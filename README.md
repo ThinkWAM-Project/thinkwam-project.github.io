@@ -13,11 +13,11 @@ A static academic project page hosted by GitHub Pages from the `main` branch.
 - `assets/`: published images, videos, and the downloadable benchmark comparison CSV.
 
 Preview with `python3 -m http.server 4173`, then open `http://localhost:4173`.
-Push changes to `main` to update GitHub Pages. No build step is required.
+Push changes to `main` to update GitHub Pages. No build step is required. Bump the asset query version in `index.html` when updating CSS or JavaScript to refresh cached assets.
 
 ## Pending resources
 
-Set `arxivUrl` in `site-data.js` after the preprint is available, update the arXiv resource text and BibTeX in `index.html`, and replace the GitHub organization link with the public code repository when released. Real-world timings are measured on the same NVIDIA RTX 4080 SUPER; keep their hardware context separate from the A100 simulation table.
+Set `arxivUrl` in `site-data.js` after the preprint is available, update the arXiv resource text and BibTeX in `index.html`, and replace the GitHub organization link with the public code repository when released. Real-world timings are measured on the same NVIDIA RTX 4080 SUPER; label their RTX 4080 SUPER hardware separately from the A100 simulation columns in the combined table.
 
 ## Media and results
 

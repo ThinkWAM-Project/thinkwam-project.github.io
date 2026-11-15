@@ -132,7 +132,7 @@ function renderDemos(tab) {
     });
   }
   document.querySelector('#demo-panel').setAttribute('aria-labelledby', tab.id);
-  document.querySelector('.video-note').textContent = type === 'real' ? 'Full recordings · original playback speed · click to play' : 'Selected trajectories · click to play · playback speed shown with each video';
+  document.querySelector('.video-note').textContent = type === 'real' ? 'Selected recordings · original playback speed · click to play' : 'Selected trajectories · click to play · playback speed shown with each video';
   for (const [index, demo] of filtered.entries()) {
     const figure = el('figure', 'demo-card');
     const media = el('div', 'demo-video-wrap' + (type === 'simulation' ? ' simulation' : ''));
@@ -198,7 +198,7 @@ function renderDemos(tab) {
     figure.append(caption); (groupGrids.get(demo.group || '') || grid).append(figure);
   }
   if (!grid.children.length) grid.append(el('p', 'demo-empty', 'Demonstrations are being prepared.'));
-  document.querySelector('#demo-footnote').textContent = type === 'real' ? (data.realVideoNote || 'Selected full real-world recordings. These examples illustrate behavior under the stated conditions.') : (data.simulationNotes?.[selectedSimulationGroup] || data.simulationVideoNote || 'Selected recorded simulation trajectories. These qualitative examples are separate from the benchmark aggregates.');
+  document.querySelector('#demo-footnote').textContent = type === 'real' ? (data.realVideoNote || 'Selected real-world recordings. These examples illustrate behavior under the stated conditions.') : (data.simulationNotes?.[selectedSimulationGroup] || data.simulationVideoNote || 'Selected recorded simulation trajectories. These qualitative examples are separate from the benchmark aggregates.');
 }
 const activateDemo = setupTabs(document.querySelector('[aria-label="Demonstration environment"]'), renderDemos);
 activateDemo(document.getElementById(demos.some(item => item.type === 'real') ? 'demo-real-tab' : 'demo-simulation-tab'));

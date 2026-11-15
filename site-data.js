@@ -290,27 +290,27 @@ window.THINKWAM = {
       "group": "Multiple distractors",
       "title": "Other-colored distractors",
       "description": "The green bottle and eraser are collected while the other-colored distractors remain on the table.",
-      "src": "assets/videos/aiz-distractors-static-scene-borderless-v14.mp4",
+      "src": "assets/videos/aiz-distractors-static-scene-trim-v18.mp4",
       "poster": "assets/posters/aiz-distractors-static-scene-borderless-v14.jpg",
-      "duration": "24.5 s · full recording",
+      "duration": "22.7 s · selected clip",
       "source_record": "20261114_异色干扰_1",
-      "frame_count": 368,
+      "frame_count": 340,
       "fps": 15.0,
-      "trimmed": false,
+      "trimmed": true,
       "human_target_intervention": false,
       "original_src": "assets/videos/aiz-distractors-static.mp4",
       "views": [
         {
           "key": "scene",
           "label": "Scene view",
-          "src": "assets/videos/aiz-distractors-static-scene-borderless-v14.mp4",
+          "src": "assets/videos/aiz-distractors-static-scene-trim-v18.mp4",
           "poster": "assets/posters/aiz-distractors-static-scene-borderless-v14.jpg",
           "aspect": "522 / 480"
         },
         {
           "key": "wrist",
           "label": "Wrist view",
-          "src": "assets/videos/aiz-distractors-static-wrist.mp4",
+          "src": "assets/videos/aiz-distractors-static-wrist-trim-v18.mp4",
           "poster": "assets/posters/aiz-distractors-static-wrist.jpg",
           "aspect": "4 / 3"
         }
@@ -319,6 +319,12 @@ window.THINKWAM = {
       "padding_removed": {
         "left": 58,
         "right": 60
+      },
+      "original_frame_count": 368,
+      "trim": {
+        "start_frame": 0,
+        "end_frame_exclusive": 340,
+        "removed_tail_frames": 28
       }
     },
     {
@@ -326,27 +332,27 @@ window.THINKWAM = {
       "group": "Multiple distractors",
       "title": "Human interference among distractors",
       "description": "Two green erasers are repeatedly moved and rotated by hand; both are eventually collected into the box.",
-      "src": "assets/videos/aiz-distractors-intervention-scene-borderless-v14.mp4",
+      "src": "assets/videos/aiz-distractors-intervention-scene-trim-v18.mp4",
       "poster": "assets/posters/aiz-distractors-intervention-scene-borderless-v14.jpg",
-      "duration": "59.0 s · full recording",
+      "duration": "56.7 s · selected clip",
       "source_record": "20261114_异色干扰_3",
-      "frame_count": 885,
+      "frame_count": 850,
       "fps": 15.0,
-      "trimmed": false,
+      "trimmed": true,
       "human_target_intervention": true,
       "original_src": "assets/videos/aiz-distractors-intervention.mp4",
       "views": [
         {
           "key": "scene",
           "label": "Scene view",
-          "src": "assets/videos/aiz-distractors-intervention-scene-borderless-v14.mp4",
+          "src": "assets/videos/aiz-distractors-intervention-scene-trim-v18.mp4",
           "poster": "assets/posters/aiz-distractors-intervention-scene-borderless-v14.jpg",
           "aspect": "522 / 480"
         },
         {
           "key": "wrist",
           "label": "Wrist view",
-          "src": "assets/videos/aiz-distractors-intervention-wrist.mp4",
+          "src": "assets/videos/aiz-distractors-intervention-wrist-trim-v18.mp4",
           "poster": "assets/posters/aiz-distractors-intervention-wrist.jpg",
           "aspect": "4 / 3"
         }
@@ -355,6 +361,12 @@ window.THINKWAM = {
       "padding_removed": {
         "left": 58,
         "right": 60
+      },
+      "original_frame_count": 885,
+      "trim": {
+        "start_frame": 0,
+        "end_frame_exclusive": 850,
+        "removed_tail_frames": 35
       }
     },
     {
@@ -362,27 +374,27 @@ window.THINKWAM = {
       "group": "Purple lighting",
       "title": "Purple lighting with two objects",
       "description": "The green tissue packet and eraser are collected under purple illumination.",
-      "src": "assets/videos/aiz-lighting-two-scene-borderless-v14.mp4",
+      "src": "assets/videos/aiz-lighting-two-scene-trim-v18.mp4",
       "poster": "assets/posters/aiz-lighting-two-scene-borderless-v14.jpg",
-      "duration": "21.9 s · full recording",
+      "duration": "20.1 s · selected clip",
       "source_record": "20261114_紫光扰动_4",
-      "frame_count": 329,
+      "frame_count": 302,
       "fps": 15.0,
-      "trimmed": false,
+      "trimmed": true,
       "human_target_intervention": false,
       "original_src": "assets/videos/aiz-lighting-two.mp4",
       "views": [
         {
           "key": "scene",
           "label": "Scene view",
-          "src": "assets/videos/aiz-lighting-two-scene-borderless-v14.mp4",
+          "src": "assets/videos/aiz-lighting-two-scene-trim-v18.mp4",
           "poster": "assets/posters/aiz-lighting-two-scene-borderless-v14.jpg",
           "aspect": "544 / 480"
         },
         {
           "key": "wrist",
           "label": "Wrist view",
-          "src": "assets/videos/aiz-lighting-two-wrist.mp4",
+          "src": "assets/videos/aiz-lighting-two-wrist-trim-v18.mp4",
           "poster": "assets/posters/aiz-lighting-two-wrist.jpg",
           "aspect": "4 / 3"
         }
@@ -391,6 +403,12 @@ window.THINKWAM = {
       "padding_removed": {
         "left": 48,
         "right": 48
+      },
+      "original_frame_count": 329,
+      "trim": {
+        "start_frame": 0,
+        "end_frame_exclusive": 302,
+        "removed_tail_frames": 27
       }
     },
     {
@@ -398,27 +416,27 @@ window.THINKWAM = {
       "group": "Purple lighting",
       "title": "Purple lighting with three objects",
       "description": "The tissue packet, small green pouch, and eraser are collected under purple illumination.",
-      "src": "assets/videos/aiz-lighting-three-scene-borderless-v14.mp4",
+      "src": "assets/videos/aiz-lighting-three-scene-trim-v18.mp4",
       "poster": "assets/posters/aiz-lighting-three-scene-borderless-v14.jpg",
-      "duration": "34.9 s · full recording",
+      "duration": "32.5 s · selected clip",
       "source_record": "20261114_紫光扰动_3",
-      "frame_count": 523,
+      "frame_count": 488,
       "fps": 15.0,
-      "trimmed": false,
+      "trimmed": true,
       "human_target_intervention": false,
       "original_src": "assets/videos/aiz-lighting-three.mp4",
       "views": [
         {
           "key": "scene",
           "label": "Scene view",
-          "src": "assets/videos/aiz-lighting-three-scene-borderless-v14.mp4",
+          "src": "assets/videos/aiz-lighting-three-scene-trim-v18.mp4",
           "poster": "assets/posters/aiz-lighting-three-scene-borderless-v14.jpg",
           "aspect": "544 / 480"
         },
         {
           "key": "wrist",
           "label": "Wrist view",
-          "src": "assets/videos/aiz-lighting-three-wrist.mp4",
+          "src": "assets/videos/aiz-lighting-three-wrist-trim-v18.mp4",
           "poster": "assets/posters/aiz-lighting-three-wrist.jpg",
           "aspect": "4 / 3"
         }
@@ -427,6 +445,12 @@ window.THINKWAM = {
       "padding_removed": {
         "left": 48,
         "right": 48
+      },
+      "original_frame_count": 523,
+      "trim": {
+        "start_frame": 0,
+        "end_frame_exclusive": 488,
+        "removed_tail_frames": 35
       }
     },
     {
@@ -717,7 +741,7 @@ window.THINKWAM = {
       "fps": 20.0
     }
   ],
-  "realVideoNote": "Six selected full recordings illustrate green-object tidying, including two examples with human target repositioning. Scene and wrist views switch at the same point in each trajectory. Videos retain the original playback speed. These qualitative examples are separate from the aggregate OOD evaluation below.",
+  "realVideoNote": "Six selected recordings illustrate green-object tidying, including two examples with human target repositioning. Distractor and purple-lighting clips are trimmed at the end. Scene and wrist views remain synchronized at the original playback speed. These qualitative examples are separate from the aggregate OOD evaluation below.",
   "comparisons": {
     "libero": {
       "title": "LIBERO",

@@ -301,7 +301,7 @@ html { scroll-behavior: smooth; }
 .site-header nav a:hover, .site-header .nav-github:hover, .site-header nav a[aria-current="location"] { color: #b7c3f5; }
 .site-header.is-scrolled nav a:hover, .site-header.is-scrolled .nav-github:hover, .site-header.is-scrolled nav a[aria-current="location"] { color: var(--green-dark); }
 .hero-cinematic { position: relative; display: flex; align-items: center; min-height: calc(100svh - var(--metric-strip-height)); width: 100%; padding: 0; overflow: hidden; text-align: left; color: #fff; background: #111216; }
-.hero-media { position: absolute; inset: 0; width: 100%; height: 100%; display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); grid-template-rows: repeat(4,minmax(0,1fr)); gap: 0; }
+.hero-media { position: absolute; inset: 0; width: 100%; height: 100%; display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); grid-template-rows: repeat(5,minmax(0,1fr)); gap: 0; }
 .hero-tile { position: relative; min-width: 0; min-height: 0; margin: 0; overflow: hidden; background: #111216; }
 .hero-media video { width: 100%; height: 100%; min-height: 0; object-fit: cover; object-position: center; background: #111216; }
 .hero-shade { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg,#111216ef 0%,#111216cf 30%,#111216a8 50%,#11121638 70%,transparent 82%),linear-gradient(180deg,#11121690,transparent 16%,transparent 88%,#11121635); }

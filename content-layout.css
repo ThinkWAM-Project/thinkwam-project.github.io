@@ -1,4 +1,4 @@
-/* Research content only. The cinematic opening and metric strip retain v14. */
+/* Compact research sections and layered demonstration controls. */
 main > .section:not(.resources-section):not(.bibtex-section) { padding-block: 42px; }
 .academic-heading { margin-bottom: 23px; }
 .academic-heading h2 { display: flex; align-items: center; gap: 13px; font-size: 31px; letter-spacing: -.85px; }
@@ -139,18 +139,30 @@ main > .section:not(.resources-section):not(.bibtex-section) { padding-block: 42
 .performance-figures, .comparison-panel, .efficiency-figures, .mechanism-row, #demo-panel {
   box-shadow: 0 7px 24px #27355209, 0 1px 3px #27355206;
 }
-.demo-toolbar .pill-tabs { padding: 5px; gap: 5px; border: 1px solid #d9e0ee; border-radius: 12px; background: #eef1f7; box-shadow: 0 3px 10px #2735520a; }
-.demo-toolbar .pill-tabs > button { min-height: 42px; padding: 9px 20px; border-color: transparent; border-radius: 8px; color: #49566f; font-size: 14px; font-weight: 700; }
-.demo-toolbar .pill-tabs > button[aria-selected=true] { color: #fff; background: #455b9d; border-color: #455b9d; box-shadow: 0 3px 7px #33487a30; }
-.demo-toolbar .pill-tabs button span { display: inline-flex; align-items: center; justify-content: center; min-width: 21px; min-height: 21px; padding-inline: 5px; margin-left: 5px; border-radius: 5px; background: #dfe5f0; color: #4d5c79; font-size: 11px; }
-.demo-toolbar .pill-tabs button[aria-selected=true] span { background: #ffffff26; color: #fff; }
+.demo-toolbar { padding-bottom: 0; border-bottom: 1px solid #e1e5ec; }
+.demo-toolbar .pill-tabs { flex-wrap: nowrap; padding: 0; gap: 8px; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.demo-toolbar .pill-tabs > button { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 50px; padding: 10px 16px 14px; border: 0; border-radius: 6px 6px 0 0; color: #677081; background: transparent; font-size: 15px; font-weight: 650; transition: color .18s ease, background .18s ease; }
+.demo-toolbar .pill-tabs > button::after { content: ''; position: absolute; bottom: -1px; left: 14px; right: 14px; height: 3px; border-radius: 3px 3px 0 0; background: #536ba8; transform: scaleX(.55); opacity: 0; transition: transform .2s ease, opacity .2s ease; }
+.demo-toolbar .pill-tabs > button[aria-selected=true] { color: #253753; background: transparent; box-shadow: none; }
+.demo-toolbar .pill-tabs > button[aria-selected=true]::after { transform: scaleX(1); opacity: 1; }
+.demo-toolbar .pill-tabs button span { display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 20px; padding-inline: 5px; margin: 0; border-radius: 5px; background: #edf0f5; color: #677185; font-size: 11px; font-weight: 600; opacity: 1; }
+.demo-toolbar .pill-tabs button[aria-selected=true] span { background: #e9edf7; color: #415989; }
+.demo-toolbar .video-note { padding-bottom: 10px; }
+.control-icon { display: block; flex: 0 0 auto; width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.65; stroke-linecap: round; stroke-linejoin: round; }
+.demo-toolbar .control-icon { width: 19px; height: 19px; }
 .demo-card { padding: 12px; border: 1px solid #e1e6ef; border-radius: 12px; background: #fff; box-shadow: 0 4px 12px #2735520b; transition: box-shadow .2s ease, transform .2s ease; }
 .demo-video-wrap { border-radius: 7px; }
-.camera-switcher { width: fit-content; max-width: 100%; margin: 10px auto 0; padding: 4px; gap: 4px; border: 1px solid #dce3ef; border-radius: 9px; background: #edf1f7; }
-.camera-switcher button { min-height: 34px; padding: 7px 12px; border: 1px solid transparent; border-radius: 6px; color: #4c5972; font-size: 12px; font-weight: 650; line-height: 1.4; white-space: nowrap; }
-.camera-switcher button[aria-pressed=true] { color: #fff; background: #4b62a8; border-color: #4b62a8; box-shadow: 0 2px 5px #354c8530; }
-.real-group-grid .camera-switcher button { min-width: 108px; font-size: 13px; }
-.single-view-note { width: fit-content; margin: 10px auto 0; padding: 7px 12px; border: 1px solid #e1e6f0; border-radius: 7px; color: #5b6880; background: #f3f5f9; font-size: 11px; font-weight: 550; line-height: 1.5; }
+.camera-switcher { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0,1fr); width: fit-content; max-width: 100%; margin: 0 0 8px auto; padding: 2px; gap: 2px; border: 1px solid #e9ebef; border-radius: 8px; background: #f0f2f5; box-shadow: inset 0 1px 2px #26344b05; }
+.camera-switcher button { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-width: 0; min-height: 28px; padding: 4px 10px; border: 1px solid transparent; border-radius: 5px; color: #626c7b; background: transparent; font-size: 12px; font-weight: 600; line-height: 1.4; white-space: nowrap; transition: color .18s ease, background .18s ease, box-shadow .18s ease; }
+.camera-switcher .control-icon { width: 14px; height: 14px; }
+.camera-switcher button[aria-pressed=true] { color: #263955; background: #fff; border-color: #e1e5eb; box-shadow: 0 2px 4px #23334d12, 0 1px 1px #23334d08; }
+.camera-switcher button[aria-pressed=true] .control-icon { color: #536ba8; }
+.camera-switcher[data-views="3"] button { gap: 4px; padding-inline: 6px; font-size: 11px; }
+.camera-switcher[data-views="3"] .control-icon { width: 14px; height: 14px; }
+.real-group-grid .camera-switcher button { font-size: 12px; }
+.single-view-note { display: flex; align-items: center; justify-content: center; gap: 7px; min-height: 34px; width: fit-content; margin: 0 0 8px auto; padding: 5px 9px; border: 1px solid #e9ebef; border-radius: 8px; color: #667183; background: #f5f6f8; font-size: 11px; font-weight: 550; line-height: 1.5; }
+.single-view-note::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #8e9cb3; }
+.demo-toolbar button:focus-visible, .camera-switcher button:focus-visible, .simulation-filters button:focus-visible { outline: 2px solid #536ba8; outline-offset: 3px; }
 .video-timeline { display: flex; align-items: center; gap: 9px; margin-top: 6px; }
 .video-timeline output { flex: 0 0 auto; min-width: 63px; color: #58657e; font-size: 10px; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
 .video-timeline input { appearance: none; -webkit-appearance: none; flex: 1 1 0; min-width: 0; height: 24px; margin: 0; background: transparent; cursor: pointer; touch-action: pan-y; }
@@ -166,16 +178,22 @@ main > .section:not(.resources-section):not(.bibtex-section) { padding-block: 42
 .latency-chart.is-revealed .latency-bar { transform: scaleX(1); opacity: 1; }
 @media (hover:hover) {
   .demo-card:hover { box-shadow: 0 9px 24px #27355216; transform: translateY(-2px); }
-  .camera-switcher button:not([aria-pressed=true]):hover { background: #fff; color: #354d93; }
+  .demo-toolbar .pill-tabs > button:not([aria-selected=true]):hover { background: #f5f7fa; color: #354763; }
+  .camera-switcher button:not([aria-pressed=true]):hover { background: #ffffff80; color: #354763; }
 }
 @media (max-width:760px) {
-  .demo-toolbar .pill-tabs > button { min-height: 40px; padding: 8px 15px; font-size: 13px; }
+  .demo-toolbar { gap: 10px; border-bottom: 0; }
+  .demo-toolbar .pill-tabs { width: 100%; border-bottom: 1px solid #e1e5ec; gap: 4px; }
+  .demo-toolbar .pill-tabs > button { flex: 1; min-height: 48px; padding: 9px 10px 13px; gap: 7px; font-size: 14px; }
+  .demo-toolbar .video-note { padding-bottom: 0; }
   .demo-card { padding: 10px; }
-  .camera-switcher button { padding-inline: 10px; font-size: 12px; }
-  .real-group-grid .camera-switcher button { min-width: 101px; }
+  .camera-switcher button { padding-inline: 9px; font-size: 12px; }
+}
+@media (pointer:coarse) {
+  .camera-switcher button { min-height: 34px; }
 }
 @media (prefers-reduced-motion:reduce) {
-  .demo-card, .latency-chart .latency-bar { transition: none; }
+  .demo-card, .latency-chart .latency-bar, .camera-switcher button, .demo-toolbar .pill-tabs > button, .demo-toolbar .pill-tabs > button::after { transition: none; }
   .demo-card:hover { transform: none; }
   .latency-chart.is-pending .latency-bar { transform: none; opacity: 1; }
 }

@@ -2,6 +2,20 @@
 const data = window.THINKWAM || {};
 const el = (tag, className, text) => { const node = document.createElement(tag); if (className) node.className = className; if (text !== undefined) node.textContent = text; return node; };
 
+function cameraIcon(kind) {
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('viewBox', '0 0 24 24');
+  svg.setAttribute('class', 'control-icon');
+  svg.setAttribute('aria-hidden', 'true');
+  svg.setAttribute('focusable', 'false');
+  const path = document.createElementNS(svg.namespaceURI, 'path');
+  path.setAttribute('d', kind === 'wrist'
+    ? 'M9 3h6v5H9V3Zm3 5v4M8 12h8l3 5-3 4M8 12l-3 5 3 4M8 17v2M16 17v2'
+    : 'M4 7h4l2-3h4l2 3h4v13H4V7Zm11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z');
+  svg.append(path);
+  return svg;
+}
+
 function setupTabs(container, onSelect) {
   if (!container) return () => {};
   const tabs = [...container.querySelectorAll('[role="tab"]')];
@@ -132,20 +146,31 @@ function renderDemos(tab) {
       const viewControls = el('div', 'camera-switcher');
       viewControls.setAttribute('role', 'group');
       viewControls.setAttribute('aria-label', `Camera view for ${demo.title}`);
+      viewControls.dataset.views = demo.views.length;
       let switchController;
+      let pendingPlayback;
       const buttons = demo.views.map((view, viewIndex) => {
-        const button = el('button', '', view.label); button.type = 'button';
+        const wrist = /wrist/i.test(view.label);
+        const label = demo.views.length === 2 ? (wrist ? 'Wrist view' : 'Scene view') : view.label.replace(/ view$/i, '');
+        const button = el('button'); button.type = 'button';
+        button.append(cameraIcon(wrist ? 'wrist' : 'scene'), el('span', 'camera-label', label));
+        button.setAttribute('aria-label', label.endsWith('view') ? label : `${label} view`);
         button.setAttribute('aria-pressed', String(viewIndex === 0));
         button.addEventListener('click', () => {
           if (button.getAttribute('aria-pressed') === 'true') return;
-          const time = video.currentTime; const playing = !video.paused;
-          const rate = video.playbackRate; video.pause();
+          // Keep the intended position if another view is chosen before loading finishes.
+          pendingPlayback ||= {time: video.currentTime, playing: !video.paused, rate: video.playbackRate};
+          const {time, playing, rate} = pendingPlayback;
+          video.pause();
           if (switchController) switchController.abort();
           switchController = new AbortController();
           buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-          video.addEventListener('canplay', () => {
+          video.addEventListener('loadedmetadata', () => {
             video.currentTime = Math.min(time, Math.max(0, video.duration - .01));
             video.playbackRate = rate;
+          }, {once: true, signal: switchController.signal});
+          video.addEventListener('canplay', () => {
+            pendingPlayback = null;
             if (playing && video.isConnected) video.play().catch(() => {});
           }, {once: true, signal: switchController.signal});
           media.style.aspectRatio = view.aspect || demo.aspect || "";
@@ -154,7 +179,18 @@ function renderDemos(tab) {
         });
         viewControls.append(button); return button;
       });
-      figure.append(viewControls);
+      viewControls.addEventListener('keydown', event => {
+        const current = buttons.indexOf(event.target);
+        if (current < 0) return;
+        let next;
+        if (event.key === 'ArrowRight') next = (current + 1) % buttons.length;
+        else if (event.key === 'ArrowLeft') next = (current - 1 + buttons.length) % buttons.length;
+        else if (event.key === 'Home') next = 0;
+        else if (event.key === 'End') next = buttons.length - 1;
+        else return;
+        event.preventDefault(); buttons[next].focus(); buttons[next].click();
+      });
+      figure.prepend(viewControls);
     }
     const caption = document.createElement('figcaption'); const top = el('div', 'demo-caption-line'); top.append(el('span', '', `${type === 'real' ? 'REAL-WORLD' : 'SIMULATION'} / ${String(index + 1).padStart(2, '0')}`));
     if (demo.duration) top.append(el('small', '', demo.duration));

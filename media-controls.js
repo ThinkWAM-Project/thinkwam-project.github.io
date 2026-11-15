@@ -22,7 +22,7 @@
       const label = document.createElement('div');
       label.className = 'single-view-note';
       label.textContent = 'Single camera view';
-      timeline.after(label);
+      video.closest('.demo-card').prepend(label);
     }
     let dragging = false, resumeAfterSeek = false;
 

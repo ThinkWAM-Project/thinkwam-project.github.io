@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="418" viewBox="0 0 1440 418" role="img" aria-labelledby="chart-title chart-desc">
 <title id="chart-title">Mean inference latency</title><desc id="chart-desc">Mean model-call latency per action chunk, with a shared 0–600 ms axis. Batch size 1 and native chunk configurations. LIBERO and RoboTwin: A100 80GB, 10 warm-up and 60 timed calls. Real robot: RTX 4080 SUPER, 120 calls after warm-up. Hardware and protocols differ; these are not per-action or task-completion times. Values from performance-data-v14.json, latest supplied manuscript Tables 5 and 10.</desc>
+<defs><linearGradient id="bar-ours" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#465BAE"/><stop offset="1" stop-color="#899AE2"/></linearGradient><linearGradient id="bar-pi" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#839EB8"/><stop offset="1" stop-color="#BBCDDE"/></linearGradient><linearGradient id="bar-fast" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#AA98C3"/><stop offset="1" stop-color="#D4C8E3"/></linearGradient></defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;font-variant-numeric:tabular-nums}</style>
 <rect width="1440" height="418" fill="#FFFFFF"/>
 <text x="24" y="32" font-size="25" font-weight="650" fill="#30384B" text-anchor="start">LIBERO</text>
@@ -14,13 +15,13 @@
 <line x1="420" y1="112" x2="420" y2="300" stroke="#E8ECF3" stroke-width="1"/>
 <text x="420" y="326" font-size="15" font-weight="400" fill="#657087" text-anchor="middle">600</text>
 <text x="24" y="104" font-size="18" font-weight="650" fill="#4557A6" text-anchor="start">ThinkWAM</text>
-<rect data-method="ThinkWAM" data-value="153.48" x="24" y="116" width="101.2968" height="23" rx="2" fill="#596CC0"/>
+<rect data-method="ThinkWAM" data-value="153.48" x="24" y="116" width="101.2968" height="23" rx="2" fill="url(#bar-ours)"/>
 <text x="135.297" y="134" font-size="18" font-weight="650" fill="#30384B" text-anchor="start">153.48</text>
 <text x="24" y="176" font-size="18" font-weight="400" fill="#30384B" text-anchor="start">π0.5</text>
-<rect data-method="π0.5" data-value="286.62" x="24" y="188" width="189.1692" height="23" rx="2" fill="#8FA8BF"/>
+<rect data-method="π0.5" data-value="286.62" x="24" y="188" width="189.1692" height="23" rx="2" fill="url(#bar-pi)"/>
 <text x="223.169" y="206" font-size="18" font-weight="400" fill="#30384B" text-anchor="start">286.62</text>
 <text x="24" y="248" font-size="18" font-weight="400" fill="#30384B" text-anchor="start">FastWAM</text>
-<rect data-method="FastWAM" data-value="506.48" x="24" y="260" width="334.2768" height="23" rx="2" fill="#B5A5CB"/>
+<rect data-method="FastWAM" data-value="506.48" x="24" y="260" width="334.2768" height="23" rx="2" fill="url(#bar-fast)"/>
 <text x="368.277" y="278" font-size="18" font-weight="400" fill="#30384B" text-anchor="start">506.48</text>
 <line x1="24" y1="300" x2="420" y2="300" stroke="#C7CFDF" stroke-width="1"/>
 <text x="222" y="356" font-size="17" font-weight="400" fill="#657087" text-anchor="middle">Mean latency (ms / chunk) ↓</text>
@@ -36,13 +37,13 @@
 <line x1="900" y1="112" x2="900" y2="300" stroke="#E8ECF3" stroke-width="1"/>
 <text x="900" y="326" font-size="15" font-weight="400" fill="#657087" text-anchor="middle">600</text>
 <text x="504" y="104" font-size="18" font-weight="650" fill="#4557A6" text-anchor="start">ThinkWAM</text>
-<rect data-method="ThinkWAM" data-value="164.61" x="504" y="116" width="108.6426" height="23" rx="2" fill="#596CC0"/>
+<rect data-method="ThinkWAM" data-value="164.61" x="504" y="116" width="108.6426" height="23" rx="2" fill="url(#bar-ours)"/>
 <text x="622.643" y="134" font-size="18" font-weight="650" fill="#30384B" text-anchor="start">164.61</text>
 <text x="504" y="176" font-size="18" font-weight="400" fill="#30384B" text-anchor="start">π0.5</text>
-<rect data-method="π0.5" data-value="254.59" x="504" y="188" width="168.0294" height="23" rx="2" fill="#8FA8BF"/>
+<rect data-method="π0.5" data-value="254.59" x="504" y="188" width="168.0294" height="23" rx="2" fill="url(#bar-pi)"/>
 <text x="682.029" y="206" font-size="18" font-weight="400" fill="#30384B" text-anchor="start">254.59</text>
 <text x="504" y="248" font-size="18" font-weight="400" fill="#30384B" text-anchor="start">FastWAM</text>
-<rect data-method="FastWAM" data-value="496.16" x="504" y="260" width="327.4656" height="23" rx="2" fill="#B5A5CB"/>
+<rect data-method="FastWAM" data-value="496.16" x="504" y="260" width="327.4656" height="23" rx="2" fill="url(#bar-fast)"/>
 <text x="841.466" y="278" font-size="18" font-weight="400" fill="#30384B" text-anchor="start">496.16</text>
 <line x1="504" y1="300" x2="900" y2="300" stroke="#C7CFDF" stroke-width="1"/>
 <text x="702" y="356" font-size="17" font-weight="400" fill="#657087" text-anchor="middle">Mean latency (ms / chunk) ↓</text>
@@ -59,13 +60,13 @@
 <line x1="1380" y1="112" x2="1380" y2="300" stroke="#E8ECF3" stroke-width="1"/>
 <text x="1380" y="326" font-size="15" font-weight="400" fill="#657087" text-anchor="middle">600</text>
 <text x="984" y="104" font-size="18" font-weight="650" fill="#4557A6" text-anchor="start">ThinkWAM</text>
-<rect data-method="ThinkWAM" data-value="101.2" x="984" y="116" width="66.7920" height="23" rx="2" fill="#596CC0"/>
+<rect data-method="ThinkWAM" data-value="101.2" x="984" y="116" width="66.7920" height="23" rx="2" fill="url(#bar-ours)"/>
 <text x="1060.79" y="134" font-size="18" font-weight="650" fill="#30384B" text-anchor="start">101.2</text>
 <text x="984" y="176" font-size="18" font-weight="400" fill="#30384B" text-anchor="start">π0.5</text>
-<rect data-method="π0.5" data-value="119.9" x="984" y="188" width="79.1340" height="23" rx="2" fill="#8FA8BF"/>
+<rect data-method="π0.5" data-value="119.9" x="984" y="188" width="79.1340" height="23" rx="2" fill="url(#bar-pi)"/>
 <text x="1073.13" y="206" font-size="18" font-weight="400" fill="#30384B" text-anchor="start">119.9</text>
 <text x="984" y="248" font-size="18" font-weight="400" fill="#30384B" text-anchor="start">FastWAM</text>
-<rect data-method="FastWAM" data-value="296.9" x="984" y="260" width="195.9540" height="23" rx="2" fill="#B5A5CB"/>
+<rect data-method="FastWAM" data-value="296.9" x="984" y="260" width="195.9540" height="23" rx="2" fill="url(#bar-fast)"/>
 <text x="1189.95" y="278" font-size="18" font-weight="400" fill="#30384B" text-anchor="start">296.9</text>
 <line x1="984" y1="300" x2="1380" y2="300" stroke="#C7CFDF" stroke-width="1"/>
 <text x="1182" y="356" font-size="17" font-weight="400" fill="#657087" text-anchor="middle">Mean latency (ms / chunk) ↓</text>

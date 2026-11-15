@@ -9,6 +9,7 @@ A static academic project page hosted by GitHub Pages from the `main` branch.
 - `index.html`: page structure, abstract, resource buttons, and BibTeX.
 - `site-data.js`: author order, affiliations, demo selection, benchmark tables, inference timings, and figure captions.
 - `app.js`: camera switching, galleries, comparison tabs, figure zoom, and citation copying.
+- `media-controls.js`: persistent seek controls for each demonstration and progressive latency-bar reveals.
 - `academic.css`: presentation and responsive layout; `styles.css` supplies the base styles.
 - `content-layout.css`: compact research sections, figure grouping, and responsive content spacing; the hero and metric strip retain their existing presentation.
 - `assets/`: published images, videos, and the downloadable benchmark comparison CSV.
@@ -35,3 +36,5 @@ The page opens with a full-viewport 4×4 mosaic of muted, looping demonstrations
 Comparison values follow the project manuscript. Timing notes distinguish model-call latency from simulator time and describe the different native chunk configurations.
 
 The v15 content layout keeps the opening unchanged, uses a two-column overview on desktop, reduces section and table spacing, and groups related analysis figures. The latency SVGs (`*-v15.svg`) use indigo for ThinkWAM, blue-gray for π0.5, and muted lavender for FastWAM, retaining the nine source values, native chunk notes, and shared 0–600 ms axis from `assets/performance-data-v14.json`.
+
+The v16 interaction update adds visible Scene/Wrist controls, stronger environment tabs, and subtle card depth. Each gallery video has a keyboard-accessible seek slider synchronized with native controls and camera switching. All 36 published camera streams retain fast-start MP4 metadata; playback remains at its original selected speed. RoboTwin currently has one camera stream per example, indicated on each card. Latency bars use a soft horizontal gradient and reveal once on entering the viewport; reduced-motion users see the complete static chart. Zhandong Mei is listed penultimate and shares the corresponding-author marker with Huibin Li; the project BibTeX order matches.

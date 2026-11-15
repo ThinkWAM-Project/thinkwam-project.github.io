@@ -134,3 +134,48 @@ main > .section:not(.resources-section):not(.bibtex-section) { padding-block: 42
 @media (max-width: 560px) {
   .demo-group-grid.simulation-group-grid { grid-template-columns: 1fr; max-width: 340px; }
 }
+
+/* Clear controls and a restrained second surface for the demonstration cards. */
+.performance-figures, .comparison-panel, .efficiency-figures, .mechanism-row, #demo-panel {
+  box-shadow: 0 7px 24px #27355209, 0 1px 3px #27355206;
+}
+.demo-toolbar .pill-tabs { padding: 5px; gap: 5px; border: 1px solid #d9e0ee; border-radius: 12px; background: #eef1f7; box-shadow: 0 3px 10px #2735520a; }
+.demo-toolbar .pill-tabs > button { min-height: 42px; padding: 9px 20px; border-color: transparent; border-radius: 8px; color: #49566f; font-size: 14px; font-weight: 700; }
+.demo-toolbar .pill-tabs > button[aria-selected=true] { color: #fff; background: #455b9d; border-color: #455b9d; box-shadow: 0 3px 7px #33487a30; }
+.demo-toolbar .pill-tabs button span { display: inline-flex; align-items: center; justify-content: center; min-width: 21px; min-height: 21px; padding-inline: 5px; margin-left: 5px; border-radius: 5px; background: #dfe5f0; color: #4d5c79; font-size: 11px; }
+.demo-toolbar .pill-tabs button[aria-selected=true] span { background: #ffffff26; color: #fff; }
+.demo-card { padding: 12px; border: 1px solid #e1e6ef; border-radius: 12px; background: #fff; box-shadow: 0 4px 12px #2735520b; transition: box-shadow .2s ease, transform .2s ease; }
+.demo-video-wrap { border-radius: 7px; }
+.camera-switcher { width: fit-content; max-width: 100%; margin: 10px auto 0; padding: 4px; gap: 4px; border: 1px solid #dce3ef; border-radius: 9px; background: #edf1f7; }
+.camera-switcher button { min-height: 34px; padding: 7px 12px; border: 1px solid transparent; border-radius: 6px; color: #4c5972; font-size: 12px; font-weight: 650; line-height: 1.4; white-space: nowrap; }
+.camera-switcher button[aria-pressed=true] { color: #fff; background: #4b62a8; border-color: #4b62a8; box-shadow: 0 2px 5px #354c8530; }
+.real-group-grid .camera-switcher button { min-width: 108px; font-size: 13px; }
+.single-view-note { width: fit-content; margin: 10px auto 0; padding: 7px 12px; border: 1px solid #e1e6f0; border-radius: 7px; color: #5b6880; background: #f3f5f9; font-size: 11px; font-weight: 550; line-height: 1.5; }
+.video-timeline { display: flex; align-items: center; gap: 9px; margin-top: 6px; }
+.video-timeline output { flex: 0 0 auto; min-width: 63px; color: #58657e; font-size: 10px; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+.video-timeline input { appearance: none; -webkit-appearance: none; flex: 1 1 0; min-width: 0; height: 24px; margin: 0; background: transparent; cursor: pointer; touch-action: pan-y; }
+.video-timeline input::-webkit-slider-runnable-track { height: 4px; border-radius: 4px; background: linear-gradient(to right,#6076bf var(--progress,0%),#e0e6f0 var(--progress,0%)); }
+.video-timeline input::-webkit-slider-thumb { appearance: none; -webkit-appearance: none; width: 14px; height: 14px; margin-top: -5px; border: 2px solid #fff; border-radius: 50%; background: #5168b1; box-shadow: 0 1px 5px #263d6e40; }
+.video-timeline input::-moz-range-track { height: 4px; border-radius: 4px; background: #e0e6f0; }
+.video-timeline input::-moz-range-progress { height: 4px; border-radius: 4px; background: #6076bf; }
+.video-timeline input::-moz-range-thumb { width: 10px; height: 10px; border: 2px solid #fff; border-radius: 50%; background: #5168b1; box-shadow: 0 1px 5px #263d6e40; }
+.video-timeline input:disabled { opacity: .4; cursor: wait; }
+.paper-figure .latency-chart { display: block; width: 100%; height: auto; }
+.latency-chart .latency-bar { transform-box: fill-box; transform-origin: left center; transition: transform 1.15s cubic-bezier(.22,.7,.2,1), opacity .7s ease; transition-delay: var(--bar-delay,0ms); }
+.latency-chart.is-pending .latency-bar { transform: scaleX(0); opacity: .15; }
+.latency-chart.is-revealed .latency-bar { transform: scaleX(1); opacity: 1; }
+@media (hover:hover) {
+  .demo-card:hover { box-shadow: 0 9px 24px #27355216; transform: translateY(-2px); }
+  .camera-switcher button:not([aria-pressed=true]):hover { background: #fff; color: #354d93; }
+}
+@media (max-width:760px) {
+  .demo-toolbar .pill-tabs > button { min-height: 40px; padding: 8px 15px; font-size: 13px; }
+  .demo-card { padding: 10px; }
+  .camera-switcher button { padding-inline: 10px; font-size: 12px; }
+  .real-group-grid .camera-switcher button { min-width: 101px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .demo-card, .latency-chart .latency-bar { transition: none; }
+  .demo-card:hover { transform: none; }
+  .latency-chart.is-pending .latency-bar { transform: none; opacity: 1; }
+}

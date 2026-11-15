@@ -78,7 +78,7 @@ setupTabs(document.querySelector('.method-tabs'), (_, index) => {
 });
 
 const demos = data.demos || [];
-document.querySelector('#demo-instruction-text').textContent = data.realTaskInstruction || 'Tidy up the green objects.';
+document.querySelector('#demo-instruction-text').textContent = data.realTaskInstruction || 'Put the green objects into the nearby box.';
 let selectedSimulationGroup = 'LIBERO / LIBERO-Plus';
 const simulationFilters = document.querySelector('#simulation-filters');
 simulationFilters.querySelectorAll('button').forEach(button => button.addEventListener('click', () => {

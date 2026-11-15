@@ -1840,7 +1840,7 @@ window.THINKWAM = {
     "RoboTwin 2.0": "Complete archived policy actions, replayed in the original scene and rendered at 25 fps. Videos are shown at 3× simulation speed; playback duration excludes model inference. These are selected qualitative examples.",
     "RoboCasa24": "Selected successful trajectories from a fixed-scene adaptation run, shown at 1× simulation speed. Camera buttons switch synchronized views. These examples are separate from the benchmark aggregates."
   },
-  "realTaskInstruction": "Tidy up the green objects.",
+  "realTaskInstruction": "Put the green objects into the nearby box.",
   "realWorldComparison": {
     "title": "Real-world task performance and inference latency",
     "columns": [

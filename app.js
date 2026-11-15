@@ -191,6 +191,8 @@ function renderDemos(tab) {
         event.preventDefault(); buttons[next].focus(); buttons[next].click();
       });
       figure.prepend(viewControls);
+    } else {
+      figure.prepend(el('div', 'single-view-note', 'Single camera view'));
     }
     const caption = document.createElement('figcaption'); const top = el('div', 'demo-caption-line'); top.append(el('span', '', `${type === 'real' ? 'REAL-WORLD' : 'SIMULATION'} / ${String(index + 1).padStart(2, '0')}`));
     if (demo.duration) top.append(el('small', '', demo.duration));

@@ -132,8 +132,10 @@ function renderDemos(tab) {
     });
   }
   document.querySelector('#demo-panel').setAttribute('aria-labelledby', tab.id);
-  document.querySelector('.video-note').textContent = type === 'real' ? 'Selected recordings · original playback speed · click to play' : 'Selected trajectories · click to play · playback speed shown with each video';
-  for (const [index, demo] of filtered.entries()) {
+  const context = document.querySelector('#demo-context');
+  context.textContent = selectedGroup === 'RoboTwin 2.0' ? 'Action replay · 3×' : selectedGroup === 'RoboCasa24' ? 'Fixed-scene adaptation' : '';
+  context.hidden = !context.textContent;
+  for (const demo of filtered) {
     const figure = el('figure', 'demo-card');
     const media = el('div', 'demo-video-wrap' + (type === 'simulation' ? ' simulation' : ''));
     if (demo.aspect) media.style.aspectRatio = demo.aspect;
@@ -192,15 +194,22 @@ function renderDemos(tab) {
       });
       figure.prepend(viewControls);
     } else {
-      figure.prepend(el('div', 'single-view-note', 'Single camera view'));
+      figure.prepend(el('div', 'single-view-note', demo.group === 'RoboTwin 2.0' ? 'Head camera' : 'Single view'));
     }
-    const caption = document.createElement('figcaption'); const top = el('div', 'demo-caption-line'); top.append(el('span', '', `${type === 'real' ? 'REAL-WORLD' : 'SIMULATION'} / ${String(index + 1).padStart(2, '0')}`));
-    if (demo.duration) top.append(el('small', '', demo.duration));
-    caption.append(top, el('h3', '', demo.title)); if (demo.description) caption.append(el('p', '', demo.description));
+    const caption = document.createElement('figcaption');
+    caption.append(el('h3', '', demo.shortTitle || demo.title));
     figure.append(caption); (groupGrids.get(demo.group || '') || grid).append(figure);
   }
   if (!grid.children.length) grid.append(el('p', 'demo-empty', 'Demonstrations are being prepared.'));
-  document.querySelector('#demo-footnote').textContent = type === 'real' ? (data.realVideoNote || 'Selected real-world recordings. These examples illustrate behavior under the stated conditions.') : (data.simulationNotes?.[selectedSimulationGroup] || data.simulationVideoNote || 'Selected recorded simulation trajectories. These qualitative examples are separate from the benchmark aggregates.');
+  const notes = document.querySelector('#demo-footnote');
+  const note = type === 'real' ? data.realVideoNote : (data.simulationNotes?.[selectedSimulationGroup] || data.simulationVideoNote);
+  notes.replaceChildren();
+  if (note) notes.append(el('p', '', note));
+  filtered.forEach(demo => {
+    const entry = el('p'); entry.append(el('strong', '', demo.title + '. '));
+    entry.append(document.createTextNode([demo.description, demo.duration].filter(Boolean).join(' · ')));
+    notes.append(entry);
+  });
 }
 const activateDemo = setupTabs(document.querySelector('[aria-label="Demonstration environment"]'), renderDemos);
 activateDemo(document.getElementById(demos.some(item => item.type === 'real') ? 'demo-real-tab' : 'demo-simulation-tab'));
@@ -209,12 +218,11 @@ function renderResults(tab) {
   const benchmark = data.benchmarks?.[tab.dataset.benchmark];
   if (!benchmark) return;
   document.querySelector('#result-panel').setAttribute('aria-labelledby', tab.id);
-  document.querySelector('#benchmark-title').textContent = benchmark.title;
-  document.querySelector('#benchmark-description').textContent = benchmark.description;
+  document.querySelector('#benchmark-title').textContent = benchmark.shortTitle || benchmark.title;
   const comparison = data.comparisons?.[tab.dataset.benchmark];
   if (comparison) {
     renderComparison(document.querySelector('#benchmark-comparison'), comparison);
-    renderNotes(document.querySelector('#benchmark-notes'), comparison.notes || []);
+    renderNotes(document.querySelector('#benchmark-notes'), [benchmark.description, ...(comparison.notes || [])].filter(Boolean));
   }
   const bars = document.querySelector('#benchmark-bars'); if (!bars) return; bars.replaceChildren();
   benchmark.rows.forEach(row => {
@@ -282,17 +290,30 @@ function renderComparison(container, comparison) {
   table.append(body); container.replaceChildren(table);
 }
 
-function renderNotes(container, notes) {
+function renderNotes(container, notes, label = 'Evaluation details') {
   if (!container) return;
   container.replaceChildren();
-  notes.slice(0, 2).forEach(note => container.append(el('p', '', note)));
-  if (notes.length > 2) { const details = el('details'); details.append(el('summary', '', 'Evaluation and reporting details')); notes.slice(2).forEach(note => details.append(el('p', '', note))); container.append(details); }
+  if (!notes.length) return;
+  const details = el('details', 'content-details');
+  details.append(el('summary', '', label));
+  notes.forEach(note => details.append(el('p', '', note)));
+  container.append(details);
+}
+
+function renderFigureNotes(container, figures) {
+  if (!container || !figures?.length) return;
+  const details = el('details', 'content-details');
+  details.append(el('summary', '', 'Figure notes'));
+  figures.forEach(item => {
+    details.append(el('h4', '', item.title), el('p', '', item.caption));
+  });
+  container.append(details);
 }
 
 const activateResult = setupTabs(document.querySelector('.result-tabs'), renderResults); activateResult(document.querySelector('.result-tabs button'));
 
 renderComparison(document.querySelector('#latency-comparison'), data.latency);
-renderNotes(document.querySelector('#latency-notes'), data.latency?.notes || []);
+renderNotes(document.querySelector('#latency-notes'), [...(data.efficiencyFigures || []).map(item => item.caption), ...(data.latency?.notes || [])], 'Timing details');
 if (data.realWorldComparison) {
   const comparison = data.realWorldComparison;
   const columns = comparison.columns.filter(column => !column.hideWhenEmpty || comparison.rows.some(row => row[column.key] != null));
@@ -318,7 +339,7 @@ function renderResearchFigures(selector, figures) {
     link.style.setProperty('--figure-aspect', `${item.width} / ${item.height}`);
     const img = el('img'); img.src = item.src; img.alt = item.alt || item.caption;
     img.width = item.width; img.height = item.height; img.loading = 'lazy';
-    link.append(img, el('span', 'zoom-hint', '↗ Enlarge'));
+    link.append(img, el('span', 'zoom-hint', '↗'));
     figure.append(link);
     if (item.mobileParts?.length) {
       link.classList.add('desktop-plot');
@@ -329,16 +350,17 @@ function renderResearchFigures(selector, figures) {
         partLink.setAttribute('aria-label', 'Enlarge ' + part.title);
         const partImage = el('img'); partImage.src = part.src; partImage.alt = part.alt;
         partImage.width = part.width; partImage.height = part.height; partImage.loading = 'lazy';
-        partLink.append(partImage, el('span', 'zoom-hint', '↗ Enlarge')); parts.append(partLink);
+        partLink.append(partImage, el('span', 'zoom-hint', '↗')); parts.append(partLink);
       }
       figure.append(parts);
     }
-    figure.append(el('figcaption', '', item.caption));
     article.append(figure); container.append(article);
   }
 }
 renderResearchFigures('#performance-figures', data.performanceFigures);
 renderResearchFigures('#efficiency-figures', data.efficiencyFigures);
+renderFigureNotes(document.querySelector('#performance-notes'), data.performanceFigures);
+renderFigureNotes(document.querySelector('#analysis-notes'), data.mechanisms);
 const mechanismRoot = document.querySelector('#mechanism-figures');
 const mechanismGroups = new Map();
 const mechanismRows = new Map();
@@ -354,17 +376,17 @@ for (const item of data.mechanisms || []) {
   if (item.group) {
     const groupKey = `${item.row || ''}/${item.group}`;
     if (!mechanismGroups.has(groupKey)) {
-      const group = el('section', 'mechanism-group'); group.append(el('h3', '', item.group));
+      const group = el('section', 'mechanism-group'); group.append(el('h3', '', item.groupTitle || item.group));
       parent.append(group); mechanismGroups.set(groupKey, group);
     }
     parent = mechanismGroups.get(groupKey);
   }
   const article = el('article', 'mechanism-item');
   if (item.layout) article.dataset.figureLayout = item.layout;
-  if (!item.hideHeading) article.append(el(item.group ? 'h4' : 'h3', '', item.title));
+  if (!item.hideHeading) article.append(el(item.group ? 'h4' : 'h3', '', item.shortTitle || item.title));
   const figure = el('figure', 'paper-figure'); const link = el('a', 'zoomable'); link.href = item.src; link.dataset.figure = ''; link.dataset.caption = item.title; link.setAttribute('aria-label', 'Enlarge ' + item.title);
   link.style.setProperty('--figure-aspect', `${item.width} / ${item.height}`);
-  const img = el('img'); img.src = item.src; img.alt = item.caption; img.width = item.width; img.height = item.height; img.loading = 'lazy'; link.append(img, el('span', 'zoom-hint', '↗ Enlarge'));
+  const img = el('img'); img.src = item.src; img.alt = item.caption; img.width = item.width; img.height = item.height; img.loading = 'lazy'; link.append(img, el('span', 'zoom-hint', '↗'));
   figure.append(link);
   if (item.pages?.length > 1) {
     const pagination = el('div', 'figure-pagination'); pagination.setAttribute('role', 'group');
@@ -381,13 +403,15 @@ for (const item of data.mechanisms || []) {
     });
     figure.append(pagination);
   }
-  figure.append(el('figcaption', '', item.caption)); article.append(figure); parent.append(article);
+  article.append(figure); parent.append(article);
 }
 
 const dialog = document.querySelector('#figure-dialog');
 document.querySelectorAll('[data-figure]').forEach(link => link.addEventListener('click', event => {
   if (!dialog.showModal) return;
-  event.preventDefault(); const image = document.querySelector('#figure-image'); image.src = link.href; image.alt = link.querySelector('img').alt;
+  event.preventDefault(); const image = document.querySelector('#figure-image'); image.src = link.href;
+  const sourceFigure = link.querySelector('img,svg');
+  image.alt = sourceFigure?.getAttribute('alt') || sourceFigure?.getAttribute('aria-label') || link.dataset.caption || 'Enlarged figure';
   document.querySelector('#figure-caption').textContent = link.dataset.caption; dialog.showModal();
 }));
 document.querySelector('#close-figure').addEventListener('click', () => dialog.close());

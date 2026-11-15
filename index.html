@@ -15,9 +15,9 @@
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css?v=20261115-14f">
   <link rel="stylesheet" href="academic.css?v=20261115-17a">
-  <link rel="stylesheet" href="content-layout.css?v=20261115-19a">
-  <script src="site-data.js?v=20261115-18a" defer></script>
-  <script src="app.js?v=20261115-19a" defer></script>
+  <link rel="stylesheet" href="content-layout.css?v=20261115-20a">
+  <script src="site-data.js?v=20261115-20a" defer></script>
+  <script src="app.js?v=20261115-20a" defer></script>
   <script src="media-controls.js?v=20261115-19a" defer></script>
 </head>
 <body>
@@ -88,61 +88,61 @@
 
     <section id="overview" class="section overview-section wrap" aria-labelledby="overview-heading">
       <div class="section-heading academic-heading"><h2 id="overview-heading"><span class="section-number" aria-hidden="true">01</span>Overview</h2></div>
-      <div class="abstract-copy"><p>Vision-language-action policies must decide how to act before the consequences of an action are visible. ThinkWAM introduces a <strong>proposal–rethink–refine</strong> loop that connects action generation with predictions of future visual states. The model uses affordance-guided observation–action memory and multi-horizon latent forecasts to represent the current context and its possible evolution.</p><p>An initial action proposal conditions a visual residual predictor that corrects the future latents. A second pass of the shared action head then uses these corrected futures to generate the executable action chunk. The entire process operates in latent space, without decoding future images during control. We evaluate ThinkWAM on LIBERO, LIBERO-Plus, RoboTwin 2.0, and RoboCasa24, with additional real-world evaluation on the Galaxea A1Z.</p></div>
+      <div class="abstract-copy"><p>ThinkWAM <strong>proposes an action, rethinks its latent future, and refines the action</strong> before execution.</p><p>Affordance-guided memory and multi-horizon forecasts support the loop, without decoding future images during control.</p></div>
       <div class="overview-composition" aria-label="ThinkWAM concept and architecture">
-        <figure class="paper-figure overview-comic"><a class="zoomable" href="assets/overview-comic-v14.png" data-figure data-caption="Observe, propose, rethink, and refine." aria-label="Enlarge the explanatory comic"><img src="assets/overview-comic-v14.png" alt="A four-panel comic illustrates an initial action, its possible collision with a bottle, recognition of the consequence, and a refined path around the obstacle." width="1261" height="940" fetchpriority="high"><span class="zoom-hint" aria-hidden="true">↗ Enlarge</span></a></figure>
-        <figure class="paper-figure overview-architecture"><a class="zoomable" href="assets/overview-architecture-v14.png" data-figure data-caption="ThinkWAM high-level architecture." aria-label="Enlarge the high-level architecture"><img src="assets/overview-architecture-v14.png" alt="A proposed action conditions a residual correction to predicted future latents; the corrected futures guide the refined action." width="1831" height="940" fetchpriority="high"><span class="zoom-hint" aria-hidden="true">↗ Enlarge</span></a></figure>
+        <figure class="paper-figure overview-comic"><a class="zoomable" href="assets/overview-comic-v14.png" data-figure data-caption="Observe, propose, rethink, and refine." aria-label="Enlarge the explanatory comic"><img src="assets/overview-comic-v14.png" alt="A four-panel comic illustrates an initial action, its possible collision with a bottle, recognition of the consequence, and a refined path around the obstacle." width="1261" height="940" fetchpriority="high"><span class="zoom-hint" aria-hidden="true">↗</span></a></figure>
+        <figure class="paper-figure overview-architecture"><a class="zoomable" href="assets/overview-architecture-v14.png" data-figure data-caption="ThinkWAM high-level architecture." aria-label="Enlarge the high-level architecture"><img src="assets/overview-architecture-v14.png" alt="A proposed action conditions a residual correction to predicted future latents; the corrected futures guide the refined action." width="1831" height="940" fetchpriority="high"><span class="zoom-hint" aria-hidden="true">↗</span></a></figure>
       </div>
-      <p class="overview-caption">From a proposed action to an action-conditioned future, then back to a refined action. The comic illustrates the idea; inference operates in latent space.</p>
     </section>
 
     <section id="method" class="section method-section" aria-labelledby="method-heading">
       <div class="wrap">
-        <div class="section-heading academic-heading"><h2 id="method-heading"><span class="section-number" aria-hidden="true">02</span>Method</h2><p class="section-deck">Action-conditioned latent correction between two passes of a shared action model.</p></div>
-        <figure class="paper-figure"><a class="zoomable" href="assets/architecture.png" data-figure data-caption="ThinkWAM model architecture." aria-label="Enlarge the model architecture"><img src="assets/architecture.png" width="2400" height="1385" loading="lazy" alt="ThinkWAM architecture: observation–action memory, affordance guidance, temporal latent forecasts, action-conditioned residual prediction, and two passes of the shared Action DiT."><span class="zoom-hint" aria-hidden="true">↗ Enlarge</span></a><figcaption>ThinkWAM uses a proposed action to revise its latent future predictions, then conditions the second action pass on those revised futures. The images used to illustrate latent horizons are conceptual visualizations.</figcaption></figure>
-        <div class="method-explanation"><p><strong>1. Propose.</strong> Encode observations and executed-action history into affordance-guided memory. The first action pass uses this context, the instruction, and the robot state to propose an action chunk.</p><p><strong>2. Rethink.</strong> A residual predictor conditions on the proposed action and current visual features to correct latent forecasts at near, middle, and far horizons.</p><p><strong>3. Refine.</strong> A second pass of the same action head reads the corrected futures and produces the action chunk for execution. The robot observes again after acting.</p></div>
+        <div class="section-heading academic-heading"><h2 id="method-heading"><span class="section-number" aria-hidden="true">02</span>Method</h2><p class="section-deck">A second action pass, guided by corrected latent futures.</p></div>
+        <figure class="paper-figure"><a class="zoomable" href="assets/architecture.png" data-figure data-caption="ThinkWAM model architecture." aria-label="Enlarge the model architecture"><img src="assets/architecture.png" width="2400" height="1385" loading="lazy" alt="ThinkWAM architecture: observation–action memory, affordance guidance, temporal latent forecasts, action-conditioned residual prediction, and two passes of the shared Action DiT."><span class="zoom-hint" aria-hidden="true">↗</span></a></figure>
+        <div class="method-explanation"><p><strong>1. Propose</strong>Use observation–action memory to propose the next action chunk.</p><p><strong>2. Rethink</strong>Correct near, middle, and far latent futures using the proposed action.</p><p><strong>3. Refine</strong>Generate the executable action chunk from the corrected futures.</p></div>
+        <details class="content-details"><summary>Architecture details</summary><p>ThinkWAM uses a proposed action to revise its latent future predictions, then conditions the second action pass on those revised futures. The images used to illustrate latent horizons are conceptual visualizations.</p></details>
       </div>
     </section>
 
     <section id="demonstrations" class="section wrap" aria-labelledby="demo-heading">
-      <div class="section-heading academic-heading"><h2 id="demo-heading"><span class="section-number" aria-hidden="true">03</span>Robot Demonstrations</h2><p class="section-deck">Selected execution recordings from real-world and simulation environments.</p></div>
-      <div class="demo-toolbar"><div class="pill-tabs" role="tablist" aria-label="Demonstration environment"><button id="demo-real-tab" role="tab" aria-selected="true" aria-controls="demo-panel" tabindex="0" data-demo-filter="real"><svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 21h16M9 21v-4l4-4-5-5 4-4 6 6-4 4M16 4l4 4M19 3l2 2"/><circle cx="8" cy="8" r="2"/><circle cx="13" cy="13" r="2"/></svg>Real-world <span id="real-count"></span></button><button id="demo-simulation-tab" role="tab" aria-selected="false" aria-controls="demo-panel" tabindex="-1" data-demo-filter="simulation"><svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3 9 5v8l-9 5-9-5V8l9-5Zm0 9v9M3 8l9 5 9-5M7.5 5.5l9 5v4"/></svg>Simulation <span id="simulation-count"></span></button></div><span class="video-note">Muted · click to play · original playback speed</span></div>
-      <div id="demo-panel" role="tabpanel" aria-labelledby="demo-real-tab" tabindex="0"><p id="real-task-description" class="real-task-description">Green-object tidying on the Galaxea A1Z, with variations in object count, distractors, and illumination.</p><div id="real-filters" class="simulation-filters real-filters" role="group" aria-label="Real-world scene condition"><button type="button" data-real-group="Two targets" aria-pressed="true">Two targets <span>2</span></button><button type="button" data-real-group="Multiple distractors" aria-pressed="false">Multiple distractors <span>2</span></button><button type="button" data-real-group="Purple lighting" aria-pressed="false">Purple lighting <span>2</span></button></div><div id="simulation-filters" class="simulation-filters" role="group" aria-label="Simulation benchmark" hidden><button type="button" data-simulation-group="LIBERO / LIBERO-Plus" aria-pressed="true">LIBERO / LIBERO-Plus <span>4</span></button><button type="button" data-simulation-group="RoboTwin 2.0" aria-pressed="false">RoboTwin 2.0 <span>4</span></button><button type="button" data-simulation-group="RoboCasa24" aria-pressed="false">RoboCasa24 <span>4</span></button></div><div id="demo-grid" class="demo-grid"></div></div>
-      <p id="demo-footnote" class="evidence-note"></p>
+      <div class="section-heading academic-heading"><h2 id="demo-heading"><span class="section-number" aria-hidden="true">03</span>Robot Demonstrations</h2></div>
+      <div class="demo-toolbar"><div class="pill-tabs" role="tablist" aria-label="Demonstration environment"><button id="demo-real-tab" role="tab" aria-selected="true" aria-controls="demo-panel" tabindex="0" data-demo-filter="real"><svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 21h16M9 21v-4l4-4-5-5 4-4 6 6-4 4M16 4l4 4M19 3l2 2"/><circle cx="8" cy="8" r="2"/><circle cx="13" cy="13" r="2"/></svg>Real-world <span id="real-count"></span></button><button id="demo-simulation-tab" role="tab" aria-selected="false" aria-controls="demo-panel" tabindex="-1" data-demo-filter="simulation"><svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3 9 5v8l-9 5-9-5V8l9-5Zm0 9v9M3 8l9 5 9-5M7.5 5.5l9 5v4"/></svg>Simulation <span id="simulation-count"></span></button></div><span id="demo-context" class="demo-context" hidden></span></div>
+      <div id="demo-panel" role="tabpanel" aria-labelledby="demo-real-tab" tabindex="0"><p id="real-task-description" class="real-task-description">Green-object tidying · Galaxea A1Z</p><div id="real-filters" class="simulation-filters real-filters" role="group" aria-label="Real-world scene condition"><button type="button" data-real-group="Two targets" aria-pressed="true">Two targets <span>2</span></button><button type="button" data-real-group="Multiple distractors" aria-pressed="false">Multiple distractors <span>2</span></button><button type="button" data-real-group="Purple lighting" aria-pressed="false">Purple lighting <span>2</span></button></div><div id="simulation-filters" class="simulation-filters" role="group" aria-label="Simulation benchmark" hidden><button type="button" data-simulation-group="LIBERO / LIBERO-Plus" aria-pressed="true">LIBERO / LIBERO-Plus <span>4</span></button><button type="button" data-simulation-group="RoboTwin 2.0" aria-pressed="false">RoboTwin 2.0 <span>4</span></button><button type="button" data-simulation-group="RoboCasa24" aria-pressed="false">RoboCasa24 <span>4</span></button></div><div id="demo-grid" class="demo-grid"></div></div>
+      <details class="content-details demo-details"><summary>Recording details</summary><div id="demo-footnote"></div></details>
     </section>
 
     <section id="real-world-results" class="section real-world-results" aria-labelledby="real-world-heading">
       <div class="wrap">
-        <div class="section-heading academic-heading"><h2 id="real-world-heading"><span class="section-number" aria-hidden="true">04</span>Real-world Results</h2><p class="section-deck">Three out-of-distribution conditions, with 30 trials per method and condition.</p></div>
+        <div class="section-heading academic-heading"><h2 id="real-world-heading"><span class="section-number" aria-hidden="true">04</span>Real-world Results</h2><p class="section-deck">3 OOD conditions · 30 trials per method and condition</p></div>
         <div class="real-results-body"><p class="hardware-label">Galaxea A1Z · NVIDIA RTX 4080 SUPER</p><div id="real-world-comparison" class="table-scroll" tabindex="0" aria-label="Real-world performance comparison"></div><div id="real-world-notes" class="table-notes"></div></div>
-        <a class="text-link" href="assets/real-world-comparisons.csv" download>Download real-world results ↓</a>
+        <a class="text-link" href="assets/real-world-comparisons.csv" download>Download CSV ↓</a>
       </div>
     </section>
 
     <section id="results" class="section results-section" aria-labelledby="results-heading">
       <div class="wrap">
-        <div class="section-heading academic-heading"><h2 id="results-heading"><span class="section-number" aria-hidden="true">05</span>Benchmark Comparisons</h2><p class="section-deck">Simulation benchmarks and real-world transfer, followed by the complete benchmark tables. Success rates are reported under each setting’s stated protocol.</p></div>
-        <div id="performance-figures" class="performance-figures" aria-label="Generalization and success-rate plots"></div>
+        <div class="section-heading academic-heading"><h2 id="results-heading"><span class="section-number" aria-hidden="true">05</span>Benchmark Comparisons</h2></div>
+        <div id="performance-figures" class="performance-figures" aria-label="Generalization and success-rate plots"></div><div id="performance-notes"></div>
         <div class="pill-tabs result-tabs" role="tablist" aria-label="Benchmark breakdown"><button id="result-libero-tab" role="tab" aria-controls="result-panel" aria-selected="true" tabindex="0" data-benchmark="libero">LIBERO</button><button id="result-plus-tab" role="tab" aria-controls="result-panel" aria-selected="false" tabindex="-1" data-benchmark="plus">LIBERO-Plus</button><button id="result-robotwin-tab" role="tab" aria-controls="result-panel" aria-selected="false" tabindex="-1" data-benchmark="robotwin">RoboTwin 2.0</button><button id="result-robocasa-tab" role="tab" aria-controls="result-panel" aria-selected="false" tabindex="-1" data-benchmark="robocasa">RoboCasa24</button></div>
-        <div id="result-panel" class="comparison-panel" role="tabpanel" aria-labelledby="result-libero-tab" tabindex="0"><h3 id="benchmark-title"></h3><p id="benchmark-description" class="table-description"></p><div id="benchmark-comparison" class="table-scroll" tabindex="0" aria-label="Benchmark comparison table, scroll horizontally on small screens"></div><div id="benchmark-notes" class="table-notes"></div></div>
-        <a class="text-link" href="assets/benchmark-comparisons.csv" download>Download all benchmark comparisons ↓</a>
+        <div id="result-panel" class="comparison-panel" role="tabpanel" aria-labelledby="result-libero-tab" tabindex="0"><h3 id="benchmark-title"></h3><div id="benchmark-comparison" class="table-scroll" tabindex="0" aria-label="Benchmark comparison table, scroll horizontally on small screens"></div><div id="benchmark-notes" class="table-notes"></div></div>
+        <a class="text-link" href="assets/benchmark-comparisons.csv" download>Download CSV ↓</a>
       </div>
     </section>
 
     <section id="efficiency" class="section wrap" aria-labelledby="efficiency-heading">
-      <div class="section-heading academic-heading"><h2 id="efficiency-heading"><span class="section-number" aria-hidden="true">06</span>Inference Efficiency</h2><p class="section-deck">Mean model-call latency per action chunk. Simulation uses an NVIDIA A100 80GB; real-world deployment uses an RTX 4080 SUPER.</p></div>
+      <div class="section-heading academic-heading"><h2 id="efficiency-heading"><span class="section-number" aria-hidden="true">06</span>Inference Efficiency</h2><p class="section-deck">Per action chunk · native model settings</p></div>
       <div id="efficiency-figures" class="efficiency-figures" aria-label="Inference latency plots"></div>
-      <h3 class="efficiency-subheading">Simulation timings and native action chunks</h3>
+      <h3 class="efficiency-subheading">Simulation latency & action chunks</h3>
       <div id="latency-comparison" class="table-scroll" tabindex="0" aria-label="Inference latency comparison table"></div>
       <div id="latency-notes" class="table-notes"></div>
     </section>
 
     <section id="analysis" class="section analysis-section" aria-labelledby="analysis-heading">
-      <div class="wrap"><div class="section-heading academic-heading"><h2 id="analysis-heading"><span class="section-number" aria-hidden="true">07</span>Mechanism Analysis</h2><p class="section-deck">Visualizing affordance guidance, latent future correction, and the allocation of future tokens.</p></div><div id="mechanism-figures" class="mechanism-figures"></div></div>
+      <div class="wrap"><div class="section-heading academic-heading"><h2 id="analysis-heading"><span class="section-number" aria-hidden="true">07</span>Mechanism Analysis</h2></div><div id="mechanism-figures" class="mechanism-figures"></div><div id="analysis-notes"></div></div>
     </section>
 
     <section id="resources" class="section resources-section wrap" aria-labelledby="resources-heading">
-      <h2 id="resources-heading">Resources</h2><p><a class="text-link" href="https://github.com/HaoyunT/Thinkwam" target="_blank" rel="noopener">GitHub project ↗</a> &nbsp; · &nbsp; <a class="text-link" href="https://huggingface.co/Adrain11/ThinkWAM" target="_blank" rel="noopener">Hugging Face model ↗</a></p><p>arXiv: coming soon.</p>
+      <h2 id="resources-heading">Resources</h2><p><a class="text-link" href="https://github.com/HaoyunT/Thinkwam" target="_blank" rel="noopener">GitHub project ↗</a> &nbsp; · &nbsp; <a class="text-link" href="https://huggingface.co/Adrain11/ThinkWAM" target="_blank" rel="noopener">Hugging Face model ↗</a></p>
     </section>
     <section id="bibtex" class="section bibtex-section wrap" aria-labelledby="bibtex-heading"><div class="bibtex-header"><h2 id="bibtex-heading">BibTeX</h2><button id="copy-bibtex" type="button">Copy</button></div><pre><code id="bibtex-text">@misc{tang2026thinkwam,
   title  = {ThinkWAM: Rethinking Latent Futures for Action Refinement},
@@ -151,7 +151,7 @@
             and Mei, Zhandong and Li, Huibin},
   year   = {2026},
   url    = {https://thinkwam-project.github.io/}
-}</code></pre><p class="evidence-note">Project-page citation. The arXiv identifier will be added after the preprint is available.</p></section>
+}</code></pre></section>
   </main>
 
   <footer class="site-footer wrap"><a class="wordmark" href="#">ThinkWAM</a><p>Rethinking Latent Futures for Action Refinement</p><a href="https://github.com/ThinkWAM-Project/thinkwam-project.github.io" target="_blank" rel="noopener">Website source ↗</a></footer>

@@ -151,7 +151,8 @@ window.THINKWAM = {
           "value": 98.0,
           "decimals": 1
         }
-      ]
+      ],
+      "shortTitle": "40 tasks. Four suites."
     },
     "plus": {
       "title": "Seven axes of visual and task variation.",
@@ -185,7 +186,8 @@ window.THINKWAM = {
           "label": "Layout",
           "value": 82.49
         }
-      ]
+      ],
+      "shortTitle": "Seven perturbation categories."
     },
     "robotwin": {
       "title": "Bimanual manipulation under two conditions.",
@@ -199,7 +201,8 @@ window.THINKWAM = {
           "label": "Random",
           "value": 65.85
         }
-      ]
+      ],
+      "shortTitle": "20 tasks. Two conditions."
     },
     "robocasa": {
       "title": "Manipulation in kitchen environments.",
@@ -209,7 +212,8 @@ window.THINKWAM = {
           "label": "RoboCasa24",
           "value": 65.17
         }
-      ]
+      ],
+      "shortTitle": "24 kitchen tasks."
     }
   },
   "demos": [
@@ -247,7 +251,8 @@ window.THINKWAM = {
       "padding_removed": {
         "left": 48,
         "right": 48
-      }
+      },
+      "shortTitle": "Fixed layout"
     },
     {
       "type": "real",
@@ -283,7 +288,8 @@ window.THINKWAM = {
       "padding_removed": {
         "left": 62,
         "right": 62
-      }
+      },
+      "shortTitle": "Target repositioning"
     },
     {
       "type": "real",
@@ -325,7 +331,8 @@ window.THINKWAM = {
         "start_frame": 0,
         "end_frame_exclusive": 340,
         "removed_tail_frames": 28
-      }
+      },
+      "shortTitle": "Color distractors"
     },
     {
       "type": "real",
@@ -367,7 +374,8 @@ window.THINKWAM = {
         "start_frame": 0,
         "end_frame_exclusive": 850,
         "removed_tail_frames": 35
-      }
+      },
+      "shortTitle": "Target repositioning"
     },
     {
       "type": "real",
@@ -409,7 +417,8 @@ window.THINKWAM = {
         "start_frame": 0,
         "end_frame_exclusive": 302,
         "removed_tail_frames": 27
-      }
+      },
+      "shortTitle": "Two objects"
     },
     {
       "type": "real",
@@ -451,7 +460,8 @@ window.THINKWAM = {
         "start_frame": 0,
         "end_frame_exclusive": 488,
         "removed_tail_frames": 35
-      }
+      },
+      "shortTitle": "Three objects"
     },
     {
       "type": "simulation",
@@ -477,7 +487,8 @@ window.THINKWAM = {
         }
       ],
       "frame_count": 119,
-      "fps": 10.0
+      "fps": 10.0,
+      "shortTitle": "Bowl in drawer"
     },
     {
       "type": "simulation",
@@ -503,7 +514,8 @@ window.THINKWAM = {
         }
       ],
       "frame_count": 156,
-      "fps": 10.0
+      "fps": 10.0,
+      "shortTitle": "Groceries to basket"
     },
     {
       "type": "simulation",
@@ -529,7 +541,8 @@ window.THINKWAM = {
         }
       ],
       "frame_count": 114,
-      "fps": 10.0
+      "fps": 10.0,
+      "shortTitle": "Mug and pudding"
     },
     {
       "type": "simulation",
@@ -555,7 +568,8 @@ window.THINKWAM = {
       "aspect": "1 / 1",
       "duration": "9.4 s · 1×",
       "frame_count": 94,
-      "fps": 10.0
+      "fps": 10.0,
+      "shortTitle": "Open and place"
     },
     {
       "type": "simulation",
@@ -568,7 +582,8 @@ window.THINKWAM = {
       "fps": 25.0,
       "aspect": "1 / 1",
       "duration": "22.8 s · 3×",
-      "playback_speed": 3
+      "playback_speed": 3,
+      "shortTitle": "Cup to coaster"
     },
     {
       "type": "simulation",
@@ -581,7 +596,8 @@ window.THINKWAM = {
       "fps": 25.0,
       "aspect": "1 / 1",
       "duration": "21.4 s · 3×",
-      "playback_speed": 3
+      "playback_speed": 3,
+      "shortTitle": "Car to basket"
     },
     {
       "type": "simulation",
@@ -594,7 +610,8 @@ window.THINKWAM = {
       "fps": 25.0,
       "aspect": "1 / 1",
       "duration": "18.5 s · 3×",
-      "playback_speed": 3
+      "playback_speed": 3,
+      "shortTitle": "Shoe placement"
     },
     {
       "type": "simulation",
@@ -607,7 +624,8 @@ window.THINKWAM = {
       "fps": 25.0,
       "aspect": "1 / 1",
       "duration": "27.3 s · 3×",
-      "playback_speed": 3
+      "playback_speed": 3,
+      "shortTitle": "Hammer strike"
     },
     {
       "type": "simulation",
@@ -640,7 +658,8 @@ window.THINKWAM = {
       "duration": "12.9 s · 1×",
       "frame_count": 258,
       "fps": 20.0,
-      "source_case": "PnPCounterToCab_ep000"
+      "source_case": "PnPCounterToCab_ep000",
+      "shortTitle": "Object to cabinet"
     },
     {
       "type": "simulation",
@@ -673,7 +692,8 @@ window.THINKWAM = {
       "duration": "13.8 s · 1×",
       "frame_count": 277,
       "fps": 20.0,
-      "source_case": "CoffeeSetupMug_ep009"
+      "source_case": "CoffeeSetupMug_ep009",
+      "shortTitle": "Mug under machine"
     },
     {
       "type": "simulation",
@@ -706,7 +726,8 @@ window.THINKWAM = {
       "duration": "11.2 s · 1×",
       "frame_count": 224,
       "fps": 20.0,
-      "source_case": "OpenDrawer_ep000"
+      "source_case": "OpenDrawer_ep000",
+      "shortTitle": "Open drawer"
     },
     {
       "type": "simulation",
@@ -738,7 +759,8 @@ window.THINKWAM = {
       "aspect": "1 / 1",
       "duration": "6.3 s · 1×",
       "frame_count": 127,
-      "fps": 20.0
+      "fps": 20.0,
+      "shortTitle": "Turn spout"
     }
   ],
   "realVideoNote": "Six selected recordings illustrate green-object tidying, including two examples with human target repositioning. Distractor and purple-lighting clips are trimmed at the end. Scene and wrist views remain synchronized at the original playback speed. These qualitative examples are separate from the aggregate OOD evaluation below.",
@@ -1779,7 +1801,8 @@ window.THINKWAM = {
       "width": 2400,
       "height": 858,
       "caption": "LIBERO observations paired with predicted affordance-head scores on a shared 0–1 scale. Dashed boxes mark task objects; circles locate score maxima. These are affordance predictions, not task-success probabilities. These LIBERO examples use the affordance branch; the RoboTwin setting disables it.",
-      "row": "memory-and-horizons"
+      "row": "memory-and-horizons",
+      "shortTitle": "Affordance-guided memory"
     },
     {
       "title": "Multi-horizon token allocation",
@@ -1788,7 +1811,8 @@ window.THINKWAM = {
       "height": 1800,
       "caption": "Multi-horizon targets at t+7, t+15, and t+31 use 288, 144, and 72 query tokens. The top row contains recorded future observations; the middle row applies increasing blur to one crop to illustrate fine-to-coarse detail; the bottom row shows one cell per query token.",
       "layout": "compact",
-      "row": "memory-and-horizons"
+      "row": "memory-and-horizons",
+      "shortTitle": "Multi-horizon futures"
     },
     {
       "title": "Action-conditioned latent correction",
@@ -1796,7 +1820,8 @@ window.THINKWAM = {
       "width": 2400,
       "height": 1583,
       "caption": "Open-loop comparisons from identical simulator states and action histories, without replanning. Proposal actions are red and refined actions are teal. A shared frozen decoder visualizes base and corrected future latents at t+7, t+15, and t+31; the action and latent panels show separate examples. Decoded latents are predictions, not simulator outcomes of the illustrated action chunks.",
-      "row": "correction-and-recoveries"
+      "row": "correction-and-recoveries",
+      "shortTitle": "Latent correction"
     },
     {
       "title": "LIBERO & LIBERO-Plus: trajectories",
@@ -1806,7 +1831,9 @@ window.THINKWAM = {
       "caption": "Selected LIBERO and LIBERO-Plus rollouts compare proposal actions (red) and refined actions (teal) from matched starts. Each branch replans from its own observations. Above, A/B show scene trajectories and snapshots at refinement’s first success; below, C/D show horizontal end-effector paths and height/gripper traces. Time excludes inference latency. These selected cases do not measure how often refinement recovers a failure.",
       "group": "Closed-loop Comparisons and Recoveries",
       "row": "correction-and-recoveries",
-      "hideHeading": true
+      "hideHeading": true,
+      "shortTitle": "Closed-loop trajectories",
+      "groupTitle": "Closed-loop trajectories"
     },
     {
       "title": "LIBERO & LIBERO-Plus: keyframe comparisons",
@@ -1828,7 +1855,8 @@ window.THINKWAM = {
         }
       ],
       "caption": "Ten selected LIBERO-family cases compare proposal-only and refined execution from matched starts. Each card shows the interaction and outcome of both branches; circles identify the task object. Timestamps refer to the two independent trajectories. These examples do not measure how often refinement recovers a failure.",
-      "row": "keyframe-comparisons"
+      "row": "keyframe-comparisons",
+      "shortTitle": "LIBERO / LIBERO-Plus"
     },
     {
       "title": "RoboTwin: keyframe comparisons",
@@ -1836,7 +1864,8 @@ window.THINKWAM = {
       "width": 2400,
       "height": 766,
       "caption": "Four selected RoboTwin tasks compare proposal-only execution with refinement from matched starts: a toy car into a basket, a cup onto a coaster, striking a block with a hammer, and aligning a shoe. Each task shows an interaction and final outcome for both branches; circles identify the interaction region. These selected cases do not measure how often refinement recovers a failure.",
-      "row": "keyframe-comparisons"
+      "row": "keyframe-comparisons",
+      "shortTitle": "RoboTwin"
     }
   ],
   "huggingfaceUrl": "https://huggingface.co/Adrain11/ThinkWAM",

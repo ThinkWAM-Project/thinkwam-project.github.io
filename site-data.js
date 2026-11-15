@@ -208,8 +208,8 @@ window.THINKWAM = {
       "group": "Standard setting",
       "title": "Object repositioning during execution",
       "description": "The eraser and bottle are repeatedly moved by hand; the robot then places both in the box.",
-      "src": "assets/videos/real-standard-dynamic.mp4",
-      "poster": "assets/posters/real-standard-dynamic.jpg",
+      "src": "assets/videos/real-standard-dynamic-focus.mp4",
+      "poster": "assets/posters/real-standard-dynamic-focus.jpg",
       "duration": "41.2 s · full recording",
       "source_record": "arm_model_20261114_224105_612578_63586",
       "frame_count": 618,
@@ -221,8 +221,8 @@ window.THINKWAM = {
       "group": "Standard setting",
       "title": "Sequential object collection",
       "description": "The robot sequentially places the green eraser and bottle into the box.",
-      "src": "assets/videos/real-standard-static.mp4",
-      "poster": "assets/posters/real-standard-static.jpg",
+      "src": "assets/videos/real-standard-static-focus.mp4",
+      "poster": "assets/posters/real-standard-static-focus.jpg",
       "duration": "34.9 s · full recording",
       "source_record": "arm_model_20261114_224007_174656_63440",
       "frame_count": 524,
@@ -234,8 +234,8 @@ window.THINKWAM = {
       "group": "Lighting perturbation",
       "title": "Colored lighting",
       "description": "The robot places the tissue packet and eraser into the box under colored illumination.",
-      "src": "assets/videos/real-lighting-static.mp4",
-      "poster": "assets/posters/real-lighting-static.jpg",
+      "src": "assets/videos/real-lighting-static-focus.mp4",
+      "poster": "assets/posters/real-lighting-static-focus.jpg",
       "duration": "21.9 s · full recording",
       "source_record": "arm_model_20261114_232032_804706_68296",
       "frame_count": 329,
@@ -247,8 +247,8 @@ window.THINKWAM = {
       "group": "Lighting perturbation",
       "title": "Colored lighting with three objects",
       "description": "Under colored illumination, the robot places a tissue packet, a small green pouch, and an eraser into the box.",
-      "src": "assets/videos/real-lighting-objects.mp4",
-      "poster": "assets/posters/real-lighting-objects.jpg",
+      "src": "assets/videos/real-lighting-objects-focus.mp4",
+      "poster": "assets/posters/real-lighting-objects-focus.jpg",
       "frame_count": 523,
       "fps": 15.0,
       "duration": "34.9 s · full recording",
@@ -260,8 +260,8 @@ window.THINKWAM = {
       "group": "Multiple objects",
       "title": "Two bottles among distractors",
       "description": "Both green bottles are placed in the box in a cluttered scene.",
-      "src": "assets/videos/real-multi-static.mp4",
-      "poster": "assets/posters/real-multi-static.jpg",
+      "src": "assets/videos/real-multi-static-focus.mp4",
+      "poster": "assets/posters/real-multi-static-focus.jpg",
       "duration": "35.1 s · full recording",
       "source_record": "arm_model_20261114_225614_047426_65337",
       "frame_count": 526,
@@ -273,8 +273,8 @@ window.THINKWAM = {
       "group": "Multiple objects",
       "title": "Multiple objects with repositioning",
       "description": "Two erasers are moved and reoriented by hand during execution; the full recording retains both placements.",
-      "src": "assets/videos/real-multi-dynamic.mp4",
-      "poster": "assets/posters/real-multi-dynamic.jpg",
+      "src": "assets/videos/real-multi-dynamic-focus.mp4",
+      "poster": "assets/posters/real-multi-dynamic-focus.jpg",
       "duration": "59.0 s · full recording",
       "source_record": "arm_model_20261114_225726_429411_65489",
       "frame_count": 885,
@@ -283,8 +283,8 @@ window.THINKWAM = {
     },
     {
       "type": "simulation",
-      "src": "assets/videos/simulation-01-main.mp4",
-      "poster": "assets/posters/simulation-01-main.jpg",
+      "src": "assets/videos/simulation-01-main-focus.mp4",
+      "poster": "assets/posters/simulation-01-main-focus.jpg",
       "title": "Close the drawer with the bowl inside",
       "description": "LIBERO · long-horizon manipulation",
       "duration": "11.9 s · 1×",
@@ -294,8 +294,8 @@ window.THINKWAM = {
         {
           "id": "main",
           "label": "Main view",
-          "src": "assets/videos/simulation-01-main.mp4",
-          "poster": "assets/posters/simulation-01-main.jpg"
+          "src": "assets/videos/simulation-01-main-focus.mp4",
+          "poster": "assets/posters/simulation-01-main-focus.jpg"
         },
         {
           "id": "wrist",
@@ -309,8 +309,8 @@ window.THINKWAM = {
     },
     {
       "type": "simulation",
-      "src": "assets/videos/simulation-02-main.mp4",
-      "poster": "assets/posters/simulation-02-main.jpg",
+      "src": "assets/videos/simulation-02-main-focus.mp4",
+      "poster": "assets/posters/simulation-02-main-focus.jpg",
       "title": "Place the cream cheese and butter in the basket",
       "description": "LIBERO-Plus · background texture variation",
       "duration": "15.6 s · 1×",
@@ -320,8 +320,8 @@ window.THINKWAM = {
         {
           "id": "main",
           "label": "Main view",
-          "src": "assets/videos/simulation-02-main.mp4",
-          "poster": "assets/posters/simulation-02-main.jpg"
+          "src": "assets/videos/simulation-02-main-focus.mp4",
+          "poster": "assets/posters/simulation-02-main-focus.jpg"
         },
         {
           "id": "wrist",
@@ -335,8 +335,8 @@ window.THINKWAM = {
     },
     {
       "type": "simulation",
-      "src": "assets/videos/simulation-03-main.mp4",
-      "poster": "assets/posters/simulation-03-main.jpg",
+      "src": "assets/videos/simulation-03-main-focus.mp4",
+      "poster": "assets/posters/simulation-03-main-focus.jpg",
       "title": "Place the mug and pudding by the plate",
       "description": "LIBERO-Plus · object layout variation",
       "duration": "11.4 s · 1×",
@@ -346,8 +346,8 @@ window.THINKWAM = {
         {
           "id": "main",
           "label": "Main view",
-          "src": "assets/videos/simulation-03-main.mp4",
-          "poster": "assets/posters/simulation-03-main.jpg"
+          "src": "assets/videos/simulation-03-main-focus.mp4",
+          "poster": "assets/posters/simulation-03-main-focus.jpg"
         },
         {
           "id": "wrist",
@@ -364,14 +364,14 @@ window.THINKWAM = {
       "group": "LIBERO / LIBERO-Plus",
       "title": "Open the drawer and place the bowl inside",
       "description": "LIBERO-Plus · lighting variation",
-      "src": "assets/videos/simulation-04-main.mp4",
-      "poster": "assets/posters/simulation-04-main.jpg",
+      "src": "assets/videos/simulation-04-main-focus.mp4",
+      "poster": "assets/posters/simulation-04-main-focus.jpg",
       "views": [
         {
           "id": "main",
           "label": "Main view",
-          "src": "assets/videos/simulation-04-main.mp4",
-          "poster": "assets/posters/simulation-04-main.jpg"
+          "src": "assets/videos/simulation-04-main-focus.mp4",
+          "poster": "assets/posters/simulation-04-main-focus.jpg"
         },
         {
           "id": "wrist",
@@ -390,8 +390,8 @@ window.THINKWAM = {
       "group": "RoboTwin 2.0",
       "title": "Place the cup on the coaster",
       "description": "Complete action replay · head camera · 3× simulation speed",
-      "src": "assets/videos/robotwin-cup.mp4",
-      "poster": "assets/posters/robotwin-cup.jpg",
+      "src": "assets/videos/robotwin-cup-focus.mp4",
+      "poster": "assets/posters/robotwin-cup-focus.jpg",
       "frame_count": 571,
       "fps": 25.0,
       "aspect": "1 / 1",
@@ -403,8 +403,8 @@ window.THINKWAM = {
       "group": "RoboTwin 2.0",
       "title": "Place the toy car in the basket",
       "description": "Complete action replay · head camera · 3× simulation speed",
-      "src": "assets/videos/robotwin-basket.mp4",
-      "poster": "assets/posters/robotwin-basket.jpg",
+      "src": "assets/videos/robotwin-basket-focus.mp4",
+      "poster": "assets/posters/robotwin-basket-focus.jpg",
       "frame_count": 536,
       "fps": 25.0,
       "aspect": "1 / 1",
@@ -416,8 +416,8 @@ window.THINKWAM = {
       "group": "RoboTwin 2.0",
       "title": "Place the shoe on the mat",
       "description": "Complete action replay · head camera · 3× simulation speed",
-      "src": "assets/videos/robotwin-shoe.mp4",
-      "poster": "assets/posters/robotwin-shoe.jpg",
+      "src": "assets/videos/robotwin-shoe-focus.mp4",
+      "poster": "assets/posters/robotwin-shoe-focus.jpg",
       "frame_count": 463,
       "fps": 25.0,
       "aspect": "1 / 1",
@@ -429,8 +429,8 @@ window.THINKWAM = {
       "group": "RoboTwin 2.0",
       "title": "Strike the block with the hammer",
       "description": "Complete action replay · head camera · 3× simulation speed",
-      "src": "assets/videos/robotwin-hammer.mp4",
-      "poster": "assets/posters/robotwin-hammer.jpg",
+      "src": "assets/videos/robotwin-hammer-focus.mp4",
+      "poster": "assets/posters/robotwin-hammer-focus.jpg",
       "frame_count": 683,
       "fps": 25.0,
       "aspect": "1 / 1",
@@ -442,14 +442,14 @@ window.THINKWAM = {
       "group": "RoboCasa24",
       "title": "Place the object in the cabinet",
       "description": "Selected successful execution · fixed-scene adaptation run",
-      "src": "assets/videos/robocasa-cabinet-left.mp4",
-      "poster": "assets/posters/robocasa-cabinet-left.jpg",
+      "src": "assets/videos/robocasa-cabinet-left-focus.mp4",
+      "poster": "assets/posters/robocasa-cabinet-left-focus.jpg",
       "views": [
         {
           "id": "left",
           "label": "Left view",
-          "src": "assets/videos/robocasa-cabinet-left.mp4",
-          "poster": "assets/posters/robocasa-cabinet-left.jpg"
+          "src": "assets/videos/robocasa-cabinet-left-focus.mp4",
+          "poster": "assets/posters/robocasa-cabinet-left-focus.jpg"
         },
         {
           "id": "right",
@@ -475,14 +475,14 @@ window.THINKWAM = {
       "group": "RoboCasa24",
       "title": "Place the mug under the coffee machine",
       "description": "Selected successful execution · fixed-scene adaptation run",
-      "src": "assets/videos/robocasa-coffee-left.mp4",
-      "poster": "assets/posters/robocasa-coffee-left.jpg",
+      "src": "assets/videos/robocasa-coffee-left-focus.mp4",
+      "poster": "assets/posters/robocasa-coffee-left-focus.jpg",
       "views": [
         {
           "id": "left",
           "label": "Left view",
-          "src": "assets/videos/robocasa-coffee-left.mp4",
-          "poster": "assets/posters/robocasa-coffee-left.jpg"
+          "src": "assets/videos/robocasa-coffee-left-focus.mp4",
+          "poster": "assets/posters/robocasa-coffee-left-focus.jpg"
         },
         {
           "id": "right",
@@ -508,14 +508,14 @@ window.THINKWAM = {
       "group": "RoboCasa24",
       "title": "Open the drawer",
       "description": "Selected successful execution · fixed-scene adaptation run",
-      "src": "assets/videos/robocasa-drawer-left.mp4",
-      "poster": "assets/posters/robocasa-drawer-left.jpg",
+      "src": "assets/videos/robocasa-drawer-left-focus.mp4",
+      "poster": "assets/posters/robocasa-drawer-left-focus.jpg",
       "views": [
         {
           "id": "left",
           "label": "Left view",
-          "src": "assets/videos/robocasa-drawer-left.mp4",
-          "poster": "assets/posters/robocasa-drawer-left.jpg"
+          "src": "assets/videos/robocasa-drawer-left-focus.mp4",
+          "poster": "assets/posters/robocasa-drawer-left-focus.jpg"
         },
         {
           "id": "right",
@@ -541,14 +541,14 @@ window.THINKWAM = {
       "group": "RoboCasa24",
       "title": "Turn the sink spout",
       "description": "Selected successful execution · fixed-scene adaptation run",
-      "src": "assets/videos/robocasa-spout-left.mp4",
-      "poster": "assets/posters/robocasa-spout-left.jpg",
+      "src": "assets/videos/robocasa-spout-left-focus.mp4",
+      "poster": "assets/posters/robocasa-spout-left-focus.jpg",
       "views": [
         {
           "id": "left",
           "label": "Left view",
-          "src": "assets/videos/robocasa-spout-left.mp4",
-          "poster": "assets/posters/robocasa-spout-left.jpg"
+          "src": "assets/videos/robocasa-spout-left-focus.mp4",
+          "poster": "assets/posters/robocasa-spout-left-focus.jpg"
         },
         {
           "id": "right",
@@ -569,7 +569,7 @@ window.THINKWAM = {
       "fps": 20.0
     }
   ],
-  "realVideoNote": "Full recordings, grouped by the conditions shown. Human interventions reposition task objects and are retained in the videos. Both camera views and the original recorded playback rate are preserved. These selected demonstrations do not constitute a real-world success-rate measurement.",
+  "realVideoNote": "Full recordings, grouped by the conditions shown. Human interventions reposition task objects and are retained in the videos. The main view is framed around the task area; wrist views and the original recorded playback rate are preserved. These selected demonstrations do not constitute a real-world success-rate measurement.",
   "comparisons": {
     "libero": {
       "title": "LIBERO",

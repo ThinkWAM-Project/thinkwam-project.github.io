@@ -23,4 +23,6 @@ Set `arxivUrl` in `site-data.js` after the preprint is available, update the arX
 
 Real-world demonstrations retain each full selected recording. Simulation camera buttons select synchronized views of the same episode; no frames are synthesized. RoboTwin examples replay archived policy actions at 25 fps and are presented at 3× simulation speed. RoboCasa24 examples are from a fixed-scene adaptation run and are separate from the benchmark aggregates. Selected demonstrations are qualitative examples, not a success-rate estimate.
 
+Main-camera videos use a mild spatial crop around the task area. Real-world main views are enlarged by about 7%; simulation primary views by 10–14%. Wrist and alternate camera fields of view are preserved, as are every recording's frame count, playback rate, and full timeline. The uncropped web videos remain in `assets/videos/`; focused versions use the `-focus` suffix.
+
 Comparison values follow the project manuscript. Timing notes distinguish model-call latency from simulator time and describe the different native chunk configurations.

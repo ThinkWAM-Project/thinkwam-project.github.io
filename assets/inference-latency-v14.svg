@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="565" viewBox="0 0 1440 565">
+<title>Mean inference latency</title><desc>Three model-call latency panels on a common 0–600 milliseconds per action chunk axis. LIBERO and RoboTwin are measured on an A100 80GB, ten warmups followed by sixty timed calls. Real-robot latency is measured separately on an RTX 4080 SUPER after warmup, with 120 calls per model. Batch size is one; native action chunks and configurations differ. This is not per-action latency or physical task completion time. Data: latest Table 10 page 17 and Table 5 page 7; protocols pages 17–18.</desc>
+
+<style>text{font-family:Arial, Helvetica, sans-serif;dominant-baseline:auto} .mono{font-family:Consolas, Menlo, monospace}</style>
+<rect x="0" y="0" width="1440" height="565" rx="0" fill="#ffffff"/>
+<text font-family="Arial" x="36.00" y="47.00" font-size="31" font-weight="700" fill="#20312f" text-anchor="start">Mean inference latency</text>
+<text font-family="Arial" x="36.00" y="78.00" font-size="19" font-weight="400" fill="#5e6c6a" text-anchor="start">Batch size 1 · native chunk configurations · lower is better</text>
+<text font-family="Arial" x="36.00" y="140.00" font-size="27" font-weight="700" fill="#20312f" text-anchor="start">LIBERO</text>
+<text font-family="Arial" x="36.00" y="168.00" font-size="18" font-weight="400" fill="#5e6c6a" text-anchor="start">A100 80GB</text>
+<line x1="36.00" y1="215.00" x2="36.00" y2="467.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="36.00" y="493.00" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="middle">0</text>
+<line x1="168.00" y1="215.00" x2="168.00" y2="467.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="168.00" y="493.00" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="middle">200</text>
+<line x1="300.00" y1="215.00" x2="300.00" y2="467.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="300.00" y="493.00" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="middle">400</text>
+<line x1="432.00" y1="215.00" x2="432.00" y2="467.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="432.00" y="493.00" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="middle">600</text>
+<text font-family="Arial" x="36.00" y="208.00" font-size="18" font-weight="700" fill="#287c76" text-anchor="start">ThinkWAM</text>
+<rect x="36.00" y="218.00" width="101.30" height="28.00" rx="0.00" fill="#287c76" stroke="none" opacity="1.000"/>
+<text font-family="Arial" x="146.30" y="239.00" font-size="18" font-weight="700" fill="#20312f" text-anchor="start">153.48</text>
+<text font-family="Arial" x="36.00" y="292.00" font-size="18" font-weight="400" fill="#61768a" text-anchor="start">π0.5</text>
+<rect x="36.00" y="302.00" width="189.17" height="28.00" rx="0.00" fill="#61768a" stroke="none" opacity="1.000"/>
+<text font-family="Arial" x="234.17" y="323.00" font-size="18" font-weight="400" fill="#20312f" text-anchor="start">286.62</text>
+<text font-family="Arial" x="36.00" y="376.00" font-size="18" font-weight="400" fill="#997857" text-anchor="start">FastWAM</text>
+<rect x="36.00" y="386.00" width="334.28" height="28.00" rx="0.00" fill="#997857" stroke="none" opacity="1.000"/>
+<text font-family="Arial" x="379.28" y="407.00" font-size="18" font-weight="400" fill="#20312f" text-anchor="start">506.48</text>
+<line x1="36.00" y1="467.00" x2="432.00" y2="467.00" stroke="#61768a" stroke-width="1.30" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="234.00" y="522.00" font-size="18" font-weight="400" fill="#20312f" text-anchor="middle">Mean latency (ms / chunk)</text>
+<text font-family="Arial" x="516.00" y="140.00" font-size="27" font-weight="700" fill="#20312f" text-anchor="start">RoboTwin</text>
+<text font-family="Arial" x="516.00" y="168.00" font-size="18" font-weight="400" fill="#5e6c6a" text-anchor="start">A100 80GB</text>
+<line x1="516.00" y1="215.00" x2="516.00" y2="467.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="516.00" y="493.00" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="middle">0</text>
+<line x1="648.00" y1="215.00" x2="648.00" y2="467.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="648.00" y="493.00" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="middle">200</text>
+<line x1="780.00" y1="215.00" x2="780.00" y2="467.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="780.00" y="493.00" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="middle">400</text>
+<line x1="912.00" y1="215.00" x2="912.00" y2="467.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="912.00" y="493.00" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="middle">600</text>
+<text font-family="Arial" x="516.00" y="208.00" font-size="18" font-weight="700" fill="#287c76" text-anchor="start">ThinkWAM</text>
+<rect x="516.00" y="218.00" width="108.64" height="28.00" rx="0.00" fill="#287c76" stroke="none" opacity="1.000"/>
+<text font-family="Arial" x="633.64" y="239.00" font-size="18" font-weight="700" fill="#20312f" text-anchor="start">164.61</text>
+<text font-family="Arial" x="516.00" y="292.00" font-size="18" font-weight="400" fill="#61768a" text-anchor="start">π0.5</text>
+<rect x="516.00" y="302.00" width="168.03" height="28.00" rx="0.00" fill="#61768a" stroke="none" opacity="1.000"/>
+<text font-family="Arial" x="693.03" y="323.00" font-size="18" font-weight="400" fill="#20312f" text-anchor="start">254.59</text>
+<text font-family="Arial" x="516.00" y="376.00" font-size="18" font-weight="400" fill="#997857" text-anchor="start">FastWAM</text>
+<rect x="516.00" y="386.00" width="327.47" height="28.00" rx="0.00" fill="#997857" stroke="none" opacity="1.000"/>
+<text font-family="Arial" x="852.47" y="407.00" font-size="18" font-weight="400" fill="#20312f" text-anchor="start">496.16</text>
+<line x1="516.00" y1="467.00" x2="912.00" y2="467.00" stroke="#61768a" stroke-width="1.30" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="714.00" y="522.00" font-size="18" font-weight="400" fill="#20312f" text-anchor="middle">Mean latency (ms / chunk)</text>
+<line x1="480.00" y1="134.00" x2="480.00" y2="497.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="996.00" y="140.00" font-size="27" font-weight="700" fill="#20312f" text-anchor="start">Real robot</text>
+<text font-family="Arial" x="996.00" y="168.00" font-size="18" font-weight="400" fill="#5e6c6a" text-anchor="start">RTX 4080 SUPER</text>
+<line x1="996.00" y1="215.00" x2="996.00" y2="467.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="996.00" y="493.00" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="middle">0</text>
+<line x1="1128.00" y1="215.00" x2="1128.00" y2="467.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="1128.00" y="493.00" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="middle">200</text>
+<line x1="1260.00" y1="215.00" x2="1260.00" y2="467.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="1260.00" y="493.00" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="middle">400</text>
+<line x1="1392.00" y1="215.00" x2="1392.00" y2="467.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="1392.00" y="493.00" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="middle">600</text>
+<text font-family="Arial" x="996.00" y="208.00" font-size="18" font-weight="700" fill="#287c76" text-anchor="start">ThinkWAM</text>
+<rect x="996.00" y="218.00" width="66.79" height="28.00" rx="0.00" fill="#287c76" stroke="none" opacity="1.000"/>
+<text font-family="Arial" x="1071.79" y="239.00" font-size="18" font-weight="700" fill="#20312f" text-anchor="start">101.2</text>
+<text font-family="Arial" x="996.00" y="292.00" font-size="18" font-weight="400" fill="#61768a" text-anchor="start">π0.5</text>
+<rect x="996.00" y="302.00" width="79.13" height="28.00" rx="0.00" fill="#61768a" stroke="none" opacity="1.000"/>
+<text font-family="Arial" x="1084.13" y="323.00" font-size="18" font-weight="400" fill="#20312f" text-anchor="start">119.9</text>
+<text font-family="Arial" x="996.00" y="376.00" font-size="18" font-weight="400" fill="#997857" text-anchor="start">FastWAM</text>
+<rect x="996.00" y="386.00" width="195.95" height="28.00" rx="0.00" fill="#997857" stroke="none" opacity="1.000"/>
+<text font-family="Arial" x="1200.95" y="407.00" font-size="18" font-weight="400" fill="#20312f" text-anchor="start">296.9</text>
+<line x1="996.00" y1="467.00" x2="1392.00" y2="467.00" stroke="#61768a" stroke-width="1.30" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="1194.00" y="522.00" font-size="18" font-weight="400" fill="#20312f" text-anchor="middle">Mean latency (ms / chunk)</text>
+<line x1="960.00" y1="134.00" x2="960.00" y2="497.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="36.00" y="548.00" font-size="17" font-weight="400" fill="#5e6c6a" text-anchor="start">Shared 0–600 ms scale. Hardware and timing protocols differ between simulation and the real robot.</text>
+</svg>

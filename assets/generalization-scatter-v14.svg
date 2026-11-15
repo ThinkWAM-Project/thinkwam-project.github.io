@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="690" viewBox="0 0 960 690">
+<title>ID–OOD generalization</title><desc>LIBERO ID success versus LIBERO-Plus OOD success. All 11 matched methods are shown. The x-axis omits 52 to 77 percent, explicitly marked. Bubble area scales with parameter counts reported in Table 1; ABot-M0 excludes optional spatial modules and V-JEPA Policy excludes its frozen text encoder. Values are from latest manuscript Tables 1 and 2, page 6. No uncertainty intervals are reported.</desc>
+
+<style>text{font-family:Arial, Helvetica, sans-serif;dominant-baseline:auto} .mono{font-family:Consolas, Menlo, monospace}</style>
+<rect x="0" y="0" width="960" height="690" rx="0" fill="#ffffff"/>
+<text font-family="Arial" x="42.00" y="48.00" font-size="31" font-weight="700" fill="#20312f" text-anchor="start">ID–OOD generalization</text>
+<text font-family="Arial" x="42.00" y="79.00" font-size="18" font-weight="400" fill="#5e6c6a" text-anchor="start">Reported success on LIBERO and LIBERO-Plus</text>
+<circle cx="56.00" cy="112.00" r="7.00" fill="#61768a" stroke="none" stroke-width="1.50" opacity="1.000"/>
+<text font-family="Arial" x="71.00" y="118.00" font-size="17" font-weight="400" fill="#5e6c6a" text-anchor="start">Non-JEPA</text>
+<polygon points="212.00,104.00 220.00,112.00 212.00,120.00 204.00,112.00" fill="#997857" stroke="none" stroke-width="1.50" opacity="1.000"/>
+<text font-family="Arial" x="228.00" y="118.00" font-size="17" font-weight="400" fill="#5e6c6a" text-anchor="start">JEPA-based</text>
+<circle cx="397.00" cy="112.00" r="7.00" fill="#287c76" stroke="#20312f" stroke-width="1.50" opacity="1.000"/>
+<text font-family="Arial" x="413.00" y="118.00" font-size="17" font-weight="700" fill="#287c76" text-anchor="start">ThinkWAM</text>
+<line x1="94.00" y1="528.00" x2="230.96" y2="528.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<line x1="278.00" y1="528.00" x2="908.00" y2="528.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="80.00" y="533.00" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="end">96.0</text>
+<line x1="94.00" y1="470.19" x2="230.96" y2="470.19" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<line x1="278.00" y1="470.19" x2="908.00" y2="470.19" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="80.00" y="475.19" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="end">96.5</text>
+<line x1="94.00" y1="412.38" x2="230.96" y2="412.38" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<line x1="278.00" y1="412.38" x2="908.00" y2="412.38" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="80.00" y="417.38" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="end">97.0</text>
+<line x1="94.00" y1="354.56" x2="230.96" y2="354.56" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<line x1="278.00" y1="354.56" x2="908.00" y2="354.56" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="80.00" y="359.56" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="end">97.5</text>
+<line x1="94.00" y1="296.75" x2="230.96" y2="296.75" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<line x1="278.00" y1="296.75" x2="908.00" y2="296.75" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="80.00" y="301.75" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="end">98.0</text>
+<line x1="94.00" y1="238.94" x2="230.96" y2="238.94" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<line x1="278.00" y1="238.94" x2="908.00" y2="238.94" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="80.00" y="243.94" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="end">98.5</text>
+<line x1="94.00" y1="181.13" x2="230.96" y2="181.13" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<line x1="278.00" y1="181.13" x2="908.00" y2="181.13" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="80.00" y="186.13" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="end">99.0</text>
+<line x1="94.00" y1="158.00" x2="94.00" y2="528.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="94.00" y="555.00" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="middle">50</text>
+<line x1="162.48" y1="158.00" x2="162.48" y2="528.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="162.48" y="555.00" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="middle">51</text>
+<line x1="230.96" y1="158.00" x2="230.96" y2="528.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="230.96" y="555.00" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="middle">52</text>
+<line x1="346.48" y1="158.00" x2="346.48" y2="528.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="346.48" y="555.00" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="middle">78</text>
+<line x1="483.43" y1="158.00" x2="483.43" y2="528.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="483.43" y="555.00" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="middle">80</text>
+<line x1="620.39" y1="158.00" x2="620.39" y2="528.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="620.39" y="555.00" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="middle">82</text>
+<line x1="757.35" y1="158.00" x2="757.35" y2="528.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="757.35" y="555.00" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="middle">84</text>
+<line x1="894.30" y1="158.00" x2="894.30" y2="528.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="894.30" y="555.00" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="middle">86</text>
+<line x1="94.00" y1="158.00" x2="94.00" y2="528.00" stroke="#61768a" stroke-width="1.50" stroke-linecap="round" opacity="1.000"/>
+<line x1="94.00" y1="528.00" x2="230.96" y2="528.00" stroke="#61768a" stroke-width="1.50" stroke-linecap="round" opacity="1.000"/>
+<line x1="278.00" y1="528.00" x2="908.00" y2="528.00" stroke="#61768a" stroke-width="1.50" stroke-linecap="round" opacity="1.000"/>
+<line x1="235.96" y1="532.00" x2="242.96" y2="524.00" stroke="#5e6c6a" stroke-width="1.70" stroke-linecap="round" opacity="1.000"/>
+<line x1="242.96" y1="532.00" x2="249.96" y2="524.00" stroke="#5e6c6a" stroke-width="1.70" stroke-linecap="round" opacity="1.000"/>
+<line x1="263.00" y1="532.00" x2="270.00" y2="524.00" stroke="#5e6c6a" stroke-width="1.70" stroke-linecap="round" opacity="1.000"/>
+<line x1="270.00" y1="532.00" x2="277.00" y2="524.00" stroke="#5e6c6a" stroke-width="1.70" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="26" y="343" transform="rotate(-90 26 343)" font-size="20" font-weight="700" fill="#20312f" text-anchor="middle">LIBERO (ID, %)</text>
+<text font-family="Arial" x="505.00" y="586.00" font-size="20" font-weight="700" fill="#20312f" text-anchor="middle">LIBERO-Plus (OOD, %)</text>
+<text font-family="Arial" x="505.00" y="611.00" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="middle">X-axis break: 52–77% omitted; FastWAM is shown at 51.4%.</text>
+<line x1="503.98" y1="423.94" x2="562.00" y2="423.00" stroke="#61768a" stroke-width="1.20" stroke-linecap="round" opacity="0.650"/>
+<circle cx="503.98" cy="423.94" r="13.52" fill="#61768a" stroke="#ffffff" stroke-width="1.70" opacity="1.000"/>
+<text font-family="Arial" x="575.00" y="425.00" font-size="19" font-weight="400" fill="#61768a" text-anchor="start">π0.5</text>
+<text font-family="Arial" x="575.00" y="448.00" font-size="19" font-weight="400" fill="#61768a" text-anchor="start">80.3 / 96.9</text>
+<line x1="593.00" y1="227.38" x2="574.00" y2="209.00" stroke="#61768a" stroke-width="1.20" stroke-linecap="round" opacity="0.650"/>
+<circle cx="593.00" cy="227.38" r="15.96" fill="#61768a" stroke="#ffffff" stroke-width="1.70" opacity="1.000"/>
+<text font-family="Arial" x="547.00" y="176.00" font-size="19" font-weight="400" fill="#61768a" text-anchor="middle">ABot-M0</text>
+<text font-family="Arial" x="547.00" y="199.00" font-size="19" font-weight="400" fill="#61768a" text-anchor="middle">81.6 / 98.6</text>
+<line x1="380.72" y1="458.63" x2="345.00" y2="468.00" stroke="#61768a" stroke-width="1.20" stroke-linecap="round" opacity="0.650"/>
+<circle cx="380.72" cy="458.63" r="14.88" fill="#61768a" stroke="#ffffff" stroke-width="1.70" opacity="1.000"/>
+<text font-family="Arial" x="301.00" y="489.00" font-size="19" font-weight="400" fill="#61768a" text-anchor="start">ResVLA</text>
+<text font-family="Arial" x="301.00" y="512.00" font-size="19" font-weight="400" fill="#61768a" text-anchor="start">78.5 / 96.6</text>
+<circle cx="189.87" cy="343.00" r="18.23" fill="#61768a" stroke="#ffffff" stroke-width="1.70" opacity="1.000"/>
+<text font-family="Arial" x="112.00" y="285.00" font-size="19" font-weight="400" fill="#61768a" text-anchor="start">FastWAM</text>
+<text font-family="Arial" x="112.00" y="308.00" font-size="19" font-weight="400" fill="#61768a" text-anchor="start">51.4 / 97.6</text>
+<line x1="682.02" y1="250.50" x2="697.00" y2="263.00" stroke="#61768a" stroke-width="1.20" stroke-linecap="round" opacity="0.650"/>
+<circle cx="682.02" cy="250.50" r="15.79" fill="#61768a" stroke="#ffffff" stroke-width="1.70" opacity="1.000"/>
+<text font-family="Arial" x="699.00" y="284.00" font-size="19" font-weight="400" fill="#61768a" text-anchor="start">ImageWAM</text>
+<text font-family="Arial" x="699.00" y="307.00" font-size="19" font-weight="400" fill="#61768a" text-anchor="start">82.9 / 98.4</text>
+<line x1="367.02" y1="308.31" x2="347.00" y2="278.00" stroke="#61768a" stroke-width="1.20" stroke-linecap="round" opacity="0.650"/>
+<circle cx="367.02" cy="308.31" r="9.11" fill="#61768a" stroke="#ffffff" stroke-width="1.70" opacity="1.000"/>
+<text font-family="Arial" x="294.00" y="246.00" font-size="19" font-weight="400" fill="#61768a" text-anchor="start">ForeWAM</text>
+<text font-family="Arial" x="294.00" y="269.00" font-size="19" font-weight="400" fill="#61768a" text-anchor="start">78.3 / 97.9</text>
+<line x1="791.59" y1="366.12" x2="797.00" y2="394.00" stroke="#61768a" stroke-width="1.20" stroke-linecap="round" opacity="0.650"/>
+<circle cx="791.59" cy="366.12" r="11.77" fill="#61768a" stroke="#ffffff" stroke-width="1.70" opacity="1.000"/>
+<text font-family="Arial" x="759.00" y="418.00" font-size="19" font-weight="400" fill="#61768a" text-anchor="start">VLANeXt (Base)</text>
+<text font-family="Arial" x="759.00" y="441.00" font-size="19" font-weight="400" fill="#61768a" text-anchor="start">84.5 / 97.4</text>
+<line x1="449.20" y1="389.25" x2="415.00" y2="370.00" stroke="#997857" stroke-width="1.20" stroke-linecap="round" opacity="0.650"/>
+<polygon points="449.20,375.10 463.34,389.25 449.20,403.40 435.05,389.25" fill="#997857" stroke="#ffffff" stroke-width="1.70" opacity="1.000"/>
+<text font-family="Arial" x="292.00" y="362.00" font-size="19" font-weight="400" fill="#997857" text-anchor="start">VLA-JEPA</text>
+<text font-family="Arial" x="292.00" y="385.00" font-size="19" font-weight="400" fill="#997857" text-anchor="start">79.5 / 97.2</text>
+<line x1="428.65" y1="447.06" x2="452.00" y2="469.00" stroke="#997857" stroke-width="1.20" stroke-linecap="round" opacity="0.650"/>
+<polygon points="428.65,436.43 439.29,447.06 428.65,457.70 418.02,447.06" fill="#997857" stroke="#ffffff" stroke-width="1.70" opacity="1.000"/>
+<text font-family="Arial" x="454.00" y="489.00" font-size="19" font-weight="400" fill="#997857" text-anchor="start">JEPA-WAM</text>
+<text font-family="Arial" x="454.00" y="512.00" font-size="19" font-weight="400" fill="#997857" text-anchor="start">79.2 / 96.7</text>
+<line x1="483.43" y1="377.69" x2="508.00" y2="359.00" stroke="#997857" stroke-width="1.20" stroke-linecap="round" opacity="0.650"/>
+<polygon points="483.43,368.84 492.28,377.69 483.43,386.54 474.59,377.69" fill="#997857" stroke="#ffffff" stroke-width="1.70" opacity="1.000"/>
+<text font-family="Arial" x="503.00" y="303.00" font-size="19" font-weight="400" fill="#997857" text-anchor="start">V-JEPA Policy</text>
+<text font-family="Arial" x="503.00" y="326.00" font-size="19" font-weight="400" fill="#997857" text-anchor="start">(from scratch)</text>
+<text font-family="Arial" x="503.00" y="349.00" font-size="19" font-weight="400" fill="#997857" text-anchor="start">80.0 / 97.3</text>
+<line x1="809.39" y1="215.81" x2="818.00" y2="197.00" stroke="#287c76" stroke-width="1.20" stroke-linecap="round" opacity="0.650"/>
+<circle cx="809.39" cy="215.81" r="9.11" fill="#287c76" stroke="#20312f" stroke-width="2.00" opacity="1.000"/>
+<text font-family="Arial" x="905.00" y="165.00" font-size="19" font-weight="700" fill="#287c76" text-anchor="end">ThinkWAM</text>
+<text font-family="Arial" x="905.00" y="188.00" font-size="19" font-weight="700" fill="#287c76" text-anchor="end">84.76 / 98.70</text>
+<text font-family="Arial" x="42.00" y="650.00" font-size="15" font-weight="400" fill="#5e6c6a" text-anchor="start">Marker area scales with reported parameters:</text>
+<circle cx="410.00" cy="645.00" r="9.11" fill="#ffffff" stroke="#61768a" stroke-width="1.50" opacity="1.000"/>
+<text font-family="Arial" x="436.00" y="650.00" font-size="15" font-weight="400" fill="#5e6c6a" text-anchor="start">1.5B</text>
+<circle cx="535.00" cy="645.00" r="12.89" fill="#ffffff" stroke="#61768a" stroke-width="1.50" opacity="1.000"/>
+<text font-family="Arial" x="561.00" y="650.00" font-size="15" font-weight="400" fill="#5e6c6a" text-anchor="start">3B</text>
+<circle cx="660.00" cy="645.00" r="18.23" fill="#ffffff" stroke="#61768a" stroke-width="1.50" opacity="1.000"/>
+<text font-family="Arial" x="686.00" y="650.00" font-size="15" font-weight="400" fill="#5e6c6a" text-anchor="start">6B</text>
+<text font-family="Arial" x="42.00" y="677.00" font-size="14" font-weight="400" fill="#5e6c6a" text-anchor="start">Parameter counts follow Table 1; model-specific exclusions apply. Success values: Tables 1–2.</text>
+</svg>

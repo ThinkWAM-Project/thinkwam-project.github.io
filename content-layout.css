@@ -1,0 +1,136 @@
+/* Research content only. The cinematic opening and metric strip retain v14. */
+main > .section:not(.resources-section):not(.bibtex-section) { padding-block: 42px; }
+.academic-heading { margin-bottom: 23px; }
+.academic-heading h2 { display: flex; align-items: center; gap: 13px; font-size: 31px; letter-spacing: -.85px; }
+.section-number { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border: 1px solid #dde2ee; border-radius: 7px; color: #6677ae; background: #f5f6fa; font-size: 11px; font-weight: 600; letter-spacing: .02em; }
+.academic-heading .section-deck { margin-top: 10px; max-width: 880px; font-size: 15px; line-height: 1.65; }
+.abstract-copy { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px; max-width: none; margin-bottom: 23px; font-size: 15.5px; line-height: 1.78; }
+.abstract-copy p { margin: 0; }
+.overview-composition { max-width: 1060px; margin-inline: auto; gap: 24px; }
+.overview-caption { margin-top: 12px; font-size: 12px; line-height: 1.65; }
+.paper-figure figcaption { margin-top: 12px; font-size: 12.5px; line-height: 1.65; }
+
+/* Quiet section bands keep white source figures legible and group related evidence. */
+.method-section, .results-section, .analysis-section { background: #f6f7fa; border-color: #e7eaf1; }
+.method-section .paper-figure { max-width: 940px; }
+.method-section .paper-figure > .zoomable { padding: 14px; border: 1px solid #e5e8f0; border-radius: 10px; }
+.method-explanation { margin-top: 22px; gap: 24px; font-size: 14px; line-height: 1.7; }
+.method-explanation p { border-color: #d1d8eb; padding-top: 12px; }
+.method-explanation strong { margin-bottom: 6px; font-size: 16px; }
+
+/* Controls and recordings form one compact demonstration area. */
+.demo-toolbar { align-items: center; justify-content: space-between; flex-direction: row; gap: 12px; margin-bottom: 16px; }
+.demo-toolbar .video-note { width: auto; text-align: right; font-size: 11px; }
+.section .pill-tabs { gap: 5px; }
+.section .pill-tabs > button { padding: 8px 15px; border-radius: 7px; font-size: 13px; }
+#demo-panel { padding: 22px; border: 1px solid #e5e8ef; border-radius: 12px; background: #f7f8fb; }
+.real-task-description { margin-bottom: 12px; font-size: 14px; line-height: 1.65; }
+.simulation-filters { margin-bottom: 18px; gap: 24px; }
+.simulation-filters button { padding-block: 8px 10px; }
+.demo-group-grid.real-group-grid { gap: 24px; }
+.demo-group-grid.simulation-group-grid { max-width: none; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 18px; }
+.demo-card figcaption { padding-top: 8px; }
+.demo-caption-line { margin-bottom: 3px; }
+.demo-card h3 { font-size: 15px; }
+.demo-card p { margin-top: 5px; font-size: 12.5px; line-height: 1.6; }
+.camera-switcher { gap: 20px; margin-top: 8px; }
+.camera-switcher button { font-size: 12px; }
+.evidence-note { margin-top: 16px; font-size: 12px; line-height: 1.65; }
+
+/* Figures lead; detailed tables follow within a separate, aligned panel. */
+.real-results-body { max-width: none; }
+.hardware-label { margin-bottom: 12px; font-size: 12px; }
+.performance-figures { padding: 20px; margin-bottom: 22px; gap: 24px; border: 1px solid #e5e8f0; border-radius: 12px; background: #fff; }
+.performance-figures figcaption { margin-top: 10px; }
+.result-tabs { margin-bottom: 14px; }
+.comparison-panel { padding: 20px; border: 1px solid #e2e6ef; border-radius: 10px; background: #fff; }
+.comparison-panel > h3 { margin-bottom: 6px; font-size: 19px; }
+.table-description { margin-bottom: 14px; font-size: 13px; line-height: 1.65; }
+.table-scroll { border-top: 1.5px solid #8c98b5; border-bottom: 1.5px solid #8c98b5; }
+.comparison-table th { padding: 10px 12px; font-size: 12px; background: #f0f3f8; }
+.comparison-table td { padding: 9px 12px; font-size: 13px; }
+.comparison-table .group-row td { padding: 6px 12px; font-size: 11px; background: #f4f6f9 !important; }
+.comparison-table tbody tr.ours td { background: #edf0fc; color: #45599b; border-top-color: #ccd4ef; }
+.table-notes { margin: 12px 0 16px; font-size: 12px; line-height: 1.65; }
+.table-notes p { margin-block: 5px; }
+.table-notes summary { font-size: 12px; }
+#result-panel + .text-link { display: inline-block; margin-top: 16px; }
+
+.efficiency-figures { max-width: none; margin-bottom: 22px; padding: 20px; border: 1px solid #e3e7f0; border-radius: 12px; background: #fff; }
+.efficiency-figures .zoomable { border-radius: 0; }
+.efficiency-figures img { max-height: none; }
+.efficiency-figures figcaption { padding-top: 12px; border-top: 1px solid #eceef4; }
+.efficiency-subheading { margin-bottom: 12px; font-size: 16px; }
+#latency-comparison th, #latency-comparison td { padding: 9px 12px; }
+
+/* Each paired row is one reading unit; the original figures remain zoomable. */
+.mechanism-figures { gap: 20px; }
+.mechanism-row { max-width: none; gap: 28px; padding: 20px 22px; border: 1px solid #e4e8f0; border-radius: 12px; background: #fff; }
+.mechanism-item h3, .mechanism-group > h3 { margin-bottom: 12px; font-size: 18px; line-height: 1.4; color: #35405b; }
+.mechanism-item .zoomable { height: 240px; }
+.mechanism-item img { max-height: 240px; }
+.mechanism-item figcaption { margin-top: 12px; font-size: 12.5px; line-height: 1.65; }
+.mechanism-row[data-mechanism-row="keyframe-comparisons"] h3 { font-size: 17px; }
+.mechanism-row[data-mechanism-row="keyframe-comparisons"] .paper-figure { grid-template-rows: 220px 30px auto; gap: 10px; }
+.mechanism-row[data-mechanism-row="keyframe-comparisons"] .zoomable { height: 220px; }
+.mechanism-row[data-mechanism-row="keyframe-comparisons"] img { max-height: 220px; }
+.resources-section { padding-block: 32px 24px; }
+.resources-section h2, .bibtex-header h2 { font-size: 27px; }
+.resources-section > p { margin-top: 10px; }
+.bibtex-section { padding-bottom: 32px; }
+.bibtex-section pre { padding: 20px; font-size: 12px; line-height: 1.65; }
+
+@media (max-width: 1000px) {
+  .demo-group-grid.simulation-group-grid { grid-template-columns: repeat(2,minmax(0,1fr)); max-width: 660px; }
+  .performance-figures { gap: 18px; padding: 16px; }
+  .mechanism-row { gap: 22px; padding: 18px; }
+}
+@media (max-width: 760px) {
+  main > .section:not(.resources-section):not(.bibtex-section) { padding-block: 30px; }
+  .academic-heading { margin-bottom: 19px; }
+  .academic-heading h2 { align-items: flex-start; gap: 10px; font-size: 26px; letter-spacing: -.6px; }
+  .section-number { margin-top: 3px; width: 25px; height: 25px; border-radius: 6px; font-size: 10px; }
+  .academic-heading .section-deck { margin-top: 9px; font-size: 14px; line-height: 1.65; }
+  .abstract-copy { grid-template-columns: 1fr; gap: 14px; margin-bottom: 20px; font-size: 15px; line-height: 1.75; }
+  .overview-composition { gap: 22px; }
+  .overview-caption, .paper-figure figcaption { font-size: 12px; line-height: 1.65; }
+  .method-section .paper-figure > .zoomable { padding: 8px; border-radius: 8px; }
+  .method-explanation { gap: 16px; margin-top: 18px; font-size: 14px; }
+  .method-explanation p { padding-top: 10px; }
+  .method-explanation strong { font-size: 15px; }
+  .demo-toolbar { justify-content: flex-start; gap: 10px; }
+  .demo-toolbar .video-note { width: 100%; text-align: left; }
+  .section .pill-tabs > button { font-size: 12px; padding: 8px 12px; }
+  #demo-panel { padding: 14px; border-radius: 9px; }
+  .real-task-description { font-size: 13px; text-align: left; }
+  .simulation-filters { justify-content: flex-start; gap: 8px 16px; margin-bottom: 16px; }
+  .simulation-filters button { font-size: 12px; }
+  .demo-group-grid.real-group-grid { gap: 22px; }
+  .performance-figures { padding: 14px; gap: 22px; margin-bottom: 18px; border-radius: 9px; }
+  .performance-figures .zoomable { aspect-ratio: auto; }
+  .comparison-panel { padding: 14px; border-radius: 9px; }
+  .comparison-panel > h3 { font-size: 18px; }
+  .result-tabs { flex-wrap: wrap; gap: 6px; }
+  .result-tabs > button { padding-inline: 10px; }
+  .comparison-table td, .comparison-table th { padding: 9px 10px; }
+  .comparison-table td:first-child, .comparison-table th:first-child { min-width: 135px; }
+  .comparison-table th { font-size: 11px; }
+  .comparison-table td { font-size: 12px; }
+  .table-notes { margin-bottom: 14px; }
+  .efficiency-figures { padding: 14px; margin-bottom: 20px; border-radius: 9px; }
+  .mobile-plot-parts { gap: 18px; }
+  .mobile-plot-parts > .zoomable + .zoomable { padding-top: 16px; border-top: 1px solid #e8ebf2; }
+  .efficiency-subheading { font-size: 15px; }
+  .mechanism-figures { gap: 16px; }
+  .mechanism-row, .mechanism-row[data-mechanism-row] { gap: 24px; padding: 16px; border-radius: 9px; }
+  .mechanism-item h3, .mechanism-group > h3 { font-size: 17px; margin-bottom: 12px; }
+  .mechanism-item .zoomable, .mechanism-row[data-mechanism-row] .zoomable { height: auto; }
+  .mechanism-item img { height: auto; max-height: 340px; }
+  .mechanism-item figcaption { font-size: 12px; }
+  .mechanism-row[data-mechanism-row="keyframe-comparisons"] img { max-height: none; }
+  .mechanism-row[data-mechanism-row="keyframe-comparisons"] .figure-pagination { margin-top: 10px; }
+  .mechanism-row[data-mechanism-row="keyframe-comparisons"] figcaption { margin-top: 10px; }
+}
+@media (max-width: 560px) {
+  .demo-group-grid.simulation-group-grid { grid-template-columns: 1fr; max-width: 340px; }
+}

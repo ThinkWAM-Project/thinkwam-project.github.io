@@ -1,0 +1,107 @@
+{
+  "description": "Fixed side padding removed; complete frame sequence and active scene retained.",
+  "views": [
+    {
+      "source": "assets/videos/aiz-objects-static-scene.mp4",
+      "video": "assets/videos/aiz-objects-static-scene-borderless-v14.mp4",
+      "poster": "assets/posters/aiz-objects-static-scene-borderless-v14.jpg",
+      "crop": {
+        "x": 48,
+        "y": 0,
+        "width": 544,
+        "height": 480,
+        "right_exclusive": 592,
+        "bottom_exclusive": 480
+      },
+      "frames": 524,
+      "fps": 15.0,
+      "duration_seconds": 34.93333333333333,
+      "sha256": "9629375c6901a16bf4292a4aaf9b89617c6a90fcf4764a6c645fe5af62a95443"
+    },
+    {
+      "source": "assets/videos/aiz-objects-intervention-scene.mp4",
+      "video": "assets/videos/aiz-objects-intervention-scene-borderless-v14.mp4",
+      "poster": "assets/posters/aiz-objects-intervention-scene-borderless-v14.jpg",
+      "crop": {
+        "x": 62,
+        "y": 0,
+        "width": 516,
+        "height": 480,
+        "right_exclusive": 578,
+        "bottom_exclusive": 480
+      },
+      "frames": 618,
+      "fps": 15.0,
+      "duration_seconds": 41.2,
+      "sha256": "6d7ce35b6db5e1bf1cc599c15d0d3c1904c2bb615b8413356b82ee6490cc3d2a"
+    },
+    {
+      "source": "assets/videos/aiz-distractors-static-scene.mp4",
+      "video": "assets/videos/aiz-distractors-static-scene-borderless-v14.mp4",
+      "poster": "assets/posters/aiz-distractors-static-scene-borderless-v14.jpg",
+      "crop": {
+        "x": 58,
+        "y": 0,
+        "width": 522,
+        "height": 480,
+        "right_exclusive": 580,
+        "bottom_exclusive": 480
+      },
+      "frames": 368,
+      "fps": 15.0,
+      "duration_seconds": 24.533333333333335,
+      "sha256": "ebe5c97a31006582aad4e68393455eb482035faabc61440748a72f1703fa005f"
+    },
+    {
+      "source": "assets/videos/aiz-distractors-intervention-scene.mp4",
+      "video": "assets/videos/aiz-distractors-intervention-scene-borderless-v14.mp4",
+      "poster": "assets/posters/aiz-distractors-intervention-scene-borderless-v14.jpg",
+      "crop": {
+        "x": 58,
+        "y": 0,
+        "width": 522,
+        "height": 480,
+        "right_exclusive": 580,
+        "bottom_exclusive": 480
+      },
+      "frames": 885,
+      "fps": 15.0,
+      "duration_seconds": 59.0,
+      "sha256": "28fd88b63b7eedd793d495a13618f64017acf1a1813177422ea5a834f1cf19d1"
+    },
+    {
+      "source": "assets/videos/aiz-lighting-two-scene.mp4",
+      "video": "assets/videos/aiz-lighting-two-scene-borderless-v14.mp4",
+      "poster": "assets/posters/aiz-lighting-two-scene-borderless-v14.jpg",
+      "crop": {
+        "x": 48,
+        "y": 0,
+        "width": 544,
+        "height": 480,
+        "right_exclusive": 592,
+        "bottom_exclusive": 480
+      },
+      "frames": 329,
+      "fps": 15.0,
+      "duration_seconds": 21.933333333333334,
+      "sha256": "5da83e19d347f9bf97414f632c7948453220fee2c1e79410949a7e7dbd154392"
+    },
+    {
+      "source": "assets/videos/aiz-lighting-three-scene.mp4",
+      "video": "assets/videos/aiz-lighting-three-scene-borderless-v14.mp4",
+      "poster": "assets/posters/aiz-lighting-three-scene-borderless-v14.jpg",
+      "crop": {
+        "x": 48,
+        "y": 0,
+        "width": 544,
+        "height": 480,
+        "right_exclusive": 592,
+        "bottom_exclusive": 480
+      },
+      "frames": 523,
+      "fps": 15.0,
+      "duration_seconds": 34.86666666666667,
+      "sha256": "f8c4b007d0051a5f7a02271b7801f51d2baf7cbfe8c3dec10359eeb06dba0c09"
+    }
+  ]
+}

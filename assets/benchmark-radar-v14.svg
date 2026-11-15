@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="690" viewBox="0 0 760 690">
+<title>Success across six settings</title><desc>ThinkWAM solid line with circles and pi0.5 dashed line with squares on six 0–100 percent axes: LIBERO, LIBERO-Plus, RoboCasa24, Real robot OOD mean, RoboTwin Random, and RoboTwin Clean. Each axis prints ThinkWAM then pi0.5. The source is latest Figure 1 and Tables 1–5, pages 6–7. Axes combine separate benchmark protocols rather than a pooled aggregate.</desc>
+
+<style>text{font-family:Arial, Helvetica, sans-serif;dominant-baseline:auto} .mono{font-family:Consolas, Menlo, monospace}</style>
+<rect x="0" y="0" width="760" height="690" rx="0" fill="#ffffff"/>
+<text font-family="Arial" x="42.00" y="48.00" font-size="31" font-weight="700" fill="#20312f" text-anchor="start">Success across six settings</text>
+<text font-family="Arial" x="42.00" y="79.00" font-size="18" font-weight="400" fill="#5e6c6a" text-anchor="start">Reported success rate (%)</text>
+<line x1="225.00" y1="111.00" x2="258.00" y2="111.00" stroke="#287c76" stroke-width="3.00" stroke-linecap="round" opacity="1.000"/>
+<circle cx="241.50" cy="111.00" r="5.00" fill="#287c76" stroke="none" stroke-width="1.50" opacity="1.000"/>
+<text font-family="Arial" x="270.00" y="117.00" font-size="17" font-weight="700" fill="#287c76" text-anchor="start">ThinkWAM</text>
+<line x1="433.00" y1="111.00" x2="440.00" y2="111.00" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="446.00" y1="111.00" x2="453.00" y2="111.00" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="459.00" y1="111.00" x2="466.00" y2="111.00" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<rect x="445.50" y="107.00" width="8.00" height="8.00" fill="#61768a" stroke="none" stroke-width="1.5"/>
+<text font-family="Arial" x="478.00" y="117.00" font-size="17" font-weight="400" fill="#61768a" text-anchor="start">π0.5</text>
+<polygon points="380.00,330.40 412.56,349.20 412.56,386.80 380.00,405.60 347.44,386.80 347.44,349.20" fill="none" stroke="#e0e8e5" stroke-width="1.20" opacity="1.000"/>
+<text font-family="Arial" x="355.20" y="330.44" font-size="13" font-weight="400" fill="#5e6c6a" text-anchor="end">20</text>
+<polygon points="380.00,292.80 445.13,330.40 445.13,405.60 380.00,443.20 314.87,405.60 314.87,330.40" fill="none" stroke="#e0e8e5" stroke-width="1.20" opacity="1.000"/>
+<text font-family="Arial" x="336.40" y="297.87" font-size="13" font-weight="400" fill="#5e6c6a" text-anchor="end">40</text>
+<polygon points="380.00,255.20 477.69,311.60 477.69,424.40 380.00,480.80 282.31,424.40 282.31,311.60" fill="none" stroke="#e0e8e5" stroke-width="1.20" opacity="1.000"/>
+<text font-family="Arial" x="317.60" y="265.31" font-size="13" font-weight="400" fill="#5e6c6a" text-anchor="end">60</text>
+<polygon points="380.00,217.60 510.25,292.80 510.25,443.20 380.00,518.40 249.75,443.20 249.75,292.80" fill="none" stroke="#e0e8e5" stroke-width="1.20" opacity="1.000"/>
+<text font-family="Arial" x="298.80" y="232.75" font-size="13" font-weight="400" fill="#5e6c6a" text-anchor="end">80</text>
+<polygon points="380.00,180.00 542.81,274.00 542.81,462.00 380.00,556.00 217.19,462.00 217.19,274.00" fill="none" stroke="#e0e8e5" stroke-width="1.20" opacity="1.000"/>
+<text font-family="Arial" x="280.00" y="200.19" font-size="13" font-weight="400" fill="#5e6c6a" text-anchor="end">100</text>
+<line x1="380.00" y1="368.00" x2="380.00" y2="180.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<line x1="380.00" y1="368.00" x2="542.81" y2="274.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<line x1="380.00" y1="368.00" x2="542.81" y2="462.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<line x1="380.00" y1="368.00" x2="380.00" y2="556.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<line x1="380.00" y1="368.00" x2="217.19" y2="462.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<line x1="380.00" y1="368.00" x2="217.19" y2="274.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<line x1="380.00" y1="185.83" x2="385.42" y2="190.25" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="390.07" y1="194.05" x2="395.50" y2="198.47" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="400.14" y1="202.27" x2="405.57" y2="206.69" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="410.22" y1="210.49" x2="415.64" y2="214.91" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="420.29" y1="218.71" x2="425.71" y2="223.13" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="430.36" y1="226.92" x2="435.78" y2="231.35" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="440.43" y1="235.14" x2="445.85" y2="239.57" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="450.50" y1="243.36" x2="455.93" y2="247.79" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="460.58" y1="251.58" x2="466.00" y2="256.01" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="470.65" y1="259.80" x2="476.07" y2="264.23" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="480.72" y1="268.02" x2="486.14" y2="272.45" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="490.79" y1="276.24" x2="496.21" y2="280.67" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="500.86" y1="284.46" x2="506.29" y2="288.88" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="510.62" y1="292.74" x2="507.23" y2="298.86" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="504.32" y1="304.11" x2="500.93" y2="310.24" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="498.02" y1="315.49" x2="494.63" y2="321.61" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="491.73" y1="326.86" x2="488.34" y2="332.98" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="485.43" y1="338.23" x2="482.04" y2="344.36" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="479.13" y1="349.61" x2="475.74" y2="355.73" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="472.84" y1="360.98" x2="469.45" y2="367.10" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="466.54" y1="372.35" x2="463.15" y2="378.48" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="460.24" y1="383.73" x2="456.85" y2="389.85" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="453.95" y1="395.10" x2="450.56" y2="401.22" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="447.65" y1="406.47" x2="447.40" y2="406.92" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="447.40" y1="406.92" x2="442.82" y2="411.52" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="438.59" y1="415.77" x2="433.65" y2="420.73" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="429.41" y1="424.98" x2="424.47" y2="429.94" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="420.24" y1="434.19" x2="415.30" y2="439.15" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="411.07" y1="443.40" x2="406.13" y2="448.36" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="401.89" y1="452.61" x2="396.95" y2="457.57" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="392.72" y1="461.82" x2="387.78" y2="466.78" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="383.55" y1="471.04" x2="380.00" y2="474.60" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="380.00" y1="474.60" x2="378.73" y2="473.09" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="374.85" y1="468.51" x2="370.33" y2="463.16" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="366.46" y1="458.58" x2="361.94" y2="453.23" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="358.06" y1="448.65" x2="353.54" y2="443.31" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="349.67" y1="438.73" x2="345.15" y2="433.38" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="341.28" y1="428.80" x2="336.76" y2="423.45" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="332.88" y1="418.87" x2="328.36" y2="413.53" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="324.49" y1="408.95" x2="319.97" y2="403.60" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="316.81" y1="398.51" x2="313.27" y2="392.47" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="310.23" y1="387.30" x2="306.68" y2="381.27" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="303.64" y1="376.09" x2="300.09" y2="370.06" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="297.06" y1="364.88" x2="293.51" y2="358.85" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="290.47" y1="353.68" x2="286.92" y2="347.64" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="283.88" y1="342.47" x2="280.34" y2="336.43" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="277.30" y1="331.26" x2="273.75" y2="325.22" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="270.71" y1="320.05" x2="267.16" y2="314.02" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="264.13" y1="308.84" x2="260.58" y2="302.81" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="257.54" y1="297.63" x2="257.24" y2="297.12" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="257.24" y1="297.12" x2="261.99" y2="292.82" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="266.43" y1="288.79" x2="271.62" y2="284.09" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="276.06" y1="280.06" x2="281.25" y2="275.36" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="285.69" y1="271.33" x2="290.88" y2="266.63" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="295.32" y1="262.60" x2="300.51" y2="257.89" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="304.96" y1="253.86" x2="310.14" y2="249.16" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="314.59" y1="245.13" x2="319.77" y2="240.43" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="324.22" y1="236.40" x2="329.40" y2="231.70" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="333.85" y1="227.67" x2="339.04" y2="222.97" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="343.48" y1="218.94" x2="348.67" y2="214.24" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="353.11" y1="210.21" x2="358.30" y2="205.50" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="362.74" y1="201.47" x2="367.93" y2="196.77" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<line x1="372.37" y1="192.74" x2="377.56" y2="188.04" stroke="#61768a" stroke-width="2.30" stroke-linecap="round" opacity="1.000"/>
+<rect x="375.60" y="181.43" width="8.80" height="8.80" fill="#ffffff" stroke="#61768a" stroke-width="1.8"/>
+<rect x="506.34" y="288.12" width="8.80" height="8.80" fill="#ffffff" stroke="#61768a" stroke-width="1.8"/>
+<rect x="443.00" y="402.52" width="8.80" height="8.80" fill="#ffffff" stroke="#61768a" stroke-width="1.8"/>
+<rect x="375.60" y="470.20" width="8.80" height="8.80" fill="#ffffff" stroke="#61768a" stroke-width="1.8"/>
+<rect x="315.03" y="398.57" width="8.80" height="8.80" fill="#ffffff" stroke="#61768a" stroke-width="1.8"/>
+<rect x="252.84" y="292.72" width="8.80" height="8.80" fill="#ffffff" stroke="#61768a" stroke-width="1.8"/>
+<polygon points="380.00,182.44 518.00,288.33 486.11,429.26 380.00,489.07 272.79,429.90 240.39,287.39" fill="#287c76" stroke="none" stroke-width="1.20" opacity="0.110"/>
+<polyline points="380.00,182.44 518.00,288.33 486.11,429.26 380.00,489.07 272.79,429.90 240.39,287.39 380.00,182.44" fill="none" stroke="#287c76" stroke-width="3.30" stroke-linecap="round" stroke-linejoin="round" opacity="1.000"/>
+<circle cx="380.00" cy="182.44" r="5.50" fill="#287c76" stroke="#ffffff" stroke-width="1.40" opacity="1.000"/>
+<circle cx="518.00" cy="288.33" r="5.50" fill="#287c76" stroke="#ffffff" stroke-width="1.40" opacity="1.000"/>
+<circle cx="486.11" cy="429.26" r="5.50" fill="#287c76" stroke="#ffffff" stroke-width="1.40" opacity="1.000"/>
+<circle cx="380.00" cy="489.07" r="5.50" fill="#287c76" stroke="#ffffff" stroke-width="1.40" opacity="1.000"/>
+<circle cx="272.79" cy="429.90" r="5.50" fill="#287c76" stroke="#ffffff" stroke-width="1.40" opacity="1.000"/>
+<circle cx="240.39" cy="287.39" r="5.50" fill="#287c76" stroke="#ffffff" stroke-width="1.40" opacity="1.000"/>
+<text font-family="Arial" x="380.00" y="143.00" font-size="20" font-weight="700" fill="#20312f" text-anchor="middle">LIBERO</text>
+<text font-family="Arial" x="371.00" y="168.00" font-size="20" font-weight="700" fill="#287c76" text-anchor="end">98.70</text>
+<text font-family="Arial" x="381.00" y="168.00" font-size="18" font-weight="400" fill="#5e6c6a" text-anchor="middle">/</text>
+<text font-family="Arial" x="392.00" y="168.00" font-size="19" font-weight="400" fill="#61768a" text-anchor="start">96.9</text>
+<text font-family="Arial" x="631.00" y="246.00" font-size="20" font-weight="700" fill="#20312f" text-anchor="middle">LIBERO-Plus</text>
+<text font-family="Arial" x="622.00" y="271.00" font-size="20" font-weight="700" fill="#287c76" text-anchor="end">84.76</text>
+<text font-family="Arial" x="632.00" y="271.00" font-size="18" font-weight="400" fill="#5e6c6a" text-anchor="middle">/</text>
+<text font-family="Arial" x="643.00" y="271.00" font-size="19" font-weight="400" fill="#61768a" text-anchor="start">80.3</text>
+<text font-family="Arial" x="631.00" y="479.00" font-size="20" font-weight="700" fill="#20312f" text-anchor="middle">RoboCasa24</text>
+<text font-family="Arial" x="622.00" y="504.00" font-size="20" font-weight="700" fill="#287c76" text-anchor="end">65.17</text>
+<text font-family="Arial" x="632.00" y="504.00" font-size="18" font-weight="400" fill="#5e6c6a" text-anchor="middle">/</text>
+<text font-family="Arial" x="643.00" y="504.00" font-size="19" font-weight="400" fill="#61768a" text-anchor="start">41.4</text>
+<text font-family="Arial" x="380.00" y="591.00" font-size="20" font-weight="700" fill="#20312f" text-anchor="middle">Real robot</text>
+<text font-family="Arial" x="380.00" y="614.00" font-size="20" font-weight="700" fill="#20312f" text-anchor="middle">(OOD mean)</text>
+<text font-family="Arial" x="371.00" y="639.00" font-size="20" font-weight="700" fill="#287c76" text-anchor="end">64.4</text>
+<text font-family="Arial" x="381.00" y="639.00" font-size="18" font-weight="400" fill="#5e6c6a" text-anchor="middle">/</text>
+<text font-family="Arial" x="392.00" y="639.00" font-size="19" font-weight="400" fill="#61768a" text-anchor="start">56.7</text>
+<text font-family="Arial" x="130.00" y="467.00" font-size="20" font-weight="700" fill="#20312f" text-anchor="middle">RoboTwin</text>
+<text font-family="Arial" x="130.00" y="490.00" font-size="20" font-weight="700" fill="#20312f" text-anchor="middle">Random</text>
+<text font-family="Arial" x="121.00" y="515.00" font-size="20" font-weight="700" fill="#287c76" text-anchor="end">65.85</text>
+<text font-family="Arial" x="131.00" y="515.00" font-size="18" font-weight="400" fill="#5e6c6a" text-anchor="middle">/</text>
+<text font-family="Arial" x="142.00" y="515.00" font-size="19" font-weight="400" fill="#61768a" text-anchor="start">37.2</text>
+<text font-family="Arial" x="130.00" y="234.00" font-size="20" font-weight="700" fill="#20312f" text-anchor="middle">RoboTwin</text>
+<text font-family="Arial" x="130.00" y="257.00" font-size="20" font-weight="700" fill="#20312f" text-anchor="middle">Clean</text>
+<text font-family="Arial" x="121.00" y="282.00" font-size="20" font-weight="700" fill="#287c76" text-anchor="end">85.75</text>
+<text font-family="Arial" x="131.00" y="282.00" font-size="18" font-weight="400" fill="#5e6c6a" text-anchor="middle">/</text>
+<text font-family="Arial" x="142.00" y="282.00" font-size="19" font-weight="400" fill="#61768a" text-anchor="start">75.4</text>
+<text font-family="Arial" x="380.00" y="680.00" font-size="14" font-weight="400" fill="#5e6c6a" text-anchor="middle">Separate benchmark protocols; these axes are not a pooled score.</text>
+</svg>

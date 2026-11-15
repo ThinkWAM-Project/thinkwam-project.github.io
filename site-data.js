@@ -215,11 +215,11 @@ window.THINKWAM = {
   "demos": [
     {
       "type": "real",
-      "group": "Standard setting",
+      "group": "Two targets",
       "title": "Fixed object layout",
       "description": "The green eraser and bottle are collected into the box.",
-      "src": "assets/videos/aiz-objects-static-scene.mp4",
-      "poster": "assets/posters/aiz-objects-static-scene.jpg",
+      "src": "assets/videos/aiz-objects-static-scene-borderless-v14.mp4",
+      "poster": "assets/posters/aiz-objects-static-scene-borderless-v14.jpg",
       "duration": "34.9 s · full recording",
       "source_record": "20261114_物体增多_2",
       "frame_count": 524,
@@ -231,25 +231,31 @@ window.THINKWAM = {
         {
           "key": "scene",
           "label": "Scene view",
-          "src": "assets/videos/aiz-objects-static-scene.mp4",
-          "poster": "assets/posters/aiz-objects-static-scene.jpg"
+          "src": "assets/videos/aiz-objects-static-scene-borderless-v14.mp4",
+          "poster": "assets/posters/aiz-objects-static-scene-borderless-v14.jpg",
+          "aspect": "544 / 480"
         },
         {
           "key": "wrist",
           "label": "Wrist view",
           "src": "assets/videos/aiz-objects-static-wrist.mp4",
-          "poster": "assets/posters/aiz-objects-static-wrist.jpg"
+          "poster": "assets/posters/aiz-objects-static-wrist.jpg",
+          "aspect": "4 / 3"
         }
       ],
-      "aspect": "4 / 3"
+      "aspect": "544 / 480",
+      "padding_removed": {
+        "left": 48,
+        "right": 48
+      }
     },
     {
       "type": "real",
-      "group": "Standard setting",
+      "group": "Two targets",
       "title": "Human target repositioning",
       "description": "The eraser and bottle are moved by hand during execution; the robot continues and stores both.",
-      "src": "assets/videos/aiz-objects-intervention-scene.mp4",
-      "poster": "assets/posters/aiz-objects-intervention-scene.jpg",
+      "src": "assets/videos/aiz-objects-intervention-scene-borderless-v14.mp4",
+      "poster": "assets/posters/aiz-objects-intervention-scene-borderless-v14.jpg",
       "duration": "41.2 s · full recording",
       "source_record": "20261114_物体增多_3",
       "frame_count": 618,
@@ -261,25 +267,31 @@ window.THINKWAM = {
         {
           "key": "scene",
           "label": "Scene view",
-          "src": "assets/videos/aiz-objects-intervention-scene.mp4",
-          "poster": "assets/posters/aiz-objects-intervention-scene.jpg"
+          "src": "assets/videos/aiz-objects-intervention-scene-borderless-v14.mp4",
+          "poster": "assets/posters/aiz-objects-intervention-scene-borderless-v14.jpg",
+          "aspect": "516 / 480"
         },
         {
           "key": "wrist",
           "label": "Wrist view",
           "src": "assets/videos/aiz-objects-intervention-wrist.mp4",
-          "poster": "assets/posters/aiz-objects-intervention-wrist.jpg"
+          "poster": "assets/posters/aiz-objects-intervention-wrist.jpg",
+          "aspect": "4 / 3"
         }
       ],
-      "aspect": "4 / 3"
+      "aspect": "516 / 480",
+      "padding_removed": {
+        "left": 62,
+        "right": 62
+      }
     },
     {
       "type": "real",
-      "group": "Effects of Multiple Distractors",
+      "group": "Multiple distractors",
       "title": "Other-colored distractors",
       "description": "The green bottle and eraser are collected while the other-colored distractors remain on the table.",
-      "src": "assets/videos/aiz-distractors-static-scene.mp4",
-      "poster": "assets/posters/aiz-distractors-static-scene.jpg",
+      "src": "assets/videos/aiz-distractors-static-scene-borderless-v14.mp4",
+      "poster": "assets/posters/aiz-distractors-static-scene-borderless-v14.jpg",
       "duration": "24.5 s · full recording",
       "source_record": "20261114_异色干扰_1",
       "frame_count": 368,
@@ -291,25 +303,31 @@ window.THINKWAM = {
         {
           "key": "scene",
           "label": "Scene view",
-          "src": "assets/videos/aiz-distractors-static-scene.mp4",
-          "poster": "assets/posters/aiz-distractors-static-scene.jpg"
+          "src": "assets/videos/aiz-distractors-static-scene-borderless-v14.mp4",
+          "poster": "assets/posters/aiz-distractors-static-scene-borderless-v14.jpg",
+          "aspect": "522 / 480"
         },
         {
           "key": "wrist",
           "label": "Wrist view",
           "src": "assets/videos/aiz-distractors-static-wrist.mp4",
-          "poster": "assets/posters/aiz-distractors-static-wrist.jpg"
+          "poster": "assets/posters/aiz-distractors-static-wrist.jpg",
+          "aspect": "4 / 3"
         }
       ],
-      "aspect": "4 / 3"
+      "aspect": "522 / 480",
+      "padding_removed": {
+        "left": 58,
+        "right": 60
+      }
     },
     {
       "type": "real",
-      "group": "Effects of Multiple Distractors",
+      "group": "Multiple distractors",
       "title": "Human interference among distractors",
       "description": "Two green erasers are repeatedly moved and rotated by hand; both are eventually collected into the box.",
-      "src": "assets/videos/aiz-distractors-intervention-scene.mp4",
-      "poster": "assets/posters/aiz-distractors-intervention-scene.jpg",
+      "src": "assets/videos/aiz-distractors-intervention-scene-borderless-v14.mp4",
+      "poster": "assets/posters/aiz-distractors-intervention-scene-borderless-v14.jpg",
       "duration": "59.0 s · full recording",
       "source_record": "20261114_异色干扰_3",
       "frame_count": 885,
@@ -321,25 +339,31 @@ window.THINKWAM = {
         {
           "key": "scene",
           "label": "Scene view",
-          "src": "assets/videos/aiz-distractors-intervention-scene.mp4",
-          "poster": "assets/posters/aiz-distractors-intervention-scene.jpg"
+          "src": "assets/videos/aiz-distractors-intervention-scene-borderless-v14.mp4",
+          "poster": "assets/posters/aiz-distractors-intervention-scene-borderless-v14.jpg",
+          "aspect": "522 / 480"
         },
         {
           "key": "wrist",
           "label": "Wrist view",
           "src": "assets/videos/aiz-distractors-intervention-wrist.mp4",
-          "poster": "assets/posters/aiz-distractors-intervention-wrist.jpg"
+          "poster": "assets/posters/aiz-distractors-intervention-wrist.jpg",
+          "aspect": "4 / 3"
         }
       ],
-      "aspect": "4 / 3"
+      "aspect": "522 / 480",
+      "padding_removed": {
+        "left": 58,
+        "right": 60
+      }
     },
     {
       "type": "real",
-      "group": "Lighting perturbation",
+      "group": "Purple lighting",
       "title": "Purple lighting with two objects",
       "description": "The green tissue packet and eraser are collected under purple illumination.",
-      "src": "assets/videos/aiz-lighting-two-scene.mp4",
-      "poster": "assets/posters/aiz-lighting-two-scene.jpg",
+      "src": "assets/videos/aiz-lighting-two-scene-borderless-v14.mp4",
+      "poster": "assets/posters/aiz-lighting-two-scene-borderless-v14.jpg",
       "duration": "21.9 s · full recording",
       "source_record": "20261114_紫光扰动_4",
       "frame_count": 329,
@@ -351,25 +375,31 @@ window.THINKWAM = {
         {
           "key": "scene",
           "label": "Scene view",
-          "src": "assets/videos/aiz-lighting-two-scene.mp4",
-          "poster": "assets/posters/aiz-lighting-two-scene.jpg"
+          "src": "assets/videos/aiz-lighting-two-scene-borderless-v14.mp4",
+          "poster": "assets/posters/aiz-lighting-two-scene-borderless-v14.jpg",
+          "aspect": "544 / 480"
         },
         {
           "key": "wrist",
           "label": "Wrist view",
           "src": "assets/videos/aiz-lighting-two-wrist.mp4",
-          "poster": "assets/posters/aiz-lighting-two-wrist.jpg"
+          "poster": "assets/posters/aiz-lighting-two-wrist.jpg",
+          "aspect": "4 / 3"
         }
       ],
-      "aspect": "4 / 3"
+      "aspect": "544 / 480",
+      "padding_removed": {
+        "left": 48,
+        "right": 48
+      }
     },
     {
       "type": "real",
-      "group": "Lighting perturbation",
+      "group": "Purple lighting",
       "title": "Purple lighting with three objects",
       "description": "The tissue packet, small green pouch, and eraser are collected under purple illumination.",
-      "src": "assets/videos/aiz-lighting-three-scene.mp4",
-      "poster": "assets/posters/aiz-lighting-three-scene.jpg",
+      "src": "assets/videos/aiz-lighting-three-scene-borderless-v14.mp4",
+      "poster": "assets/posters/aiz-lighting-three-scene-borderless-v14.jpg",
       "duration": "34.9 s · full recording",
       "source_record": "20261114_紫光扰动_3",
       "frame_count": 523,
@@ -381,17 +411,23 @@ window.THINKWAM = {
         {
           "key": "scene",
           "label": "Scene view",
-          "src": "assets/videos/aiz-lighting-three-scene.mp4",
-          "poster": "assets/posters/aiz-lighting-three-scene.jpg"
+          "src": "assets/videos/aiz-lighting-three-scene-borderless-v14.mp4",
+          "poster": "assets/posters/aiz-lighting-three-scene-borderless-v14.jpg",
+          "aspect": "544 / 480"
         },
         {
           "key": "wrist",
           "label": "Wrist view",
           "src": "assets/videos/aiz-lighting-three-wrist.mp4",
-          "poster": "assets/posters/aiz-lighting-three-wrist.jpg"
+          "poster": "assets/posters/aiz-lighting-three-wrist.jpg",
+          "aspect": "4 / 3"
         }
       ],
-      "aspect": "4 / 3"
+      "aspect": "544 / 480",
+      "padding_removed": {
+        "left": 48,
+        "right": 48
+      }
     },
     {
       "type": "simulation",
@@ -681,7 +717,7 @@ window.THINKWAM = {
       "fps": 20.0
     }
   ],
-  "realVideoNote": "All six demonstrations use the same instruction. Two recordings include human target repositioning. Scene and wrist views preserve the complete camera panels and switch at the same point in each full trajectory. Videos retain the original playback speed. These selected qualitative demonstrations are separate from aggregate success-rate evaluation.",
+  "realVideoNote": "Six selected full recordings illustrate green-object tidying, including two examples with human target repositioning. Scene and wrist views switch at the same point in each trajectory. Videos retain the original playback speed. These qualitative examples are separate from the aggregate OOD evaluation below.",
   "comparisons": {
     "libero": {
       "title": "LIBERO",
@@ -1708,7 +1744,7 @@ window.THINKWAM = {
       "Mean latency per action chunk, measured on one A100 80GB with batch size 1, 10 warm-up calls, and 60 timed calls.",
       "Methods retain their native chunk shapes and integration settings. These are model-call timings; simulator rendering and initialization are excluded.",
       "Inputs use synthetic RGB/state with real task instructions. All timed samples are retained.",
-      "Implementation and timing boundaries differ: ThinkWAM uses a compiled action core and CUDA Graph, while π0.5 uses PyTorch eager. ThinkWAM instruction encoding is outside the timed interval.",
+      "Additional timing details supplied with the A100 measurements: ThinkWAM uses a compiled action core and CUDA Graph; π0.5 uses PyTorch eager. ThinkWAM instruction encoding is outside the timed interval.",
       "The table reports means only. It does not report real-world robot control latency."
     ]
   },
@@ -1806,11 +1842,11 @@ window.THINKWAM = {
       },
       {
         "method": "π0.5",
-        "mean_ms": "112.6"
+        "mean_ms": "119.9"
       },
       {
         "method": "FastWAM",
-        "mean_ms": "119.8"
+        "mean_ms": "296.9"
       }
     ],
     "hardware": "NVIDIA RTX 4080 SUPER"
@@ -1875,7 +1911,7 @@ window.THINKWAM = {
         "libero_chunk": "50 × 7",
         "robotwin_chunk": "50 × 14 (32 padded)",
         "integration": "10 steps",
-        "real_mean_ms": "112.6"
+        "real_mean_ms": "119.9"
       },
       {
         "method": "OpenWAM-α",
@@ -1901,7 +1937,7 @@ window.THINKWAM = {
         "libero_chunk": "32 × 7",
         "robotwin_chunk": "32 × 14",
         "integration": "10 steps",
-        "real_mean_ms": "119.8"
+        "real_mean_ms": "296.9"
       },
       {
         "method": "ThinkWAM",
@@ -1923,7 +1959,7 @@ window.THINKWAM = {
       "Real-world: all three reported methods were measured on the same RTX 4080 SUPER. A dash indicates that no result is reported.",
       "Methods retain their native chunk shapes and integration settings. These are model-call timings; simulator rendering and initialization are excluded.",
       "Inputs use synthetic RGB/state with real task instructions. All timed samples are retained.",
-      "Implementation and timing boundaries differ: ThinkWAM uses a compiled action core and CUDA Graph, while π0.5 uses PyTorch eager. ThinkWAM instruction encoding is outside the timed interval."
+      "Additional timing details supplied with the A100 measurements: ThinkWAM uses a compiled action core and CUDA Graph; π0.5 uses PyTorch eager. ThinkWAM instruction encoding is outside the timed interval."
     ],
     "columnGroups": [
       {
@@ -1941,20 +1977,40 @@ window.THINKWAM = {
     "RoboTwin 2.0": "Complete archived policy actions, replayed in the original scene and rendered at 25 fps. Videos are shown at 3× simulation speed; playback duration excludes model inference. These are selected qualitative examples.",
     "RoboCasa24": "Selected successful trajectories from a fixed-scene adaptation run, shown at 1× simulation speed. Camera buttons switch synchronized views. These examples are separate from the benchmark aggregates."
   },
-  "realTaskInstruction": "Put the green objects into the nearby box.",
   "realWorldComparison": {
-    "title": "Real-world task performance and inference latency",
+    "title": "Galaxea A1Z: OOD task success and inference latency",
     "columns": [
       {
         "key": "method",
         "label": "Method"
       },
       {
-        "key": "success_rate",
-        "label": "Success rate (%)",
+        "key": "action_pretraining",
+        "label": "P.T."
+      },
+      {
+        "key": "two_targets",
+        "label": "Two targets (%)",
         "unit": "%",
-        "direction": "higher",
-        "hideWhenEmpty": true
+        "direction": "higher"
+      },
+      {
+        "key": "color_distractors",
+        "label": "+ Color distractors (%)",
+        "unit": "%",
+        "direction": "higher"
+      },
+      {
+        "key": "purple_light",
+        "label": "+ Purple light (%)",
+        "unit": "%",
+        "direction": "higher"
+      },
+      {
+        "key": "average",
+        "label": "Mean success (%)",
+        "unit": "%",
+        "direction": "higher"
       },
       {
         "key": "mean_ms",
@@ -1965,28 +2021,156 @@ window.THINKWAM = {
     ],
     "rows": [
       {
-        "method": "ThinkWAM",
-        "mean_ms": "101.2",
-        "is_ours": true,
-        "source_emphasis": {
-          "mean_ms": "bold"
-        },
-        "success_rate": null
-      },
-      {
         "method": "π0.5",
-        "mean_ms": "112.6",
-        "success_rate": null
+        "action_pretraining": "Yes",
+        "two_targets": "66.7",
+        "color_distractors": "50.0",
+        "purple_light": "53.3",
+        "is_ours": false,
+        "average": "56.7",
+        "mean_ms": "119.9",
+        "success_counts": {
+          "two_targets": 20,
+          "color_distractors": 15,
+          "purple_light": 16
+        },
+        "total_successes": 51,
+        "total_trials": 90
       },
       {
-        "method": "FastWAM",
-        "mean_ms": "119.8",
-        "success_rate": null
+        "method": "Fast-WAM",
+        "action_pretraining": "No",
+        "two_targets": "46.7",
+        "color_distractors": "30.0",
+        "purple_light": "36.7",
+        "is_ours": false,
+        "average": "37.8",
+        "mean_ms": "296.9",
+        "success_counts": {
+          "two_targets": 14,
+          "color_distractors": 9,
+          "purple_light": 11
+        },
+        "total_successes": 34,
+        "total_trials": 90
+      },
+      {
+        "method": "ThinkWAM",
+        "action_pretraining": "No",
+        "two_targets": "73.3",
+        "color_distractors": "56.7",
+        "purple_light": "63.3",
+        "is_ours": true,
+        "average": "64.4",
+        "mean_ms": "101.2",
+        "success_counts": {
+          "two_targets": 22,
+          "color_distractors": 17,
+          "purple_light": 19
+        },
+        "total_successes": 58,
+        "total_trials": 90,
+        "source_emphasis": {
+          "two_targets": "bold",
+          "color_distractors": "bold",
+          "purple_light": "bold",
+          "average": "bold",
+          "mean_ms": "bold"
+        }
       }
     ],
     "hardware": "NVIDIA RTX 4080 SUPER",
     "notes": [
-      "All three methods were measured on the same NVIDIA RTX 4080 SUPER. Latency is reported in milliseconds; lower is better."
+      "Success requires both green targets to reach the box within the common execution time limit. Each method is evaluated on 30 complete episodes per condition (90 total); the mean weights the three conditions equally.",
+      "Training uses one green target. Two targets, added color distractors, and purple illumination are evaluated without OOD fine-tuning. P.T. denotes action pretraining.",
+      "Latency is the mean of 120 separate model calls after warm-up, on the same RTX 4080 SUPER with batch size 1 and non-RTC execution. Native action chunk lengths are retained: 32 for ThinkWAM and Fast-WAM, and 50 for π0.5.",
+      "ThinkWAM timing includes visual encoding and both action passes. These are per-chunk model-call timings, separate from success trials and physical task-completion time. Selected demonstration videos are not the evaluation trial set."
     ]
-  }
+  },
+  "headlineMetrics": [
+    {
+      "label": "LIBERO",
+      "value": "98.70%",
+      "detail": "40 tasks · 2,000 evaluations"
+    },
+    {
+      "label": "LIBERO-Plus",
+      "value": "84.76%",
+      "detail": "Seven-category macro average"
+    },
+    {
+      "label": "RoboTwin 2.0",
+      "value": "75.80%",
+      "detail": "Clean / Random mean · 85.75 / 65.85"
+    },
+    {
+      "label": "RoboCasa24",
+      "value": "65.17%",
+      "detail": "24 kitchen tasks"
+    },
+    {
+      "label": "Real-world OOD",
+      "value": "64.4%",
+      "detail": "Three conditions · 90 trials"
+    },
+    {
+      "label": "Real-world inference",
+      "value": "101.2 ms",
+      "detail": "Per chunk · RTX 4080 SUPER"
+    }
+  ],
+  "performanceFigures": [
+    {
+      "title": "ID–OOD generalization",
+      "hideHeading": true,
+      "src": "assets/generalization-scatter-v14.svg",
+      "width": 960,
+      "height": 690,
+      "alt": "LIBERO versus LIBERO-Plus success rates for eleven methods. ThinkWAM reports 98.70% on LIBERO and 84.76% on LIBERO-Plus.",
+      "caption": "Paired LIBERO and LIBERO-Plus results for each method. Bubble area follows the reported parameter count; the omitted x-axis interval is marked explicitly. Full values and model-size qualifications appear in the tables below."
+    },
+    {
+      "title": "Success across six settings",
+      "hideHeading": true,
+      "src": "assets/benchmark-radar-v14.svg",
+      "width": 760,
+      "height": 690,
+      "alt": "ThinkWAM and π0.5 success rates across LIBERO, LIBERO-Plus, RoboCasa24, real-world OOD, and RoboTwin Clean and Random.",
+      "caption": "ThinkWAM and π0.5 under each setting’s evaluation protocol. The real-world axis is the mean over three OOD conditions, with 30 complete episodes per condition and method."
+    }
+  ],
+  "efficiencyFigures": [
+    {
+      "title": "Mean inference latency",
+      "hideHeading": true,
+      "src": "assets/inference-latency-v15.svg",
+      "width": 1440,
+      "height": 418,
+      "alt": "ThinkWAM, π0.5 and FastWAM mean inference latency on LIBERO, RoboTwin and the real robot, with hardware shown for each setting.",
+      "caption": "Per-chunk means with batch size 1 and native model configurations. Simulation uses 10 warm-up calls and 60 timed calls on A100 80GB; real-world timings use 120 calls after warm-up on RTX 4080 SUPER.",
+      "mobileParts": [
+        {
+          "title": "LIBERO inference latency — A100 80GB",
+          "src": "assets/latency-libero-v15.svg",
+          "width": 480,
+          "height": 375,
+          "alt": "LIBERO on A100: ThinkWAM 153.48 ms, π0.5 286.62 ms, FastWAM 506.48 ms per chunk."
+        },
+        {
+          "title": "RoboTwin inference latency — A100 80GB",
+          "src": "assets/latency-robotwin-v15.svg",
+          "width": 480,
+          "height": 375,
+          "alt": "RoboTwin on A100: ThinkWAM 164.61 ms, π0.5 254.59 ms, FastWAM 496.16 ms per chunk."
+        },
+        {
+          "title": "Real-world inference latency — RTX 4080 SUPER",
+          "src": "assets/latency-real_robot-v15.svg",
+          "width": 480,
+          "height": 375,
+          "alt": "Real robot on RTX 4080 SUPER: ThinkWAM 101.2 ms, π0.5 119.9 ms, FastWAM 296.9 ms per chunk."
+        }
+      ]
+    }
+  ]
 };

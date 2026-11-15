@@ -78,9 +78,8 @@ setupTabs(document.querySelector('.method-tabs'), (_, index) => {
 });
 
 const demos = data.demos || [];
-document.querySelector('#demo-instruction-text').textContent = data.realTaskInstruction || 'Put the green objects into the nearby box.';
 let selectedSimulationGroup = 'LIBERO / LIBERO-Plus';
-let selectedRealGroup = 'Standard setting';
+let selectedRealGroup = 'Two targets';
 const simulationFilters = document.querySelector('#simulation-filters');
 const realFilters = document.querySelector('#real-filters');
 simulationFilters.querySelectorAll('button').forEach(button => button.addEventListener('click', () => {
@@ -99,7 +98,7 @@ function renderDemos(tab) {
   const grid = document.querySelector('#demo-grid'); grid.replaceChildren();
   const selectedGroup = type === 'real' ? selectedRealGroup : selectedSimulationGroup;
   const filtered = demos.filter(item => item.type === type && item.group === selectedGroup);
-  document.querySelector('#demo-instruction').hidden = type !== 'real';
+  document.querySelector('#real-task-description').hidden = type !== 'real';
   grid.dataset.environment = type;
   simulationFilters.hidden = type !== 'simulation';
   realFilters.hidden = type !== 'real';
@@ -149,6 +148,7 @@ function renderDemos(tab) {
             video.playbackRate = rate;
             if (playing && video.isConnected) video.play().catch(() => {});
           }, {once: true, signal: switchController.signal});
+          media.style.aspectRatio = view.aspect || demo.aspect || "";
           video.poster = view.poster; source.src = view.src; fallback.href = view.src;
           video.setAttribute('aria-label', `${demo.title} — ${view.label}`); video.load();
         });
@@ -261,6 +261,46 @@ if (data.realWorldComparison) {
   renderComparison(document.querySelector('#real-world-comparison'), {...comparison, columns});
   renderNotes(document.querySelector('#real-world-notes'), comparison.notes || []);
 }
+for (const metric of data.headlineMetrics || []) {
+  const item = el('div');
+  item.append(el('dt', '', metric.label), el('dd', '', metric.value));
+  if (metric.detail) item.append(el('span', '', metric.detail));
+  document.querySelector('#headline-metrics').append(item);
+}
+function renderResearchFigures(selector, figures) {
+  const container = document.querySelector(selector);
+  if (!container) return;
+  for (const item of figures || []) {
+    const article = el('article', 'research-figure');
+    if (item.title && !item.hideHeading) article.append(el('h3', '', item.title));
+    const figure = el('figure', 'paper-figure');
+    const link = el('a', 'zoomable');
+    link.href = item.src; link.dataset.figure = ''; link.dataset.caption = item.title;
+    link.setAttribute('aria-label', 'Enlarge ' + item.title);
+    link.style.setProperty('--figure-aspect', `${item.width} / ${item.height}`);
+    const img = el('img'); img.src = item.src; img.alt = item.alt || item.caption;
+    img.width = item.width; img.height = item.height; img.loading = 'lazy';
+    link.append(img, el('span', 'zoom-hint', '↗ Enlarge'));
+    figure.append(link);
+    if (item.mobileParts?.length) {
+      link.classList.add('desktop-plot');
+      const parts = el('div', 'mobile-plot-parts');
+      for (const part of item.mobileParts) {
+        const partLink = el('a', 'zoomable'); partLink.href = part.src;
+        partLink.dataset.figure = ''; partLink.dataset.caption = part.title;
+        partLink.setAttribute('aria-label', 'Enlarge ' + part.title);
+        const partImage = el('img'); partImage.src = part.src; partImage.alt = part.alt;
+        partImage.width = part.width; partImage.height = part.height; partImage.loading = 'lazy';
+        partLink.append(partImage, el('span', 'zoom-hint', '↗ Enlarge')); parts.append(partLink);
+      }
+      figure.append(parts);
+    }
+    figure.append(el('figcaption', '', item.caption));
+    article.append(figure); container.append(article);
+  }
+}
+renderResearchFigures('#performance-figures', data.performanceFigures);
+renderResearchFigures('#efficiency-figures', data.efficiencyFigures);
 const mechanismRoot = document.querySelector('#mechanism-figures');
 const mechanismGroups = new Map();
 const mechanismRows = new Map();
@@ -321,3 +361,97 @@ document.querySelector('#copy-bibtex').addEventListener('click', async event => 
   catch (_) { button.textContent = 'Select text to copy'; }
   setTimeout(() => { button.textContent = 'Copy'; }, 2200);
 });
+
+// Progressive motion: readable static content when motion or scripting is unavailable.
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const pageHeader = document.querySelector('.site-header');
+const hero = document.querySelector('.hero-cinematic');
+const heroVideos = [...document.querySelectorAll('[data-hero-video]')];
+const heroMotion = document.querySelector('#hero-motion');
+const scrollProgress = document.querySelector('.scroll-progress');
+const navTargets = [...document.querySelectorAll('.nav-inner nav a[href^="#"]')].map(link => ({link, section: document.querySelector(link.getAttribute('href'))})).filter(item => item.section);
+let userPausedHero = reducedMotion.matches || Boolean(navigator.connection?.saveData);
+let heroVisible = true;
+let scrollFrame = 0;
+let revealObserver;
+
+function syncHeroButton() {
+  if (!heroMotion) return;
+  const playing = heroVideos.some(video => !video.paused);
+  heroMotion.textContent = playing ? 'Pause videos' : 'Play videos';
+  heroMotion.setAttribute('aria-label', playing ? 'Pause background demonstration videos' : 'Play background demonstration videos');
+}
+function updateHeroPlayback() {
+  const otherVideoPlaying = [...document.querySelectorAll('#demo-grid video')].some(video => !video.paused);
+  heroVideos.forEach(video => {
+    const shouldPlay = heroVisible && !document.hidden && !userPausedHero && !otherVideoPlaying;
+    if (shouldPlay && video.paused) video.play().catch(syncHeroButton);
+    if (!shouldPlay && !video.paused) video.pause();
+  });
+  syncHeroButton();
+}
+if (heroMotion && heroVideos.length) {
+  heroMotion.hidden = false;
+  heroMotion.addEventListener('click', () => {
+    userPausedHero = heroVideos.some(video => !video.paused);
+    if (!userPausedHero) document.querySelectorAll('#demo-grid video').forEach(video => video.pause());
+    updateHeroPlayback();
+  });
+  heroVideos.forEach(video => {
+    video.addEventListener('playing', syncHeroButton);
+    video.addEventListener('pause', syncHeroButton);
+  });
+}
+function updateScrollExperience() {
+  scrollFrame = 0;
+  const scroll = window.scrollY;
+  const extent = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+  if (scrollProgress) scrollProgress.style.transform = `scaleX(${Math.min(1, Math.max(0, scroll / extent))})`;
+  pageHeader?.classList.toggle('is-scrolled', !hero || hero.getBoundingClientRect().bottom <= 64);
+  if (hero) {
+    const bounds = hero.getBoundingClientRect();
+    heroVisible = bounds.bottom > 0 && bounds.top < window.innerHeight;
+  }
+  let active = null;
+  navTargets.forEach(item => { if (item.section.getBoundingClientRect().top <= 150) active = item; });
+  navTargets.forEach(item => {
+    if (item === active) item.link.setAttribute('aria-current', 'location');
+    else item.link.removeAttribute('aria-current');
+  });
+  updateHeroPlayback();
+}
+function requestScrollUpdate() {
+  if (!scrollFrame) scrollFrame = requestAnimationFrame(updateScrollExperience);
+}
+function enableSectionReveals() {
+  revealObserver?.disconnect();
+  if (reducedMotion.matches || !('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal-pending').forEach(node => node.classList.add('is-visible'));
+    return;
+  }
+  const selector = '.project-meta>.wrap, .academic-heading, .abstract-copy, .overview-composition, .method-section .paper-figure, .method-explanation, .demo-toolbar, #demo-panel, .real-results-body, .performance-figures, #result-panel, .efficiency-figures, #latency-comparison, .mechanism-row, .resources-section, .bibtex-section';
+  const targets = [...document.querySelectorAll(selector)];
+  revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    });
+  }, {threshold: .04, rootMargin: '0px 0px -24px 0px'});
+  targets.forEach(node => {
+    const bounds = node.getBoundingClientRect();
+    node.classList.add('reveal-pending');
+    if (bounds.top < window.innerHeight - 24 && bounds.bottom > 0) node.classList.add('is-visible');
+    if (!node.classList.contains('is-visible')) revealObserver.observe(node);
+  });
+}
+window.addEventListener('scroll', requestScrollUpdate, {passive: true});
+window.addEventListener('resize', requestScrollUpdate);
+document.addEventListener('visibilitychange', updateHeroPlayback);
+reducedMotion.addEventListener('change', () => {
+  userPausedHero = reducedMotion.matches;
+  enableSectionReveals();
+  requestScrollUpdate();
+});
+enableSectionReveals();
+updateScrollExperience();

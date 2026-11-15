@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="460" viewBox="0 0 480 460">
+<title>LIBERO mean inference latency</title><desc>LIBERO mean milliseconds per action chunk on A100 80GB. Same 0–600 ms scale as the other panels; batch size 1. Native chunk lengths and inference settings differ. See the combined latency figure and source-data file for timing protocols.</desc>
+
+<style>text{font-family:Arial, Helvetica, sans-serif;dominant-baseline:auto} .mono{font-family:Consolas, Menlo, monospace}</style>
+<rect x="0" y="0" width="480" height="460" rx="0" fill="#ffffff"/>
+<text font-family="Arial" x="36.00" y="32.00" font-size="27" font-weight="700" fill="#20312f" text-anchor="start">LIBERO</text>
+<text font-family="Arial" x="36.00" y="60.00" font-size="18" font-weight="400" fill="#5e6c6a" text-anchor="start">A100 80GB</text>
+<line x1="36.00" y1="107.00" x2="36.00" y2="359.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="36.00" y="385.00" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="middle">0</text>
+<line x1="168.00" y1="107.00" x2="168.00" y2="359.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="168.00" y="385.00" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="middle">200</text>
+<line x1="300.00" y1="107.00" x2="300.00" y2="359.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="300.00" y="385.00" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="middle">400</text>
+<line x1="432.00" y1="107.00" x2="432.00" y2="359.00" stroke="#e0e8e5" stroke-width="1.00" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="432.00" y="385.00" font-size="16" font-weight="400" fill="#5e6c6a" text-anchor="middle">600</text>
+<text font-family="Arial" x="36.00" y="100.00" font-size="18" font-weight="700" fill="#287c76" text-anchor="start">ThinkWAM</text>
+<rect x="36.00" y="110.00" width="101.30" height="28.00" rx="0.00" fill="#287c76" stroke="none" opacity="1.000"/>
+<text font-family="Arial" x="146.30" y="131.00" font-size="18" font-weight="700" fill="#20312f" text-anchor="start">153.48</text>
+<text font-family="Arial" x="36.00" y="184.00" font-size="18" font-weight="400" fill="#61768a" text-anchor="start">π0.5</text>
+<rect x="36.00" y="194.00" width="189.17" height="28.00" rx="0.00" fill="#61768a" stroke="none" opacity="1.000"/>
+<text font-family="Arial" x="234.17" y="215.00" font-size="18" font-weight="400" fill="#20312f" text-anchor="start">286.62</text>
+<text font-family="Arial" x="36.00" y="268.00" font-size="18" font-weight="400" fill="#997857" text-anchor="start">FastWAM</text>
+<rect x="36.00" y="278.00" width="334.28" height="28.00" rx="0.00" fill="#997857" stroke="none" opacity="1.000"/>
+<text font-family="Arial" x="379.28" y="299.00" font-size="18" font-weight="400" fill="#20312f" text-anchor="start">506.48</text>
+<line x1="36.00" y1="359.00" x2="432.00" y2="359.00" stroke="#61768a" stroke-width="1.30" stroke-linecap="round" opacity="1.000"/>
+<text font-family="Arial" x="234.00" y="414.00" font-size="18" font-weight="400" fill="#20312f" text-anchor="middle">Mean latency (ms / chunk)</text>
+<text font-family="Arial" x="240.00" y="446.00" font-size="15" font-weight="400" fill="#5e6c6a" text-anchor="middle">Batch size 1 · native chunk settings</text>
+</svg>

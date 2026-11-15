@@ -1,0 +1,446 @@
+{
+  "source": "Latest supplied ThinkWAM manuscript, Figure 1 and Tables 1–5, 10–11",
+  "real_world": {
+    "columns": [
+      {
+        "key": "method",
+        "label": "Method"
+      },
+      {
+        "key": "action_pretraining",
+        "label": "P.T."
+      },
+      {
+        "key": "two_targets",
+        "label": "Two targets (%)",
+        "unit": "%",
+        "direction": "higher"
+      },
+      {
+        "key": "color_distractors",
+        "label": "+ Color distractors (%)",
+        "unit": "%",
+        "direction": "higher"
+      },
+      {
+        "key": "purple_light",
+        "label": "+ Purple light (%)",
+        "unit": "%",
+        "direction": "higher"
+      },
+      {
+        "key": "average",
+        "label": "Mean success (%)",
+        "unit": "%",
+        "direction": "higher"
+      },
+      {
+        "key": "mean_ms",
+        "label": "Mean latency",
+        "unit": "ms",
+        "direction": "lower"
+      }
+    ],
+    "rows": [
+      {
+        "method": "π0.5",
+        "action_pretraining": "Yes",
+        "two_targets": "66.7",
+        "color_distractors": "50.0",
+        "purple_light": "53.3",
+        "is_ours": false,
+        "average": "56.7",
+        "mean_ms": "119.9",
+        "success_counts": {
+          "two_targets": 20,
+          "color_distractors": 15,
+          "purple_light": 16
+        },
+        "total_successes": 51,
+        "total_trials": 90
+      },
+      {
+        "method": "Fast-WAM",
+        "action_pretraining": "No",
+        "two_targets": "46.7",
+        "color_distractors": "30.0",
+        "purple_light": "36.7",
+        "is_ours": false,
+        "average": "37.8",
+        "mean_ms": "296.9",
+        "success_counts": {
+          "two_targets": 14,
+          "color_distractors": 9,
+          "purple_light": 11
+        },
+        "total_successes": 34,
+        "total_trials": 90
+      },
+      {
+        "method": "ThinkWAM",
+        "action_pretraining": "No",
+        "two_targets": "73.3",
+        "color_distractors": "56.7",
+        "purple_light": "63.3",
+        "is_ours": true,
+        "average": "64.4",
+        "mean_ms": "101.2",
+        "success_counts": {
+          "two_targets": 22,
+          "color_distractors": 17,
+          "purple_light": 19
+        },
+        "total_successes": 58,
+        "total_trials": 90,
+        "source_emphasis": {
+          "two_targets": "bold",
+          "color_distractors": "bold",
+          "purple_light": "bold",
+          "average": "bold",
+          "mean_ms": "bold"
+        }
+      }
+    ],
+    "notes": [
+      "Success requires both green targets to reach the box within the common execution time limit. Each method is evaluated on 30 complete episodes per condition (90 total); the mean weights the three conditions equally.",
+      "Training uses one green target. Two targets, added color distractors, and purple illumination are evaluated without OOD fine-tuning. P.T. denotes action pretraining.",
+      "Latency is the mean of 120 separate model calls after warm-up, on the same RTX 4080 SUPER with batch size 1 and non-RTC execution. Native action chunk lengths are retained: 32 for ThinkWAM and Fast-WAM, and 50 for π0.5.",
+      "ThinkWAM timing includes visual encoding and both action passes. These are per-chunk model-call timings, separate from success trials and physical task-completion time. Selected demonstration videos are not the evaluation trial set."
+    ]
+  },
+  "figures": {
+    "scatter": {
+      "source": {
+        "page": 1,
+        "figure": 1,
+        "data_tables": [
+          1,
+          2
+        ],
+        "data_page": 6
+      },
+      "title": "ID–OOD generalization",
+      "x_axis": "LIBERO-Plus (OOD, %)",
+      "y_axis": "LIBERO (ID, %)",
+      "scope": "simulation generalization",
+      "source_has_broken_x_axis": true,
+      "marker_area": "model size in billions of parameters, Table 1",
+      "points": [
+        {
+          "method": "π0.5",
+          "x": 80.3,
+          "y": 96.9,
+          "size_b": 3.3,
+          "x_label": "80.3",
+          "y_label": "96.9",
+          "size_label": "3.3",
+          "group": "Non-JEPA",
+          "action_pretraining": true
+        },
+        {
+          "method": "ABot-M0",
+          "x": 81.6,
+          "y": 98.6,
+          "size_b": 4.6,
+          "x_label": "81.6",
+          "y_label": "98.6",
+          "size_label": "4.6",
+          "group": "Non-JEPA",
+          "action_pretraining": true
+        },
+        {
+          "method": "ResVLA",
+          "x": 78.5,
+          "y": 96.6,
+          "size_b": 4.0,
+          "x_label": "78.5",
+          "y_label": "96.6",
+          "size_label": "4.0",
+          "group": "Non-JEPA",
+          "action_pretraining": false
+        },
+        {
+          "method": "FastWAM",
+          "x": 51.4,
+          "y": 97.6,
+          "size_b": 6.0,
+          "x_label": "51.4",
+          "y_label": "97.6",
+          "size_label": "6.0",
+          "group": "Non-JEPA",
+          "action_pretraining": false
+        },
+        {
+          "method": "ImageWAM",
+          "x": 82.9,
+          "y": 98.4,
+          "size_b": 4.5,
+          "x_label": "82.9",
+          "y_label": "98.4",
+          "size_label": "4.5",
+          "group": "Non-JEPA",
+          "action_pretraining": false
+        },
+        {
+          "method": "ForeWAM",
+          "x": 78.3,
+          "y": 97.9,
+          "size_b": 1.5,
+          "x_label": "78.3",
+          "y_label": "97.9",
+          "size_label": "1.5",
+          "group": "Non-JEPA",
+          "action_pretraining": false
+        },
+        {
+          "method": "VLANeXt (Base)",
+          "x": 84.5,
+          "y": 97.4,
+          "size_b": 2.5,
+          "x_label": "84.5",
+          "y_label": "97.4",
+          "size_label": "2.5",
+          "group": "Non-JEPA",
+          "action_pretraining": false
+        },
+        {
+          "method": "VLA-JEPA",
+          "x": 79.5,
+          "y": 97.2,
+          "size_b": 2.3,
+          "x_label": "79.5",
+          "y_label": "97.2",
+          "size_label": "2.3",
+          "group": "JEPA-based",
+          "action_pretraining": true
+        },
+        {
+          "method": "JEPA-WAM",
+          "x": 79.2,
+          "y": 96.7,
+          "size_b": 1.3,
+          "x_label": "79.2",
+          "y_label": "96.7",
+          "size_label": "1.3",
+          "group": "JEPA-based",
+          "action_pretraining": false
+        },
+        {
+          "method": "V-JEPA Policy (from scratch)",
+          "x": 80.0,
+          "y": 97.3,
+          "size_b": 0.9,
+          "x_label": "80.0",
+          "y_label": "97.3",
+          "size_label": "0.9",
+          "group": "JEPA-based",
+          "action_pretraining": false
+        },
+        {
+          "method": "ThinkWAM",
+          "x": 84.76,
+          "y": 98.7,
+          "size_b": 1.5,
+          "x_label": "84.76",
+          "y_label": "98.70",
+          "size_label": "1.5",
+          "group": "ThinkWAM",
+          "action_pretraining": false
+        }
+      ],
+      "size_convention_notes": [
+        "ABot-M0 excludes optional spatial modules.",
+        "V-JEPA Policy excludes its frozen text encoder."
+      ],
+      "no_error_bars_reported": true
+    },
+    "radar": {
+      "source": {
+        "page": 1,
+        "figure": 1
+      },
+      "unit": "success (%)",
+      "radial_range": [
+        0,
+        100
+      ],
+      "axes_clockwise_from_top": [
+        {
+          "key": "libero",
+          "label": "LIBERO",
+          "source": {
+            "page": 6,
+            "table": 1
+          }
+        },
+        {
+          "key": "plus",
+          "label": "LIBERO-Plus",
+          "source": {
+            "page": 6,
+            "table": 2
+          }
+        },
+        {
+          "key": "robocasa",
+          "label": "RoboCasa24",
+          "source": {
+            "page": 6,
+            "table": 4
+          }
+        },
+        {
+          "key": "real_ood_mean",
+          "label": "Real robot (OOD mean)",
+          "source": {
+            "page": 7,
+            "table": 5
+          }
+        },
+        {
+          "key": "robotwin_random",
+          "label": "RoboTwin Random",
+          "source": {
+            "page": 6,
+            "table": 3
+          }
+        },
+        {
+          "key": "robotwin_clean",
+          "label": "RoboTwin Clean",
+          "source": {
+            "page": 6,
+            "table": 3
+          }
+        }
+      ],
+      "series": [
+        {
+          "method": "ThinkWAM",
+          "values": [
+            98.7,
+            84.76,
+            65.17,
+            64.4,
+            65.85,
+            85.75
+          ],
+          "labels": [
+            "98.70",
+            "84.76",
+            "65.17",
+            "64.4",
+            "65.85",
+            "85.75"
+          ]
+        },
+        {
+          "method": "π0.5",
+          "values": [
+            96.9,
+            80.3,
+            41.4,
+            56.7,
+            37.2,
+            75.4
+          ],
+          "labels": [
+            "96.9",
+            "80.3",
+            "41.4",
+            "56.7",
+            "37.2",
+            "75.4"
+          ]
+        }
+      ],
+      "note": "Axes combine separate benchmark protocols; not one pooled aggregate."
+    },
+    "latency": {
+      "source": {
+        "page": 1,
+        "figure": 1
+      },
+      "unit": "mean ms/chunk",
+      "batch_size": 1,
+      "environments": [
+        {
+          "key": "libero",
+          "label": "LIBERO",
+          "hardware": "A100 80GB"
+        },
+        {
+          "key": "robotwin",
+          "label": "RoboTwin",
+          "hardware": "A100 80GB"
+        },
+        {
+          "key": "real_robot",
+          "label": "Real robot",
+          "hardware": "RTX 4080 SUPER"
+        }
+      ],
+      "series": [
+        {
+          "method": "ThinkWAM",
+          "values": [
+            153.48,
+            164.61,
+            101.2
+          ]
+        },
+        {
+          "method": "π0.5",
+          "values": [
+            286.62,
+            254.59,
+            119.9
+          ],
+          "simulation_implementation": "RLinf SFT"
+        },
+        {
+          "method": "FastWAM",
+          "values": [
+            506.48,
+            496.16,
+            296.9
+          ]
+        }
+      ],
+      "note": "Native chunk lengths/configurations differ. Simulation and real-world use different GPUs and timing protocols; not per-action or task-completion time."
+    }
+  },
+  "headline_metrics": [
+    {
+      "label": "LIBERO",
+      "value": "98.70%",
+      "detail": "40 tasks · 2,000 evaluations"
+    },
+    {
+      "label": "LIBERO-Plus",
+      "value": "84.76%",
+      "detail": "Seven-category macro average"
+    },
+    {
+      "label": "RoboTwin 2.0",
+      "value": "75.80%",
+      "detail": "Clean / Random mean · 85.75 / 65.85"
+    },
+    {
+      "label": "RoboCasa24",
+      "value": "65.17%",
+      "detail": "24 kitchen tasks"
+    },
+    {
+      "label": "Real-world OOD",
+      "value": "64.4%",
+      "detail": "Three conditions · 90 trials"
+    },
+    {
+      "label": "Real-world inference",
+      "value": "101.2 ms",
+      "detail": "Per chunk · RTX 4080 SUPER"
+    }
+  ],
+  "headline_metric_note": "RoboTwin 2.0 headline is the equal-weight average of Clean (85.75%) and Random (65.85%): 75.80%. Other headline values retain their reported benchmark protocols."
+}

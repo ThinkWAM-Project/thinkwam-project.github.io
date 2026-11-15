@@ -1,0 +1,4 @@
+Method,P.T.,Two targets (%),+ Color distractors (%),+ Purple light (%),Mean success (%),Mean latency,Successful episodes,Total episodes
+π0.5,Yes,66.7,50.0,53.3,56.7,119.9,51,90
+Fast-WAM,No,46.7,30.0,36.7,37.8,296.9,34,90
+ThinkWAM,No,73.3,56.7,63.3,64.4,101.2,58,90

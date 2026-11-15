@@ -70,20 +70,28 @@ setupTabs(document.querySelector('.method-tabs'), (_, index) => {
 });
 
 const demos = data.demos || [];
+let selectedSimulationGroup = 'LIBERO / LIBERO-Plus';
+const simulationFilters = document.querySelector('#simulation-filters');
+simulationFilters.querySelectorAll('button').forEach(button => button.addEventListener('click', () => {
+  selectedSimulationGroup = button.dataset.simulationGroup;
+  renderDemos(document.getElementById('demo-simulation-tab'));
+}));
 document.querySelector('#real-count').textContent = demos.filter(demo => demo.type === 'real').length || '';
 document.querySelector('#simulation-count').textContent = demos.filter(demo => demo.type === 'simulation').length || '';
 function renderDemos(tab) {
   const type = tab.dataset.demoFilter;
   document.querySelectorAll('#demo-grid video').forEach(video => video.pause());
   const grid = document.querySelector('#demo-grid'); grid.replaceChildren();
-  const filtered = demos.filter(item => item.type === type);
+  const filtered = demos.filter(item => item.type === type && (type !== 'simulation' || item.group === selectedSimulationGroup));
+  simulationFilters.hidden = type !== 'simulation';
+  simulationFilters.querySelectorAll('button').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.simulationGroup === selectedSimulationGroup)));
   const groupNames = [...new Set(filtered.map(item => item.group || ''))];
   const groupGrids = new Map();
   grid.classList.toggle('grouped-gallery', groupNames.some(Boolean));
   if (groupNames.some(Boolean)) {
     groupNames.forEach(name => {
       const group = el('section', 'demo-group');
-      if (name) group.append(el('h3', 'demo-group-title', name));
+      if (name && type === 'real') group.append(el('h3', 'demo-group-title', name));
       const groupGrid = el('div', 'demo-group-grid' + (type === 'real' ? ' real-group-grid' : ' simulation-group-grid'));
       if (filtered.filter(item => (item.group || '') === name).length === 1) groupGrid.classList.add('single-demo');
       if (filtered.filter(item => (item.group || '') === name).length === 4) groupGrid.classList.add('paired-grid');
@@ -134,7 +142,7 @@ function renderDemos(tab) {
     figure.append(caption); (groupGrids.get(demo.group || '') || grid).append(figure);
   }
   if (!grid.children.length) grid.append(el('p', 'demo-empty', 'Demonstrations are being prepared.'));
-  document.querySelector('#demo-footnote').textContent = type === 'real' ? (data.realVideoNote || 'Selected full real-world recordings. These examples illustrate behavior under the stated conditions.') : (data.simulationVideoNote || 'Selected recorded simulation trajectories. These qualitative examples are separate from the benchmark aggregates.');
+  document.querySelector('#demo-footnote').textContent = type === 'real' ? (data.realVideoNote || 'Selected full real-world recordings. These examples illustrate behavior under the stated conditions.') : (data.simulationNotes?.[selectedSimulationGroup] || data.simulationVideoNote || 'Selected recorded simulation trajectories. These qualitative examples are separate from the benchmark aggregates.');
 }
 const activateDemo = setupTabs(document.querySelector('[aria-label="Demonstration environment"]'), renderDemos);
 activateDemo(document.getElementById(demos.some(item => item.type === 'real') ? 'demo-real-tab' : 'demo-simulation-tab'));
@@ -180,7 +188,7 @@ function renderComparison(container, comparison) {
     comparison.columns.forEach(column => {
       const value = row[column.key]; const td = el('td', '', value == null ? '—' : String(value));
       if (column.key === 'action_pretraining' && ['Yes', 'No'].includes(value)) {
-        td.textContent = value === 'Yes' ? '✅' : '❌'; td.classList.add('pretraining-indicator');
+        td.textContent = value === 'Yes' ? '✓' : '✗'; td.classList.add('pretraining-indicator', value === 'Yes' ? 'pt-yes' : 'pt-no');
         td.setAttribute('aria-label', value); td.title = value === 'Yes' ? 'With action pretraining' : 'Without action pretraining';
       }
       if (row.source_emphasis?.[column.key] === 'bold') td.classList.add('best');

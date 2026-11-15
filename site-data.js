@@ -2152,9 +2152,14 @@ window.THINKWAM = {
       "detail": "Seven-category macro average"
     },
     {
-      "label": "RoboTwin 2.0",
-      "value": "75.80%",
-      "detail": "Clean / Random mean · 85.75 / 65.85"
+      "label": "RoboTwin · Clean",
+      "value": "85.75%",
+      "detail": "20 tasks · 2,000 episodes"
+    },
+    {
+      "label": "RoboTwin · Random",
+      "value": "65.85%",
+      "detail": "20 tasks · 2,000 episodes"
     },
     {
       "label": "RoboCasa24",

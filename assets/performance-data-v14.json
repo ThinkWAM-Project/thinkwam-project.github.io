@@ -422,9 +422,14 @@
       "detail": "Seven-category macro average"
     },
     {
-      "label": "RoboTwin 2.0",
-      "value": "75.80%",
-      "detail": "Clean / Random mean · 85.75 / 65.85"
+      "label": "RoboTwin · Clean",
+      "value": "85.75%",
+      "detail": "20 tasks · 2,000 episodes"
+    },
+    {
+      "label": "RoboTwin · Random",
+      "value": "65.85%",
+      "detail": "20 tasks · 2,000 episodes"
     },
     {
       "label": "RoboCasa24",
@@ -442,5 +447,5 @@
       "detail": "Per chunk · RTX 4080 SUPER"
     }
   ],
-  "headline_metric_note": "RoboTwin 2.0 headline is the equal-weight average of Clean (85.75%) and Random (65.85%): 75.80%. Other headline values retain their reported benchmark protocols."
+  "headline_metric_note": "RoboTwin Clean (85.75%) and Random (65.85%) are reported separately. All values retain their reported benchmark protocols."
 }

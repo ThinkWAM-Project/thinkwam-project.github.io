@@ -204,7 +204,6 @@ main > .section:not(.resources-section):not(.bibtex-section) { padding-block: 42
 .performance-figures { margin-bottom: 12px; }
 .efficiency-figures { margin-bottom: 24px; }
 #performance-notes { margin-bottom: 24px; }
-#analysis-notes { margin-top: 18px; }
 .content-details { margin: 16px 0 0; padding: 0; color: #5b6578; font-size: 16px; line-height: 1.65; }
 .content-details > summary { display: flex; align-items: center; gap: 9px; width: fit-content; padding: 4px 0; color: #4e5d7e; font-size: 16px; font-weight: 550; list-style: none; cursor: pointer; }
 .content-details > summary::-webkit-details-marker { display: none; }
@@ -236,3 +235,52 @@ main > .section:not(.resources-section):not(.bibtex-section) { padding-block: 42
   .bibtex-section pre { font-size: 13px; }
 }
 @media (prefers-reduced-motion:reduce) { .content-details > summary::before { transition: none; } }
+
+/* Presentation order and consistent viewing windows. */
+.hero-lead { max-width: none; margin-top: 12px; }
+.project-meta .headline-metrics { grid-template-columns: repeat(7,minmax(0,1fr)); }
+.project-meta .headline-metrics > div { padding-inline: 10px; }
+.project-meta .headline-metrics dd { font-size: clamp(23px,2.15vw,31px); }
+.real-group-grid .demo-video-wrap { aspect-ratio: 11 / 10; background: #edf0f4; }
+.real-group-grid .demo-video-wrap video { object-fit: contain; }
+.simulation-results { background: #f6f7fa; border-block: 1px solid #e7eaf1; }
+.simulation-timings { margin-top: 30px; padding-top: 25px; border-top: 1px solid #dde3ed; }
+#efficiency .efficiency-figures { margin-bottom: 0; }
+@media (min-width:761px) and (max-width:1100px) {
+  :root { --metric-strip-height: 210px; }
+  .project-meta .headline-metrics { grid-template-columns: repeat(4,minmax(0,1fr)); gap: 12px 0; }
+  .project-meta .headline-metrics > div:nth-child(4) { border-right: 0; }
+  .project-meta .headline-metrics > div:last-child { grid-column: span 2; }
+}
+@media (max-width:760px) {
+  :root { --metric-strip-height: 250px; }
+  .project-meta .headline-metrics { grid-template-columns: repeat(3,minmax(0,1fr)); height: auto; min-height: var(--metric-strip-height); }
+  .project-meta .headline-metrics > div { padding-inline: 8px; }
+  .project-meta .headline-metrics > div:last-child { grid-column: 1 / -1; flex-direction: row; align-items: center; justify-content: center; gap: 12px; padding-top: 10px; border-top: 1px solid #e7eaf1; }
+  .project-meta .headline-metrics > div:last-child dt { margin: 0; font-size: 12px; }
+  .project-meta .headline-metrics > div:last-child span { display: none; }
+  .project-meta .headline-metrics dt { font-size: 11px; }
+  .project-meta .headline-metrics span { font-size: 9px; }
+}
+
+/* A quiet entrance, then ordinary selectable text and links. */
+@keyframes hero-enter {
+  from { opacity: 0; transform: translateY(12px); filter: blur(3px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+.hero-enter { animation: hero-enter .85s cubic-bezier(.22,1,.36,1) var(--hero-delay,0ms) both; }
+.hero-enter:focus-within { animation: none; }
+.site-footer { display: block; width: 100%; margin: 36px 0 0; padding: 34px 0; border: 0; background: #111216; color: #b7bcc9; }
+.footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px 32px; }
+.site-footer .wordmark { color: #fff; font-size: 23px; font-weight: 800; letter-spacing: -.8px; }
+.footer-inner > p { flex: 1; margin: 0; font-size: 16px; line-height: 1.6; }
+.footer-inner > a:last-child { white-space: nowrap; color: #d1d6e0; font-size: 14px; border-bottom: 1px solid #606674; padding-bottom: 3px; }
+.footer-inner > a:hover { color: #fff; }
+@media (max-width:760px) {
+  .site-footer { margin-top: 24px; padding-block: 28px; }
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .footer-inner > p { max-width: 320px; font-size: 15px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .hero-enter { animation: none; }
+}

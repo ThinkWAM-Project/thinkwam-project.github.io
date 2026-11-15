@@ -15,9 +15,11 @@
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css?v=20261115-14f">
   <link rel="stylesheet" href="academic.css?v=20261115-17a">
-  <link rel="stylesheet" href="content-layout.css?v=20261115-20a">
-  <script src="site-data.js?v=20261115-20a" defer></script>
-  <script src="app.js?v=20261115-20a" defer></script>
+  <link rel="stylesheet" href="content-layout.css?v=20261115-21b">
+  <link rel="stylesheet" href="charts.css?v=20261115-21b">
+  <script src="site-data.js?v=20261115-21b" defer></script>
+  <script src="app.js?v=20261115-21b" defer></script>
+  <script src="charts.js?v=20261115-21b" defer></script>
   <script src="media-controls.js?v=20261115-19a" defer></script>
 </head>
 <body>
@@ -66,7 +68,7 @@
       <div class="hero-content wrap">
         <p class="hero-kicker">World Action Model</p>
         <h1 id="hero-title" aria-label="ThinkWAM: Rethinking Latent Futures for Action Refinement"><span class="thinkwam-name">ThinkWAM</span><span class="hero-paper-title">Rethinking Latent Futures<br>for Action Refinement</span></h1>
-        <p class="hero-lead">Propose an action. Rethink its consequences.<br>Refine before execution.</p>
+        <p class="hero-lead">Propose an action. Rethink its consequences. Refine before execution.</p>
         <div class="hero-credits" aria-label="Authors and affiliations">
       <div id="authors" class="authors" hidden></div>
       <div id="affiliations" class="affiliations" hidden></div>
@@ -108,42 +110,57 @@
       <div class="section-heading academic-heading"><h2 id="demo-heading"><span class="section-number" aria-hidden="true">03</span>Robot Demonstrations</h2></div>
       <div class="demo-toolbar"><div class="pill-tabs" role="tablist" aria-label="Demonstration environment"><button id="demo-real-tab" role="tab" aria-selected="true" aria-controls="demo-panel" tabindex="0" data-demo-filter="real"><svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 21h16M9 21v-4l4-4-5-5 4-4 6 6-4 4M16 4l4 4M19 3l2 2"/><circle cx="8" cy="8" r="2"/><circle cx="13" cy="13" r="2"/></svg>Real-world <span id="real-count"></span></button><button id="demo-simulation-tab" role="tab" aria-selected="false" aria-controls="demo-panel" tabindex="-1" data-demo-filter="simulation"><svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3 9 5v8l-9 5-9-5V8l9-5Zm0 9v9M3 8l9 5 9-5M7.5 5.5l9 5v4"/></svg>Simulation <span id="simulation-count"></span></button></div><span id="demo-context" class="demo-context" hidden></span></div>
       <div id="demo-panel" role="tabpanel" aria-labelledby="demo-real-tab" tabindex="0"><p id="real-task-description" class="real-task-description">Green-object tidying · Galaxea A1Z</p><div id="real-filters" class="simulation-filters real-filters" role="group" aria-label="Real-world scene condition"><button type="button" data-real-group="Two targets" aria-pressed="true">Two targets <span>2</span></button><button type="button" data-real-group="Multiple distractors" aria-pressed="false">Multiple distractors <span>2</span></button><button type="button" data-real-group="Purple lighting" aria-pressed="false">Purple lighting <span>2</span></button></div><div id="simulation-filters" class="simulation-filters" role="group" aria-label="Simulation benchmark" hidden><button type="button" data-simulation-group="LIBERO / LIBERO-Plus" aria-pressed="true">LIBERO / LIBERO-Plus <span>4</span></button><button type="button" data-simulation-group="RoboTwin 2.0" aria-pressed="false">RoboTwin 2.0 <span>4</span></button><button type="button" data-simulation-group="RoboCasa24" aria-pressed="false">RoboCasa24 <span>4</span></button></div><div id="demo-grid" class="demo-grid"></div></div>
-      <details class="content-details demo-details"><summary>Recording details</summary><div id="demo-footnote"></div></details>
-    </section>
-
-    <section id="real-world-results" class="section real-world-results" aria-labelledby="real-world-heading">
-      <div class="wrap">
-        <div class="section-heading academic-heading"><h2 id="real-world-heading"><span class="section-number" aria-hidden="true">04</span>Real-world Results</h2><p class="section-deck">3 OOD conditions · 30 trials per method and condition</p></div>
-        <div class="real-results-body"><p class="hardware-label">Galaxea A1Z · NVIDIA RTX 4080 SUPER</p><div id="real-world-comparison" class="table-scroll" tabindex="0" aria-label="Real-world performance comparison"></div><div id="real-world-notes" class="table-notes"></div></div>
-        <a class="text-link" href="assets/real-world-comparisons.csv" download>Download CSV ↓</a>
-      </div>
     </section>
 
     <section id="results" class="section results-section" aria-labelledby="results-heading">
       <div class="wrap">
-        <div class="section-heading academic-heading"><h2 id="results-heading"><span class="section-number" aria-hidden="true">05</span>Benchmark Comparisons</h2></div>
-        <div id="performance-figures" class="performance-figures" aria-label="Generalization and success-rate plots"></div><div id="performance-notes"></div>
-        <div class="pill-tabs result-tabs" role="tablist" aria-label="Benchmark breakdown"><button id="result-libero-tab" role="tab" aria-controls="result-panel" aria-selected="true" tabindex="0" data-benchmark="libero">LIBERO</button><button id="result-plus-tab" role="tab" aria-controls="result-panel" aria-selected="false" tabindex="-1" data-benchmark="plus">LIBERO-Plus</button><button id="result-robotwin-tab" role="tab" aria-controls="result-panel" aria-selected="false" tabindex="-1" data-benchmark="robotwin">RoboTwin 2.0</button><button id="result-robocasa-tab" role="tab" aria-controls="result-panel" aria-selected="false" tabindex="-1" data-benchmark="robocasa">RoboCasa24</button></div>
-        <div id="result-panel" class="comparison-panel" role="tabpanel" aria-labelledby="result-libero-tab" tabindex="0"><h3 id="benchmark-title"></h3><div id="benchmark-comparison" class="table-scroll" tabindex="0" aria-label="Benchmark comparison table, scroll horizontally on small screens"></div><div id="benchmark-notes" class="table-notes"></div></div>
-        <a class="text-link" href="assets/benchmark-comparisons.csv" download>Download CSV ↓</a>
+        <div class="section-heading academic-heading"><h2 id="results-heading">Performance</h2></div>
+        <div id="performance-charts" class="native-charts" aria-label="Interactive benchmark charts">
+          <article id="radar-chart" class="chart-card" aria-labelledby="radar-heading">
+            <header class="chart-heading"><h3 id="radar-heading">Success across six settings</h3><button class="chart-replay" type="button" aria-label="Replay radar chart animation" title="Replay animation">↻</button></header>
+            <div class="chart-legend"><span class="legend-ours">ThinkWAM</span><span class="legend-baseline">π0.5</span></div>
+            <div class="chart-stage"><p class="chart-loading">Loading chart…</p></div>
+          </article>
+          <article id="scatter-chart" class="chart-card" aria-labelledby="scatter-heading">
+            <header class="chart-heading"><h3 id="scatter-heading">ID–OOD generalization</h3><button class="chart-replay" type="button" aria-label="Replay scatter chart animation" title="Replay animation">↻</button></header>
+            <div class="chart-legend"><span class="legend-baseline">Non-JEPA</span><span class="legend-jepa">JEPA-based</span><span class="legend-ours">ThinkWAM</span></div>
+            <div class="chart-stage"><p class="chart-loading">Loading chart…</p></div>
+          </article>
+        </div>
       </div>
     </section>
 
     <section id="efficiency" class="section wrap" aria-labelledby="efficiency-heading">
       <div class="section-heading academic-heading"><h2 id="efficiency-heading"><span class="section-number" aria-hidden="true">06</span>Inference Efficiency</h2><p class="section-deck">Per action chunk · native model settings</p></div>
       <div id="efficiency-figures" class="efficiency-figures" aria-label="Inference latency plots"></div>
+    </section>
+
+    <section id="simulation-results" class="section simulation-results" aria-labelledby="simulation-heading">
+      <div class="wrap">
+        <div class="section-heading academic-heading"><h2 id="simulation-heading">Simulation Results</h2></div>
+        <div class="pill-tabs result-tabs" role="tablist" aria-label="Benchmark breakdown"><button id="result-libero-tab" role="tab" aria-controls="result-panel" aria-selected="true" tabindex="0" data-benchmark="libero">LIBERO</button><button id="result-plus-tab" role="tab" aria-controls="result-panel" aria-selected="false" tabindex="-1" data-benchmark="plus">LIBERO-Plus</button><button id="result-robotwin-tab" role="tab" aria-controls="result-panel" aria-selected="false" tabindex="-1" data-benchmark="robotwin">RoboTwin 2.0</button><button id="result-robocasa-tab" role="tab" aria-controls="result-panel" aria-selected="false" tabindex="-1" data-benchmark="robocasa">RoboCasa24</button></div>
+        <div id="result-panel" class="comparison-panel" role="tabpanel" aria-labelledby="result-libero-tab" tabindex="0"><h3 id="benchmark-title"></h3><div id="benchmark-comparison" class="table-scroll" tabindex="0" aria-label="Benchmark comparison table, scroll horizontally on small screens"></div></div>
+        <a class="text-link" href="assets/benchmark-comparisons.csv" download>Download CSV ↓</a>
+        <div class="simulation-timings">
       <h3 class="efficiency-subheading">Simulation latency & action chunks</h3>
       <div id="latency-comparison" class="table-scroll" tabindex="0" aria-label="Inference latency comparison table"></div>
       <div id="latency-notes" class="table-notes"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="real-world-results" class="section real-world-results" aria-labelledby="real-world-heading">
+      <div class="wrap">
+        <div class="section-heading academic-heading"><h2 id="real-world-heading"><span class="section-number" aria-hidden="true">04</span>Real-world Results</h2><p class="section-deck">3 OOD conditions · 30 trials per method and condition</p></div>
+        <div class="real-results-body"><p class="hardware-label">Galaxea A1Z · NVIDIA RTX 4080 SUPER</p><div id="real-world-comparison" class="table-scroll" tabindex="0" aria-label="Real-world performance comparison"></div></div>
+        <a class="text-link" href="assets/real-world-comparisons.csv" download>Download CSV ↓</a>
+      </div>
     </section>
 
     <section id="analysis" class="section analysis-section" aria-labelledby="analysis-heading">
-      <div class="wrap"><div class="section-heading academic-heading"><h2 id="analysis-heading"><span class="section-number" aria-hidden="true">07</span>Mechanism Analysis</h2></div><div id="mechanism-figures" class="mechanism-figures"></div><div id="analysis-notes"></div></div>
+      <div class="wrap"><div class="section-heading academic-heading"><h2 id="analysis-heading"><span class="section-number" aria-hidden="true">07</span>Mechanism Analysis</h2></div><div id="mechanism-figures" class="mechanism-figures"></div></div>
     </section>
 
-    <section id="resources" class="section resources-section wrap" aria-labelledby="resources-heading">
-      <h2 id="resources-heading">Resources</h2><p><a class="text-link" href="https://github.com/HaoyunT/Thinkwam" target="_blank" rel="noopener">GitHub project ↗</a> &nbsp; · &nbsp; <a class="text-link" href="https://huggingface.co/Adrain11/ThinkWAM" target="_blank" rel="noopener">Hugging Face model ↗</a></p>
-    </section>
     <section id="bibtex" class="section bibtex-section wrap" aria-labelledby="bibtex-heading"><div class="bibtex-header"><h2 id="bibtex-heading">BibTeX</h2><button id="copy-bibtex" type="button">Copy</button></div><pre><code id="bibtex-text">@misc{tang2026thinkwam,
   title  = {ThinkWAM: Rethinking Latent Futures for Action Refinement},
   author = {Tang, Haoyun and Deng, Baqiao and Zhou, Enjin and Tian, Songwen
@@ -154,7 +171,7 @@
 }</code></pre></section>
   </main>
 
-  <footer class="site-footer wrap"><a class="wordmark" href="#">ThinkWAM</a><p>Rethinking Latent Futures for Action Refinement</p><a href="https://github.com/ThinkWAM-Project/thinkwam-project.github.io" target="_blank" rel="noopener">Website source ↗</a></footer>
+  <footer class="site-footer"><div class="footer-inner wrap"><a class="wordmark" href="#">ThinkWAM</a><p>Rethinking Latent Futures for Action Refinement</p><a href="https://github.com/ThinkWAM-Project/thinkwam-project.github.io" target="_blank" rel="noopener">Website source ↗</a></div></footer>
   <dialog id="figure-dialog" aria-labelledby="figure-caption"><button id="close-figure" aria-label="Close enlarged figure">×</button><img id="figure-image" src="assets/mark.svg" alt=""><p id="figure-caption"></p></dialog>
   <noscript><p class="noscript-note">Enable JavaScript to browse video demonstrations and benchmark breakdowns. The project overview and method figure remain available above.</p></noscript>
 </body>

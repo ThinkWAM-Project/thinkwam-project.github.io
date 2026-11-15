@@ -138,7 +138,7 @@ function renderDemos(tab) {
   for (const demo of filtered) {
     const figure = el('figure', 'demo-card');
     const media = el('div', 'demo-video-wrap' + (type === 'simulation' ? ' simulation' : ''));
-    if (demo.aspect) media.style.aspectRatio = demo.aspect;
+    if (type !== 'real' && demo.aspect) media.style.aspectRatio = demo.aspect;
     const video = document.createElement('video'); video.controls = true; video.playsInline = true; video.muted = true; video.preload = 'metadata'; video.poster = demo.poster;
     video.setAttribute('aria-label', demo.title); const source = document.createElement('source'); source.src = demo.src; source.type = 'video/mp4'; video.append(source);
     const fallback = el('a', '', 'Download video'); fallback.href = demo.src; video.append(fallback);
@@ -175,7 +175,7 @@ function renderDemos(tab) {
             pendingPlayback = null;
             if (playing && video.isConnected) video.play().catch(() => {});
           }, {once: true, signal: switchController.signal});
-          media.style.aspectRatio = view.aspect || demo.aspect || "";
+          if (type !== 'real') media.style.aspectRatio = view.aspect || demo.aspect || "";
           video.poster = view.poster; source.src = view.src; fallback.href = view.src;
           video.setAttribute('aria-label', `${demo.title} — ${view.label}`); video.load();
         });
@@ -201,15 +201,6 @@ function renderDemos(tab) {
     figure.append(caption); (groupGrids.get(demo.group || '') || grid).append(figure);
   }
   if (!grid.children.length) grid.append(el('p', 'demo-empty', 'Demonstrations are being prepared.'));
-  const notes = document.querySelector('#demo-footnote');
-  const note = type === 'real' ? data.realVideoNote : (data.simulationNotes?.[selectedSimulationGroup] || data.simulationVideoNote);
-  notes.replaceChildren();
-  if (note) notes.append(el('p', '', note));
-  filtered.forEach(demo => {
-    const entry = el('p'); entry.append(el('strong', '', demo.title + '. '));
-    entry.append(document.createTextNode([demo.description, demo.duration].filter(Boolean).join(' · ')));
-    notes.append(entry);
-  });
 }
 const activateDemo = setupTabs(document.querySelector('[aria-label="Demonstration environment"]'), renderDemos);
 activateDemo(document.getElementById(demos.some(item => item.type === 'real') ? 'demo-real-tab' : 'demo-simulation-tab'));
@@ -222,7 +213,6 @@ function renderResults(tab) {
   const comparison = data.comparisons?.[tab.dataset.benchmark];
   if (comparison) {
     renderComparison(document.querySelector('#benchmark-comparison'), comparison);
-    renderNotes(document.querySelector('#benchmark-notes'), [benchmark.description, ...(comparison.notes || [])].filter(Boolean));
   }
   const bars = document.querySelector('#benchmark-bars'); if (!bars) return; bars.replaceChildren();
   benchmark.rows.forEach(row => {
@@ -300,15 +290,6 @@ function renderNotes(container, notes, label = 'Evaluation details') {
   container.append(details);
 }
 
-function renderFigureNotes(container, figures) {
-  if (!container || !figures?.length) return;
-  const details = el('details', 'content-details');
-  details.append(el('summary', '', 'Figure notes'));
-  figures.forEach(item => {
-    details.append(el('h4', '', item.title), el('p', '', item.caption));
-  });
-  container.append(details);
-}
 
 const activateResult = setupTabs(document.querySelector('.result-tabs'), renderResults); activateResult(document.querySelector('.result-tabs button'));
 
@@ -318,7 +299,6 @@ if (data.realWorldComparison) {
   const comparison = data.realWorldComparison;
   const columns = comparison.columns.filter(column => !column.hideWhenEmpty || comparison.rows.some(row => row[column.key] != null));
   renderComparison(document.querySelector('#real-world-comparison'), {...comparison, columns});
-  renderNotes(document.querySelector('#real-world-notes'), comparison.notes || []);
 }
 for (const metric of data.headlineMetrics || []) {
   const item = el('div');
@@ -357,10 +337,7 @@ function renderResearchFigures(selector, figures) {
     article.append(figure); container.append(article);
   }
 }
-renderResearchFigures('#performance-figures', data.performanceFigures);
 renderResearchFigures('#efficiency-figures', data.efficiencyFigures);
-renderFigureNotes(document.querySelector('#performance-notes'), data.performanceFigures);
-renderFigureNotes(document.querySelector('#analysis-notes'), data.mechanisms);
 const mechanismRoot = document.querySelector('#mechanism-figures');
 const mechanismGroups = new Map();
 const mechanismRows = new Map();
@@ -491,7 +468,7 @@ function enableSectionReveals() {
     document.querySelectorAll('.reveal-pending').forEach(node => node.classList.add('is-visible'));
     return;
   }
-  const selector = '.project-meta>.wrap, .academic-heading, .abstract-copy, .overview-composition, .method-section .paper-figure, .method-explanation, .demo-toolbar, #demo-panel, .real-results-body, .performance-figures, #result-panel, .efficiency-figures, #latency-comparison, .mechanism-row, .resources-section, .bibtex-section';
+  const selector = '.project-meta>.wrap, .academic-heading, .abstract-copy, .overview-composition, .method-section .paper-figure, .method-explanation, .demo-toolbar, #demo-panel, .real-results-body, .performance-figures, #result-panel, .efficiency-figures, #latency-comparison, .mechanism-row, .bibtex-section';
   const targets = [...document.querySelectorAll(selector)];
   revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -517,3 +494,16 @@ reducedMotion.addEventListener('change', () => {
 });
 enableSectionReveals();
 updateScrollExperience();
+
+// A short, staggered entrance keeps every hero group readable after the reveal.
+if (!reducedMotion.matches) {
+  const groups = document.querySelectorAll('.hero-kicker, .thinkwam-name, .hero-paper-title, .hero-lead, #authors, #affiliations, #author-notes, #institution-logos, .hero-cinematic .resource-links, .hero-bottom');
+  [...groups].filter(node => node.offsetParent !== null).forEach((node, index) => {
+    node.style.setProperty('--hero-delay', `${index * 85}ms`);
+    node.classList.add('hero-enter');
+    node.addEventListener('animationend', () => {
+      node.classList.remove('hero-enter');
+      node.style.removeProperty('--hero-delay');
+    }, {once: true});
+  });
+}

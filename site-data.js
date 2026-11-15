@@ -215,87 +215,183 @@ window.THINKWAM = {
   "demos": [
     {
       "type": "real",
-      "group": "Multiple target objects",
+      "group": "Standard setting",
       "title": "Fixed object layout",
       "description": "The green eraser and bottle are collected into the box.",
-      "src": "assets/videos/aiz-objects-static.mp4",
-      "poster": "assets/posters/aiz-objects-static.jpg",
+      "src": "assets/videos/aiz-objects-static-scene.mp4",
+      "poster": "assets/posters/aiz-objects-static-scene.jpg",
       "duration": "34.9 s · full recording",
       "source_record": "20261114_物体增多_2",
       "frame_count": 524,
       "fps": 15.0,
       "trimmed": false,
-      "human_target_intervention": false
+      "human_target_intervention": false,
+      "original_src": "assets/videos/aiz-objects-static.mp4",
+      "views": [
+        {
+          "key": "scene",
+          "label": "Scene view",
+          "src": "assets/videos/aiz-objects-static-scene.mp4",
+          "poster": "assets/posters/aiz-objects-static-scene.jpg"
+        },
+        {
+          "key": "wrist",
+          "label": "Wrist view",
+          "src": "assets/videos/aiz-objects-static-wrist.mp4",
+          "poster": "assets/posters/aiz-objects-static-wrist.jpg"
+        }
+      ],
+      "aspect": "4 / 3"
     },
     {
       "type": "real",
-      "group": "Multiple target objects",
+      "group": "Standard setting",
       "title": "Human target repositioning",
       "description": "The eraser and bottle are moved by hand during execution; the robot continues and stores both.",
-      "src": "assets/videos/aiz-objects-intervention.mp4",
-      "poster": "assets/posters/aiz-objects-intervention.jpg",
+      "src": "assets/videos/aiz-objects-intervention-scene.mp4",
+      "poster": "assets/posters/aiz-objects-intervention-scene.jpg",
       "duration": "41.2 s · full recording",
       "source_record": "20261114_物体增多_3",
       "frame_count": 618,
       "fps": 15.0,
       "trimmed": false,
-      "human_target_intervention": true
+      "human_target_intervention": true,
+      "original_src": "assets/videos/aiz-objects-intervention.mp4",
+      "views": [
+        {
+          "key": "scene",
+          "label": "Scene view",
+          "src": "assets/videos/aiz-objects-intervention-scene.mp4",
+          "poster": "assets/posters/aiz-objects-intervention-scene.jpg"
+        },
+        {
+          "key": "wrist",
+          "label": "Wrist view",
+          "src": "assets/videos/aiz-objects-intervention-wrist.mp4",
+          "poster": "assets/posters/aiz-objects-intervention-wrist.jpg"
+        }
+      ],
+      "aspect": "4 / 3"
     },
     {
       "type": "real",
       "group": "Effects of Multiple Distractors",
       "title": "Other-colored distractors",
       "description": "The green bottle and eraser are collected while the other-colored distractors remain on the table.",
-      "src": "assets/videos/aiz-distractors-static.mp4",
-      "poster": "assets/posters/aiz-distractors-static.jpg",
+      "src": "assets/videos/aiz-distractors-static-scene.mp4",
+      "poster": "assets/posters/aiz-distractors-static-scene.jpg",
       "duration": "24.5 s · full recording",
       "source_record": "20261114_异色干扰_1",
       "frame_count": 368,
       "fps": 15.0,
       "trimmed": false,
-      "human_target_intervention": false
+      "human_target_intervention": false,
+      "original_src": "assets/videos/aiz-distractors-static.mp4",
+      "views": [
+        {
+          "key": "scene",
+          "label": "Scene view",
+          "src": "assets/videos/aiz-distractors-static-scene.mp4",
+          "poster": "assets/posters/aiz-distractors-static-scene.jpg"
+        },
+        {
+          "key": "wrist",
+          "label": "Wrist view",
+          "src": "assets/videos/aiz-distractors-static-wrist.mp4",
+          "poster": "assets/posters/aiz-distractors-static-wrist.jpg"
+        }
+      ],
+      "aspect": "4 / 3"
     },
     {
       "type": "real",
       "group": "Effects of Multiple Distractors",
       "title": "Human interference among distractors",
       "description": "Two green erasers are repeatedly moved and rotated by hand; both are eventually collected into the box.",
-      "src": "assets/videos/aiz-distractors-intervention.mp4",
-      "poster": "assets/posters/aiz-distractors-intervention.jpg",
+      "src": "assets/videos/aiz-distractors-intervention-scene.mp4",
+      "poster": "assets/posters/aiz-distractors-intervention-scene.jpg",
       "duration": "59.0 s · full recording",
       "source_record": "20261114_异色干扰_3",
       "frame_count": 885,
       "fps": 15.0,
       "trimmed": false,
-      "human_target_intervention": true
+      "human_target_intervention": true,
+      "original_src": "assets/videos/aiz-distractors-intervention.mp4",
+      "views": [
+        {
+          "key": "scene",
+          "label": "Scene view",
+          "src": "assets/videos/aiz-distractors-intervention-scene.mp4",
+          "poster": "assets/posters/aiz-distractors-intervention-scene.jpg"
+        },
+        {
+          "key": "wrist",
+          "label": "Wrist view",
+          "src": "assets/videos/aiz-distractors-intervention-wrist.mp4",
+          "poster": "assets/posters/aiz-distractors-intervention-wrist.jpg"
+        }
+      ],
+      "aspect": "4 / 3"
     },
     {
       "type": "real",
       "group": "Lighting perturbation",
       "title": "Purple lighting with two objects",
       "description": "The green tissue packet and eraser are collected under purple illumination.",
-      "src": "assets/videos/aiz-lighting-two.mp4",
-      "poster": "assets/posters/aiz-lighting-two.jpg",
+      "src": "assets/videos/aiz-lighting-two-scene.mp4",
+      "poster": "assets/posters/aiz-lighting-two-scene.jpg",
       "duration": "21.9 s · full recording",
       "source_record": "20261114_紫光扰动_4",
       "frame_count": 329,
       "fps": 15.0,
       "trimmed": false,
-      "human_target_intervention": false
+      "human_target_intervention": false,
+      "original_src": "assets/videos/aiz-lighting-two.mp4",
+      "views": [
+        {
+          "key": "scene",
+          "label": "Scene view",
+          "src": "assets/videos/aiz-lighting-two-scene.mp4",
+          "poster": "assets/posters/aiz-lighting-two-scene.jpg"
+        },
+        {
+          "key": "wrist",
+          "label": "Wrist view",
+          "src": "assets/videos/aiz-lighting-two-wrist.mp4",
+          "poster": "assets/posters/aiz-lighting-two-wrist.jpg"
+        }
+      ],
+      "aspect": "4 / 3"
     },
     {
       "type": "real",
       "group": "Lighting perturbation",
       "title": "Purple lighting with three objects",
       "description": "The tissue packet, small green pouch, and eraser are collected under purple illumination.",
-      "src": "assets/videos/aiz-lighting-three.mp4",
-      "poster": "assets/posters/aiz-lighting-three.jpg",
+      "src": "assets/videos/aiz-lighting-three-scene.mp4",
+      "poster": "assets/posters/aiz-lighting-three-scene.jpg",
       "duration": "34.9 s · full recording",
       "source_record": "20261114_紫光扰动_3",
       "frame_count": 523,
       "fps": 15.0,
       "trimmed": false,
-      "human_target_intervention": false
+      "human_target_intervention": false,
+      "original_src": "assets/videos/aiz-lighting-three.mp4",
+      "views": [
+        {
+          "key": "scene",
+          "label": "Scene view",
+          "src": "assets/videos/aiz-lighting-three-scene.mp4",
+          "poster": "assets/posters/aiz-lighting-three-scene.jpg"
+        },
+        {
+          "key": "wrist",
+          "label": "Wrist view",
+          "src": "assets/videos/aiz-lighting-three-wrist.mp4",
+          "poster": "assets/posters/aiz-lighting-three-wrist.jpg"
+        }
+      ],
+      "aspect": "4 / 3"
     },
     {
       "type": "simulation",
@@ -585,7 +681,7 @@ window.THINKWAM = {
       "fps": 20.0
     }
   ],
-  "realVideoNote": "All six demonstrations use the same green-object tidying instruction. Two recordings include human target repositioning. The supplied camera views, every frame, and the full original playback timing are preserved. These selected qualitative demonstrations are separate from aggregate success-rate evaluation.",
+  "realVideoNote": "All six demonstrations use the same instruction. Two recordings include human target repositioning. Scene and wrist views preserve the complete camera panels and switch at the same point in each full trajectory. Videos retain the original playback speed. These selected qualitative demonstrations are separate from aggregate success-rate evaluation.",
   "comparisons": {
     "libero": {
       "title": "LIBERO",
@@ -1622,7 +1718,8 @@ window.THINKWAM = {
       "src": "assets/affordance_compact.png",
       "width": 2400,
       "height": 858,
-      "caption": "LIBERO observations paired with predicted affordance-head scores on a shared 0–1 scale. Dashed boxes mark task objects; circles locate score maxima. These are affordance predictions, not task-success probabilities. These LIBERO examples use the affordance branch; the RoboTwin setting disables it."
+      "caption": "LIBERO observations paired with predicted affordance-head scores on a shared 0–1 scale. Dashed boxes mark task objects; circles locate score maxima. These are affordance predictions, not task-success probabilities. These LIBERO examples use the affordance branch; the RoboTwin setting disables it.",
+      "row": "memory-and-horizons"
     },
     {
       "title": "Multi-horizon token allocation",
@@ -1630,7 +1727,8 @@ window.THINKWAM = {
       "width": 2400,
       "height": 1800,
       "caption": "Multi-horizon targets at t+7, t+15, and t+31 use 288, 144, and 72 query tokens. The top row contains recorded future observations; the middle row applies increasing blur to one crop to illustrate fine-to-coarse detail; the bottom row shows one cell per query token.",
-      "layout": "compact"
+      "layout": "compact",
+      "row": "memory-and-horizons"
     },
     {
       "title": "Action-conditioned latent correction",
@@ -1650,30 +1748,30 @@ window.THINKWAM = {
     {
       "title": "LIBERO & LIBERO-Plus: keyframe comparisons",
       "group": "Closed-loop Comparisons and Recoveries",
-      "src": "assets/libero_cases_01_06_gapless.png",
+      "src": "assets/libero_cases_01_06_grouped.png",
       "width": 2400,
-      "height": 1192,
+      "height": 1141,
       "pages": [
         {
           "label": "Cases 1–6",
-          "src": "assets/libero_cases_01_06_gapless.png",
+          "src": "assets/libero_cases_01_06_grouped.png",
           "width": 2400,
-          "height": 1192
+          "height": 1141
         },
         {
           "label": "Cases 7–12",
-          "src": "assets/libero_cases_07_12_gapless.png",
+          "src": "assets/libero_cases_07_12_grouped.png",
           "width": 2400,
-          "height": 1235
+          "height": 1182
         }
       ],
       "caption": "Twelve selected LIBERO-family cases compare proposal-only and refined execution from matched starts. Each card shows the interaction and outcome of both branches; circles identify the task object. Timestamps refer to the two independent trajectories. These examples do not measure how often refinement recovers a failure."
     },
     {
       "title": "RoboTwin: keyframe comparisons",
-      "src": "assets/robotwin_cases_01_04_gapless.png",
+      "src": "assets/robotwin_cases_01_04_grouped.png",
       "width": 2400,
-      "height": 800,
+      "height": 766,
       "caption": "Four selected RoboTwin tasks compare proposal-only execution with refinement from matched starts: a toy car into a basket, a cup onto a coaster, striking a block with a hammer, and aligning a shoe. Each task shows an interaction and final outcome for both branches; circles identify the interaction region. These selected cases do not measure how often refinement recovers a failure.",
       "group": "Closed-loop Comparisons and Recoveries"
     }

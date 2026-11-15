@@ -80,10 +80,16 @@ setupTabs(document.querySelector('.method-tabs'), (_, index) => {
 const demos = data.demos || [];
 document.querySelector('#demo-instruction-text').textContent = data.realTaskInstruction || 'Put the green objects into the nearby box.';
 let selectedSimulationGroup = 'LIBERO / LIBERO-Plus';
+let selectedRealGroup = 'Standard setting';
 const simulationFilters = document.querySelector('#simulation-filters');
+const realFilters = document.querySelector('#real-filters');
 simulationFilters.querySelectorAll('button').forEach(button => button.addEventListener('click', () => {
   selectedSimulationGroup = button.dataset.simulationGroup;
   renderDemos(document.getElementById('demo-simulation-tab'));
+}));
+realFilters.querySelectorAll('button').forEach(button => button.addEventListener('click', () => {
+  selectedRealGroup = button.dataset.realGroup;
+  renderDemos(document.getElementById('demo-real-tab'));
 }));
 document.querySelector('#real-count').textContent = demos.filter(demo => demo.type === 'real').length || '';
 document.querySelector('#simulation-count').textContent = demos.filter(demo => demo.type === 'simulation').length || '';
@@ -91,18 +97,21 @@ function renderDemos(tab) {
   const type = tab.dataset.demoFilter;
   document.querySelectorAll('#demo-grid video').forEach(video => video.pause());
   const grid = document.querySelector('#demo-grid'); grid.replaceChildren();
-  const filtered = demos.filter(item => item.type === type && (type !== 'simulation' || item.group === selectedSimulationGroup));
+  const selectedGroup = type === 'real' ? selectedRealGroup : selectedSimulationGroup;
+  const filtered = demos.filter(item => item.type === type && item.group === selectedGroup);
   document.querySelector('#demo-instruction').hidden = type !== 'real';
   grid.dataset.environment = type;
   simulationFilters.hidden = type !== 'simulation';
+  realFilters.hidden = type !== 'real';
   simulationFilters.querySelectorAll('button').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.simulationGroup === selectedSimulationGroup)));
+  realFilters.querySelectorAll('button').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.realGroup === selectedRealGroup)));
   const groupNames = [...new Set(filtered.map(item => item.group || ''))];
   const groupGrids = new Map();
   grid.classList.toggle('grouped-gallery', groupNames.some(Boolean));
   if (groupNames.some(Boolean)) {
     groupNames.forEach(name => {
       const group = el('section', 'demo-group');
-      if (name && type === 'real') group.append(el('h3', 'demo-group-title', name));
+      if (name && type === 'real' && groupNames.length > 1) group.append(el('h3', 'demo-group-title', name));
       const groupGrid = el('div', 'demo-group-grid' + (type === 'real' ? ' real-group-grid' : ' simulation-group-grid'));
       if (filtered.filter(item => (item.group || '') === name).length === 1) groupGrid.classList.add('single-demo');
       if (filtered.filter(item => (item.group || '') === name).length === 4) groupGrid.classList.add('paired-grid');
@@ -254,6 +263,7 @@ if (data.realWorldComparison) {
 }
 const mechanismRoot = document.querySelector('#mechanism-figures');
 const mechanismGroups = new Map();
+const mechanismRows = new Map();
 for (const item of data.mechanisms || []) {
   let parent = mechanismRoot;
   if (item.group) {
@@ -262,6 +272,12 @@ for (const item of data.mechanisms || []) {
       mechanismRoot.append(group); mechanismGroups.set(item.group, group);
     }
     parent = mechanismGroups.get(item.group);
+  } else if (item.row) {
+    if (!mechanismRows.has(item.row)) {
+      const row = el('div', 'mechanism-row');
+      mechanismRoot.append(row); mechanismRows.set(item.row, row);
+    }
+    parent = mechanismRows.get(item.row);
   }
   const article = el('article', 'mechanism-item');
   if (item.layout) article.dataset.figureLayout = item.layout;

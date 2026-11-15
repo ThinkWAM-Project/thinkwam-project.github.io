@@ -227,3 +227,32 @@ body{font-family:var(--sans);-webkit-font-smoothing:antialiased}
   .simulation-group-grid .demo-card h3{font-size:14px}
   .demo-group-grid.real-group-grid{gap:22px}
 }
+
+/* One shared real-world task, with complete camera panels and scene tabs. */
+.real-filters{max-width:900px;gap:27px;margin-bottom:24px}
+.real-filters button{font-size:13px}
+.demo-group-grid.real-group-grid{max-width:900px;gap:28px}
+.real-group-grid .demo-video-wrap{aspect-ratio:4/3}
+.real-group-grid .demo-caption-line>span{display:none}
+.real-group-grid .demo-card h3{font-size:15px}
+.real-group-grid .demo-card p{font-size:12px;line-height:1.7;max-width:420px}
+.real-group-grid .camera-switcher{margin-top:10px;gap:24px}
+.real-group-grid .camera-switcher button{font-size:12px}
+
+/* Memory and horizon allocation share a row before latent correction. */
+.mechanism-row{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:36px;max-width:1000px;margin-inline:auto;width:100%}
+.mechanism-row .mechanism-item{min-width:0}
+.mechanism-row .mechanism-item h3{font-size:19px;margin-bottom:16px}
+.mechanism-row .mechanism-item .zoomable{display:flex;align-items:center;justify-content:center;width:100%;max-width:none;height:260px}
+.mechanism-row .mechanism-item img{width:100%;height:100%;max-height:260px;object-fit:contain}
+.mechanism-row .mechanism-item figcaption{max-width:100%;margin-top:14px;font-size:11px;line-height:1.75}
+@media(max-width:760px){
+  .real-filters{max-width:600px;gap:10px 20px}
+  .real-filters button{font-size:11px;padding-block:8px 10px}
+  .demo-group-grid.real-group-grid{max-width:500px;gap:26px}
+  .real-group-grid .demo-card p{font-size:11px}
+  .mechanism-row{grid-template-columns:1fr;gap:30px;max-width:620px}
+  .mechanism-row .mechanism-item .zoomable{height:auto}
+  .mechanism-row .mechanism-item img{height:auto;max-height:320px}
+  .mechanism-row .mechanism-item[data-figure-layout="compact"] .zoomable{width:min(100%,360px)}
+}

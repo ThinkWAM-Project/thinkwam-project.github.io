@@ -10,10 +10,11 @@ main > .section:not(.resources-section):not(.bibtex-section) { padding-block: 42
 .overview-caption { margin-top: 12px; font-size: 12px; line-height: 1.65; }
 .paper-figure figcaption { margin-top: 12px; font-size: 12.5px; line-height: 1.65; }
 
-/* Quiet section bands keep white source figures legible and group related evidence. */
-.method-section, .results-section, .analysis-section { background: #f6f7fa; border-color: #e7eaf1; }
-.method-section .paper-figure { max-width: 940px; }
-.method-section .paper-figure > .zoomable { padding: 14px; border: 1px solid #e5e8f0; border-radius: 10px; }
+/* White content surfaces let the source artwork sit directly on the page. */
+body, main > .section { background: #fff; }
+.method-section, .results-section, .analysis-section { background: #fff; border-color: #e7eaf1; }
+.method-section .paper-figure { max-width: 1060px; }
+.method-section .paper-figure > .zoomable { padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
 .method-explanation { margin-top: 22px; gap: 28px; font-size: 17px; line-height: 1.65; }
 .method-explanation p { border-color: #d1d8eb; padding-top: 12px; }
 .method-explanation strong { margin-bottom: 8px; font-size: 22px; }
@@ -23,12 +24,12 @@ main > .section:not(.resources-section):not(.bibtex-section) { padding-block: 42
 .demo-toolbar .demo-context { width: auto; text-align: right; color: #5d6779; font-size: 15px; }
 .section .pill-tabs { gap: 5px; }
 .section .pill-tabs > button { padding: 8px 15px; border-radius: 7px; font-size: 13px; }
-#demo-panel { padding: 22px; border: 1px solid #e5e8ef; border-radius: 12px; background: #f7f8fb; }
+#demo-panel { padding: 0; border: 0; border-radius: 0; background: transparent; }
 .real-task-description { margin-bottom: 12px; font-size: 17px; line-height: 1.6; }
 .simulation-filters { margin-bottom: 18px; gap: 24px; }
 .simulation-filters button { padding-block: 8px 10px; }
-.demo-group-grid.real-group-grid { gap: 24px; }
-.demo-group-grid.simulation-group-grid { max-width: none; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 18px; }
+.demo-group-grid.real-group-grid { max-width: none; gap: 24px; }
+.demo-group-grid.simulation-group-grid { max-width: none; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; }
 .demo-card figcaption { padding: 13px 1px 3px; }
 .demo-caption-line { margin-bottom: 3px; }
 .demo-card h3 { font-size: 18px; line-height: 1.4; letter-spacing: -.25px; }
@@ -81,7 +82,7 @@ main > .section:not(.resources-section):not(.bibtex-section) { padding-block: 42
 .bibtex-section pre { padding: 20px; font-size: 12px; line-height: 1.65; }
 
 @media (max-width: 1000px) {
-  .demo-group-grid.simulation-group-grid { grid-template-columns: repeat(2,minmax(0,1fr)); max-width: 660px; }
+  .demo-group-grid.simulation-group-grid { grid-template-columns: repeat(2,minmax(0,1fr)); max-width: none; }
   .performance-figures { gap: 18px; padding: 16px; }
   .mechanism-row { gap: 22px; padding: 18px; }
 }
@@ -94,14 +95,12 @@ main > .section:not(.resources-section):not(.bibtex-section) { padding-block: 42
   .abstract-copy { grid-template-columns: 1fr; gap: 14px; margin-bottom: 20px; font-size: 18px; line-height: 1.65; }
   .overview-composition { gap: 22px; }
   .overview-caption, .paper-figure figcaption { font-size: 12px; line-height: 1.65; }
-  .method-section .paper-figure > .zoomable { padding: 8px; border-radius: 8px; }
   .method-explanation { gap: 16px; margin-top: 18px; font-size: 16px; }
   .method-explanation p { padding-top: 10px; }
   .method-explanation strong { font-size: 21px; }
   .demo-toolbar { justify-content: flex-start; gap: 10px; }
   .demo-toolbar .demo-context { width: 100%; text-align: left; font-size: 14px; }
   .section .pill-tabs > button { font-size: 12px; padding: 8px 12px; }
-  #demo-panel { padding: 14px; border-radius: 9px; }
   .real-task-description { font-size: 16px; text-align: left; }
   .simulation-filters { justify-content: flex-start; gap: 8px 16px; margin-bottom: 16px; }
   .simulation-filters button { font-size: 12px; }
@@ -132,11 +131,11 @@ main > .section:not(.resources-section):not(.bibtex-section) { padding-block: 42
   .mechanism-row[data-mechanism-row="keyframe-comparisons"] figcaption { margin-top: 10px; }
 }
 @media (max-width: 560px) {
-  .demo-group-grid.simulation-group-grid { grid-template-columns: 1fr; max-width: 340px; }
+  .demo-group-grid.simulation-group-grid { grid-template-columns: 1fr; max-width: none; }
 }
 
 /* Clear controls and a restrained second surface for the demonstration cards. */
-.performance-figures, .comparison-panel, .efficiency-figures, .mechanism-row, #demo-panel {
+.performance-figures, .comparison-panel, .efficiency-figures, .mechanism-row {
   box-shadow: 0 7px 24px #27355209, 0 1px 3px #27355206;
 }
 .demo-toolbar { padding-bottom: 0; border-bottom: 1px solid #e1e5ec; }
@@ -243,7 +242,7 @@ main > .section:not(.resources-section):not(.bibtex-section) { padding-block: 42
 .project-meta .headline-metrics dd { font-size: clamp(23px,2.15vw,31px); }
 .real-group-grid .demo-video-wrap { aspect-ratio: 11 / 10; background: #edf0f4; }
 .real-group-grid .demo-video-wrap video { object-fit: contain; }
-.simulation-results { background: #f6f7fa; border-block: 1px solid #e7eaf1; }
+.simulation-results { background: #fff; border-block: 1px solid #e7eaf1; }
 .simulation-timings { margin-top: 30px; padding-top: 25px; border-top: 1px solid #dde3ed; }
 #efficiency .efficiency-figures { margin-bottom: 0; }
 @media (min-width:761px) and (max-width:1100px) {
@@ -268,6 +267,7 @@ main > .section:not(.resources-section):not(.bibtex-section) { padding-block: 42
   from { opacity: 0; transform: translateY(12px); filter: blur(3px); }
   to { opacity: 1; transform: translateY(0); filter: blur(0); }
 }
+.metric-pending { opacity: 0; }
 .hero-enter { animation: hero-enter .85s cubic-bezier(.22,1,.36,1) var(--hero-delay,0ms) both; }
 .hero-enter:focus-within { animation: none; }
 .site-footer { display: block; width: 100%; margin: 36px 0 0; padding: 34px 0; border: 0; background: #111216; color: #b7bcc9; }
@@ -282,5 +282,6 @@ main > .section:not(.resources-section):not(.bibtex-section) { padding-block: 42
   .footer-inner > p { max-width: 320px; font-size: 15px; }
 }
 @media (prefers-reduced-motion:reduce) {
+  .metric-pending { opacity: 1; }
   .hero-enter { animation: none; }
 }

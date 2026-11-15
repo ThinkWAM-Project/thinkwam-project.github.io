@@ -280,21 +280,9 @@ function renderComparison(container, comparison) {
   table.append(body); container.replaceChildren(table);
 }
 
-function renderNotes(container, notes, label = 'Evaluation details') {
-  if (!container) return;
-  container.replaceChildren();
-  if (!notes.length) return;
-  const details = el('details', 'content-details');
-  details.append(el('summary', '', label));
-  notes.forEach(note => details.append(el('p', '', note)));
-  container.append(details);
-}
-
-
 const activateResult = setupTabs(document.querySelector('.result-tabs'), renderResults); activateResult(document.querySelector('.result-tabs button'));
 
 renderComparison(document.querySelector('#latency-comparison'), data.latency);
-renderNotes(document.querySelector('#latency-notes'), [...(data.efficiencyFigures || []).map(item => item.caption), ...(data.latency?.notes || [])], 'Timing details');
 if (data.realWorldComparison) {
   const comparison = data.realWorldComparison;
   const columns = comparison.columns.filter(column => !column.hideWhenEmpty || comparison.rows.some(row => row[column.key] != null));
@@ -468,7 +456,7 @@ function enableSectionReveals() {
     document.querySelectorAll('.reveal-pending').forEach(node => node.classList.add('is-visible'));
     return;
   }
-  const selector = '.project-meta>.wrap, .academic-heading, .abstract-copy, .overview-composition, .method-section .paper-figure, .method-explanation, .demo-toolbar, #demo-panel, .real-results-body, .performance-figures, #result-panel, .efficiency-figures, #latency-comparison, .mechanism-row, .bibtex-section';
+  const selector = '.academic-heading, .abstract-copy, .overview-composition, .method-section .paper-figure, .method-explanation, .demo-toolbar, #demo-panel, .real-results-body, .performance-figures, #result-panel, .efficiency-figures, #latency-comparison, .mechanism-row, .bibtex-section';
   const targets = [...document.querySelectorAll(selector)];
   revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -495,15 +483,36 @@ reducedMotion.addEventListener('change', () => {
 enableSectionReveals();
 updateScrollExperience();
 
-// A short, staggered entrance keeps every hero group readable after the reveal.
+// A short entrance shared by the hero text and each headline metric.
+function revealIntroItem(node, delay) {
+  node.style.setProperty('--hero-delay', `${delay}ms`);
+  node.classList.remove('metric-pending');
+  node.classList.add('hero-enter');
+  node.addEventListener('animationend', () => {
+    node.classList.remove('hero-enter');
+    node.style.removeProperty('--hero-delay');
+  }, {once: true});
+}
 if (!reducedMotion.matches) {
   const groups = document.querySelectorAll('.hero-kicker, .thinkwam-name, .hero-paper-title, .hero-lead, #authors, #affiliations, #author-notes, #institution-logos, .hero-cinematic .resource-links, .hero-bottom');
-  [...groups].filter(node => node.offsetParent !== null).forEach((node, index) => {
-    node.style.setProperty('--hero-delay', `${index * 85}ms`);
-    node.classList.add('hero-enter');
-    node.addEventListener('animationend', () => {
-      node.classList.remove('hero-enter');
-      node.style.removeProperty('--hero-delay');
-    }, {once: true});
-  });
+  [...groups].filter(node => node.offsetParent !== null).forEach((node, index) => revealIntroItem(node, index * 85));
+  if ('IntersectionObserver' in window) {
+    const metrics = [...document.querySelectorAll('#headline-metrics > div')];
+    const metricObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        revealIntroItem(entry.target, metrics.indexOf(entry.target) * 85);
+        metricObserver.unobserve(entry.target);
+      });
+    }, {threshold: .15, rootMargin: '0px 0px -12px 0px'});
+    metrics.forEach(node => { node.classList.add('metric-pending'); metricObserver.observe(node); });
+    reducedMotion.addEventListener('change', () => {
+      if (!reducedMotion.matches) return;
+      metricObserver.disconnect();
+      metrics.forEach(node => {
+        node.classList.remove('metric-pending', 'hero-enter');
+        node.style.removeProperty('--hero-delay');
+      });
+    });
+  }
 }

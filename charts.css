@@ -1,6 +1,6 @@
 /* Charts are drawn from source values as interactive DOM/SVG, not image assets. */
 .native-charts { display: grid; grid-template-columns: 1fr 1.25fr; gap: 20px; }
-.chart-card { min-width: 0; position: relative; padding: 20px; border: 1px solid #e2e7ef; border-radius: 14px; background: linear-gradient(155deg,#fff,#fdfdff); box-shadow: 0 7px 24px #27355209, 0 1px 3px #27355206; }
+.chart-card { min-width: 0; position: relative; padding: 20px; border: 1px solid #e2e7ef; border-radius: 14px; background: #fff; box-shadow: 0 7px 24px #27355209, 0 1px 3px #27355206; }
 .chart-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .chart-heading h3 { margin: 0; font-size: 20px; font-weight: 700; line-height: 1.35; letter-spacing: -.4px; color: #2f3a50; }
 .chart-replay { display: grid; place-items: center; flex: 0 0 30px; width: 30px; height: 30px; padding: 0; border: 1px solid #e3e7ef; border-radius: 50%; background: #fff; color: #61718c; font-size: 21px; line-height: 1; }

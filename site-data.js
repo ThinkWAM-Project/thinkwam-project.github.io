@@ -218,6 +218,19 @@ window.THINKWAM = {
     },
     {
       "type": "real",
+      "group": "Standard setting",
+      "title": "Sequential object collection",
+      "description": "The robot sequentially places the green eraser and bottle into the box.",
+      "src": "assets/videos/real-standard-static.mp4",
+      "poster": "assets/posters/real-standard-static.jpg",
+      "duration": "34.9 s · full recording",
+      "source_record": "arm_model_20261114_224007_174656_63440",
+      "frame_count": 524,
+      "fps": 15.0,
+      "trimmed": false
+    },
+    {
+      "type": "real",
       "group": "Lighting perturbation",
       "title": "Colored lighting",
       "description": "The robot places the tissue packet and eraser into the box under colored illumination.",
@@ -1607,10 +1620,11 @@ window.THINKWAM = {
       "src": "assets/horizon_token_allocation_75k.png",
       "width": 2400,
       "height": 1800,
-      "caption": "Multi-horizon targets at t+7, t+15, and t+31 use 288, 144, and 72 query tokens. The top row contains recorded future observations; the middle row applies increasing blur to one crop to illustrate fine-to-coarse detail; the bottom row shows one cell per query token."
+      "caption": "Multi-horizon targets at t+7, t+15, and t+31 use 288, 144, and 72 query tokens. The top row contains recorded future observations; the middle row applies increasing blur to one crop to illustrate fine-to-coarse detail; the bottom row shows one cell per query token.",
+      "layout": "compact"
     },
     {
-      "title": "LIBERO & LIBERO-Plus",
+      "title": "LIBERO & LIBERO-Plus: trajectories",
       "src": "assets/closed_loop_action_comparison.png",
       "width": 2400,
       "height": 912,
@@ -1618,7 +1632,29 @@ window.THINKWAM = {
       "group": "Closed-loop Comparisons and Recoveries"
     },
     {
-      "title": "RoboTwin 2.0",
+      "title": "LIBERO & LIBERO-Plus: keyframe comparisons",
+      "group": "Closed-loop Comparisons and Recoveries",
+      "src": "assets/libero_recoveries_1.png",
+      "width": 2400,
+      "height": 1296,
+      "pages": [
+        {
+          "label": "Cases 1–6",
+          "src": "assets/libero_recoveries_1.png",
+          "width": 2400,
+          "height": 1296
+        },
+        {
+          "label": "Cases 7–12",
+          "src": "assets/libero_recoveries_2.png",
+          "width": 2400,
+          "height": 1296
+        }
+      ],
+      "caption": "Twelve selected LIBERO-family cases compare proposal-only and refined execution from matched starts. Each card shows the interaction and outcome of both branches; circles identify the task object. Timestamps refer to the two independent trajectories. These examples do not measure how often refinement recovers a failure."
+    },
+    {
+      "title": "RoboTwin: keyframe comparisons",
       "src": "assets/robotwin_recoveries_compact.png",
       "width": 2400,
       "height": 731,
@@ -1680,6 +1716,14 @@ window.THINKWAM = {
         "label": "RoboTwin 2.0",
         "unit": "ms",
         "direction": "lower"
+      },
+      {
+        "key": "libero_chunk",
+        "label": "LIBERO chunk"
+      },
+      {
+        "key": "robotwin_chunk",
+        "label": "RoboTwin chunk"
       },
       {
         "key": "real_mean_ms",
@@ -1762,17 +1806,12 @@ window.THINKWAM = {
       "Real-world: all three reported methods were measured on the same RTX 4080 SUPER. A dash indicates that no result is reported.",
       "Methods retain their native chunk shapes and integration settings. These are model-call timings; simulator rendering and initialization are excluded.",
       "Inputs use synthetic RGB/state with real task instructions. All timed samples are retained.",
-      "Implementation and timing boundaries differ: ThinkWAM uses a compiled action core and CUDA Graph, while π0.5 uses PyTorch eager. ThinkWAM instruction encoding is outside the timed interval.",
-      "Native action chunks (LIBERO / RoboTwin): LaWAM — 8 × 32 (7 native) / 36 × 32 (16 native EEF).",
-      "Native action chunks (LIBERO / RoboTwin): π0.5 — 50 × 7 / 50 × 14 (32 padded).",
-      "Native action chunks (LIBERO / RoboTwin): OpenWAM-α — 32 × 10 EEF / 32 × 20 EEF.",
-      "Native action chunks (LIBERO / RoboTwin): FastWAM — 32 × 7 / 32 × 14.",
-      "Native action chunks (LIBERO / RoboTwin): ThinkWAM — 16 × 7 / 32 × 14."
+      "Implementation and timing boundaries differ: ThinkWAM uses a compiled action core and CUDA Graph, while π0.5 uses PyTorch eager. ThinkWAM instruction encoding is outside the timed interval."
     ],
     "columnGroups": [
       {
         "label": "Simulation · NVIDIA A100 80GB",
-        "span": 2
+        "span": 4
       },
       {
         "label": "Real-world · RTX 4080 SUPER",

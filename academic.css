@@ -106,3 +106,54 @@ body{font-family:var(--sans);-webkit-font-smoothing:antialiased}
 .comparison-table tr td.pt-yes{color:rgb(0,166,79)}.comparison-table tr td.pt-no{color:rgb(232,150,122)}
 @media(max-width:760px){.mechanism-item figcaption{max-width:92%}.comparison-table tr td.pretraining-indicator{font-size:17px}}
 @media(max-width:560px){.mechanism-item .zoomable{width:100%}.mechanism-item figcaption{max-width:100%}}
+.figure-pagination{display:flex;justify-content:center;gap:20px;margin:15px 0 4px}
+.figure-pagination button{font:inherit;font-size:12px;color:#7c8891;background:none;border:0;border-bottom:1px solid transparent;padding:5px 1px;cursor:pointer}
+.figure-pagination button[aria-pressed=true]{color:#315f7c;border-bottom-color:#315f7c}
+.figure-pagination button:hover{color:#315f7c}
+
+/* Shared paper-table styling: quiet rules, aligned values, and a distinct result row. */
+.table-scroll{border-top:2px solid #596974;border-bottom:2px solid #596974;background:#fff}
+.table-scroll:focus-visible{outline:2px solid #8aa7bb;outline-offset:4px}
+.comparison-table{font-size:12.5px;line-height:1.5}
+.comparison-table th{padding:10px 12px;color:#435560;background:#f5f7f9;border-bottom:1px solid #c8d2da}
+.comparison-table td{padding:9px 12px;border-bottom:1px solid #e9eef2;color:#47545e}
+.comparison-table tbody tr:not(.group-row):nth-child(even) td{background:#fafbfd}
+.comparison-table tbody tr.ours td{background:#eaf2f7;border-top:1px solid #c1d2df;color:#294c65}
+.comparison-table tbody tr.ours td:first-child{box-shadow:inset 3px 0 #587f9a}
+.comparison-table tbody tr td.pt-yes{color:rgb(0,166,79)}
+.comparison-table tbody tr td.pt-no{color:rgb(232,150,122)}
+.comparison-table td:first-child,.comparison-table th:first-child{min-width:150px}
+.comparison-table .numeric-column{text-align:right;font-variant-numeric:tabular-nums}
+.comparison-table .average-column{border-left:1px solid #e1e8ed;font-weight:600}
+.comparison-table .group-row td{background:#f3f6f8!important;border-bottom:1px solid #e4eaee;font-size:10.5px;font-style:normal;color:#74828d;padding:6px 12px}
+.comparison-table .best{font-weight:750;color:#253e50}
+.comparison-table .second{text-underline-offset:3px;text-decoration-thickness:1px}
+.comparison-table .column-unit{display:block;font-size:10px;font-weight:400;color:#7a8790;line-height:1.3}
+.comparison-table .chunk-column{text-align:center;font-size:11px;font-weight:400}
+.comparison-table th.chunk-column{font-weight:600}
+.comparison-table .chunk-shape{display:block;white-space:nowrap}
+.comparison-table .chunk-detail{display:block;font-size:9.5px;font-weight:400;color:#81909b;line-height:1.35;margin-top:1px}
+.comparison-table .group-start{border-left:1px solid #ccd9e2}
+.comparison-table.has-grouped-head thead tr:first-child th{padding:9px 10px;font-size:11px;line-height:1.4}
+.comparison-table.has-grouped-head thead tr:last-child th{padding:7px 10px}
+.comparison-table.has-grouped-head thead tr:last-child th:first-child{text-align:right}
+.comparison-table.has-grouped-head thead tr:first-child th:last-child{background:#edf3f7;border-left:1px solid #ccd9e2}
+#latency-comparison,#latency-notes{max-width:900px;margin-left:auto;margin-right:auto}
+#latency-comparison .comparison-table{font-size:12px}
+#latency-comparison .comparison-table td{padding:8px 10px}
+#latency-comparison .comparison-table td:first-child,#latency-comparison .comparison-table th[rowspan]{min-width:112px}
+#latency-notes{font-size:11px;line-height:1.75}
+#latency-notes summary{font-size:11px}
+.mechanism-item[data-figure-layout="compact"] .zoomable{width:76%;max-width:480px}
+.mechanism-item[data-figure-layout="compact"] img{max-height:360px}
+.mechanism-item[data-figure-layout="compact"] figcaption{max-width:640px}
+@media(hover:hover){.comparison-table tbody tr:not(.group-row):not(.ours):hover td{background:#f1f5f8}}
+@media(max-width:760px){
+  .comparison-table{font-size:11px}.comparison-table th,.comparison-table td{padding:8px 9px}
+  .comparison-table td:first-child,.comparison-table th:first-child{min-width:132px}
+  #latency-comparison .comparison-table{min-width:680px;font-size:11px}
+  #latency-comparison .comparison-table td{padding:7px 9px}
+  .comparison-table .chunk-column{font-size:10.5px}
+  .comparison-table.has-grouped-head thead tr:first-child th{font-size:10.5px;padding:8px 9px}
+}
+@media(max-width:560px){.mechanism-item[data-figure-layout="compact"] .zoomable{width:92%}}

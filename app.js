@@ -170,6 +170,18 @@ function renderComparison(container, comparison) {
   const table = el('table', 'comparison-table');
   const caption = el('caption', 'sr-only', comparison.title); table.append(caption);
   const head = el('thead'); const header = el('tr');
+  const groupStarts = new Set();
+  let groupOffset = 1;
+  comparison.columnGroups?.forEach((group, index) => {
+    if (index > 0) groupStarts.add(groupOffset);
+    groupOffset += group.span;
+  });
+  const styleColumn = (cell, column, index) => {
+    if (column.unit || column.key === 'demos_per_task') cell.classList.add('numeric-column');
+    if (column.key.endsWith('_chunk')) cell.classList.add('chunk-column');
+    if (column.key === 'average') cell.classList.add('average-column');
+    if (groupStarts.has(index)) cell.classList.add('group-start');
+  };
   if (comparison.columnGroups) {
     table.classList.add('has-grouped-head');
     const groups = el('tr'); const method = el('th', '', comparison.columns[0].label);
@@ -177,7 +189,12 @@ function renderComparison(container, comparison) {
     comparison.columnGroups.forEach(group => {const cell = el('th', '', group.label); cell.colSpan = group.span; cell.scope = 'colgroup'; groups.append(cell);});
     head.append(groups);
   }
-  (comparison.columnGroups ? comparison.columns.slice(1) : comparison.columns).forEach(column => { const cell = el('th', '', column.label + (column.unit === 'ms' ? ' (ms)' : '')); cell.scope = 'col'; header.append(cell); });
+  comparison.columns.forEach((column, index) => {
+    if (comparison.columnGroups && index === 0) return;
+    const cell = el('th', '', column.label); cell.scope = 'col'; styleColumn(cell, column, index);
+    if (column.unit === 'ms') cell.append(el('span', 'column-unit', ' (ms)'));
+    header.append(cell);
+  });
   head.append(header); table.append(head); const body = el('tbody');
   let lastGroup = null;
   comparison.rows.forEach(row => {
@@ -185,8 +202,16 @@ function renderComparison(container, comparison) {
       const groupRow = el('tr', 'group-row'); const cell = el('td', '', row.group); cell.colSpan = comparison.columns.length; groupRow.append(cell); body.append(groupRow); lastGroup = row.group;
     }
     const tr = el('tr', row.is_ours ? 'ours' : '');
-    comparison.columns.forEach(column => {
+    comparison.columns.forEach((column, index) => {
       const value = row[column.key]; const td = el('td', '', value == null ? '—' : String(value));
+      styleColumn(td, column, index);
+      if (column.key.endsWith('_chunk') && typeof value === 'string') {
+        const parts = value.match(/^(.*?)\s+\(([^)]+)\)$/);
+        if (parts) {
+          td.replaceChildren(el('span', 'chunk-shape', parts[1]), el('small', 'chunk-detail', ` (${parts[2]})`));
+          td.setAttribute('aria-label', value);
+        }
+      }
       if (column.key === 'action_pretraining' && ['Yes', 'No'].includes(value)) {
         td.textContent = value === 'Yes' ? '✓' : '✗'; td.classList.add('pretraining-indicator', value === 'Yes' ? 'pt-yes' : 'pt-no');
         td.setAttribute('aria-label', value); td.title = value === 'Yes' ? 'With action pretraining' : 'Without action pretraining';
@@ -221,10 +246,27 @@ for (const item of data.mechanisms || []) {
     }
     parent = mechanismGroups.get(item.group);
   }
-  const article = el('article', 'mechanism-item'); article.append(el(item.group ? 'h4' : 'h3', '', item.title));
+  const article = el('article', 'mechanism-item');
+  if (item.layout) article.dataset.figureLayout = item.layout;
+  article.append(el(item.group ? 'h4' : 'h3', '', item.title));
   const figure = el('figure', 'paper-figure'); const link = el('a', 'zoomable'); link.href = item.src; link.dataset.figure = ''; link.dataset.caption = item.title; link.setAttribute('aria-label', 'Enlarge ' + item.title);
   const img = el('img'); img.src = item.src; img.alt = item.caption; img.width = item.width; img.height = item.height; img.loading = 'lazy'; link.append(img, el('span', 'zoom-hint', '↗ Enlarge'));
-  figure.append(link, el('figcaption', '', item.caption)); article.append(figure); parent.append(article);
+  figure.append(link);
+  if (item.pages?.length > 1) {
+    const pagination = el('div', 'figure-pagination'); pagination.setAttribute('role', 'group');
+    pagination.setAttribute('aria-label', `Figure pages for ${item.title}`);
+    const pageButtons = item.pages.map((page, index) => {
+      const button = el('button', '', page.label); button.type = 'button'; button.setAttribute('aria-pressed', String(index === 0));
+      button.addEventListener('click', () => {
+        img.src = page.src; img.width = page.width; img.height = page.height;
+        link.href = page.src; link.dataset.caption = `${item.title} · ${page.label}`;
+        pageButtons.forEach(other => other.setAttribute('aria-pressed', String(other === button)));
+      });
+      pagination.append(button); return button;
+    });
+    figure.append(pagination);
+  }
+  figure.append(el('figcaption', '', item.caption)); article.append(figure); parent.append(article);
 }
 
 const dialog = document.querySelector('#figure-dialog');

@@ -257,7 +257,7 @@ window.THINKWAM = {
     },
     {
       "type": "real",
-      "group": "Multiple objects",
+      "group": "Effects of Multiple Distractors",
       "title": "Two bottles among distractors",
       "description": "Both green bottles are placed in the box in a cluttered scene.",
       "src": "assets/videos/real-multi-static.mp4",
@@ -270,7 +270,7 @@ window.THINKWAM = {
     },
     {
       "type": "real",
-      "group": "Multiple objects",
+      "group": "Effects of Multiple Distractors",
       "title": "Multiple objects with repositioning",
       "description": "Two erasers are moved and reoriented by hand during execution; the full recording retains both placements.",
       "src": "assets/videos/real-multi-dynamic.mp4",

@@ -1735,7 +1735,8 @@ window.THINKWAM = {
       "src": "assets/action_latent_openloop_stacked.png",
       "width": 2400,
       "height": 1583,
-      "caption": "Open-loop comparisons from identical simulator states and action histories, without replanning. Proposal actions are red and refined actions are teal. A shared frozen decoder visualizes base and corrected future latents at t+7, t+15, and t+31; the action and latent panels show separate examples. Decoded latents are predictions, not simulator outcomes of the illustrated action chunks."
+      "caption": "Open-loop comparisons from identical simulator states and action histories, without replanning. Proposal actions are red and refined actions are teal. A shared frozen decoder visualizes base and corrected future latents at t+7, t+15, and t+31; the action and latent panels show separate examples. Decoded latents are predictions, not simulator outcomes of the illustrated action chunks.",
+      "row": "correction-and-recoveries"
     },
     {
       "title": "LIBERO & LIBERO-Plus: trajectories",
@@ -1743,11 +1744,12 @@ window.THINKWAM = {
       "width": 2400,
       "height": 912,
       "caption": "Selected LIBERO and LIBERO-Plus rollouts compare proposal actions (red) and refined actions (teal) from matched starts. Each branch replans from its own observations. Panels show scene trajectories, snapshots at refinement’s first success, horizontal end-effector paths, and height/gripper traces. Time excludes inference latency. These selected cases do not measure how often refinement recovers a failure.",
-      "group": "Closed-loop Comparisons and Recoveries"
+      "group": "Closed-loop Comparisons and Recoveries",
+      "row": "correction-and-recoveries",
+      "hideHeading": true
     },
     {
       "title": "LIBERO & LIBERO-Plus: keyframe comparisons",
-      "group": "Closed-loop Comparisons and Recoveries",
       "src": "assets/libero_cases_01_06_grouped.png",
       "width": 2400,
       "height": 1141,
@@ -1765,7 +1767,8 @@ window.THINKWAM = {
           "height": 1182
         }
       ],
-      "caption": "Twelve selected LIBERO-family cases compare proposal-only and refined execution from matched starts. Each card shows the interaction and outcome of both branches; circles identify the task object. Timestamps refer to the two independent trajectories. These examples do not measure how often refinement recovers a failure."
+      "caption": "Twelve selected LIBERO-family cases compare proposal-only and refined execution from matched starts. Each card shows the interaction and outcome of both branches; circles identify the task object. Timestamps refer to the two independent trajectories. These examples do not measure how often refinement recovers a failure.",
+      "row": "keyframe-comparisons"
     },
     {
       "title": "RoboTwin: keyframe comparisons",
@@ -1773,7 +1776,7 @@ window.THINKWAM = {
       "width": 2400,
       "height": 766,
       "caption": "Four selected RoboTwin tasks compare proposal-only execution with refinement from matched starts: a toy car into a basket, a cup onto a coaster, striking a block with a hammer, and aligning a shoe. Each task shows an interaction and final outcome for both branches; circles identify the interaction region. These selected cases do not measure how often refinement recovers a failure.",
-      "group": "Closed-loop Comparisons and Recoveries"
+      "row": "keyframe-comparisons"
     }
   ],
   "huggingfaceUrl": "https://huggingface.co/Adrain11/ThinkWAM",

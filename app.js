@@ -266,22 +266,24 @@ const mechanismGroups = new Map();
 const mechanismRows = new Map();
 for (const item of data.mechanisms || []) {
   let parent = mechanismRoot;
-  if (item.group) {
-    if (!mechanismGroups.has(item.group)) {
-      const group = el('section', 'mechanism-group'); group.append(el('h3', '', item.group));
-      mechanismRoot.append(group); mechanismGroups.set(item.group, group);
-    }
-    parent = mechanismGroups.get(item.group);
-  } else if (item.row) {
+  if (item.row) {
     if (!mechanismRows.has(item.row)) {
-      const row = el('div', 'mechanism-row');
+      const row = el('div', 'mechanism-row'); row.dataset.mechanismRow = item.row;
       mechanismRoot.append(row); mechanismRows.set(item.row, row);
     }
     parent = mechanismRows.get(item.row);
   }
+  if (item.group) {
+    const groupKey = `${item.row || ''}/${item.group}`;
+    if (!mechanismGroups.has(groupKey)) {
+      const group = el('section', 'mechanism-group'); group.append(el('h3', '', item.group));
+      parent.append(group); mechanismGroups.set(groupKey, group);
+    }
+    parent = mechanismGroups.get(groupKey);
+  }
   const article = el('article', 'mechanism-item');
   if (item.layout) article.dataset.figureLayout = item.layout;
-  article.append(el(item.group ? 'h4' : 'h3', '', item.title));
+  if (!item.hideHeading) article.append(el(item.group ? 'h4' : 'h3', '', item.title));
   const figure = el('figure', 'paper-figure'); const link = el('a', 'zoomable'); link.href = item.src; link.dataset.figure = ''; link.dataset.caption = item.title; link.setAttribute('aria-label', 'Enlarge ' + item.title);
   const img = el('img'); img.src = item.src; img.alt = item.caption; img.width = item.width; img.height = item.height; img.loading = 'lazy'; link.append(img, el('span', 'zoom-hint', '↗ Enlarge'));
   figure.append(link);

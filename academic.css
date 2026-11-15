@@ -276,3 +276,102 @@ body{font-family:var(--sans);-webkit-font-smoothing:antialiased}
   .mechanism-row[data-mechanism-row="keyframe-comparisons"] .figure-pagination{margin-top:12px}
   .mechanism-row[data-mechanism-row="keyframe-comparisons"] figcaption{margin-top:14px}
 }
+
+/* Typography echoes the paper diagrams while keeping long text and data clear. */
+@font-face{font-family:"Comic Neue";src:url("assets/fonts/ComicNeue-Regular.woff2") format("woff2");font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:"Comic Neue";src:url("assets/fonts/ComicNeue-Bold.woff2") format("woff2");font-style:normal;font-weight:700;font-display:swap}
+:root{--sans:Arial,"Helvetica Neue",Helvetica,sans-serif;--display:"Comic Sans MS","Comic Neue","Chalkboard SE",cursive;--ink:#293b47;--muted:#5e6b75}
+body{font-size:17px;line-height:1.7}
+.hero h1,.academic-heading h2,.mechanism-item h3,.mechanism-group>h3,.resources-section h2,.bibtex-header h2{font-family:var(--display);font-weight:700;letter-spacing:-.35px}
+.hero h1{font-size:43px;line-height:1.23;letter-spacing:-.8px}
+.hero h1>span{font-weight:700}
+.nav-inner nav,.nav-github{font-size:13px}.nav-github>span{font-size:13px}
+.authors{font-size:18px;line-height:1.8}.affiliations{font-size:14px}.author-notes{font-size:12px}
+.resource-button{font-size:14px;min-height:42px;padding:10px 18px}
+.tldr{font-size:16px;line-height:1.8;max-width:900px;padding:18px 23px}
+.academic-heading h2{font-size:32px;line-height:1.35}
+.academic-heading .section-deck{font-size:16px;line-height:1.7;max-width:810px}
+.abstract-copy{font-size:17px;line-height:1.9;max-width:860px}
+.method-explanation{font-size:16px;line-height:1.85;max-width:930px}
+.paper-figure figcaption{font-size:13px;line-height:1.75;color:#5d6b75}
+.demo-instruction{font-family:var(--display);font-size:20px;line-height:1.6;color:#314d60}
+.demo-instruction>span{font-family:var(--sans);font-size:12px;letter-spacing:.06em}
+.pill-tabs>button{font-size:14px;padding:9px 18px}.pill-tabs button span{font-size:12px}
+.simulation-filters button,.real-filters button{font-size:14px}
+.simulation-filters button span{font-size:12px}
+.video-note,.demo-caption-line>small{font-size:12px}
+.demo-card h3,.real-group-grid .demo-card h3,.simulation-group-grid .demo-card h3{font-size:16px;line-height:1.45}
+.demo-card p,.real-group-grid .demo-card p,.simulation-group-grid .demo-card p{font-size:13px;line-height:1.75}
+.camera-switcher button,.real-group-grid .camera-switcher button,.simulation-group-grid .camera-switcher button{font-size:13px}
+.evidence-note{font-size:13px;line-height:1.8;color:#687680}
+.hardware-label{font-size:13px;color:#607584}
+.results-section .wrap{max-width:1080px}
+.comparison-panel>h3{font-size:21px;margin-bottom:10px}
+.table-description{font-size:14px;line-height:1.75;margin-bottom:23px}
+.table-scroll{border-top:2px solid #5e7688;border-bottom:2px solid #5e7688}
+.comparison-table,#real-world-comparison .comparison-table{font-size:14px;line-height:1.55}
+.comparison-table th{font-size:14px;font-weight:600;padding:13px 14px;color:#354c5c;background:#f2f6f8;border-bottom:1px solid #bdcdd8}
+.comparison-table td{padding:12px 14px;color:#344956;border-bottom:1px solid #e4ebf0}
+.comparison-table td:first-child,.comparison-table th:first-child{min-width:165px}
+.comparison-table tbody tr:not(.group-row):nth-child(even) td{background:#fafcfd}
+.comparison-table tbody tr.ours td{background:#eaf3f9;color:#244d69;border-top:1px solid #b4cbdc}
+.comparison-table tbody tr.ours td:first-child{box-shadow:inset 3px 0 #4b7d9e}
+.comparison-table .group-row td{font-size:12px;padding:8px 14px;color:#617686;background:#edf3f7!important;letter-spacing:.1px}
+.comparison-table .column-unit{font-size:12px;color:#738694;margin-top:2px}
+.comparison-table .chunk-column{font-size:12.5px}.comparison-table .chunk-detail{font-size:11.5px;line-height:1.45;color:#6f808d}
+.comparison-table.has-grouped-head thead tr:first-child th{font-size:13px;padding:11px 14px}
+.comparison-table.has-grouped-head thead tr:last-child th{padding:10px 14px}
+#real-world-comparison .comparison-table th,#real-world-comparison .comparison-table td{padding:12px 19px}
+#latency-comparison,#latency-notes{max-width:880px}
+#latency-comparison .comparison-table{font-size:13.5px}
+#latency-comparison .comparison-table th,#latency-comparison .comparison-table td{padding:11px 13px}
+.table-notes,#latency-notes,#real-world-notes{font-size:12.5px;line-height:1.8;color:#657581}
+.table-notes summary,#latency-notes summary{font-size:12.5px}
+#efficiency .academic-heading h2{font-size:29px}
+#efficiency .academic-heading .section-deck{font-size:15px}
+.mechanism-row{max-width:1080px;gap:36px}
+.mechanism-row .mechanism-item h3,.mechanism-row .mechanism-group>h3{font-size:21px;line-height:1.35}
+.mechanism-row .mechanism-item figcaption{font-size:13px;line-height:1.75;color:#5d6b75}
+.mechanism-row[data-mechanism-row="keyframe-comparisons"] h3{font-size:19px;min-height:2.7em;display:flex;align-items:center;justify-content:center}
+.figure-pagination button{font-size:13px;padding-block:6px}
+.zoom-hint{font-size:11px;padding:5px 9px}
+.resources-section>p{font-size:14px;line-height:1.8}.bibtex-section pre{font-size:13px;line-height:1.8}
+.site-footer>p,.site-footer>a:last-child{font-size:12px}
+@media(max-width:760px){
+  .hero h1{font-size:32px;letter-spacing:-.6px}
+  .authors{font-size:16px}.affiliations{font-size:12.5px}.author-notes{font-size:11.5px}
+  .nav-inner nav{font-size:11px}.resource-button{font-size:12.5px;padding:9px 13px}
+  .tldr{font-size:15px;padding:16px 18px}.academic-heading h2{font-size:28px}
+  .academic-heading .section-deck{font-size:14px}.abstract-copy{font-size:15.5px;line-height:1.85}
+  .method-explanation{font-size:15px;line-height:1.8}.paper-figure figcaption{font-size:12.5px}
+  .demo-instruction{font-size:18px}.demo-instruction>span{font-size:11px}
+  .pill-tabs>button{font-size:13px;padding:8px 15px}
+  .simulation-filters button,.real-filters button{font-size:12px}
+  .video-note,.demo-caption-line>small{font-size:11px}
+  .demo-card h3,.real-group-grid .demo-card h3,.simulation-group-grid .demo-card h3{font-size:15px}
+  .demo-card p,.real-group-grid .demo-card p,.simulation-group-grid .demo-card p{font-size:12.5px}
+  .evidence-note{font-size:12px}.comparison-panel>h3{font-size:19px}.table-description{font-size:13px}
+  .comparison-table,#real-world-comparison .comparison-table{font-size:13px}
+  .comparison-table th{font-size:12.5px}.comparison-table th,.comparison-table td{padding:10px 11px}
+  .comparison-table td:first-child,.comparison-table th:first-child{min-width:145px}
+  .comparison-table .chunk-column{font-size:12px}.comparison-table .chunk-detail{font-size:11px}
+  #latency-comparison .comparison-table{font-size:12.5px;min-width:650px}
+  #latency-comparison .comparison-table th,#latency-comparison .comparison-table td{padding:10px 11px}
+  .table-notes,#latency-notes,#real-world-notes,.table-notes summary,#latency-notes summary{font-size:12px}
+  #efficiency .academic-heading h2{font-size:26px}#efficiency .academic-heading .section-deck{font-size:14px}
+  .mechanism-row .mechanism-item h3,.mechanism-row .mechanism-group>h3{font-size:20px}
+  .mechanism-row .mechanism-item figcaption{font-size:12.5px}
+  .mechanism-row[data-mechanism-row="keyframe-comparisons"] h3{font-size:18px;min-height:0}
+}
+
+/* Natural figure proportions give the correction and recovery columns equal height. */
+.mechanism-row[data-mechanism-row="correction-and-recoveries"]{grid-template-columns:minmax(0,1.2634fr) minmax(0,1fr)}
+.mechanism-row[data-mechanism-row="correction-and-recoveries"] .mechanism-item>h3,
+.mechanism-row[data-mechanism-row="correction-and-recoveries"] .mechanism-group>h3{min-height:2.7em;display:flex;align-items:center;justify-content:center}
+.mechanism-row[data-mechanism-row="correction-and-recoveries"] .zoomable{height:auto;aspect-ratio:var(--figure-aspect)}
+.mechanism-row[data-mechanism-row="correction-and-recoveries"] img{max-height:none}
+@media(max-width:760px){
+  .mechanism-row[data-mechanism-row="correction-and-recoveries"]{grid-template-columns:1fr}
+  .mechanism-row[data-mechanism-row="correction-and-recoveries"] .mechanism-item>h3,
+  .mechanism-row[data-mechanism-row="correction-and-recoveries"] .mechanism-group>h3{min-height:0}
+}

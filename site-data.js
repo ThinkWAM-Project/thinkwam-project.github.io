@@ -1740,25 +1740,25 @@ window.THINKWAM = {
     },
     {
       "title": "LIBERO & LIBERO-Plus: trajectories",
-      "src": "assets/closed_loop_action_comparison.png",
+      "src": "assets/closed_loop_action_comparison_stacked.png",
       "width": 2400,
-      "height": 912,
-      "caption": "Selected LIBERO and LIBERO-Plus rollouts compare proposal actions (red) and refined actions (teal) from matched starts. Each branch replans from its own observations. Panels show scene trajectories, snapshots at refinement’s first success, horizontal end-effector paths, and height/gripper traces. Time excludes inference latency. These selected cases do not measure how often refinement recovers a failure.",
+      "height": 2000,
+      "caption": "Selected LIBERO and LIBERO-Plus rollouts compare proposal actions (red) and refined actions (teal) from matched starts. Each branch replans from its own observations. Above, A/B show scene trajectories and snapshots at refinement’s first success; below, C/D show horizontal end-effector paths and height/gripper traces. Time excludes inference latency. These selected cases do not measure how often refinement recovers a failure.",
       "group": "Closed-loop Comparisons and Recoveries",
       "row": "correction-and-recoveries",
       "hideHeading": true
     },
     {
       "title": "LIBERO & LIBERO-Plus: keyframe comparisons",
-      "src": "assets/libero_cases_01_06_grouped.png",
+      "src": "assets/libero_cases_01_04_grouped.png",
       "width": 2400,
-      "height": 1141,
+      "height": 766,
       "pages": [
         {
-          "label": "Cases 1–6",
-          "src": "assets/libero_cases_01_06_grouped.png",
+          "label": "Cases 1–4",
+          "src": "assets/libero_cases_01_04_grouped.png",
           "width": 2400,
-          "height": 1141
+          "height": 766
         },
         {
           "label": "Cases 7–12",
@@ -1767,7 +1767,7 @@ window.THINKWAM = {
           "height": 1182
         }
       ],
-      "caption": "Twelve selected LIBERO-family cases compare proposal-only and refined execution from matched starts. Each card shows the interaction and outcome of both branches; circles identify the task object. Timestamps refer to the two independent trajectories. These examples do not measure how often refinement recovers a failure.",
+      "caption": "Ten selected LIBERO-family cases compare proposal-only and refined execution from matched starts. Each card shows the interaction and outcome of both branches; circles identify the task object. Timestamps refer to the two independent trajectories. These examples do not measure how often refinement recovers a failure.",
       "row": "keyframe-comparisons"
     },
     {

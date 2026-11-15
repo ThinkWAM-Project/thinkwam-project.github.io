@@ -285,6 +285,7 @@ for (const item of data.mechanisms || []) {
   if (item.layout) article.dataset.figureLayout = item.layout;
   if (!item.hideHeading) article.append(el(item.group ? 'h4' : 'h3', '', item.title));
   const figure = el('figure', 'paper-figure'); const link = el('a', 'zoomable'); link.href = item.src; link.dataset.figure = ''; link.dataset.caption = item.title; link.setAttribute('aria-label', 'Enlarge ' + item.title);
+  link.style.setProperty('--figure-aspect', `${item.width} / ${item.height}`);
   const img = el('img'); img.src = item.src; img.alt = item.caption; img.width = item.width; img.height = item.height; img.loading = 'lazy'; link.append(img, el('span', 'zoom-hint', '↗ Enlarge'));
   figure.append(link);
   if (item.pages?.length > 1) {
@@ -294,6 +295,7 @@ for (const item of data.mechanisms || []) {
       const button = el('button', '', page.label); button.type = 'button'; button.setAttribute('aria-pressed', String(index === 0));
       button.addEventListener('click', () => {
         img.src = page.src; img.width = page.width; img.height = page.height;
+        link.style.setProperty('--figure-aspect', `${page.width} / ${page.height}`);
         link.href = page.src; link.dataset.caption = `${item.title} · ${page.label}`;
         pageButtons.forEach(other => other.setAttribute('aria-pressed', String(other === button)));
       });

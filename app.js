@@ -61,8 +61,16 @@ if (data.affiliations?.length) {
   affiliations.hidden = false; logos.hidden = !logos.children.length;
 }
 if (data.authorNotes) { const notes = document.querySelector('#author-notes'); notes.textContent = data.authorNotes; notes.hidden = false; }
-for (const [key, id, text] of [['arxivUrl', 'arxiv-link', 'arXiv paper ↗'], ['codeUrl', 'code-link', 'GitHub ↗']]) {
-  if (data[key]) { const link = el('a', 'resource-button', text); link.href = data[key]; link.target = '_blank'; link.rel = 'noopener'; link.id = id; document.getElementById(id).replaceWith(link); }
+for (const [key, id] of [['arxivUrl', 'arxiv-link'], ['codeUrl', 'code-link']]) {
+  if (!data[key]) continue;
+  const current = document.getElementById(id);
+  const link = current.tagName === 'A' ? current : el('a', 'resource-button');
+  if (link !== current) {
+    link.id = id; link.append(...current.childNodes); current.replaceWith(link);
+  }
+  link.href = data[key]; link.target = '_blank'; link.rel = 'noopener';
+  link.classList.remove('unavailable'); link.querySelector('.coming-soon')?.remove();
+  link.removeAttribute('aria-label');
 }
 
 setupTabs(document.querySelector('.method-tabs'), (_, index) => {
@@ -70,6 +78,7 @@ setupTabs(document.querySelector('.method-tabs'), (_, index) => {
 });
 
 const demos = data.demos || [];
+document.querySelector('#demo-instruction-text').textContent = data.realTaskInstruction || 'Tidy up the green objects.';
 let selectedSimulationGroup = 'LIBERO / LIBERO-Plus';
 const simulationFilters = document.querySelector('#simulation-filters');
 simulationFilters.querySelectorAll('button').forEach(button => button.addEventListener('click', () => {
@@ -83,6 +92,8 @@ function renderDemos(tab) {
   document.querySelectorAll('#demo-grid video').forEach(video => video.pause());
   const grid = document.querySelector('#demo-grid'); grid.replaceChildren();
   const filtered = demos.filter(item => item.type === type && (type !== 'simulation' || item.group === selectedSimulationGroup));
+  document.querySelector('#demo-instruction').hidden = type !== 'real';
+  grid.dataset.environment = type;
   simulationFilters.hidden = type !== 'simulation';
   simulationFilters.querySelectorAll('button').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.simulationGroup === selectedSimulationGroup)));
   const groupNames = [...new Set(filtered.map(item => item.group || ''))];
@@ -233,8 +244,14 @@ function renderNotes(container, notes) {
 
 const activateResult = setupTabs(document.querySelector('.result-tabs'), renderResults); activateResult(document.querySelector('.result-tabs button'));
 
-renderComparison(document.querySelector('#latency-comparison'), data.inferenceComparison);
-renderNotes(document.querySelector('#latency-notes'), data.inferenceComparison?.notes || []);
+renderComparison(document.querySelector('#latency-comparison'), data.latency);
+renderNotes(document.querySelector('#latency-notes'), data.latency?.notes || []);
+if (data.realWorldComparison) {
+  const comparison = data.realWorldComparison;
+  const columns = comparison.columns.filter(column => !column.hideWhenEmpty || comparison.rows.some(row => row[column.key] != null));
+  renderComparison(document.querySelector('#real-world-comparison'), {...comparison, columns});
+  renderNotes(document.querySelector('#real-world-notes'), comparison.notes || []);
+}
 const mechanismRoot = document.querySelector('#mechanism-figures');
 const mechanismGroups = new Map();
 for (const item of data.mechanisms || []) {

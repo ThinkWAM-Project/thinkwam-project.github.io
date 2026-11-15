@@ -2,43 +2,53 @@ window.THINKWAM = {
   "authors": [
     {
       "name": "Haoyun Tang",
-      "sup": "1*"
+      "sup": "1*",
+      "url": "https://haoyunt.github.io/"
     },
     {
       "name": "Baqiao Deng",
-      "sup": "1*"
+      "sup": "1*",
+      "url": "https://mercyai.github.io/MERCYAI/"
     },
     {
       "name": "Enjin Zhou",
-      "sup": "1"
+      "sup": "1",
+      "url": "https://zhouenjin.github.io/"
     },
     {
       "name": "Songwen Tian",
-      "sup": "1"
+      "sup": "1",
+      "url": "https://github.com/SHini-CHi33"
     },
     {
       "name": "Keyao Xu",
-      "sup": "2"
+      "sup": "2",
+      "url": "https://keyao0121.github.io/"
     },
     {
       "name": "Bowen Jing",
-      "sup": "3"
+      "sup": "3",
+      "url": "https://bowen12137.github.io/"
     },
     {
       "name": "Kun Wang",
-      "sup": "4"
+      "sup": "4",
+      "url": "https://scholar.google.com/citations?user=UnyqjWQAAAAJ&hl=en&oi=sra"
     },
     {
       "name": "Zhandong Mei",
-      "sup": "1"
+      "sup": "1",
+      "url": "https://gr.xjtu.edu.cn/zhdmei/"
     },
     {
       "name": "Ke Ma",
-      "sup": "5"
+      "sup": "5",
+      "url": "https://github.com/Alakia"
     },
     {
       "name": "Huibin Li",
-      "sup": "1,5†"
+      "sup": "1,5†",
+      "url": "https://gr.xjtu.edu.cn/huibinli/"
     }
   ],
   "affiliations": [
@@ -115,7 +125,7 @@ window.THINKWAM = {
   ],
   "authorNotes": "* Equal contribution.  † Corresponding author.",
   "arxivUrl": null,
-  "codeUrl": "https://github.com/ThinkWAM-Project",
+  "codeUrl": "https://github.com/HaoyunT/Thinkwam",
   "benchmarks": {
     "libero": {
       "title": "40 tasks. Four suites.",
@@ -205,81 +215,87 @@ window.THINKWAM = {
   "demos": [
     {
       "type": "real",
-      "group": "Standard setting",
-      "title": "Object repositioning during execution",
-      "description": "The eraser and bottle are repeatedly moved by hand; the robot then places both in the box.",
-      "src": "assets/videos/real-standard-dynamic.mp4",
-      "poster": "assets/posters/real-standard-dynamic.jpg",
-      "duration": "41.2 s · full recording",
-      "source_record": "arm_model_20261114_224105_612578_63586",
-      "frame_count": 618,
-      "fps": 15.0,
-      "trimmed": false
-    },
-    {
-      "type": "real",
-      "group": "Standard setting",
-      "title": "Sequential object collection",
-      "description": "The robot sequentially places the green eraser and bottle into the box.",
-      "src": "assets/videos/real-standard-static.mp4",
-      "poster": "assets/posters/real-standard-static.jpg",
+      "group": "Multiple target objects",
+      "title": "Fixed object layout",
+      "description": "The green eraser and bottle are collected into the box.",
+      "src": "assets/videos/aiz-objects-static.mp4",
+      "poster": "assets/posters/aiz-objects-static.jpg",
       "duration": "34.9 s · full recording",
-      "source_record": "arm_model_20261114_224007_174656_63440",
+      "source_record": "20261114_物体增多_2",
       "frame_count": 524,
       "fps": 15.0,
-      "trimmed": false
+      "trimmed": false,
+      "human_target_intervention": false
     },
     {
       "type": "real",
-      "group": "Lighting perturbation",
-      "title": "Colored lighting",
-      "description": "The robot places the tissue packet and eraser into the box under colored illumination.",
-      "src": "assets/videos/real-lighting-static.mp4",
-      "poster": "assets/posters/real-lighting-static.jpg",
-      "duration": "21.9 s · full recording",
-      "source_record": "arm_model_20261114_232032_804706_68296",
-      "frame_count": 329,
+      "group": "Multiple target objects",
+      "title": "Human target repositioning",
+      "description": "The eraser and bottle are moved by hand during execution; the robot continues and stores both.",
+      "src": "assets/videos/aiz-objects-intervention.mp4",
+      "poster": "assets/posters/aiz-objects-intervention.jpg",
+      "duration": "41.2 s · full recording",
+      "source_record": "20261114_物体增多_3",
+      "frame_count": 618,
       "fps": 15.0,
-      "trimmed": false
-    },
-    {
-      "type": "real",
-      "group": "Lighting perturbation",
-      "title": "Colored lighting with three objects",
-      "description": "Under colored illumination, the robot places a tissue packet, a small green pouch, and an eraser into the box.",
-      "src": "assets/videos/real-lighting-objects.mp4",
-      "poster": "assets/posters/real-lighting-objects.jpg",
-      "frame_count": 523,
-      "fps": 15.0,
-      "duration": "34.9 s · full recording",
-      "source_record": "arm_model_20261114_231849_438412_68117",
-      "trimmed": false
+      "trimmed": false,
+      "human_target_intervention": true
     },
     {
       "type": "real",
       "group": "Effects of Multiple Distractors",
-      "title": "Two bottles among distractors",
-      "description": "Both green bottles are placed in the box in a cluttered scene.",
-      "src": "assets/videos/real-multi-static.mp4",
-      "poster": "assets/posters/real-multi-static.jpg",
-      "duration": "35.1 s · full recording",
-      "source_record": "arm_model_20261114_225614_047426_65337",
-      "frame_count": 526,
+      "title": "Other-colored distractors",
+      "description": "The green bottle and eraser are collected while the other-colored distractors remain on the table.",
+      "src": "assets/videos/aiz-distractors-static.mp4",
+      "poster": "assets/posters/aiz-distractors-static.jpg",
+      "duration": "24.5 s · full recording",
+      "source_record": "20261114_异色干扰_1",
+      "frame_count": 368,
       "fps": 15.0,
-      "trimmed": false
+      "trimmed": false,
+      "human_target_intervention": false
     },
     {
       "type": "real",
       "group": "Effects of Multiple Distractors",
-      "title": "Multiple objects with repositioning",
-      "description": "Two erasers are moved and reoriented by hand during execution; the full recording retains both placements.",
-      "src": "assets/videos/real-multi-dynamic.mp4",
-      "poster": "assets/posters/real-multi-dynamic.jpg",
+      "title": "Human interference among distractors",
+      "description": "Two green erasers are repeatedly moved and rotated by hand; both are eventually collected into the box.",
+      "src": "assets/videos/aiz-distractors-intervention.mp4",
+      "poster": "assets/posters/aiz-distractors-intervention.jpg",
       "duration": "59.0 s · full recording",
-      "source_record": "arm_model_20261114_225726_429411_65489",
+      "source_record": "20261114_异色干扰_3",
       "frame_count": 885,
       "fps": 15.0,
-      "trimmed": false
+      "trimmed": false,
+      "human_target_intervention": true
+    },
+    {
+      "type": "real",
+      "group": "Lighting perturbation",
+      "title": "Purple lighting with two objects",
+      "description": "The green tissue packet and eraser are collected under purple illumination.",
+      "src": "assets/videos/aiz-lighting-two.mp4",
+      "poster": "assets/posters/aiz-lighting-two.jpg",
+      "duration": "21.9 s · full recording",
+      "source_record": "20261114_紫光扰动_4",
+      "frame_count": 329,
+      "fps": 15.0,
+      "trimmed": false,
+      "human_target_intervention": false
+    },
+    {
+      "type": "real",
+      "group": "Lighting perturbation",
+      "title": "Purple lighting with three objects",
+      "description": "The tissue packet, small green pouch, and eraser are collected under purple illumination.",
+      "src": "assets/videos/aiz-lighting-three.mp4",
+      "poster": "assets/posters/aiz-lighting-three.jpg",
+      "duration": "34.9 s · full recording",
+      "source_record": "20261114_紫光扰动_3",
+      "frame_count": 523,
+      "fps": 15.0,
+      "trimmed": false,
+      "human_target_intervention": false
     },
     {
       "type": "simulation",
@@ -569,7 +585,7 @@ window.THINKWAM = {
       "fps": 20.0
     }
   ],
-  "realVideoNote": "Full recordings, grouped by the conditions shown. Human interventions reposition task objects and are retained in the videos. Both camera views and the original recorded playback rate are preserved. These selected demonstrations do not constitute a real-world success-rate measurement.",
+  "realVideoNote": "All six demonstrations use the same green-object tidying instruction. Two recordings include human target repositioning. The supplied camera views, every frame, and the full original playback timing are preserved. These selected qualitative demonstrations are separate from aggregate success-rate evaluation.",
   "comparisons": {
     "libero": {
       "title": "LIBERO",
@@ -1609,19 +1625,19 @@ window.THINKWAM = {
       "caption": "LIBERO observations paired with predicted affordance-head scores on a shared 0–1 scale. Dashed boxes mark task objects; circles locate score maxima. These are affordance predictions, not task-success probabilities. These LIBERO examples use the affordance branch; the RoboTwin setting disables it."
     },
     {
-      "title": "Action-conditioned latent correction",
-      "src": "assets/action_latent_openloop_stacked.png",
-      "width": 2400,
-      "height": 1583,
-      "caption": "Open-loop comparisons from identical simulator states and action histories, without replanning. Proposal actions are red and refined actions are teal. A shared frozen decoder visualizes base and corrected future latents at t+7, t+15, and t+31; the action and latent panels show separate examples. Decoded latents are predictions, not simulator outcomes of the illustrated action chunks."
-    },
-    {
       "title": "Multi-horizon token allocation",
       "src": "assets/horizon_token_allocation_75k.png",
       "width": 2400,
       "height": 1800,
       "caption": "Multi-horizon targets at t+7, t+15, and t+31 use 288, 144, and 72 query tokens. The top row contains recorded future observations; the middle row applies increasing blur to one crop to illustrate fine-to-coarse detail; the bottom row shows one cell per query token.",
       "layout": "compact"
+    },
+    {
+      "title": "Action-conditioned latent correction",
+      "src": "assets/action_latent_openloop_stacked.png",
+      "width": 2400,
+      "height": 1583,
+      "caption": "Open-loop comparisons from identical simulator states and action histories, without replanning. Proposal actions are red and refined actions are teal. A shared frozen decoder visualizes base and corrected future latents at t+7, t+15, and t+31; the action and latent panels show separate examples. Decoded latents are predictions, not simulator outcomes of the illustrated action chunks."
     },
     {
       "title": "LIBERO & LIBERO-Plus: trajectories",
@@ -1634,30 +1650,30 @@ window.THINKWAM = {
     {
       "title": "LIBERO & LIBERO-Plus: keyframe comparisons",
       "group": "Closed-loop Comparisons and Recoveries",
-      "src": "assets/libero_recoveries_1.png",
+      "src": "assets/libero_cases_01_06_gapless.png",
       "width": 2400,
-      "height": 1296,
+      "height": 1192,
       "pages": [
         {
           "label": "Cases 1–6",
-          "src": "assets/libero_recoveries_1.png",
+          "src": "assets/libero_cases_01_06_gapless.png",
           "width": 2400,
-          "height": 1296
+          "height": 1192
         },
         {
           "label": "Cases 7–12",
-          "src": "assets/libero_recoveries_2.png",
+          "src": "assets/libero_cases_07_12_gapless.png",
           "width": 2400,
-          "height": 1296
+          "height": 1235
         }
       ],
       "caption": "Twelve selected LIBERO-family cases compare proposal-only and refined execution from matched starts. Each card shows the interaction and outcome of both branches; circles identify the task object. Timestamps refer to the two independent trajectories. These examples do not measure how often refinement recovers a failure."
     },
     {
       "title": "RoboTwin: keyframe comparisons",
-      "src": "assets/robotwin_recoveries_compact.png",
+      "src": "assets/robotwin_cases_01_04_gapless.png",
       "width": 2400,
-      "height": 731,
+      "height": 800,
       "caption": "Four selected RoboTwin tasks compare proposal-only execution with refinement from matched starts: a toy car into a basket, a cup onto a coaster, striking a block with a hammer, and aligning a shoe. Each task shows an interaction and final outcome for both branches; circles identify the interaction region. These selected cases do not measure how often refinement recovers a failure.",
       "group": "Closed-loop Comparisons and Recoveries"
     }
@@ -1823,5 +1839,53 @@ window.THINKWAM = {
     "LIBERO / LIBERO-Plus": "Selected closed-loop rollouts at the original recorded speed. Camera buttons switch between the scene and wrist views at the same point in the trajectory. These qualitative examples are separate from the benchmark aggregates.",
     "RoboTwin 2.0": "Complete archived policy actions, replayed in the original scene and rendered at 25 fps. Videos are shown at 3× simulation speed; playback duration excludes model inference. These are selected qualitative examples.",
     "RoboCasa24": "Selected successful trajectories from a fixed-scene adaptation run, shown at 1× simulation speed. Camera buttons switch synchronized views. These examples are separate from the benchmark aggregates."
+  },
+  "realTaskInstruction": "Tidy up the green objects.",
+  "realWorldComparison": {
+    "title": "Real-world task performance and inference latency",
+    "columns": [
+      {
+        "key": "method",
+        "label": "Method"
+      },
+      {
+        "key": "success_rate",
+        "label": "Success rate (%)",
+        "unit": "%",
+        "direction": "higher",
+        "hideWhenEmpty": true
+      },
+      {
+        "key": "mean_ms",
+        "label": "Mean latency",
+        "unit": "ms",
+        "direction": "lower"
+      }
+    ],
+    "rows": [
+      {
+        "method": "ThinkWAM",
+        "mean_ms": "101.2",
+        "is_ours": true,
+        "source_emphasis": {
+          "mean_ms": "bold"
+        },
+        "success_rate": null
+      },
+      {
+        "method": "π0.5",
+        "mean_ms": "112.6",
+        "success_rate": null
+      },
+      {
+        "method": "FastWAM",
+        "mean_ms": "119.8",
+        "success_rate": null
+      }
+    ],
+    "hardware": "NVIDIA RTX 4080 SUPER",
+    "notes": [
+      "All three methods were measured on the same NVIDIA RTX 4080 SUPER. Latency is reported in milliseconds; lower is better."
+    ]
   }
 };

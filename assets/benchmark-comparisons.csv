@@ -1,0 +1,261 @@
+benchmark,method,column,value,source
+LIBERO,π0.5,Size (B),3.3,Supplied November 13 manuscript
+LIBERO,π0.5,Action P.T.,Yes,Supplied November 13 manuscript
+LIBERO,π0.5,Spatial,98.8,Supplied November 13 manuscript
+LIBERO,π0.5,Object,98.2,Supplied November 13 manuscript
+LIBERO,π0.5,Goal,98.0,Supplied November 13 manuscript
+LIBERO,π0.5,Long,92.4,Supplied November 13 manuscript
+LIBERO,π0.5,Avg.,96.9,Supplied November 13 manuscript
+LIBERO,ABot-M0,Size (B),4.6,Supplied November 13 manuscript
+LIBERO,ABot-M0,Action P.T.,Yes,Supplied November 13 manuscript
+LIBERO,ABot-M0,Spatial,98.8,Supplied November 13 manuscript
+LIBERO,ABot-M0,Object,99.8,Supplied November 13 manuscript
+LIBERO,ABot-M0,Goal,99.0,Supplied November 13 manuscript
+LIBERO,ABot-M0,Long,96.6,Supplied November 13 manuscript
+LIBERO,ABot-M0,Avg.,98.6,Supplied November 13 manuscript
+LIBERO,ResVLA,Size (B),4.0,Supplied November 13 manuscript
+LIBERO,ResVLA,Action P.T.,No,Supplied November 13 manuscript
+LIBERO,ResVLA,Spatial,96.0,Supplied November 13 manuscript
+LIBERO,ResVLA,Object,100.0,Supplied November 13 manuscript
+LIBERO,ResVLA,Goal,97.4,Supplied November 13 manuscript
+LIBERO,ResVLA,Long,92.8,Supplied November 13 manuscript
+LIBERO,ResVLA,Avg.,96.6,Supplied November 13 manuscript
+LIBERO,FastWAM,Size (B),6.0,Supplied November 13 manuscript
+LIBERO,FastWAM,Action P.T.,No,Supplied November 13 manuscript
+LIBERO,FastWAM,Spatial,98.2,Supplied November 13 manuscript
+LIBERO,FastWAM,Object,100.0,Supplied November 13 manuscript
+LIBERO,FastWAM,Goal,97.0,Supplied November 13 manuscript
+LIBERO,FastWAM,Long,95.2,Supplied November 13 manuscript
+LIBERO,FastWAM,Avg.,97.6,Supplied November 13 manuscript
+LIBERO,ImageWAM,Size (B),4.5,Supplied November 13 manuscript
+LIBERO,ImageWAM,Action P.T.,No,Supplied November 13 manuscript
+LIBERO,ImageWAM,Spatial,97.2,Supplied November 13 manuscript
+LIBERO,ImageWAM,Object,99.2,Supplied November 13 manuscript
+LIBERO,ImageWAM,Goal,98.8,Supplied November 13 manuscript
+LIBERO,ImageWAM,Long,98.4,Supplied November 13 manuscript
+LIBERO,ImageWAM,Avg.,98.4,Supplied November 13 manuscript
+LIBERO,ForeWAM,Size (B),1.5,Supplied November 13 manuscript
+LIBERO,ForeWAM,Action P.T.,No,Supplied November 13 manuscript
+LIBERO,ForeWAM,Spatial,97.6,Supplied November 13 manuscript
+LIBERO,ForeWAM,Object,99.8,Supplied November 13 manuscript
+LIBERO,ForeWAM,Goal,98.0,Supplied November 13 manuscript
+LIBERO,ForeWAM,Long,96.2,Supplied November 13 manuscript
+LIBERO,ForeWAM,Avg.,97.9,Supplied November 13 manuscript
+LIBERO,VLANeXt (Base),Size (B),2.5,Supplied November 13 manuscript
+LIBERO,VLANeXt (Base),Action P.T.,No,Supplied November 13 manuscript
+LIBERO,VLANeXt (Base),Spatial,99.0,Supplied November 13 manuscript
+LIBERO,VLANeXt (Base),Object,99.2,Supplied November 13 manuscript
+LIBERO,VLANeXt (Base),Goal,96.6,Supplied November 13 manuscript
+LIBERO,VLANeXt (Base),Long,94.8,Supplied November 13 manuscript
+LIBERO,VLANeXt (Base),Avg.,97.4,Supplied November 13 manuscript
+LIBERO,VLA-JEPA,Size (B),2.3,Supplied November 13 manuscript
+LIBERO,VLA-JEPA,Action P.T.,Yes,Supplied November 13 manuscript
+LIBERO,VLA-JEPA,Spatial,96.2,Supplied November 13 manuscript
+LIBERO,VLA-JEPA,Object,99.6,Supplied November 13 manuscript
+LIBERO,VLA-JEPA,Goal,97.2,Supplied November 13 manuscript
+LIBERO,VLA-JEPA,Long,95.8,Supplied November 13 manuscript
+LIBERO,VLA-JEPA,Avg.,97.2,Supplied November 13 manuscript
+LIBERO,JEPA-WAM,Size (B),1.3,Supplied November 13 manuscript
+LIBERO,JEPA-WAM,Action P.T.,No,Supplied November 13 manuscript
+LIBERO,JEPA-WAM,Spatial,95.6,Supplied November 13 manuscript
+LIBERO,JEPA-WAM,Object,99.4,Supplied November 13 manuscript
+LIBERO,JEPA-WAM,Goal,97.2,Supplied November 13 manuscript
+LIBERO,JEPA-WAM,Long,94.6,Supplied November 13 manuscript
+LIBERO,JEPA-WAM,Avg.,96.7,Supplied November 13 manuscript
+LIBERO,V-JEPA Policy (from scratch),Size (B),0.9,Supplied November 13 manuscript
+LIBERO,V-JEPA Policy (from scratch),Action P.T.,No,Supplied November 13 manuscript
+LIBERO,V-JEPA Policy (from scratch),Spatial,97.2,Supplied November 13 manuscript
+LIBERO,V-JEPA Policy (from scratch),Object,98.0,Supplied November 13 manuscript
+LIBERO,V-JEPA Policy (from scratch),Goal,97.0,Supplied November 13 manuscript
+LIBERO,V-JEPA Policy (from scratch),Long,96.8,Supplied November 13 manuscript
+LIBERO,V-JEPA Policy (from scratch),Avg.,97.3,Supplied November 13 manuscript
+LIBERO,ThinkWAM,Size (B),1.5,Supplied November 13 manuscript
+LIBERO,ThinkWAM,Action P.T.,No,Supplied November 13 manuscript
+LIBERO,ThinkWAM,Spatial,98.4,Supplied November 13 manuscript
+LIBERO,ThinkWAM,Object,100.0,Supplied November 13 manuscript
+LIBERO,ThinkWAM,Goal,98.4,Supplied November 13 manuscript
+LIBERO,ThinkWAM,Long,98.0,Supplied November 13 manuscript
+LIBERO,ThinkWAM,Avg.,98.7,Supplied November 13 manuscript
+LIBERO-Plus,π0.5,Camera,64.0,Supplied November 13 manuscript
+LIBERO-Plus,π0.5,Init.,58.0,Supplied November 13 manuscript
+LIBERO-Plus,π0.5,Language,88.5,Supplied November 13 manuscript
+LIBERO-Plus,π0.5,Light,96.6,Supplied November 13 manuscript
+LIBERO-Plus,π0.5,Texture,81.4,Supplied November 13 manuscript
+LIBERO-Plus,π0.5,Noise,87.5,Supplied November 13 manuscript
+LIBERO-Plus,π0.5,Layout,85.9,Supplied November 13 manuscript
+LIBERO-Plus,π0.5,Avg.,80.3,Supplied November 13 manuscript
+LIBERO-Plus,ABot-M0,Camera,60.4,Supplied November 13 manuscript
+LIBERO-Plus,ABot-M0,Init.,67.9,Supplied November 13 manuscript
+LIBERO-Plus,ABot-M0,Language,86.4,Supplied November 13 manuscript
+LIBERO-Plus,ABot-M0,Light,96.2,Supplied November 13 manuscript
+LIBERO-Plus,ABot-M0,Texture,91.6,Supplied November 13 manuscript
+LIBERO-Plus,ABot-M0,Noise,86.4,Supplied November 13 manuscript
+LIBERO-Plus,ABot-M0,Layout,82.6,Supplied November 13 manuscript
+LIBERO-Plus,ABot-M0,Avg.,81.6,Supplied November 13 manuscript
+LIBERO-Plus,ResVLA,Camera,53.2,Supplied November 13 manuscript
+LIBERO-Plus,ResVLA,Init.,57.5,Supplied November 13 manuscript
+LIBERO-Plus,ResVLA,Language,88.2,Supplied November 13 manuscript
+LIBERO-Plus,ResVLA,Light,94.5,Supplied November 13 manuscript
+LIBERO-Plus,ResVLA,Texture,96.3,Supplied November 13 manuscript
+LIBERO-Plus,ResVLA,Noise,81.8,Supplied November 13 manuscript
+LIBERO-Plus,ResVLA,Layout,78.3,Supplied November 13 manuscript
+LIBERO-Plus,ResVLA,Avg.,78.5,Supplied November 13 manuscript
+LIBERO-Plus,FastWAM,Camera,16.4,Supplied November 13 manuscript
+LIBERO-Plus,FastWAM,Init.,44.5,Supplied November 13 manuscript
+LIBERO-Plus,FastWAM,Language,68.9,Supplied November 13 manuscript
+LIBERO-Plus,FastWAM,Light,78.2,Supplied November 13 manuscript
+LIBERO-Plus,FastWAM,Texture,53.7,Supplied November 13 manuscript
+LIBERO-Plus,FastWAM,Noise,37.7,Supplied November 13 manuscript
+LIBERO-Plus,FastWAM,Layout,60.7,Supplied November 13 manuscript
+LIBERO-Plus,FastWAM,Avg.,51.4,Supplied November 13 manuscript
+LIBERO-Plus,ImageWAM,Camera,80.8,Supplied November 13 manuscript
+LIBERO-Plus,ImageWAM,Init.,50.3,Supplied November 13 manuscript
+LIBERO-Plus,ImageWAM,Language,91.4,Supplied November 13 manuscript
+LIBERO-Plus,ImageWAM,Light,98.1,Supplied November 13 manuscript
+LIBERO-Plus,ImageWAM,Texture,85.5,Supplied November 13 manuscript
+LIBERO-Plus,ImageWAM,Noise,93.8,Supplied November 13 manuscript
+LIBERO-Plus,ImageWAM,Layout,80.5,Supplied November 13 manuscript
+LIBERO-Plus,ImageWAM,Avg.,82.9,Supplied November 13 manuscript
+LIBERO-Plus,ForeWAM,Camera,61.7,Supplied November 13 manuscript
+LIBERO-Plus,ForeWAM,Init.,56.8,Supplied November 13 manuscript
+LIBERO-Plus,ForeWAM,Language,85.1,Supplied November 13 manuscript
+LIBERO-Plus,ForeWAM,Light,95.8,Supplied November 13 manuscript
+LIBERO-Plus,ForeWAM,Texture,76.5,Supplied November 13 manuscript
+LIBERO-Plus,ForeWAM,Noise,89.1,Supplied November 13 manuscript
+LIBERO-Plus,ForeWAM,Layout,83.0,Supplied November 13 manuscript
+LIBERO-Plus,ForeWAM,Avg.,78.3,Supplied November 13 manuscript
+LIBERO-Plus,VLANeXt (Base),Camera,90.4,Supplied November 13 manuscript
+LIBERO-Plus,VLANeXt (Base),Init.,65.7,Supplied November 13 manuscript
+LIBERO-Plus,VLANeXt (Base),Language,81.8,Supplied November 13 manuscript
+LIBERO-Plus,VLANeXt (Base),Light,95.9,Supplied November 13 manuscript
+LIBERO-Plus,VLANeXt (Base),Texture,82.5,Supplied November 13 manuscript
+LIBERO-Plus,VLANeXt (Base),Noise,94.1,Supplied November 13 manuscript
+LIBERO-Plus,VLANeXt (Base),Layout,80.8,Supplied November 13 manuscript
+LIBERO-Plus,VLANeXt (Base),Avg.,84.5,Supplied November 13 manuscript
+LIBERO-Plus,VLA-JEPA,Camera,63.3,Supplied November 13 manuscript
+LIBERO-Plus,VLA-JEPA,Init.,67.1,Supplied November 13 manuscript
+LIBERO-Plus,VLA-JEPA,Language,85.4,Supplied November 13 manuscript
+LIBERO-Plus,VLA-JEPA,Light,95.6,Supplied November 13 manuscript
+LIBERO-Plus,VLA-JEPA,Texture,93.6,Supplied November 13 manuscript
+LIBERO-Plus,VLA-JEPA,Noise,66.3,Supplied November 13 manuscript
+LIBERO-Plus,VLA-JEPA,Layout,85.1,Supplied November 13 manuscript
+LIBERO-Plus,VLA-JEPA,Avg.,79.5,Supplied November 13 manuscript
+LIBERO-Plus,JEPA-WAM,Camera,79.2,Supplied November 13 manuscript
+LIBERO-Plus,JEPA-WAM,Init.,59.2,Supplied November 13 manuscript
+LIBERO-Plus,JEPA-WAM,Language,68.2,Supplied November 13 manuscript
+LIBERO-Plus,JEPA-WAM,Light,93.3,Supplied November 13 manuscript
+LIBERO-Plus,JEPA-WAM,Texture,94.6,Supplied November 13 manuscript
+LIBERO-Plus,JEPA-WAM,Noise,83.6,Supplied November 13 manuscript
+LIBERO-Plus,JEPA-WAM,Layout,76.1,Supplied November 13 manuscript
+LIBERO-Plus,JEPA-WAM,Avg.,79.2,Supplied November 13 manuscript
+LIBERO-Plus,V-JEPA Policy (from scratch),Camera,70.0,Supplied November 13 manuscript
+LIBERO-Plus,V-JEPA Policy (from scratch),Init.,80.7,Supplied November 13 manuscript
+LIBERO-Plus,V-JEPA Policy (from scratch),Language,64.9,Supplied November 13 manuscript
+LIBERO-Plus,V-JEPA Policy (from scratch),Light,97.2,Supplied November 13 manuscript
+LIBERO-Plus,V-JEPA Policy (from scratch),Texture,80.0,Supplied November 13 manuscript
+LIBERO-Plus,V-JEPA Policy (from scratch),Noise,87.8,Supplied November 13 manuscript
+LIBERO-Plus,V-JEPA Policy (from scratch),Layout,79.1,Supplied November 13 manuscript
+LIBERO-Plus,V-JEPA Policy (from scratch),Avg.,80.0,Supplied November 13 manuscript
+LIBERO-Plus,ThinkWAM,Camera,93.62,Supplied November 13 manuscript
+LIBERO-Plus,ThinkWAM,Init.,74.19,Supplied November 13 manuscript
+LIBERO-Plus,ThinkWAM,Language,74.82,Supplied November 13 manuscript
+LIBERO-Plus,ThinkWAM,Light,97.37,Supplied November 13 manuscript
+LIBERO-Plus,ThinkWAM,Texture,74.91,Supplied November 13 manuscript
+LIBERO-Plus,ThinkWAM,Noise,95.94,Supplied November 13 manuscript
+LIBERO-Plus,ThinkWAM,Layout,82.49,Supplied November 13 manuscript
+LIBERO-Plus,ThinkWAM,Avg.,84.76,Supplied November 13 manuscript
+RoboTwin 2.0,Diffusion Policy,Size (B),—,Supplied November 13 manuscript
+RoboTwin 2.0,Diffusion Policy,P.T.,No,Supplied November 13 manuscript
+RoboTwin 2.0,Diffusion Policy,Clean,48.0,Supplied November 13 manuscript
+RoboTwin 2.0,Diffusion Policy,Random,1.6,Supplied November 13 manuscript
+RoboTwin 2.0,Diffusion Policy,Avg.,24.8,Supplied November 13 manuscript
+RoboTwin 2.0,ACT,Size (B),—,Supplied November 13 manuscript
+RoboTwin 2.0,ACT,P.T.,No,Supplied November 13 manuscript
+RoboTwin 2.0,ACT,Clean,51.8,Supplied November 13 manuscript
+RoboTwin 2.0,ACT,Random,4.0,Supplied November 13 manuscript
+RoboTwin 2.0,ACT,Avg.,27.9,Supplied November 13 manuscript
+RoboTwin 2.0,RDT-1B,Size (B),1.2,Supplied November 13 manuscript
+RoboTwin 2.0,RDT-1B,P.T.,Yes,Supplied November 13 manuscript
+RoboTwin 2.0,RDT-1B,Clean,56.0,Supplied November 13 manuscript
+RoboTwin 2.0,RDT-1B,Random,24.1,Supplied November 13 manuscript
+RoboTwin 2.0,RDT-1B,Avg.,40.1,Supplied November 13 manuscript
+RoboTwin 2.0,DP3,Size (B),—,Supplied November 13 manuscript
+RoboTwin 2.0,DP3,P.T.,No,Supplied November 13 manuscript
+RoboTwin 2.0,DP3,Clean,73.9,Supplied November 13 manuscript
+RoboTwin 2.0,DP3,Random,8.3,Supplied November 13 manuscript
+RoboTwin 2.0,DP3,Avg.,41.1,Supplied November 13 manuscript
+RoboTwin 2.0,π0,Size (B),3.3,Supplied November 13 manuscript
+RoboTwin 2.0,π0,P.T.,Yes,Supplied November 13 manuscript
+RoboTwin 2.0,π0,Clean,62.5,Supplied November 13 manuscript
+RoboTwin 2.0,π0,Random,23.9,Supplied November 13 manuscript
+RoboTwin 2.0,π0,Avg.,43.2,Supplied November 13 manuscript
+RoboTwin 2.0,GO-1,Size (B),2.82,Supplied November 13 manuscript
+RoboTwin 2.0,GO-1,P.T.,Yes,Supplied November 13 manuscript
+RoboTwin 2.0,GO-1,Clean,56.75,Supplied November 13 manuscript
+RoboTwin 2.0,GO-1,Random,55.60,Supplied November 13 manuscript
+RoboTwin 2.0,GO-1,Avg.,56.2,Supplied November 13 manuscript
+RoboTwin 2.0,π0.5,Size (B),3.3,Supplied November 13 manuscript
+RoboTwin 2.0,π0.5,P.T.,Yes,Supplied November 13 manuscript
+RoboTwin 2.0,π0.5,Clean,75.4,Supplied November 13 manuscript
+RoboTwin 2.0,π0.5,Random,37.2,Supplied November 13 manuscript
+RoboTwin 2.0,π0.5,Avg.,56.3,Supplied November 13 manuscript
+RoboTwin 2.0,JEPA-WAM,Size (B),1.3,Supplied November 13 manuscript
+RoboTwin 2.0,JEPA-WAM,P.T.,No,Supplied November 13 manuscript
+RoboTwin 2.0,JEPA-WAM,Clean,79.9,Supplied November 13 manuscript
+RoboTwin 2.0,JEPA-WAM,Random,36.9,Supplied November 13 manuscript
+RoboTwin 2.0,JEPA-WAM,Avg.,58.4,Supplied November 13 manuscript
+RoboTwin 2.0,π0.5 + JEPA Obj.,Size (B),3.3,Supplied November 13 manuscript
+RoboTwin 2.0,π0.5 + JEPA Obj.,P.T.,Yes,Supplied November 13 manuscript
+RoboTwin 2.0,π0.5 + JEPA Obj.,Clean,84.6,Supplied November 13 manuscript
+RoboTwin 2.0,π0.5 + JEPA Obj.,Random,37.5,Supplied November 13 manuscript
+RoboTwin 2.0,π0.5 + JEPA Obj.,Avg.,61.1,Supplied November 13 manuscript
+RoboTwin 2.0,PAVE,Size (B),1.3,Supplied November 13 manuscript
+RoboTwin 2.0,PAVE,P.T.,No,Supplied November 13 manuscript
+RoboTwin 2.0,PAVE,Clean,86.8,Supplied November 13 manuscript
+RoboTwin 2.0,PAVE,Random,45.2,Supplied November 13 manuscript
+RoboTwin 2.0,PAVE,Avg.,66.0,Supplied November 13 manuscript
+RoboTwin 2.0,ThinkWAM,Size (B),1.5,Supplied November 13 manuscript
+RoboTwin 2.0,ThinkWAM,P.T.,No,Supplied November 13 manuscript
+RoboTwin 2.0,ThinkWAM,Clean,85.75,Supplied November 13 manuscript
+RoboTwin 2.0,ThinkWAM,Random,65.85,Supplied November 13 manuscript
+RoboTwin 2.0,ThinkWAM,Avg.,75.8,Supplied November 13 manuscript
+RoboCasa24,UWM,Size (B),0.4,Supplied November 13 manuscript
+RoboCasa24,UWM,P.T.,Yes,Supplied November 13 manuscript
+RoboCasa24,UWM,Demos,"1,000",Supplied November 13 manuscript
+RoboCasa24,UWM,Avg.,60.8,Supplied November 13 manuscript
+RoboCasa24,π0,Size (B),3.3,Supplied November 13 manuscript
+RoboCasa24,π0,P.T.,Yes,Supplied November 13 manuscript
+RoboCasa24,π0,Demos,300,Supplied November 13 manuscript
+RoboCasa24,π0,Avg.,62.5,Supplied November 13 manuscript
+RoboCasa24,GR00T-N1.5,Size (B),3.0,Supplied November 13 manuscript
+RoboCasa24,GR00T-N1.5,P.T.,Yes,Supplied November 13 manuscript
+RoboCasa24,GR00T-N1.5,Demos,300,Supplied November 13 manuscript
+RoboCasa24,GR00T-N1.5,Avg.,64.1,Supplied November 13 manuscript
+RoboCasa24,GR00T-N1,Size (B),2.2,Supplied November 13 manuscript
+RoboCasa24,GR00T-N1,P.T.,Yes,Supplied November 13 manuscript
+RoboCasa24,GR00T-N1,Demos,50,Supplied November 13 manuscript
+RoboCasa24,GR00T-N1,Avg.,36.0,Supplied November 13 manuscript
+RoboCasa24,π0.5,Size (B),3.3,Supplied November 13 manuscript
+RoboCasa24,π0.5,P.T.,Yes,Supplied November 13 manuscript
+RoboCasa24,π0.5,Demos,50,Supplied November 13 manuscript
+RoboCasa24,π0.5,Avg.,41.4,Supplied November 13 manuscript
+RoboCasa24,UVA,Size (B),0.5,Supplied November 13 manuscript
+RoboCasa24,UVA,P.T.,No,Supplied November 13 manuscript
+RoboCasa24,UVA,Demos,50,Supplied November 13 manuscript
+RoboCasa24,UVA,Avg.,50.0,Supplied November 13 manuscript
+RoboCasa24,Video Policy,Size (B),2.43,Supplied November 13 manuscript
+RoboCasa24,Video Policy,P.T.,No,Supplied November 13 manuscript
+RoboCasa24,Video Policy,Demos,50,Supplied November 13 manuscript
+RoboCasa24,Video Policy,Avg.,63.0,Supplied November 13 manuscript
+RoboCasa24,Fast-WAM,Size (B),6.0,Supplied November 13 manuscript
+RoboCasa24,Fast-WAM,P.T.,No,Supplied November 13 manuscript
+RoboCasa24,Fast-WAM,Demos,50,Supplied November 13 manuscript
+RoboCasa24,Fast-WAM,Avg.,49.5,Supplied November 13 manuscript
+RoboCasa24,ForeWAM,Size (B),1.5,Supplied November 13 manuscript
+RoboCasa24,ForeWAM,P.T.,No,Supplied November 13 manuscript
+RoboCasa24,ForeWAM,Demos,50,Supplied November 13 manuscript
+RoboCasa24,ForeWAM,Avg.,59.2,Supplied November 13 manuscript
+RoboCasa24,ThinkWAM,Size (B),1.5,Supplied November 13 manuscript
+RoboCasa24,ThinkWAM,P.T.,No,Supplied November 13 manuscript
+RoboCasa24,ThinkWAM,Demos,50,Supplied November 13 manuscript
+RoboCasa24,ThinkWAM,Avg.,65.17,Supplied November 13 manuscript

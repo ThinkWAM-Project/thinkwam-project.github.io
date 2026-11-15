@@ -1,0 +1,226 @@
+'use strict';
+const data = window.THINKWAM || {};
+const el = (tag, className, text) => { const node = document.createElement(tag); if (className) node.className = className; if (text !== undefined) node.textContent = text; return node; };
+
+function setupTabs(container, onSelect) {
+  if (!container) return () => {};
+  const tabs = [...container.querySelectorAll('[role="tab"]')];
+  const activate = (tab, focus = false) => {
+    tabs.forEach(item => { item.setAttribute('aria-selected', String(item === tab)); item.tabIndex = item === tab ? 0 : -1; });
+    onSelect(tab, tabs.indexOf(tab));
+    if (focus) tab.focus();
+  };
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => activate(tab));
+    tab.addEventListener('keydown', event => {
+      let next = index;
+      if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+      else if (event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
+      else if (event.key === 'Home') next = 0;
+      else if (event.key === 'End') next = tabs.length - 1;
+      else return;
+      event.preventDefault(); activate(tabs[next], true);
+    });
+  });
+  return activate;
+}
+
+if (data.authors?.length) {
+  const authors = document.querySelector('#authors');
+  data.authors.forEach(author => {
+    const item = el(author.url ? 'a' : 'span', '', author.name);
+    if (author.url) { item.href = author.url; item.target = '_blank'; item.rel = 'noopener'; }
+    if (author.sup) item.append(el('sup', '', author.sup));
+    authors.append(item);
+  });
+  authors.hidden = false;
+}
+if (data.affiliations?.length) {
+  const affiliations = document.querySelector('#affiliations');
+  const logos = document.querySelector('#institution-logos');
+  data.affiliations.forEach(affiliation => {
+    const label = el('span');
+    if (affiliation.index) label.append(el('sup', '', affiliation.index + ' '));
+    label.append(document.createTextNode(affiliation.name)); affiliations.append(label);
+    if (affiliation.logo) {
+      const link = el(affiliation.url ? 'a' : 'span', 'institution-item');
+      if (affiliation.url) { link.href = affiliation.url; link.target = '_blank'; link.rel = 'noopener'; }
+      const img = el('img', 'institution-logo'); img.src = affiliation.logo; img.alt = affiliation.name; img.height = 64;
+      if (affiliation.logoBounds) {
+        const {width, height, x, y, cropWidth, cropHeight, displayWidth} = affiliation.logoBounds;
+        link.style.setProperty('--logo-width', displayWidth + 'px');
+        link.style.setProperty('--logo-ratio', `${cropWidth} / ${cropHeight}`);
+        img.style.width = `${width / cropWidth * 100}%`;
+        img.style.height = `${height / cropHeight * 100}%`;
+        img.style.left = `${-x / cropWidth * 100}%`;
+        img.style.top = `${-y / cropHeight * 100}%`;
+      }
+      link.append(img); logos.append(link);
+    }
+  });
+  affiliations.hidden = false; logos.hidden = !logos.children.length;
+}
+if (data.authorNotes) { const notes = document.querySelector('#author-notes'); notes.textContent = data.authorNotes; notes.hidden = false; }
+for (const [key, id, text] of [['arxivUrl', 'arxiv-link', 'arXiv paper ↗'], ['codeUrl', 'code-link', 'GitHub ↗']]) {
+  if (data[key]) { const link = el('a', 'resource-button', text); link.href = data[key]; link.target = '_blank'; link.rel = 'noopener'; link.id = id; document.getElementById(id).replaceWith(link); }
+}
+
+setupTabs(document.querySelector('.method-tabs'), (_, index) => {
+  document.querySelectorAll('.method-panel').forEach((panel, i) => { panel.hidden = i !== index; });
+});
+
+const demos = data.demos || [];
+document.querySelector('#real-count').textContent = demos.filter(demo => demo.type === 'real').length || '';
+document.querySelector('#simulation-count').textContent = demos.filter(demo => demo.type === 'simulation').length || '';
+function renderDemos(tab) {
+  const type = tab.dataset.demoFilter;
+  document.querySelectorAll('#demo-grid video').forEach(video => video.pause());
+  const grid = document.querySelector('#demo-grid'); grid.replaceChildren();
+  const filtered = demos.filter(item => item.type === type);
+  const groupNames = [...new Set(filtered.map(item => item.group || ''))];
+  const groupGrids = new Map();
+  grid.classList.toggle('grouped-gallery', groupNames.some(Boolean));
+  if (groupNames.some(Boolean)) {
+    groupNames.forEach(name => {
+      const group = el('section', 'demo-group');
+      if (name) group.append(el('h3', 'demo-group-title', name));
+      const groupGrid = el('div', 'demo-group-grid' + (type === 'real' ? ' real-group-grid' : ' simulation-group-grid'));
+      if (filtered.filter(item => (item.group || '') === name).length === 1) groupGrid.classList.add('single-demo');
+      if (filtered.filter(item => (item.group || '') === name).length === 4) groupGrid.classList.add('paired-grid');
+      group.append(groupGrid); grid.append(group); groupGrids.set(name, groupGrid);
+    });
+  }
+  document.querySelector('#demo-panel').setAttribute('aria-labelledby', tab.id);
+  document.querySelector('.video-note').textContent = type === 'real' ? 'Full recordings · original playback speed · click to play' : 'Selected trajectories · click to play · playback speed shown with each video';
+  for (const [index, demo] of filtered.entries()) {
+    const figure = el('figure', 'demo-card');
+    const media = el('div', 'demo-video-wrap' + (type === 'simulation' ? ' simulation' : ''));
+    if (demo.aspect) media.style.aspectRatio = demo.aspect;
+    const video = document.createElement('video'); video.controls = true; video.playsInline = true; video.muted = true; video.preload = 'metadata'; video.poster = demo.poster;
+    video.setAttribute('aria-label', demo.title); const source = document.createElement('source'); source.src = demo.src; source.type = 'video/mp4'; video.append(source);
+    const fallback = el('a', '', 'Download video'); fallback.href = demo.src; video.append(fallback);
+    video.addEventListener('play', () => { document.querySelectorAll('video').forEach(other => { if (other !== video) other.pause(); }); });
+    media.append(video); figure.append(media);
+    if (demo.views?.length > 1) {
+      const viewControls = el('div', 'camera-switcher');
+      viewControls.setAttribute('role', 'group');
+      viewControls.setAttribute('aria-label', `Camera view for ${demo.title}`);
+      let switchController;
+      const buttons = demo.views.map((view, viewIndex) => {
+        const button = el('button', '', view.label); button.type = 'button';
+        button.setAttribute('aria-pressed', String(viewIndex === 0));
+        button.addEventListener('click', () => {
+          if (button.getAttribute('aria-pressed') === 'true') return;
+          const time = video.currentTime; const playing = !video.paused;
+          const rate = video.playbackRate; video.pause();
+          if (switchController) switchController.abort();
+          switchController = new AbortController();
+          buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+          video.addEventListener('canplay', () => {
+            video.currentTime = Math.min(time, Math.max(0, video.duration - .01));
+            video.playbackRate = rate;
+            if (playing && video.isConnected) video.play().catch(() => {});
+          }, {once: true, signal: switchController.signal});
+          video.poster = view.poster; source.src = view.src; fallback.href = view.src;
+          video.setAttribute('aria-label', `${demo.title} — ${view.label}`); video.load();
+        });
+        viewControls.append(button); return button;
+      });
+      figure.append(viewControls);
+    }
+    const caption = document.createElement('figcaption'); const top = el('div', 'demo-caption-line'); top.append(el('span', '', `${type === 'real' ? 'REAL-WORLD' : 'SIMULATION'} / ${String(index + 1).padStart(2, '0')}`));
+    if (demo.duration) top.append(el('small', '', demo.duration));
+    caption.append(top, el('h3', '', demo.title)); if (demo.description) caption.append(el('p', '', demo.description));
+    figure.append(caption); (groupGrids.get(demo.group || '') || grid).append(figure);
+  }
+  if (!grid.children.length) grid.append(el('p', 'demo-empty', 'Demonstrations are being prepared.'));
+  document.querySelector('#demo-footnote').textContent = type === 'real' ? (data.realVideoNote || 'Selected full real-world recordings. These examples illustrate behavior under the stated conditions.') : (data.simulationVideoNote || 'Selected recorded simulation trajectories. These qualitative examples are separate from the benchmark aggregates.');
+}
+const activateDemo = setupTabs(document.querySelector('[aria-label="Demonstration environment"]'), renderDemos);
+activateDemo(document.getElementById(demos.some(item => item.type === 'real') ? 'demo-real-tab' : 'demo-simulation-tab'));
+
+function renderResults(tab) {
+  const benchmark = data.benchmarks?.[tab.dataset.benchmark];
+  if (!benchmark) return;
+  document.querySelector('#result-panel').setAttribute('aria-labelledby', tab.id);
+  document.querySelector('#benchmark-title').textContent = benchmark.title;
+  document.querySelector('#benchmark-description').textContent = benchmark.description;
+  const comparison = data.comparisons?.[tab.dataset.benchmark];
+  if (comparison) {
+    renderComparison(document.querySelector('#benchmark-comparison'), comparison);
+    renderNotes(document.querySelector('#benchmark-notes'), comparison.notes || []);
+  }
+  const bars = document.querySelector('#benchmark-bars'); if (!bars) return; bars.replaceChildren();
+  benchmark.rows.forEach(row => {
+    const item = el('div', 'bar-row'); const track = el('div', 'bar-track'); track.setAttribute('aria-hidden', 'true'); const fill = el('div', 'bar-fill'); fill.style.setProperty('--value', `${Math.max(0, Math.min(100, row.value))}%`); track.append(fill);
+    item.append(el('span', 'bar-label', row.label), track, el('span', 'bar-value', row.value.toFixed(row.decimals ?? 2) + '%')); bars.append(item);
+  });
+}
+
+function renderComparison(container, comparison) {
+  if (!container || !comparison) return;
+  const table = el('table', 'comparison-table');
+  const caption = el('caption', 'sr-only', comparison.title); table.append(caption);
+  const head = el('thead'); const header = el('tr');
+  comparison.columns.forEach(column => { const cell = el('th', '', column.label + (column.unit === 'ms' ? ' (ms)' : '')); cell.scope = 'col'; header.append(cell); });
+  head.append(header); table.append(head); const body = el('tbody');
+  let lastGroup = null;
+  comparison.rows.forEach(row => {
+    if (row.group && row.group !== lastGroup) {
+      const groupRow = el('tr', 'group-row'); const cell = el('td', '', row.group); cell.colSpan = comparison.columns.length; groupRow.append(cell); body.append(groupRow); lastGroup = row.group;
+    }
+    const tr = el('tr', row.is_ours ? 'ours' : '');
+    comparison.columns.forEach(column => {
+      const value = row[column.key]; const td = el('td', '', value == null ? '—' : String(value));
+      if (row.source_emphasis?.[column.key] === 'bold') td.classList.add('best');
+      if (row.source_emphasis?.[column.key] === 'underline') td.classList.add('second');
+      tr.append(td);
+    }); body.append(tr);
+  });
+  table.append(body); container.replaceChildren(table);
+}
+
+function renderNotes(container, notes) {
+  if (!container) return;
+  container.replaceChildren();
+  notes.slice(0, 2).forEach(note => container.append(el('p', '', note)));
+  if (notes.length > 2) { const details = el('details'); details.append(el('summary', '', 'Evaluation and reporting details')); notes.slice(2).forEach(note => details.append(el('p', '', note))); container.append(details); }
+}
+
+const activateResult = setupTabs(document.querySelector('.result-tabs'), renderResults); activateResult(document.querySelector('.result-tabs button'));
+
+renderComparison(document.querySelector('#latency-comparison'), data.latency);
+renderComparison(document.querySelector('#real-latency-comparison'), data.realLatency);
+renderNotes(document.querySelector('#latency-notes'), data.latency?.notes || []);
+const mechanismRoot = document.querySelector('#mechanism-figures');
+const mechanismGroups = new Map();
+for (const item of data.mechanisms || []) {
+  let parent = mechanismRoot;
+  if (item.group) {
+    if (!mechanismGroups.has(item.group)) {
+      const group = el('section', 'mechanism-group'); group.append(el('h3', '', item.group));
+      mechanismRoot.append(group); mechanismGroups.set(item.group, group);
+    }
+    parent = mechanismGroups.get(item.group);
+  }
+  const article = el('article', 'mechanism-item'); article.append(el(item.group ? 'h4' : 'h3', '', item.title));
+  const figure = el('figure', 'paper-figure'); const link = el('a', 'zoomable'); link.href = item.src; link.dataset.figure = ''; link.dataset.caption = item.title; link.setAttribute('aria-label', 'Enlarge ' + item.title);
+  const img = el('img'); img.src = item.src; img.alt = item.caption; img.width = item.width; img.height = item.height; img.loading = 'lazy'; link.append(img, el('span', 'zoom-hint', '↗ Enlarge'));
+  figure.append(link, el('figcaption', '', item.caption)); article.append(figure); parent.append(article);
+}
+
+const dialog = document.querySelector('#figure-dialog');
+document.querySelectorAll('[data-figure]').forEach(link => link.addEventListener('click', event => {
+  if (!dialog.showModal) return;
+  event.preventDefault(); const image = document.querySelector('#figure-image'); image.src = link.href; image.alt = link.querySelector('img').alt;
+  document.querySelector('#figure-caption').textContent = link.dataset.caption; dialog.showModal();
+}));
+document.querySelector('#close-figure').addEventListener('click', () => dialog.close());
+dialog.addEventListener('click', event => { if (event.target === dialog) { const rect = dialog.getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close(); } });
+
+document.querySelector('#copy-bibtex').addEventListener('click', async event => {
+  const button = event.currentTarget;
+  try { await navigator.clipboard.writeText(document.querySelector('#bibtex-text').textContent); button.textContent = 'Copied'; }
+  catch (_) { button.textContent = 'Select text to copy'; }
+  setTimeout(() => { button.textContent = 'Copy'; }, 2200);
+});

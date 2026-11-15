@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#174b43">
+  <title>ThinkWAM — Rethinking Latent Futures for Action Refinement</title>
+  <meta name="description" content="ThinkWAM is a latent world–action model that proposes an action, rethinks its predicted consequences, and refines the action before execution.">
+  <link rel="canonical" href="https://thinkwam-project.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ThinkWAM: Rethinking Latent Futures for Action Refinement">
+  <meta property="og:description" content="Propose. Rethink. Refine. A second look at the future before a robot takes its next action.">
+  <meta property="og:url" content="https://thinkwam-project.github.io/">
+  <meta property="og:image" content="https://thinkwam-project.github.io/assets/overview.png">
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="academic.css">
+  <script src="site-data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-inner wrap">
+      <a class="wordmark" href="#" aria-label="ThinkWAM home"><img src="assets/mark.svg" width="30" height="30" alt="">ThinkWAM<span class="wordmark-dot">.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#overview">Abstract</a><a href="#method">Method</a><a href="#demonstrations">Demos</a><a href="#results">Results</a><a href="#analysis">Analysis</a>
+      </nav>
+      <a class="nav-github" href="https://github.com/ThinkWAM-Project" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <h1 id="hero-title"><span class="thinkwam-name">ThinkWAM:</span> Rethinking Latent Futures <br>for Action Refinement</h1>
+      <div id="authors" class="authors" hidden></div>
+      <div id="affiliations" class="affiliations" hidden></div>
+      <div id="author-notes" class="author-notes" hidden></div>
+      <div id="institution-logos" class="institution-logos" hidden></div>
+      <div class="resource-links">
+        <span class="resource-button unavailable" id="arxiv-link" aria-label="arXiv paper, coming soon"><span class="resource-icon" aria-hidden="true">↗</span> arXiv <span class="coming-soon">Coming soon</span></span>
+        <a class="resource-button" id="code-link" href="https://github.com/ThinkWAM-Project" target="_blank" rel="noopener"><span class="resource-icon" aria-hidden="true">&lt;/&gt;</span> GitHub</a>
+        <a class="resource-button" href="https://huggingface.co/Adrain11/ThinkWAM" target="_blank" rel="noopener"><span class="resource-icon" aria-hidden="true">🤗</span> Hugging Face</a>
+        <a class="resource-button" href="#bibtex"><span class="resource-icon" aria-hidden="true">{ }</span> BibTeX</a>
+      </div>
+      <p class="tldr"><strong>TL;DR.</strong> ThinkWAM proposes an action, rethinks the future it would produce, and refines the action using the corrected future representations.</p>
+    </section>
+
+    <section id="overview" class="section overview-section wrap" aria-labelledby="overview-heading">
+      <div class="section-heading academic-heading"><h2 id="overview-heading">Abstract</h2></div>
+      <div class="abstract-copy"><p>Vision-language-action policies must decide how to act before the consequences of an action are visible. ThinkWAM introduces a <strong>proposal–rethink–refine</strong> loop that connects action generation with predictions of future visual states. The model uses affordance-guided observation–action memory and multi-horizon latent forecasts to represent the current context and its possible evolution.</p><p>An initial action proposal conditions a visual residual predictor that corrects the future latents. A second pass of the shared action head then uses these corrected futures to generate the executable action chunk. The entire process operates in latent space, without decoding future images during control. We evaluate ThinkWAM on LIBERO, LIBERO-Plus, RoboTwin 2.0, and RoboCasa24.</p></div>
+      <figure class="paper-figure overview-figure">
+        <a class="zoomable" href="assets/overview.png" data-figure data-caption="ThinkWAM overview and benchmark results." aria-label="Enlarge the ThinkWAM overview figure"><img src="assets/overview.png" alt="ThinkWAM first imagines a future, then corrects that future using its proposed action, and produces a refined action. The lower panels summarize the reported benchmark results." width="2400" height="1410" fetchpriority="high"><span class="zoom-hint" aria-hidden="true">↗ Enlarge figure</span></a>
+        <figcaption>From a proposed action to an action-conditioned future, then back to a refined action. The illustrated future images explain the concept; inference operates in latent space.</figcaption>
+      </figure>
+    </section>
+
+    <section id="method" class="section method-section" aria-labelledby="method-heading">
+      <div class="wrap">
+        <div class="section-heading academic-heading"><h2 id="method-heading">Method</h2><p class="section-deck">Action-conditioned latent correction between two passes of a shared action model.</p></div>
+        <figure class="paper-figure"><a class="zoomable" href="assets/architecture.png" data-figure data-caption="ThinkWAM model architecture." aria-label="Enlarge the model architecture"><img src="assets/architecture.png" width="2400" height="1385" loading="lazy" alt="ThinkWAM architecture: observation–action memory, affordance guidance, temporal latent forecasts, action-conditioned residual prediction, and two passes of the shared Action DiT."><span class="zoom-hint" aria-hidden="true">↗ Enlarge</span></a><figcaption>ThinkWAM uses a proposed action to revise its latent future predictions, then conditions the second action pass on those revised futures. The images used to illustrate latent horizons are conceptual visualizations.</figcaption></figure>
+        <div class="method-explanation"><p><strong>1. Propose.</strong> Encode observations and executed-action history into affordance-guided memory. The first action pass uses this context, the instruction, and the robot state to propose an action chunk.</p><p><strong>2. Rethink.</strong> A residual predictor conditions on the proposed action and current visual features to correct latent forecasts at near, middle, and far horizons.</p><p><strong>3. Refine.</strong> A second pass of the same action head reads the corrected futures and produces the action chunk for execution. The robot observes again after acting.</p></div>
+      </div>
+    </section>
+
+    <section id="demonstrations" class="section wrap" aria-labelledby="demo-heading">
+      <div class="section-heading academic-heading"><h2 id="demo-heading">Robot Demonstrations</h2><p class="section-deck">Selected execution recordings from real-world and simulation environments.</p></div>
+      <div class="demo-toolbar"><div class="pill-tabs" role="tablist" aria-label="Demonstration environment"><button id="demo-real-tab" role="tab" aria-selected="true" aria-controls="demo-panel" tabindex="0" data-demo-filter="real">Real-world <span id="real-count"></span></button><button id="demo-simulation-tab" role="tab" aria-selected="false" aria-controls="demo-panel" tabindex="-1" data-demo-filter="simulation">Simulation <span id="simulation-count"></span></button></div><span class="video-note">Muted · click to play · original playback speed</span></div>
+      <div id="demo-panel" role="tabpanel" aria-labelledby="demo-real-tab" tabindex="0"><div id="demo-grid" class="demo-grid"></div></div>
+      <p id="demo-footnote" class="evidence-note"></p>
+    </section>
+
+    <section id="results" class="section results-section" aria-labelledby="results-heading">
+      <div class="wrap">
+        <div class="section-heading academic-heading"><h2 id="results-heading">Benchmark Comparisons</h2><p class="section-deck">Success rates across four benchmarks. All values are percentages; each benchmark uses its stated protocol.</p></div>
+        <div class="pill-tabs result-tabs" role="tablist" aria-label="Benchmark breakdown"><button id="result-libero-tab" role="tab" aria-controls="result-panel" aria-selected="true" tabindex="0" data-benchmark="libero">LIBERO</button><button id="result-plus-tab" role="tab" aria-controls="result-panel" aria-selected="false" tabindex="-1" data-benchmark="plus">LIBERO-Plus</button><button id="result-robotwin-tab" role="tab" aria-controls="result-panel" aria-selected="false" tabindex="-1" data-benchmark="robotwin">RoboTwin 2.0</button><button id="result-robocasa-tab" role="tab" aria-controls="result-panel" aria-selected="false" tabindex="-1" data-benchmark="robocasa">RoboCasa24</button></div>
+        <div id="result-panel" class="comparison-panel" role="tabpanel" aria-labelledby="result-libero-tab" tabindex="0"><h3 id="benchmark-title"></h3><p id="benchmark-description" class="table-description"></p><div id="benchmark-comparison" class="table-scroll" tabindex="0" aria-label="Benchmark comparison table, scroll horizontally on small screens"></div><div id="benchmark-notes" class="table-notes"></div></div>
+        <a class="text-link" href="assets/benchmark-comparisons.csv" download>Download all benchmark comparisons ↓</a>
+      </div>
+    </section>
+
+    <section id="efficiency" class="section wrap" aria-labelledby="efficiency-heading">
+      <div class="section-heading academic-heading"><h2 id="efficiency-heading">Inference Efficiency</h2><p class="section-deck">Mean inference time in simulation and real-world deployment. Lower is better.</p></div>
+      <h3 class="efficiency-subheading">Simulation · NVIDIA A100 80GB</h3>
+      <div id="latency-comparison" class="table-scroll" tabindex="0" aria-label="Inference latency comparison table"></div>
+      <div id="latency-notes" class="table-notes"></div>
+      <div class="real-latency-block"><h3 class="efficiency-subheading">Real-world · NVIDIA RTX 4080 SUPER</h3><div id="real-latency-comparison" class="table-scroll" aria-label="Real-world inference latency comparison table"></div><p class="evidence-note">All three methods were measured on the same RTX 4080 SUPER. Values are mean inference times in milliseconds.</p></div>
+    </section>
+
+    <section id="analysis" class="section analysis-section" aria-labelledby="analysis-heading">
+      <div class="wrap"><div class="section-heading academic-heading"><h2 id="analysis-heading">Mechanism Analysis</h2><p class="section-deck">Visualizing affordance guidance, latent future correction, and the allocation of future tokens.</p></div><div id="mechanism-figures" class="mechanism-figures"></div></div>
+    </section>
+
+    <section id="resources" class="section resources-section wrap" aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Resources</h2><p><a class="text-link" href="https://github.com/ThinkWAM-Project" target="_blank" rel="noopener">GitHub project ↗</a> &nbsp; · &nbsp; <a class="text-link" href="https://huggingface.co/Adrain11/ThinkWAM" target="_blank" rel="noopener">Hugging Face model ↗</a></p><p>arXiv: coming soon.</p>
+    </section>
+    <section id="bibtex" class="section bibtex-section wrap" aria-labelledby="bibtex-heading"><div class="bibtex-header"><h2 id="bibtex-heading">BibTeX</h2><button id="copy-bibtex" type="button">Copy</button></div><pre><code id="bibtex-text">@misc{tang2026thinkwam,
+  title  = {ThinkWAM: Rethinking Latent Futures for Action Refinement},
+  author = {Tang, Haoyun and Deng, Baqiao and Zhou, Enjin and Tian, Songwen
+            and Xu, Keyao and Jing, Bowen and Wang, Kun and Mei, Zhandong
+            and Ma, Ke and Li, Huibin},
+  year   = {2026},
+  url    = {https://thinkwam-project.github.io/}
+}</code></pre><p class="evidence-note">Project-page citation. The arXiv identifier will be added after the preprint is available.</p></section>
+  </main>
+
+  <footer class="site-footer wrap"><a class="wordmark" href="#"><img src="assets/mark.svg" width="24" height="24" alt="">ThinkWAM<span class="wordmark-dot">.</span></a><p>Rethinking Latent Futures for Action Refinement</p><a href="https://github.com/ThinkWAM-Project/thinkwam-project.github.io" target="_blank" rel="noopener">Website source ↗</a></footer>
+  <dialog id="figure-dialog" aria-labelledby="figure-caption"><button id="close-figure" aria-label="Close enlarged figure">×</button><img id="figure-image" src="assets/mark.svg" alt=""><p id="figure-caption"></p></dialog>
+  <noscript><p class="noscript-note">Enable JavaScript to browse video demonstrations and benchmark breakdowns. The project overview and method figure remain available above.</p></noscript>
+</body>
+</html>

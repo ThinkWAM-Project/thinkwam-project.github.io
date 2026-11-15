@@ -38,3 +38,12 @@ body{background:#fff}.wrap{width:min(1080px,calc(100% - 64px))}.site-header{back
 .real-latency-block .comparison-table th,.real-latency-block .comparison-table td{padding:14px 20px}
 .real-latency-block .evidence-note{margin-top:13px}
 @media(max-width:760px){.efficiency-subheading{font-size:16px}.real-latency-block .comparison-table{font-size:12px}}
+.comparison-table.has-grouped-head thead tr:first-child th{font-size:11px;white-space:normal;padding:12px 10px}
+.comparison-table.has-grouped-head thead tr:last-child th:first-child{position:static;min-width:0;text-align:center}
+.comparison-table.has-grouped-head thead th[rowspan]{vertical-align:middle}
+.comparison-table.has-grouped-head thead tr:first-child th:last-child{border-left:1px solid #cbd6de;background:#ecf3f8}
+.comparison-table.has-grouped-head tbody td:last-child{border-left:1px solid #dce5eb}
+.pretraining-indicator{font-size:13px}
+#latency-comparison .comparison-table td:first-child,#latency-comparison .comparison-table th[rowspan]{min-width:130px}
+#latency-comparison .comparison-table.has-grouped-head th{white-space:normal}
+@media(max-width:560px){#latency-comparison .comparison-table td:first-child,#latency-comparison .comparison-table th[rowspan]{min-width:100px}#latency-comparison .comparison-table th,#latency-comparison .comparison-table td{padding:9px 7px;font-size:10px}}

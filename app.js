@@ -162,7 +162,14 @@ function renderComparison(container, comparison) {
   const table = el('table', 'comparison-table');
   const caption = el('caption', 'sr-only', comparison.title); table.append(caption);
   const head = el('thead'); const header = el('tr');
-  comparison.columns.forEach(column => { const cell = el('th', '', column.label + (column.unit === 'ms' ? ' (ms)' : '')); cell.scope = 'col'; header.append(cell); });
+  if (comparison.columnGroups) {
+    table.classList.add('has-grouped-head');
+    const groups = el('tr'); const method = el('th', '', comparison.columns[0].label);
+    method.scope = 'col'; method.rowSpan = 2; groups.append(method);
+    comparison.columnGroups.forEach(group => {const cell = el('th', '', group.label); cell.colSpan = group.span; cell.scope = 'colgroup'; groups.append(cell);});
+    head.append(groups);
+  }
+  (comparison.columnGroups ? comparison.columns.slice(1) : comparison.columns).forEach(column => { const cell = el('th', '', column.label + (column.unit === 'ms' ? ' (ms)' : '')); cell.scope = 'col'; header.append(cell); });
   head.append(header); table.append(head); const body = el('tbody');
   let lastGroup = null;
   comparison.rows.forEach(row => {
@@ -172,6 +179,10 @@ function renderComparison(container, comparison) {
     const tr = el('tr', row.is_ours ? 'ours' : '');
     comparison.columns.forEach(column => {
       const value = row[column.key]; const td = el('td', '', value == null ? '—' : String(value));
+      if (column.key === 'action_pretraining' && ['Yes', 'No'].includes(value)) {
+        td.textContent = value === 'Yes' ? '✅' : '❌'; td.classList.add('pretraining-indicator');
+        td.setAttribute('aria-label', value); td.title = value === 'Yes' ? 'With action pretraining' : 'Without action pretraining';
+      }
       if (row.source_emphasis?.[column.key] === 'bold') td.classList.add('best');
       if (row.source_emphasis?.[column.key] === 'underline') td.classList.add('second');
       tr.append(td);
@@ -189,9 +200,8 @@ function renderNotes(container, notes) {
 
 const activateResult = setupTabs(document.querySelector('.result-tabs'), renderResults); activateResult(document.querySelector('.result-tabs button'));
 
-renderComparison(document.querySelector('#latency-comparison'), data.latency);
-renderComparison(document.querySelector('#real-latency-comparison'), data.realLatency);
-renderNotes(document.querySelector('#latency-notes'), data.latency?.notes || []);
+renderComparison(document.querySelector('#latency-comparison'), data.inferenceComparison);
+renderNotes(document.querySelector('#latency-notes'), data.inferenceComparison?.notes || []);
 const mechanismRoot = document.querySelector('#mechanism-figures');
 const mechanismGroups = new Map();
 for (const item of data.mechanisms || []) {

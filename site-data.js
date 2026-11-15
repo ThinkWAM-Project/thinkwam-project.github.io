@@ -1661,5 +1661,123 @@ window.THINKWAM = {
       }
     ],
     "hardware": "NVIDIA RTX 4080 SUPER"
+  },
+  "inferenceComparison": {
+    "title": "Mean inference latency in simulation and real-world deployment",
+    "columns": [
+      {
+        "key": "method",
+        "label": "Method"
+      },
+      {
+        "key": "libero_mean_ms",
+        "label": "LIBERO",
+        "unit": "ms",
+        "direction": "lower"
+      },
+      {
+        "key": "robotwin_mean_ms",
+        "label": "RoboTwin 2.0",
+        "unit": "ms",
+        "direction": "lower"
+      },
+      {
+        "key": "real_mean_ms",
+        "label": "Mean latency",
+        "unit": "ms",
+        "direction": "lower"
+      }
+    ],
+    "rows": [
+      {
+        "method": "LaWAM",
+        "libero_mean_ms": "222.73",
+        "robotwin_mean_ms": "215.62",
+        "citation_keys": [
+          "lawam2026"
+        ],
+        "is_ours": false,
+        "libero_chunk": "8 × 32 (7 native)",
+        "robotwin_chunk": "36 × 32 (16 native EEF)",
+        "integration": "10 steps",
+        "real_mean_ms": null
+      },
+      {
+        "method": "π0.5",
+        "libero_mean_ms": "286.62",
+        "robotwin_mean_ms": "254.59",
+        "citation_keys": [
+          "pi05",
+          "rlinf2026repository"
+        ],
+        "is_ours": false,
+        "libero_chunk": "50 × 7",
+        "robotwin_chunk": "50 × 14 (32 padded)",
+        "integration": "10 steps",
+        "real_mean_ms": "112.6"
+      },
+      {
+        "method": "OpenWAM-α",
+        "libero_mean_ms": "413.97",
+        "robotwin_mean_ms": "426.83",
+        "citation_keys": [
+          "wang2026openwam"
+        ],
+        "is_ours": false,
+        "libero_chunk": "32 × 10 EEF",
+        "robotwin_chunk": "32 × 20 EEF",
+        "integration": "10 steps",
+        "real_mean_ms": null
+      },
+      {
+        "method": "FastWAM",
+        "libero_mean_ms": "506.48",
+        "robotwin_mean_ms": "496.16",
+        "citation_keys": [
+          "yuan2026fastwam"
+        ],
+        "is_ours": false,
+        "libero_chunk": "32 × 7",
+        "robotwin_chunk": "32 × 14",
+        "integration": "10 steps",
+        "real_mean_ms": "119.8"
+      },
+      {
+        "method": "ThinkWAM",
+        "libero_mean_ms": "153.48",
+        "robotwin_mean_ms": "164.61",
+        "citation_keys": [],
+        "is_ours": true,
+        "libero_chunk": "16 × 7",
+        "robotwin_chunk": "32 × 14",
+        "integration": "2 passes × 4 steps",
+        "real_mean_ms": "101.2",
+        "source_emphasis": {
+          "real_mean_ms": "bold"
+        }
+      }
+    ],
+    "notes": [
+      "Simulation: mean action-chunk latency on one A100 80GB, batch size 1, 10 warm-up calls, and 60 timed calls. π0.5 uses the RLinf SFT implementation in simulation.",
+      "Real-world: all three reported methods were measured on the same RTX 4080 SUPER. A dash indicates that no result is reported.",
+      "Methods retain their native chunk shapes and integration settings. These are model-call timings; simulator rendering and initialization are excluded.",
+      "Inputs use synthetic RGB/state with real task instructions. All timed samples are retained.",
+      "Implementation and timing boundaries differ: ThinkWAM uses a compiled action core and CUDA Graph, while π0.5 uses PyTorch eager. ThinkWAM instruction encoding is outside the timed interval.",
+      "Native action chunks (LIBERO / RoboTwin): LaWAM — 8 × 32 (7 native) / 36 × 32 (16 native EEF).",
+      "Native action chunks (LIBERO / RoboTwin): π0.5 — 50 × 7 / 50 × 14 (32 padded).",
+      "Native action chunks (LIBERO / RoboTwin): OpenWAM-α — 32 × 10 EEF / 32 × 20 EEF.",
+      "Native action chunks (LIBERO / RoboTwin): FastWAM — 32 × 7 / 32 × 14.",
+      "Native action chunks (LIBERO / RoboTwin): ThinkWAM — 16 × 7 / 32 × 14."
+    ],
+    "columnGroups": [
+      {
+        "label": "Simulation · NVIDIA A100 80GB",
+        "span": 2
+      },
+      {
+        "label": "Real-world · RTX 4080 SUPER",
+        "span": 1
+      }
+    ]
   }
 };

@@ -451,7 +451,7 @@ function enableSectionReveals() {
     document.querySelectorAll('.reveal-pending').forEach(node => node.classList.add('is-visible'));
     return;
   }
-  const selector = '.academic-heading, .abstract-copy, .overview-composition, .method-section .paper-figure, .method-explanation, .demo-toolbar, #demo-panel, .real-results-body, .performance-figures, #result-panel, .efficiency-figures, #latency-comparison, .mechanism-row, .bibtex-section';
+  const selector = '.academic-heading, .abstract-copy, .overview-composition, .method-section .paper-figure, .method-steps, .demo-toolbar, #demo-panel, .real-results-body, .performance-figures, #result-panel, #efficiency .figure-card, .simulation-timings, .mechanism-row, .bibtex-section';
   const targets = [...document.querySelectorAll(selector)];
   revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {

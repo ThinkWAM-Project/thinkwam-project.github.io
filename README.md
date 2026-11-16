@@ -55,3 +55,7 @@ The v22 demonstration area removes its outer gray panel. Real-world recordings f
 The 5x5 hero retains its existing clip order. Nine larger sources have dedicated 320-pixel-wide, 15 fps H.264 copies under `assets/videos/hero-v23/`, with fast-start metadata and complete playback durations. Unique hero assets now total about 4.94 MB (previously 25.10 MB). Gallery recordings retain their original files.
 
 `hero-playback.js` starts at most three pending media loads at a time, beginning across different benchmark rows. Source errors and stalled playback are retried with bounded backoff. Motion preferences, explicit pause, offscreen visibility and gallery playback remain respected. CSV download buttons are omitted from the public results sections.
+
+## Content layout (2026-11-16)
+
+Content sections use the approved numbered headings, card treatments, alternating section backgrounds, three method steps, and continuous dark BibTeX/footer. Efficiency follows the simulation and real-world results, with its latency table in the same section. Figure and logo thumbnails use the supplied WebP assets. The demonstration panel has one unique set of IDs, and the existing hero playback controller and lightweight videos remain in use.

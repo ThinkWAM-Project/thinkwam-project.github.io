@@ -55,7 +55,7 @@ window.THINKWAM = {
     {
       "index": 1,
       "name": "Xi'an Jiaotong University",
-      "logo": "assets/logos/xjtu_lockup.png",
+      "logo": "assets/logos/xjtu_lockup.webp",
       "logoBounds": {
         "width": 2935,
         "height": 786,
@@ -69,7 +69,7 @@ window.THINKWAM = {
     {
       "index": 2,
       "name": "Nankai University",
-      "logo": "assets/logos/nankai_purple.png",
+      "logo": "assets/logos/nankai_purple.webp",
       "logoBounds": {
         "width": 330,
         "height": 73,
@@ -83,7 +83,7 @@ window.THINKWAM = {
     {
       "index": 3,
       "name": "The University of Manchester",
-      "logo": "assets/logos/manchester_transparent.png",
+      "logo": "assets/logos/manchester_transparent.webp",
       "logoBounds": {
         "width": 1864,
         "height": 843,
@@ -97,7 +97,7 @@ window.THINKWAM = {
     {
       "index": 4,
       "name": "Nanyang Technological University",
-      "logo": "assets/logos/ntu.png",
+      "logo": "assets/logos/ntu.webp",
       "logoBounds": {
         "width": 3006,
         "height": 1079,
@@ -111,7 +111,7 @@ window.THINKWAM = {
     {
       "index": 5,
       "name": "Phantrix Research",
-      "logo": "assets/logos/phantrix_transparent.png",
+      "logo": "assets/logos/phantrix_transparent.webp",
       "logoBounds": {
         "width": 2172,
         "height": 724,
@@ -1797,7 +1797,7 @@ window.THINKWAM = {
   "mechanisms": [
     {
       "title": "Affordance-guided memory",
-      "src": "assets/affordance_compact.png",
+      "src": "assets/affordance_compact.webp",
       "width": 2400,
       "height": 858,
       "caption": "LIBERO observations paired with predicted affordance-head scores on a shared 0–1 scale. Dashed boxes mark task objects; circles locate score maxima. These are affordance predictions, not task-success probabilities. These LIBERO examples use the affordance branch; the RoboTwin setting disables it.",
@@ -1806,7 +1806,7 @@ window.THINKWAM = {
     },
     {
       "title": "Multi-horizon token allocation",
-      "src": "assets/horizon_token_allocation_75k.png",
+      "src": "assets/horizon_token_allocation_75k.webp",
       "width": 2400,
       "height": 1800,
       "caption": "Multi-horizon targets at t+7, t+15, and t+31 use 288, 144, and 72 query tokens. The top row contains recorded future observations; the middle row applies increasing blur to one crop to illustrate fine-to-coarse detail; the bottom row shows one cell per query token.",
@@ -1816,7 +1816,7 @@ window.THINKWAM = {
     },
     {
       "title": "Action-conditioned latent correction",
-      "src": "assets/action_latent_openloop_stacked.png",
+      "src": "assets/action_latent_openloop_stacked.webp",
       "width": 2400,
       "height": 1583,
       "caption": "Open-loop comparisons from identical simulator states and action histories, without replanning. Proposal actions are red and refined actions are teal. A shared frozen decoder visualizes base and corrected future latents at t+7, t+15, and t+31; the action and latent panels show separate examples. Decoded latents are predictions, not simulator outcomes of the illustrated action chunks.",
@@ -1825,7 +1825,7 @@ window.THINKWAM = {
     },
     {
       "title": "LIBERO & LIBERO-Plus: trajectories",
-      "src": "assets/closed_loop_action_comparison_stacked.png",
+      "src": "assets/closed_loop_action_comparison_stacked.webp",
       "width": 2400,
       "height": 2000,
       "caption": "Selected LIBERO and LIBERO-Plus rollouts compare proposal actions (red) and refined actions (teal) from matched starts. Each branch replans from its own observations. Above, A/B show scene trajectories and snapshots at refinement’s first success; below, C/D show horizontal end-effector paths and height/gripper traces. Time excludes inference latency. These selected cases do not measure how often refinement recovers a failure.",
@@ -1837,19 +1837,19 @@ window.THINKWAM = {
     },
     {
       "title": "LIBERO & LIBERO-Plus: keyframe comparisons",
-      "src": "assets/libero_cases_01_04_grouped.png",
+      "src": "assets/libero_cases_01_04_grouped.webp",
       "width": 2400,
       "height": 766,
       "pages": [
         {
           "label": "Cases 1–4",
-          "src": "assets/libero_cases_01_04_grouped.png",
+          "src": "assets/libero_cases_01_04_grouped.webp",
           "width": 2400,
           "height": 766
         },
         {
           "label": "Cases 7–12",
-          "src": "assets/libero_cases_07_12_grouped.png",
+          "src": "assets/libero_cases_07_12_grouped.webp",
           "width": 2400,
           "height": 1182
         }
@@ -1860,7 +1860,7 @@ window.THINKWAM = {
     },
     {
       "title": "RoboTwin: keyframe comparisons",
-      "src": "assets/robotwin_cases_01_04_grouped.png",
+      "src": "assets/robotwin_cases_01_04_grouped.webp",
       "width": 2400,
       "height": 766,
       "caption": "Four selected RoboTwin tasks compare proposal-only execution with refinement from matched starts: a toy car into a basket, a cup onto a coaster, striking a block with a hammer, and aligning a shoe. Each task shows an interaction and final outcome for both branches; circles identify the interaction region. These selected cases do not measure how often refinement recovers a failure.",

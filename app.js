@@ -98,24 +98,19 @@ const simulationFilters = document.querySelector('#simulation-filters');
 const realFilters = document.querySelector('#real-filters');
 simulationFilters.querySelectorAll('button').forEach(button => button.addEventListener('click', () => {
   selectedSimulationGroup = button.dataset.simulationGroup;
-  renderDemos(document.getElementById('demo-simulation-tab'));
+  renderDemos('simulation');
 }));
 realFilters.querySelectorAll('button').forEach(button => button.addEventListener('click', () => {
   selectedRealGroup = button.dataset.realGroup;
-  renderDemos(document.getElementById('demo-real-tab'));
+  renderDemos('real');
 }));
-document.querySelector('#real-count').textContent = demos.filter(demo => demo.type === 'real').length || '';
-document.querySelector('#simulation-count').textContent = demos.filter(demo => demo.type === 'simulation').length || '';
-function renderDemos(tab) {
-  const type = tab.dataset.demoFilter;
-  document.querySelectorAll('#demo-grid video').forEach(video => video.pause());
-  const grid = document.querySelector('#demo-grid'); grid.replaceChildren();
+function renderDemos(type) {
+  const grid = document.querySelector(`#${type}-demo-grid`);
+  grid.querySelectorAll('video').forEach(video => video.pause());
+  grid.replaceChildren();
   const selectedGroup = type === 'real' ? selectedRealGroup : selectedSimulationGroup;
   const filtered = demos.filter(item => item.type === type && item.group === selectedGroup);
-  document.querySelector('#real-task-description').hidden = type !== 'real';
   grid.dataset.environment = type;
-  simulationFilters.hidden = type !== 'simulation';
-  realFilters.hidden = type !== 'real';
   simulationFilters.querySelectorAll('button').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.simulationGroup === selectedSimulationGroup)));
   realFilters.querySelectorAll('button').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.realGroup === selectedRealGroup)));
   const groupNames = [...new Set(filtered.map(item => item.group || ''))];
@@ -131,10 +126,11 @@ function renderDemos(tab) {
       group.append(groupGrid); grid.append(group); groupGrids.set(name, groupGrid);
     });
   }
-  document.querySelector('#demo-panel').setAttribute('aria-labelledby', tab.id);
-  const context = document.querySelector('#demo-context');
-  context.textContent = selectedGroup === 'RoboTwin 2.0' ? 'Action replay · 3×' : selectedGroup === 'RoboCasa24' ? 'Fixed-scene adaptation' : '';
-  context.hidden = !context.textContent;
+  if (type === 'simulation') {
+    const context = document.querySelector('#simulation-demo-context');
+    context.textContent = selectedGroup === 'RoboTwin 2.0' ? 'Action replay · 3×' : selectedGroup === 'RoboCasa24' ? 'Fixed-scene adaptation' : '';
+    context.hidden = !context.textContent;
+  }
   for (const demo of filtered) {
     const figure = el('figure', 'demo-card');
     const media = el('div', 'demo-video-wrap' + (type === 'simulation' ? ' simulation' : ''));
@@ -202,8 +198,8 @@ function renderDemos(tab) {
   }
   if (!grid.children.length) grid.append(el('p', 'demo-empty', 'Demonstrations are being prepared.'));
 }
-const activateDemo = setupTabs(document.querySelector('[aria-label="Demonstration environment"]'), renderDemos);
-activateDemo(document.getElementById(demos.some(item => item.type === 'real') ? 'demo-real-tab' : 'demo-simulation-tab'));
+renderDemos('real');
+renderDemos('simulation');
 
 function renderResults(tab) {
   const benchmark = data.benchmarks?.[tab.dataset.benchmark];
@@ -360,6 +356,7 @@ for (const item of data.mechanisms || []) {
       const button = el('button', '', page.label); button.type = 'button'; button.setAttribute('aria-pressed', String(index === 0));
       button.addEventListener('click', () => {
         img.src = page.src; img.width = page.width; img.height = page.height;
+        img.alt = page.caption || item.caption;
         link.style.setProperty('--figure-aspect', `${page.width} / ${page.height}`);
         link.href = page.src; link.dataset.caption = `${item.title} · ${page.label}`;
         pageButtons.forEach(other => other.setAttribute('aria-pressed', String(other === button)));
@@ -410,7 +407,7 @@ function syncHeroButton() {
   heroMotion.setAttribute('aria-label', playing ? 'Pause background demonstration videos' : 'Play background demonstration videos');
 }
 function updateHeroPlayback() {
-  const otherVideoPlaying = [...document.querySelectorAll('#demo-grid video')].some(video => !video.paused && !video.ended);
+  const otherVideoPlaying = [...document.querySelectorAll('.demo-grid video')].some(video => !video.paused && !video.ended);
   heroPlayback.setEnabled(heroVisible && !document.hidden && !userPausedHero && !otherVideoPlaying);
 }
 if (heroMotion && heroVideos.length) {
@@ -418,7 +415,7 @@ if (heroMotion && heroVideos.length) {
   heroMotion.addEventListener('click', () => {
     userPausedHero = heroVideos.some(video => !video.paused);
     if (!userPausedHero) {
-      document.querySelectorAll('#demo-grid video').forEach(video => video.pause());
+      document.querySelectorAll('.demo-grid video').forEach(video => video.pause());
       heroPlayback.retry();
     }
     updateHeroPlayback();
@@ -451,7 +448,7 @@ function enableSectionReveals() {
     document.querySelectorAll('.reveal-pending').forEach(node => node.classList.add('is-visible'));
     return;
   }
-  const selector = '.academic-heading, .abstract-copy, .overview-composition, .method-section .paper-figure, .method-steps, .demo-toolbar, #demo-panel, .real-results-body, .performance-figures, #result-panel, #efficiency .figure-card, .simulation-timings, .mechanism-row, .bibtex-section';
+  const selector = '.academic-heading, .abstract-copy, .overview-composition, .method-section .paper-figure, .method-steps, .demo-toolbar, .demo-block, .real-results-body, .performance-figures, #result-panel, #efficiency .figure-card, .simulation-timings, .mechanism-row, .bibtex-section';
   const targets = [...document.querySelectorAll(selector)];
   revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -472,7 +469,7 @@ window.addEventListener('resize', requestScrollUpdate);
 document.addEventListener('visibilitychange', updateHeroPlayback);
 window.addEventListener('online', () => { heroPlayback.retry(); updateHeroPlayback(); });
 ['play', 'pause', 'ended'].forEach(event => document.addEventListener(event, e => {
-  if (e.target.matches?.('#demo-grid video')) updateHeroPlayback();
+  if (e.target.matches?.('.demo-grid video')) updateHeroPlayback();
 }, true));
 reducedMotion.addEventListener('change', () => {
   userPausedHero = reducedMotion.matches;

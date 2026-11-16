@@ -1,28 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="480" height="375" viewBox="0 0 480 375" role="img" aria-labelledby="chart-title chart-desc">
 <title id="chart-title">Real robot mean inference latency</title><desc id="chart-desc">Mean model-call latency per action chunk, with a shared 0–600 ms axis. Batch size 1 and native chunk configurations. LIBERO and RoboTwin: A100 80GB, 10 warm-up and 60 timed calls. Real robot: RTX 4080 SUPER, 120 calls after warm-up. Hardware and protocols differ; these are not per-action or task-completion times. Values from performance-data-v14.json, latest supplied manuscript Tables 5 and 10.</desc>
-<defs><linearGradient id="bar-ours" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#465BAE"/><stop offset="1" stop-color="#899AE2"/></linearGradient><linearGradient id="bar-pi" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#839EB8"/><stop offset="1" stop-color="#BBCDDE"/></linearGradient><linearGradient id="bar-fast" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#AA98C3"/><stop offset="1" stop-color="#D4C8E3"/></linearGradient></defs>
+<defs><linearGradient id="bar-ours" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6C83D6"/><stop offset="1" stop-color="#B3C1F4"/></linearGradient><linearGradient id="bar-pi" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7A9FC6"/><stop offset="1" stop-color="#AEC8E6"/></linearGradient><linearGradient id="bar-fast" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#A793CB"/><stop offset="1" stop-color="#D6C8EE"/></linearGradient></defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;font-variant-numeric:tabular-nums}</style>
-<rect width="480" height="375" fill="#FFFFFF"/>
-<text x="24" y="32" font-size="25" font-weight="650" fill="#30384B" text-anchor="start">Real robot</text>
-<text x="24" y="58" font-size="17" font-weight="400" fill="#657087" text-anchor="start">RTX 4080 SUPER</text>
-<rect x="10" y="82" width="452" height="73" rx="6" fill="#F1F3FC"/>
-<line x1="24" y1="112" x2="24" y2="300" stroke="#E8ECF3" stroke-width="1"/>
-<text x="24" y="326" font-size="15" font-weight="400" fill="#657087" text-anchor="middle">0</text>
-<line x1="156" y1="112" x2="156" y2="300" stroke="#E8ECF3" stroke-width="1"/>
-<text x="156" y="326" font-size="15" font-weight="400" fill="#657087" text-anchor="middle">200</text>
-<line x1="288" y1="112" x2="288" y2="300" stroke="#E8ECF3" stroke-width="1"/>
-<text x="288" y="326" font-size="15" font-weight="400" fill="#657087" text-anchor="middle">400</text>
-<line x1="420" y1="112" x2="420" y2="300" stroke="#E8ECF3" stroke-width="1"/>
-<text x="420" y="326" font-size="15" font-weight="400" fill="#657087" text-anchor="middle">600</text>
-<text x="24" y="104" font-size="18" font-weight="650" fill="#4557A6" text-anchor="start">ThinkWAM</text>
+<rect width="480" height="375" fill="none"/>
+<text x="24" y="32" font-size="25" font-weight="650" fill="#E3E8F3" text-anchor="start">Real robot</text>
+<text x="24" y="58" font-size="17" font-weight="400" fill="#A7B2C9" text-anchor="start">RTX 4080 SUPER</text>
+<rect x="10" y="82" width="452" height="73" rx="6" fill="#202637"/>
+<line x1="24" y1="112" x2="24" y2="300" stroke="#343B4B" stroke-width="1"/>
+<text x="24" y="326" font-size="15" font-weight="400" fill="#A7B2C9" text-anchor="middle">0</text>
+<line x1="156" y1="112" x2="156" y2="300" stroke="#343B4B" stroke-width="1"/>
+<text x="156" y="326" font-size="15" font-weight="400" fill="#A7B2C9" text-anchor="middle">200</text>
+<line x1="288" y1="112" x2="288" y2="300" stroke="#343B4B" stroke-width="1"/>
+<text x="288" y="326" font-size="15" font-weight="400" fill="#A7B2C9" text-anchor="middle">400</text>
+<line x1="420" y1="112" x2="420" y2="300" stroke="#343B4B" stroke-width="1"/>
+<text x="420" y="326" font-size="15" font-weight="400" fill="#A7B2C9" text-anchor="middle">600</text>
+<text x="24" y="104" font-size="18" font-weight="650" fill="#BBC8FF" text-anchor="start">ThinkWAM</text>
 <rect data-method="ThinkWAM" data-value="101.2" x="24" y="116" width="66.7920" height="23" rx="2" fill="url(#bar-ours)"/>
-<text x="100.792" y="134" font-size="18" font-weight="650" fill="#30384B" text-anchor="start">101.2</text>
-<text x="24" y="176" font-size="18" font-weight="400" fill="#30384B" text-anchor="start">π0.5</text>
+<text x="100.792" y="134" font-size="18" font-weight="650" fill="#E3E8F3" text-anchor="start">101.2</text>
+<text x="24" y="176" font-size="18" font-weight="400" fill="#E3E8F3" text-anchor="start">π0.5</text>
 <rect data-method="π0.5" data-value="119.9" x="24" y="188" width="79.1340" height="23" rx="2" fill="url(#bar-pi)"/>
-<text x="113.134" y="206" font-size="18" font-weight="400" fill="#30384B" text-anchor="start">119.9</text>
-<text x="24" y="248" font-size="18" font-weight="400" fill="#30384B" text-anchor="start">FastWAM</text>
+<text x="113.134" y="206" font-size="18" font-weight="400" fill="#E3E8F3" text-anchor="start">119.9</text>
+<text x="24" y="248" font-size="18" font-weight="400" fill="#E3E8F3" text-anchor="start">FastWAM</text>
 <rect data-method="FastWAM" data-value="296.9" x="24" y="260" width="195.9540" height="23" rx="2" fill="url(#bar-fast)"/>
-<text x="229.954" y="278" font-size="18" font-weight="400" fill="#30384B" text-anchor="start">296.9</text>
-<line x1="24" y1="300" x2="420" y2="300" stroke="#C7CFDF" stroke-width="1"/>
-<text x="222" y="356" font-size="17" font-weight="400" fill="#657087" text-anchor="middle">Mean latency (ms / chunk) ↓</text>
+<text x="229.954" y="278" font-size="18" font-weight="400" fill="#E3E8F3" text-anchor="start">296.9</text>
+<line x1="24" y1="300" x2="420" y2="300" stroke="#72809B" stroke-width="1"/>
+<text x="222" y="356" font-size="17" font-weight="400" fill="#A7B2C9" text-anchor="middle">Mean latency (ms / chunk) ↓</text>
 </svg>

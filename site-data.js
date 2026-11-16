@@ -1816,12 +1816,28 @@ window.THINKWAM = {
     },
     {
       "title": "Action-conditioned latent correction",
-      "src": "assets/action_latent_openloop_stacked.webp",
+      "src": "assets/action_latent_openloop_stacked-v25.webp",
       "width": 2400,
-      "height": 1583,
-      "caption": "Open-loop comparisons from identical simulator states and action histories, without replanning. Proposal actions are red and refined actions are teal. A shared frozen decoder visualizes base and corrected future latents at t+7, t+15, and t+31; the action and latent panels show separate examples. Decoded latents are predictions, not simulator outcomes of the illustrated action chunks.",
+      "height": 1982,
+      "caption": "Paired open-loop comparisons at h=0,7,15, with h=0 the observed input. The latent and action panels show the same examples: a shared frozen decoder visualizes base and residual-corrected futures, and proposal (red) and refined (teal) chunks execute from matched states. Action MSE decreases by 15.25% and 44.60% in the two main examples.",
       "row": "correction-and-recoveries",
-      "shortTitle": "Latent correction"
+      "shortTitle": "Paired open-loop comparisons",
+      "pages": [
+        {
+          "label": "Main examples",
+          "src": "assets/action_latent_openloop_stacked-v25.webp",
+          "width": 2400,
+          "height": 1982,
+          "caption": "Paired open-loop comparisons at h=0,7,15, with h=0 the observed input. The latent and action panels show the same examples: a shared frozen decoder visualizes base and residual-corrected futures, and proposal (red) and refined (teal) chunks execute from matched states. Action MSE decreases by 15.25% and 44.60% in the two main examples."
+        },
+        {
+          "label": "More paired examples",
+          "src": "assets/appendix_openloop_comparisons-v25.webp",
+          "width": 3600,
+          "height": 2825,
+          "caption": "Eight additional paired training-set examples at h=0,7,15, selected for visible changes and lower second-pass action MSE. A1–A8 show decoded futures; B1–B8 show executions from matched states. Each pair shares the demonstration, decision index, wrist-camera view and input. The two action passes use independent sampling noise. Action paths include wrist-camera motion; B6 tracks a static Cookies-box corner."
+        }
+      ]
     },
     {
       "title": "LIBERO & LIBERO-Plus: trajectories",
@@ -2201,7 +2217,7 @@ window.THINKWAM = {
     {
       "title": "Mean inference latency",
       "hideHeading": true,
-      "src": "assets/inference-latency-v15.svg?v=20261115-16a",
+      "src": "assets/inference-latency-v15.svg?v=20261116-25c",
       "width": 1440,
       "height": 418,
       "alt": "ThinkWAM, π0.5 and FastWAM mean inference latency on LIBERO, RoboTwin and the real robot, with hardware shown for each setting.",
@@ -2209,26 +2225,27 @@ window.THINKWAM = {
       "mobileParts": [
         {
           "title": "LIBERO inference latency — A100 80GB",
-          "src": "assets/latency-libero-v15.svg?v=20261115-16a",
+          "src": "assets/latency-libero-v15.svg?v=20261116-25c",
           "width": 480,
           "height": 375,
           "alt": "LIBERO on A100: ThinkWAM 153.48 ms, π0.5 286.62 ms, FastWAM 506.48 ms per chunk."
         },
         {
           "title": "RoboTwin inference latency — A100 80GB",
-          "src": "assets/latency-robotwin-v15.svg?v=20261115-16a",
+          "src": "assets/latency-robotwin-v15.svg?v=20261116-25c",
           "width": 480,
           "height": 375,
           "alt": "RoboTwin on A100: ThinkWAM 164.61 ms, π0.5 254.59 ms, FastWAM 496.16 ms per chunk."
         },
         {
           "title": "Real-world inference latency — RTX 4080 SUPER",
-          "src": "assets/latency-real_robot-v15.svg?v=20261115-16a",
+          "src": "assets/latency-real_robot-v15.svg?v=20261116-25c",
           "width": 480,
           "height": 375,
           "alt": "Real robot on RTX 4080 SUPER: ThinkWAM 101.2 ms, π0.5 119.9 ms, FastWAM 296.9 ms per chunk."
         }
       ]
     }
-  ]
+  ],
+  "abstract": "World-action models (WAMs) couple action generation with predictions of future states. An initial action chunk may be flawed. A future prediction that is not conditioned on the chunk may fail to reflect the changes that the proposed actions would induce in visual representations, limiting its usefulness for refinement before execution. We introduce ThinkWAM, a latent WAM that establishes bidirectional feedback before execution through a proposal–rethink–refine loop: the policy first proposes a complete action chunk, the proposal corrects multi-horizon future latents through a learned residual, and the corrected latents are injected into a second pass of the same action head, which generates the executable chunk. An affordance-guided observation-action memory and a near-fine, far-coarse multi-horizon prediction scheme, both motivated by predictive coding, support this loop, and all prediction stays in latent space. ThinkWAM achieves 98.70\\"
 };

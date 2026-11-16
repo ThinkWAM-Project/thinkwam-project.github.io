@@ -1,0 +1,52 @@
+/* Optional whole-page dark preview: ?theme=dark. */
+html[data-preview-theme="dark"] { color-scheme: dark; --paper: #000; --ink: #e7eaf1; --muted: #aeb6c7; --line: #303440; --tint: #08090c; --night: #000; }
+html[data-preview-theme="dark"] body,
+html[data-preview-theme="dark"] main > .band,
+html[data-preview-theme="dark"] .project-meta { background: #000; color: #e7eaf1; }
+html[data-preview-theme="dark"] .site-header { background: rgba(0,0,0,.96); border-color: #282c36; color: #e7eaf1; }
+html[data-preview-theme="dark"] .nav-inner nav { color: #b6bfd0; }
+html[data-preview-theme="dark"] .nav-inner nav [aria-current] { color: #c8d5ff; }
+html[data-preview-theme="dark"] .band .academic-heading h2,
+html[data-preview-theme="dark"] .subsection-heading,
+html[data-preview-theme="dark"] .efficiency-subheading,
+html[data-preview-theme="dark"] .mechanism-item h3,
+html[data-preview-theme="dark"] .mechanism-group > h3,
+html[data-preview-theme="dark"] .demo-card h3,
+html[data-preview-theme="dark"] .comparison-panel > h3,
+html[data-preview-theme="dark"] .method-steps strong { color: #e7eaf1; }
+html[data-preview-theme="dark"] .section-index { color: #a6b7ec; }
+html[data-preview-theme="dark"] .section-deck,
+html[data-preview-theme="dark"] .real-task-description,
+html[data-preview-theme="dark"] .hardware-label,
+html[data-preview-theme="dark"] .method-steps p,
+html[data-preview-theme="dark"] .content-details { color: #b3bdce; }
+html[data-preview-theme="dark"] #overview .abstract-copy p:first-child { color: #e4e8f1; }
+html[data-preview-theme="dark"] .abstract-copy strong { color: #b9c9f5; }
+html[data-preview-theme="dark"] #overview .abstract-copy p:last-child { color: #b3bdce; border-color: #435172; }
+html[data-preview-theme="dark"] .figure-card,
+html[data-preview-theme="dark"] .table-card,
+html[data-preview-theme="dark"] .overview-composition,
+html[data-preview-theme="dark"] .method-steps li,
+html[data-preview-theme="dark"] .demo-card,
+html[data-preview-theme="dark"] .analysis-section .mechanism-row { background: #0b0d12; border-color: #262b39; box-shadow: none; }
+html[data-preview-theme="dark"] .comparison-table { color: #d1d8e7; background: #0b0d12; }
+html[data-preview-theme="dark"] .comparison-table thead th { background: #171c29; color: #c9d3e9; }
+html[data-preview-theme="dark"] .comparison-table td { background: #0b0d12; border-color: #282d3a; color: #c9d2e4; }
+html[data-preview-theme="dark"] .comparison-table tr:nth-child(even) td { background: #11151e; }
+html[data-preview-theme="dark"] .comparison-table tbody tr.ours td { background: #222d49; color: #e1e9ff; }
+html[data-preview-theme="dark"] .comparison-table .group-row td { background: #141923; color: #a9b9d9; }
+html[data-preview-theme="dark"] .comparison-table tbody tr:not(.group-row):not(.ours):hover td { background: #1b2231; }
+html[data-preview-theme="dark"] .pill-tabs > button,
+html[data-preview-theme="dark"] .camera-switcher { background: #111622; color: #b6bfd1; border-color: #30394d; }
+html[data-preview-theme="dark"] .pill-tabs > button[aria-selected=true],
+html[data-preview-theme="dark"] .camera-switcher button[aria-pressed=true] { background: #d6def3; color: #16233f; }
+html[data-preview-theme="dark"] .camera-switcher button,
+html[data-preview-theme="dark"] .simulation-filters button,
+html[data-preview-theme="dark"] .figure-pagination button { color: #aebbd4; }
+html[data-preview-theme="dark"] .simulation-filters button[aria-pressed=true],
+html[data-preview-theme="dark"] .figure-pagination button[aria-pressed=true] { color: #d8e5ff; border-color: #9bb5ec; }
+html[data-preview-theme="dark"] .headline-metrics dt { color: #aab7d1; }
+html[data-preview-theme="dark"] .headline-metrics dd { color: #e3eafe; }
+html[data-preview-theme="dark"] .headline-metrics small { color: #8f9db6; }
+html[data-preview-theme="dark"] main > .band + .band,
+html[data-preview-theme="dark"] .simulation-timings { border-color: #242934; }

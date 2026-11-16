@@ -59,3 +59,9 @@ The 5x5 hero retains its existing clip order. Nine larger sources have dedicated
 ## Content layout (2026-11-16)
 
 Content sections use the approved numbered headings, card treatments, alternating section backgrounds, three method steps, and continuous dark BibTeX/footer. Efficiency follows the simulation and real-world results, with its latency table in the same section. Figure and logo thumbnails use the supplied WebP assets. The demonstration panel has one unique set of IDs, and the existing hero playback controller and lightweight videos remain in use.
+## November 16 manuscript and presentation update
+
+- Updated the abstract and paired open-loop figures from the November 16 manuscript. Main and additional paired examples share the same figure switcher.
+- Ordered content as Overview, Method, Performance (including latency plots), Simulation Results (tables, timing, videos), Real-world Results (table, videos), and Mechanism Analysis.
+- Split real-world and simulation video galleries so each appears alongside its results; retained synchronized camera switching and native seeking. Reduced gallery width to 920 px.
+- Drew the radar, scatter and latency plots directly on a pure-black Performance section. Other content sections use white backgrounds. An optional whole-page dark preview is available with `?theme=dark`.

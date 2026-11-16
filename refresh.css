@@ -5,17 +5,17 @@
   --card-line: #e3e6ee;
   --card-shadow: 0 1px 2px rgba(31, 41, 74, .04), 0 10px 30px rgba(31, 41, 74, .06);
   --radius: 14px;
-  --night: #111216;
+  --night: #000;
 }
 
 /* ---------- Section rhythm ---------- */
-main > .band { padding-block: 96px; border: 0; background: #fff; }
+main > .band { padding-block: 60px; border: 0; background: #fff; }
 main > .band.band-tint { background: var(--tint); }
 main > .band + .band { border-top: 1px solid #eceef3; }
 main > .band.band-tint + .band, main > .band + .band.band-tint { border-top-color: transparent; }
 
 /* ---------- Section headings ---------- */
-.band .academic-heading { position: relative; margin-bottom: 44px; max-width: 860px; }
+.band .academic-heading { position: relative; margin-bottom: 28px; max-width: 860px; }
 .band .section-index {
   display: inline-flex; align-items: center; gap: 10px; margin-bottom: 14px;
   font: 600 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 1.5px;
@@ -41,7 +41,7 @@ main > .band.band-tint + .band, main > .band + .band.band-tint { border-top-colo
 
 /* ---------- 01 Overview ---------- */
 #overview .abstract-copy {
-  display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; max-width: none; margin-bottom: 44px; align-items: start;
+  display: grid; grid-template-columns: 1.15fr 1fr; gap: 32px; max-width: none; margin-bottom: 28px; align-items: start;
 }
 #overview .abstract-copy p:first-child { margin: 0; font-size: 24px; line-height: 1.5; letter-spacing: -.3px; color: #23273a; font-weight: 450; }
 #overview .abstract-copy p:last-child { margin: 4px 0 0; padding-left: 22px; border-left: 2px solid #d5dbef; font-size: 16px; line-height: 1.75; color: #5d6373; }
@@ -87,6 +87,32 @@ main > .band.band-tint + .band, main > .band + .band.band-tint { border-top-colo
 /* ---------- 04 Performance ---------- */
 .results-section .native-charts { gap: 24px; }
 .results-section .chart-card { border-radius: var(--radius); border-color: var(--card-line); box-shadow: var(--card-shadow); padding: 24px; }
+.results-section.band-dark .academic-heading h2,
+.results-section.band-dark .subsection-heading { color: #f4f5fa; }
+.results-section.band-dark .academic-heading .section-deck { color: #b5b9c7; }
+.results-section.band-dark .chart-card,
+.results-section.band-dark .figure-card,
+.results-section.band-dark .efficiency-figures,
+.results-section.band-dark .zoomable { color: #e5e8f0; background: transparent; border: 0; box-shadow: none; border-radius: 0; }
+.results-section.band-dark .figure-card,
+.results-section.band-dark .efficiency-figures { padding: 0; }
+.results-section.band-dark .chart-heading h3 { color: #f0f2f8; }
+.results-section.band-dark .chart-legend { color: #b4bdd0; }
+.results-section.band-dark .legend-ours { color: #72d6c7; }
+.results-section.band-dark .legend-ours::before { background: #72d6c7; }
+.results-section.band-dark .legend-baseline::before { background: #9dbce2; }
+.results-section.band-dark .legend-jepa::before { background: #c2a5e4; }
+.results-section.band-dark .chart-stage text { fill: #aab5ca; }
+.results-section.band-dark .chart-stage .chart-axis-title,
+.results-section.band-dark .chart-stage .radar-axis-name { fill: #dfe5f1; }
+.results-section.band-dark .chart-stage .radar-value,
+.results-section.band-dark .chart-stage .chart-method-label.ours { fill: #72d6c7; }
+.results-section.band-dark .chart-stage .radar-baseline-value { fill: #9db0ca; }
+.results-section.band-dark .chart-grid { stroke: #343a48; }
+.results-section.band-dark .chart-axis { stroke: #758097; }
+.results-section.band-dark .chart-replay { background: #1c202b; border-color: #343b4c; color: #c8d1e4; }
+.results-section.band-dark .focus-ring { stroke: #b8c8ef; }
+.results-section.band-dark .zoom-hint { background: #262c3c; color: #dce4f7; }
 
 /* ---------- 05 / 06 Tables ---------- */
 .simulation-results .result-tabs { margin-bottom: 20px; }
@@ -95,10 +121,26 @@ main > .band.band-tint + .band, main > .band + .band.band-tint { border-top-colo
 .real-world-results .table-card { max-width: 1040px; }
 
 /* ---------- 07 Efficiency ---------- */
-#efficiency .figure-card { margin-bottom: 40px; }
+#efficiency .figure-card { margin-bottom: 0; }
 #efficiency .efficiency-figures { margin: 0 auto; }
 #efficiency .efficiency-subheading { max-width: none; margin: 0 0 16px; font-size: 19px; color: #23273a; }
 #efficiency #latency-comparison { max-width: none; }
+
+/* Results and their demonstrations share one numbered section. */
+.performance-efficiency, .simulation-timings, .demo-block { margin-top: 30px; }
+.subsection-heading { margin: 0 0 20px; color: #23273a; font-size: 25px; line-height: 1.25; letter-spacing: -.5px; }
+.demo-block .real-task-description { margin-bottom: 18px; }
+.demo-block .demo-context { margin: -10px 0 20px; text-align: center; color: #626879; }
+.demo-block .simulation-filters { max-width: none; }
+.demo-block .demo-group-grid { max-width: 920px; margin-inline: auto; gap: 18px; }
+.demo-block .demo-card { padding: 8px 8px 10px; }
+.demo-block .camera-switcher { margin-bottom: 8px; }
+.demo-block .demo-card figcaption { padding-top: 9px; min-height: 0; }
+.simulation-timings .efficiency-subheading { max-width: none; margin: 0 0 20px; font-size: 25px; }
+.simulation-timings #latency-comparison { max-width: none; }
+.mechanism-row[data-mechanism-row="correction-and-recoveries"] { align-items: start; }
+.mechanism-row[data-mechanism-row="correction-and-recoveries"] .zoomable { height: auto; padding: 0; }
+.mechanism-row[data-mechanism-row="correction-and-recoveries"] img { width: 100%; height: auto; max-height: none; }
 
 /* ---------- 08 Analysis ---------- */
 .analysis-section .mechanism-figures { gap: 28px; }
@@ -144,13 +186,14 @@ main > .band.band-dark { padding-bottom: 56px; }
   .analysis-section .mechanism-row { padding: 20px; }
 }
 @media (max-width: 760px) {
-  main > .band { padding-block: 64px; }
-  .band .academic-heading { margin-bottom: 30px; }
+  main > .band { padding-block: 40px; }
+  .band .academic-heading { margin-bottom: 24px; }
   .band .academic-heading .section-deck { font-size: 15px; }
   #overview .abstract-copy p:first-child { font-size: 19px; }
   #overview .overview-composition, .figure-card { padding: 12px; }
   #demonstrations #demo-panel { padding: 16px 12px 20px; border-radius: 14px; }
   .analysis-section .mechanism-row { padding: 14px; }
+  .demo-block .demo-group-grid { max-width: 440px; }
   .band-dark pre { padding: 18px; font-size: 12px; }
   .back-to-top { right: 16px; bottom: 16px; width: 40px; height: 40px; }
   .nav-inner nav { overflow-x: auto; scrollbar-width: none; }

@@ -1797,7 +1797,7 @@ window.THINKWAM = {
   "mechanisms": [
     {
       "title": "Affordance-guided memory",
-      "src": "assets/affordance_compact.webp",
+      "src": "assets/affordance_compact-v27.webp",
       "width": 2400,
       "height": 858,
       "caption": "LIBERO observations paired with predicted affordance-head scores on a shared 0–1 scale. Dashed boxes mark task objects; circles locate score maxima. These are affordance predictions, not task-success probabilities. These LIBERO examples use the affordance branch; the RoboTwin setting disables it.",

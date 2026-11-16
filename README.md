@@ -70,3 +70,5 @@ Content sections use the approved numbered headings, card treatments, alternatin
 - Added eight additional paired open-loop examples and four additional closed-loop trajectories behind the existing figure tabs. Each aligned comparison panel offers a main/additional view. The latter is rendered directly from the approved appendix Figure 12 PDF at 3600 px, preserving its existing gutters and annotations.
 - Replaced the LIBERO/RoboTwin keyframe gallery with section 07, Ablation Study, immediately after Mechanism Analysis. All nine configurations, 18 success values and the two-pass/no-latent-correction qualification match manuscript Table 6 (also checked against main(11).pdf).
 - Replaced the wrapping text braces on the hero BibTeX button with a fixed-size SVG icon.
+
+- Synchronized the affordance-guided memory figure with the revised November 16 manuscript (appendix Figure 7). The replacement uses a versioned lossless WebP asset; its caption, 0–1 score scale, layout and zoom interaction remain unchanged.

@@ -401,6 +401,7 @@ let userPausedHero = reducedMotion.matches || Boolean(navigator.connection?.save
 let heroVisible = true;
 let scrollFrame = 0;
 let revealObserver;
+const heroPlayback = window.createHeroPlayback(heroVideos, syncHeroButton);
 
 function syncHeroButton() {
   if (!heroMotion) return;
@@ -409,24 +410,18 @@ function syncHeroButton() {
   heroMotion.setAttribute('aria-label', playing ? 'Pause background demonstration videos' : 'Play background demonstration videos');
 }
 function updateHeroPlayback() {
-  const otherVideoPlaying = [...document.querySelectorAll('#demo-grid video')].some(video => !video.paused);
-  heroVideos.forEach(video => {
-    const shouldPlay = heroVisible && !document.hidden && !userPausedHero && !otherVideoPlaying;
-    if (shouldPlay && video.paused) video.play().catch(syncHeroButton);
-    if (!shouldPlay && !video.paused) video.pause();
-  });
-  syncHeroButton();
+  const otherVideoPlaying = [...document.querySelectorAll('#demo-grid video')].some(video => !video.paused && !video.ended);
+  heroPlayback.setEnabled(heroVisible && !document.hidden && !userPausedHero && !otherVideoPlaying);
 }
 if (heroMotion && heroVideos.length) {
   heroMotion.hidden = false;
   heroMotion.addEventListener('click', () => {
     userPausedHero = heroVideos.some(video => !video.paused);
-    if (!userPausedHero) document.querySelectorAll('#demo-grid video').forEach(video => video.pause());
+    if (!userPausedHero) {
+      document.querySelectorAll('#demo-grid video').forEach(video => video.pause());
+      heroPlayback.retry();
+    }
     updateHeroPlayback();
-  });
-  heroVideos.forEach(video => {
-    video.addEventListener('playing', syncHeroButton);
-    video.addEventListener('pause', syncHeroButton);
   });
 }
 function updateScrollExperience() {
@@ -475,6 +470,10 @@ function enableSectionReveals() {
 window.addEventListener('scroll', requestScrollUpdate, {passive: true});
 window.addEventListener('resize', requestScrollUpdate);
 document.addEventListener('visibilitychange', updateHeroPlayback);
+window.addEventListener('online', () => { heroPlayback.retry(); updateHeroPlayback(); });
+['play', 'pause', 'ended'].forEach(event => document.addEventListener(event, e => {
+  if (e.target.matches?.('#demo-grid video')) updateHeroPlayback();
+}, true));
 reducedMotion.addEventListener('change', () => {
   userPausedHero = reducedMotion.matches;
   enableSectionReveals();

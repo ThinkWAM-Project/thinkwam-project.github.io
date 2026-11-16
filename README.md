@@ -49,3 +49,9 @@ The v21 presentation keeps Real-world first and initially selected in Robot Demo
 The seven headline metrics enter individually with the same fade, slight upward movement and soft focus as the hero text. Each plays once on entering the viewport, with an 85 ms stagger; reduced-motion visitors see the values immediately. The metric strip retains its layout, colors and exact reported values.
 
 The v22 demonstration area removes its outer gray panel. Real-world recordings fill the available two-column width; simulation recordings use two columns on desktop and one on narrow mobile screens, making individual streams easier to inspect. Video frames remain complete and synchronized camera controls stay above each recording.
+
+## Hero playback (2026-11-16)
+
+The 5x5 hero retains its existing clip order. Nine larger sources have dedicated 320-pixel-wide, 15 fps H.264 copies under `assets/videos/hero-v23/`, with fast-start metadata and complete playback durations. Unique hero assets now total about 4.94 MB (previously 25.10 MB). Gallery recordings retain their original files.
+
+`hero-playback.js` starts at most three pending media loads at a time, beginning across different benchmark rows. Source errors and stalled playback are retried with bounded backoff. Motion preferences, explicit pause, offscreen visibility and gallery playback remain respected. CSV download buttons are omitted from the public results sections.

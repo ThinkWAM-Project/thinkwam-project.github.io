@@ -1821,23 +1821,7 @@ window.THINKWAM = {
       "height": 1982,
       "caption": "Paired open-loop comparisons at h=0,7,15, with h=0 the observed input. The latent and action panels show the same examples: a shared frozen decoder visualizes base and residual-corrected futures, and proposal (red) and refined (teal) chunks execute from matched states. Action MSE decreases by 15.25% and 44.60% in the two main examples.",
       "row": "correction-and-recoveries",
-      "shortTitle": "Paired open-loop comparisons",
-      "pages": [
-        {
-          "label": "Main examples",
-          "src": "assets/action_latent_openloop_stacked-v25.webp",
-          "width": 2400,
-          "height": 1982,
-          "caption": "Paired open-loop comparisons at h=0,7,15, with h=0 the observed input. The latent and action panels show the same examples: a shared frozen decoder visualizes base and residual-corrected futures, and proposal (red) and refined (teal) chunks execute from matched states. Action MSE decreases by 15.25% and 44.60% in the two main examples."
-        },
-        {
-          "label": "More paired examples",
-          "src": "assets/appendix_openloop_comparisons-v25.webp",
-          "width": 3600,
-          "height": 2825,
-          "caption": "Eight additional paired training-set examples at h=0,7,15, selected for visible changes and lower second-pass action MSE. A1–A8 show decoded futures; B1–B8 show executions from matched states. Each pair shares the demonstration, decision index, wrist-camera view and input. The two action passes use independent sampling noise. Action paths include wrist-camera motion; B6 tracks a static Cookies-box corner."
-        }
-      ]
+      "shortTitle": "Paired open-loop comparisons"
     },
     {
       "title": "LIBERO & LIBERO-Plus: trajectories",
@@ -1852,36 +1836,24 @@ window.THINKWAM = {
       "groupTitle": "Closed-loop trajectories"
     },
     {
-      "title": "LIBERO & LIBERO-Plus: keyframe comparisons",
-      "src": "assets/libero_cases_01_04_grouped.webp",
-      "width": 2400,
-      "height": 766,
-      "pages": [
-        {
-          "label": "Cases 1–4",
-          "src": "assets/libero_cases_01_04_grouped.webp",
-          "width": 2400,
-          "height": 766
-        },
-        {
-          "label": "Cases 7–12",
-          "src": "assets/libero_cases_07_12_grouped.webp",
-          "width": 2400,
-          "height": 1182
-        }
-      ],
-      "caption": "Ten selected LIBERO-family cases compare proposal-only and refined execution from matched starts. Each card shows the interaction and outcome of both branches; circles identify the task object. Timestamps refer to the two independent trajectories. These examples do not measure how often refinement recovers a failure.",
-      "row": "keyframe-comparisons",
-      "shortTitle": "LIBERO / LIBERO-Plus"
+      "src": "assets/appendix_openloop_comparisons-v25.webp",
+      "width": 3600,
+      "height": 2825,
+      "caption": "Eight additional paired training-set examples at h=0,7,15, selected for visible changes and lower second-pass action MSE. A1–A8 show decoded futures; B1–B8 show executions from matched states. Each pair shares the demonstration, decision index, wrist-camera view and input. The two action passes use independent sampling noise. Action paths include wrist-camera motion; B6 tracks a static Cookies-box corner.",
+      "title": "Additional paired open-loop comparisons",
+      "shortTitle": "More open-loop examples",
+      "row": "additional-comparisons",
+      "source": "November 16 manuscript, Appendix Figure 11"
     },
     {
-      "title": "RoboTwin: keyframe comparisons",
-      "src": "assets/robotwin_cases_01_04_grouped.webp",
-      "width": 2400,
-      "height": 766,
-      "caption": "Four selected RoboTwin tasks compare proposal-only execution with refinement from matched starts: a toy car into a basket, a cup onto a coaster, striking a block with a hammer, and aligning a shoe. Each task shows an interaction and final outcome for both branches; circles identify the interaction region. These selected cases do not measure how often refinement recovers a failure.",
-      "row": "keyframe-comparisons",
-      "shortTitle": "RoboTwin"
+      "title": "Additional closed-loop trajectories",
+      "shortTitle": "More closed-loop trajectories",
+      "src": "assets/appendix_closed_loop_comparisons-v26.webp",
+      "width": 3600,
+      "height": 2752,
+      "row": "additional-comparisons",
+      "caption": "Four additional LIBERO-Plus comparisons from matched starts, with proposal in red and refinement in teal. Each branch replans from its own observations. Panels show scene paths, snapshots at refinement's first success, horizontal paths, and height/gripper traces. Time is at 20 Hz after initialization and excludes inference latency. These are selected comparisons, not an aggregate recovery rate.",
+      "source": "November 16 manuscript, Appendix Figure 12"
     }
   ],
   "huggingfaceUrl": "https://huggingface.co/Adrain11/ThinkWAM",
@@ -2247,5 +2219,114 @@ window.THINKWAM = {
       ]
     }
   ],
-  "abstract": "World-action models (WAMs) couple action generation with predictions of future states. An initial action chunk may be flawed. A future prediction that is not conditioned on the chunk may fail to reflect the changes that the proposed actions would induce in visual representations, limiting its usefulness for refinement before execution. We introduce ThinkWAM, a latent WAM that establishes bidirectional feedback before execution through a proposal–rethink–refine loop: the policy first proposes a complete action chunk, the proposal corrects multi-horizon future latents through a learned residual, and the corrected latents are injected into a second pass of the same action head, which generates the executable chunk. An affordance-guided observation-action memory and a near-fine, far-coarse multi-horizon prediction scheme, both motivated by predictive coding, support this loop, and all prediction stays in latent space. ThinkWAM achieves 98.70% success on LIBERO, 84.76% on LIBERO-Plus without OOD fine-tuning, 85.75%/65.85% on RoboTwin 2.0 Clean/Random, and 65.17% on RoboCasa24. ThinkWAM achieves 64.4% mean success across three real-world OOD conditions. The mean two-pass inference latency per action chunk is 153.48 ms on LIBERO, 164.61 ms on RoboTwin, and 101.2 ms on the Galaxea A1Z. Ablations show complementary gains from rethinking and affordance guidance. Diagnostics indicate that proposal-conditioned corrections change both predicted futures and action trajectories, showing that the corrected future representations improve the final action."
+  "abstract": "World-action models (WAMs) couple action generation with predictions of future states. An initial action chunk may be flawed. A future prediction that is not conditioned on the chunk may fail to reflect the changes that the proposed actions would induce in visual representations, limiting its usefulness for refinement before execution. We introduce ThinkWAM, a latent WAM that establishes bidirectional feedback before execution through a proposal–rethink–refine loop: the policy first proposes a complete action chunk, the proposal corrects multi-horizon future latents through a learned residual, and the corrected latents are injected into a second pass of the same action head, which generates the executable chunk. An affordance-guided observation-action memory and a near-fine, far-coarse multi-horizon prediction scheme, both motivated by predictive coding, support this loop, and all prediction stays in latent space. ThinkWAM achieves 98.70% success on LIBERO, 84.76% on LIBERO-Plus without OOD fine-tuning, 85.75%/65.85% on RoboTwin 2.0 Clean/Random, and 65.17% on RoboCasa24. ThinkWAM achieves 64.4% mean success across three real-world OOD conditions. The mean two-pass inference latency per action chunk is 153.48 ms on LIBERO, 164.61 ms on RoboTwin, and 101.2 ms on the Galaxea A1Z. Ablations show complementary gains from rethinking and affordance guidance. Diagnostics indicate that proposal-conditioned corrections change both predicted futures and action trajectories, showing that the corrected future representations improve the final action.",
+  "ablations": {
+    "title": "Component ablations: success rate (%)",
+    "source": "November 16 manuscript, Table 6 and Appendix C.1; checked against main(11).pdf Table 6",
+    "columns": [
+      {
+        "key": "configuration",
+        "label": "Configuration"
+      },
+      {
+        "key": "rethinking",
+        "label": "Rethinking",
+        "indicator": true
+      },
+      {
+        "key": "affordance",
+        "label": "Affordance",
+        "indicator": true
+      },
+      {
+        "key": "libero",
+        "label": "LIBERO",
+        "unit": "%"
+      },
+      {
+        "key": "libero_plus",
+        "label": "LIBERO-Plus",
+        "unit": "%"
+      }
+    ],
+    "rows": [
+      {
+        "configuration": "Full ThinkWAM",
+        "rethinking": true,
+        "affordance": true,
+        "libero": "98.70",
+        "libero_plus": "84.76",
+        "group": "Multi-horizon futures",
+        "is_ours": true,
+        "source_emphasis": {
+          "libero": "bold",
+          "libero_plus": "bold"
+        }
+      },
+      {
+        "configuration": "Without rethinking",
+        "rethinking": false,
+        "affordance": true,
+        "libero": "96.35",
+        "libero_plus": "80.51",
+        "group": "Multi-horizon futures"
+      },
+      {
+        "configuration": "Without latent correction †",
+        "rethinking": false,
+        "affordance": true,
+        "libero": "96.55",
+        "libero_plus": "81.59",
+        "group": "Multi-horizon futures"
+      },
+      {
+        "configuration": "Without affordance",
+        "rethinking": true,
+        "affordance": false,
+        "libero": "97.10",
+        "libero_plus": "82.01",
+        "group": "Multi-horizon futures"
+      },
+      {
+        "configuration": "Without both",
+        "rethinking": false,
+        "affordance": false,
+        "libero": "95.00",
+        "libero_plus": "76.41",
+        "group": "Multi-horizon futures"
+      },
+      {
+        "configuration": "Single future",
+        "rethinking": true,
+        "affordance": true,
+        "libero": "96.40",
+        "libero_plus": "79.92",
+        "group": "Single future target"
+      },
+      {
+        "configuration": "Without rethinking",
+        "rethinking": false,
+        "affordance": true,
+        "libero": "95.65",
+        "libero_plus": "77.36",
+        "group": "Single future target"
+      },
+      {
+        "configuration": "Without affordance",
+        "rethinking": true,
+        "affordance": false,
+        "libero": "96.10",
+        "libero_plus": "78.66",
+        "group": "Single future target"
+      },
+      {
+        "configuration": "Without both",
+        "rethinking": false,
+        "affordance": false,
+        "libero": "94.30",
+        "libero_plus": "75.58",
+        "group": "Single future target"
+      }
+    ]
+  }
 };

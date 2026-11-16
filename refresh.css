@@ -122,16 +122,16 @@ main > .band.band-tint + .band, main > .band + .band.band-tint { border-top-colo
 .demo-block .demo-card figcaption { padding-top: 9px; min-height: 0; }
 .simulation-timings .efficiency-subheading { max-width: none; margin: 0 0 20px; font-size: 25px; }
 .simulation-timings #latency-comparison { max-width: none; }
-.mechanism-row[data-mechanism-row="correction-and-recoveries"] { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
-.mechanism-row[data-mechanism-row="correction-and-recoveries"] .zoomable { height: auto; padding: 0; }
-.mechanism-row[data-mechanism-row="correction-and-recoveries"] img { width: 100%; height: auto; max-height: none; }
+.mechanism-row:is([data-mechanism-row="correction-and-recoveries"], [data-mechanism-row="additional-comparisons"]) { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+.mechanism-row:is([data-mechanism-row="correction-and-recoveries"], [data-mechanism-row="additional-comparisons"]) .zoomable { height: auto; padding: 0; }
+.mechanism-row:is([data-mechanism-row="correction-and-recoveries"], [data-mechanism-row="additional-comparisons"]) img { width: 100%; height: auto; max-height: none; }
 @media (min-width: 761px) {
-  .mechanism-row[data-mechanism-row="correction-and-recoveries"] { grid-template-rows: auto 1fr; row-gap: 12px; }
-  .mechanism-row[data-mechanism-row="correction-and-recoveries"] > .mechanism-item,
-  .mechanism-row[data-mechanism-row="correction-and-recoveries"] > .mechanism-group { display: grid; grid-template-rows: subgrid; grid-row: span 2; row-gap: 12px; }
-  .mechanism-row[data-mechanism-row="correction-and-recoveries"] > .mechanism-group > .mechanism-item { display: contents; }
-  .mechanism-row[data-mechanism-row="correction-and-recoveries"] .mechanism-item > h3,
-  .mechanism-row[data-mechanism-row="correction-and-recoveries"] .mechanism-group > h3 { min-height: 0; margin: 0; align-items: flex-start; }
+  .mechanism-row:is([data-mechanism-row="correction-and-recoveries"], [data-mechanism-row="additional-comparisons"]) { grid-template-rows: auto 1fr; row-gap: 12px; }
+  .mechanism-row:is([data-mechanism-row="correction-and-recoveries"], [data-mechanism-row="additional-comparisons"]) > .mechanism-item,
+  .mechanism-row:is([data-mechanism-row="correction-and-recoveries"], [data-mechanism-row="additional-comparisons"]) > .mechanism-group { display: grid; grid-template-rows: subgrid; grid-row: span 2; row-gap: 12px; }
+  .mechanism-row:is([data-mechanism-row="correction-and-recoveries"], [data-mechanism-row="additional-comparisons"]) > .mechanism-group > .mechanism-item { display: contents; }
+  .mechanism-row:is([data-mechanism-row="correction-and-recoveries"], [data-mechanism-row="additional-comparisons"]) .mechanism-item > h3,
+  .mechanism-row:is([data-mechanism-row="correction-and-recoveries"], [data-mechanism-row="additional-comparisons"]) .mechanism-group > h3 { min-height: 0; margin: 0; align-items: flex-start; }
 }
 @media (min-width: 761px) and (max-width: 1000px) {
   .simulation-group-grid .camera-switcher button { gap: 2px; padding-inline: 2px; font-size: 10px; }
@@ -191,7 +191,7 @@ main > .band.band-dark { padding-bottom: 56px; }
   .analysis-section .mechanism-row { padding: 14px; }
   .demo-block .simulation-group-grid { max-width: 640px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .demo-block .real-group-grid { max-width: 360px; }
-  .mechanism-row[data-mechanism-row="correction-and-recoveries"] { grid-template-columns: 1fr; }
+  .mechanism-row:is([data-mechanism-row="correction-and-recoveries"], [data-mechanism-row="additional-comparisons"]) { grid-template-columns: 1fr; }
   .band-dark pre { padding: 18px; font-size: 12px; }
   .back-to-top { right: 16px; bottom: 16px; width: 40px; height: 40px; }
   .nav-inner nav { overflow-x: auto; scrollbar-width: none; }
@@ -204,3 +204,8 @@ main > .band.band-dark { padding-bottom: 56px; }
   .method-steps li, .back-to-top { transition: none; }
   .method-steps li:hover { transform: none; }
 }
+
+/* Source-derived ablation table follows the mechanism examples. */
+.ablation-section .table-card { max-width: 1040px; margin-inline: auto; }
+.ablation-section .comparison-table th:first-child, .ablation-section .comparison-table td:first-child { min-width: 210px; }
+.ablation-note { max-width: 1040px; margin: 14px auto 0; color: #626879; font-size: 14px; line-height: 1.6; }

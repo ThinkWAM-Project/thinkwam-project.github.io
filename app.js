@@ -268,6 +268,10 @@ function renderComparison(container, comparison) {
         td.textContent = value === 'Yes' ? '✓' : '✗'; td.classList.add('pretraining-indicator', value === 'Yes' ? 'pt-yes' : 'pt-no');
         td.setAttribute('aria-label', value); td.title = value === 'Yes' ? 'With action pretraining' : 'Without action pretraining';
       }
+      if (column.indicator && typeof value === 'boolean') {
+        td.textContent = value ? '✓' : '✗'; td.classList.add('pretraining-indicator', value ? 'pt-yes' : 'pt-no');
+        td.setAttribute('aria-label', `${column.label}: ${value ? 'enabled' : 'disabled'}`);
+      }
       if (row.source_emphasis?.[column.key] === 'bold') td.classList.add('best');
       if (row.source_emphasis?.[column.key] === 'underline') td.classList.add('second');
       tr.append(td);
@@ -279,6 +283,7 @@ function renderComparison(container, comparison) {
 const activateResult = setupTabs(document.querySelector('.result-tabs'), renderResults); activateResult(document.querySelector('.result-tabs button'));
 
 renderComparison(document.querySelector('#latency-comparison'), data.latency);
+renderComparison(document.querySelector('#ablation-comparison'), data.ablations);
 if (data.realWorldComparison) {
   const comparison = data.realWorldComparison;
   const columns = comparison.columns.filter(column => !column.hideWhenEmpty || comparison.rows.some(row => row[column.key] != null));

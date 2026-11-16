@@ -1821,7 +1821,23 @@ window.THINKWAM = {
       "height": 1982,
       "caption": "Paired open-loop comparisons at h=0,7,15, with h=0 the observed input. The latent and action panels show the same examples: a shared frozen decoder visualizes base and residual-corrected futures, and proposal (red) and refined (teal) chunks execute from matched states. Action MSE decreases by 15.25% and 44.60% in the two main examples.",
       "row": "correction-and-recoveries",
-      "shortTitle": "Paired open-loop comparisons"
+      "shortTitle": "Paired open-loop comparisons",
+      "pages": [
+        {
+          "src": "assets/action_latent_openloop_stacked-v25.webp",
+          "width": 2400,
+          "height": 1982,
+          "caption": "Paired open-loop comparisons at h=0,7,15, with h=0 the observed input. The latent and action panels show the same examples: a shared frozen decoder visualizes base and residual-corrected futures, and proposal (red) and refined (teal) chunks execute from matched states. Action MSE decreases by 15.25% and 44.60% in the two main examples.",
+          "label": "Main examples"
+        },
+        {
+          "src": "assets/appendix_openloop_comparisons-v25.webp",
+          "width": 3600,
+          "height": 2825,
+          "caption": "Eight additional paired training-set examples at h=0,7,15, selected for visible changes and lower second-pass action MSE. A1–A8 show decoded futures; B1–B8 show executions from matched states. Each pair shares the demonstration, decision index, wrist-camera view and input. The two action passes use independent sampling noise. Action paths include wrist-camera motion; B6 tracks a static Cookies-box corner.",
+          "label": "More paired examples"
+        }
+      ]
     },
     {
       "title": "LIBERO & LIBERO-Plus: trajectories",
@@ -1833,27 +1849,23 @@ window.THINKWAM = {
       "row": "correction-and-recoveries",
       "hideHeading": true,
       "shortTitle": "Closed-loop trajectories",
-      "groupTitle": "Closed-loop trajectories"
-    },
-    {
-      "src": "assets/appendix_openloop_comparisons-v25.webp",
-      "width": 3600,
-      "height": 2825,
-      "caption": "Eight additional paired training-set examples at h=0,7,15, selected for visible changes and lower second-pass action MSE. A1–A8 show decoded futures; B1–B8 show executions from matched states. Each pair shares the demonstration, decision index, wrist-camera view and input. The two action passes use independent sampling noise. Action paths include wrist-camera motion; B6 tracks a static Cookies-box corner.",
-      "title": "Additional paired open-loop comparisons",
-      "shortTitle": "More open-loop examples",
-      "row": "additional-comparisons",
-      "source": "November 16 manuscript, Appendix Figure 11"
-    },
-    {
-      "title": "Additional closed-loop trajectories",
-      "shortTitle": "More closed-loop trajectories",
-      "src": "assets/appendix_closed_loop_comparisons-v26.webp",
-      "width": 3600,
-      "height": 2752,
-      "row": "additional-comparisons",
-      "caption": "Four additional LIBERO-Plus comparisons from matched starts, with proposal in red and refinement in teal. Each branch replans from its own observations. Panels show scene paths, snapshots at refinement's first success, horizontal paths, and height/gripper traces. Time is at 20 Hz after initialization and excludes inference latency. These are selected comparisons, not an aggregate recovery rate.",
-      "source": "November 16 manuscript, Appendix Figure 12"
+      "groupTitle": "Closed-loop trajectories",
+      "pages": [
+        {
+          "src": "assets/closed_loop_action_comparison_stacked.webp",
+          "width": 2400,
+          "height": 2000,
+          "caption": "Selected LIBERO and LIBERO-Plus rollouts compare proposal actions (red) and refined actions (teal) from matched starts. Each branch replans from its own observations. Above, A/B show scene trajectories and snapshots at refinement’s first success; below, C/D show horizontal end-effector paths and height/gripper traces. Time excludes inference latency. These selected cases do not measure how often refinement recovers a failure.",
+          "label": "Main trajectories"
+        },
+        {
+          "src": "assets/appendix_closed_loop_comparisons-v26.webp",
+          "width": 3600,
+          "height": 2752,
+          "caption": "Four additional LIBERO-Plus comparisons from matched starts, with proposal in red and refinement in teal. Each branch replans from its own observations. Panels show scene paths, snapshots at refinement's first success, horizontal paths, and height/gripper traces. Time is at 20 Hz after initialization and excludes inference latency. These are selected comparisons, not an aggregate recovery rate.",
+          "label": "More trajectories"
+        }
+      ]
     }
   ],
   "huggingfaceUrl": "https://huggingface.co/Adrain11/ThinkWAM",

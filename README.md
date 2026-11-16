@@ -67,5 +67,6 @@ Content sections use the approved numbered headings, card treatments, alternatin
 - Performance and Inference Efficiency use the same white background as the other content sections. Radar, scatter and latency plots sit directly on the section, with dark labels and preserved reveal animations. The whole-page dark preview is disabled.
 - Paired open-loop and closed-loop figures use equal columns and a shared title row, aligning their titles and image tops without cropping.
 
-- Expanded eight additional paired open-loop examples and four additional closed-loop trajectories inline. The latter is rendered directly from the approved appendix Figure 12 PDF at 3600 px, preserving its existing gutters and annotations.
+- Added eight additional paired open-loop examples and four additional closed-loop trajectories behind the existing figure tabs. Each aligned comparison panel offers a main/additional view. The latter is rendered directly from the approved appendix Figure 12 PDF at 3600 px, preserving its existing gutters and annotations.
 - Replaced the LIBERO/RoboTwin keyframe gallery with section 07, Ablation Study, immediately after Mechanism Analysis. All nine configurations, 18 success values and the two-pass/no-latent-correction qualification match manuscript Table 6 (also checked against main(11).pdf).
+- Replaced the wrapping text braces on the hero BibTeX button with a fixed-size SVG icon.

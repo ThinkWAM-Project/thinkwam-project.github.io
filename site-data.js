@@ -37,7 +37,7 @@ window.THINKWAM = {
     },
     {
       "name": "Ke Ma",
-      "sup": "5",
+      "sup": "1,5",
       "url": "https://github.com/Alakia"
     },
     {

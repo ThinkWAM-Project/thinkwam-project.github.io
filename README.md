@@ -72,3 +72,5 @@ Content sections use the approved numbered headings, card treatments, alternatin
 - Replaced the wrapping text braces on the hero BibTeX button with a fixed-size SVG icon.
 
 - Synchronized the affordance-guided memory figure with the revised November 16 manuscript (appendix Figure 7). The replacement uses a versioned lossless WebP asset; its caption, 0–1 score scale, layout and zoom interaction remain unchanged.
+
+- Ke Ma is affiliated with both Xi'an Jiaotong University and Phantrix Research (1,5), matching the updated manuscript author block.

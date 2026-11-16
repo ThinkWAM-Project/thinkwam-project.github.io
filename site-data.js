@@ -1834,7 +1834,7 @@ window.THINKWAM = {
           "src": "assets/appendix_openloop_comparisons-v25.webp",
           "width": 3600,
           "height": 2825,
-          "caption": "Eight additional paired training-set examples at h=0,7,15, selected for visible changes and lower second-pass action MSE. A1–A8 show decoded futures; B1–B8 show executions from matched states. Each pair shares the demonstration, decision index, wrist-camera view and input. The two action passes use independent sampling noise. Action paths include wrist-camera motion; B6 tracks a static Cookies-box corner.",
+          "caption": "Eight additional paired examples at h=0,7,15, selected for visible changes and lower second-pass action MSE. A1–A8 show decoded futures; B1–B8 show executions from matched states. Each pair shares the demonstration, decision index, wrist-camera view and input. The two action passes use independent sampling noise. Action paths include wrist-camera motion; B6 tracks a static Cookies-box corner.",
           "label": "More paired examples"
         }
       ]

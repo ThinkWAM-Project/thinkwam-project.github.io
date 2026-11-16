@@ -2217,7 +2217,7 @@ window.THINKWAM = {
     {
       "title": "Mean inference latency",
       "hideHeading": true,
-      "src": "assets/inference-latency-v15.svg?v=20261116-25c",
+      "src": "assets/inference-latency-v15.svg?v=20261116-26a",
       "width": 1440,
       "height": 418,
       "alt": "ThinkWAM, π0.5 and FastWAM mean inference latency on LIBERO, RoboTwin and the real robot, with hardware shown for each setting.",
@@ -2225,21 +2225,21 @@ window.THINKWAM = {
       "mobileParts": [
         {
           "title": "LIBERO inference latency — A100 80GB",
-          "src": "assets/latency-libero-v15.svg?v=20261116-25c",
+          "src": "assets/latency-libero-v15.svg?v=20261116-26a",
           "width": 480,
           "height": 375,
           "alt": "LIBERO on A100: ThinkWAM 153.48 ms, π0.5 286.62 ms, FastWAM 506.48 ms per chunk."
         },
         {
           "title": "RoboTwin inference latency — A100 80GB",
-          "src": "assets/latency-robotwin-v15.svg?v=20261116-25c",
+          "src": "assets/latency-robotwin-v15.svg?v=20261116-26a",
           "width": 480,
           "height": 375,
           "alt": "RoboTwin on A100: ThinkWAM 164.61 ms, π0.5 254.59 ms, FastWAM 496.16 ms per chunk."
         },
         {
           "title": "Real-world inference latency — RTX 4080 SUPER",
-          "src": "assets/latency-real_robot-v15.svg?v=20261116-25c",
+          "src": "assets/latency-real_robot-v15.svg?v=20261116-26a",
           "width": 480,
           "height": 375,
           "alt": "Real robot on RTX 4080 SUPER: ThinkWAM 101.2 ms, π0.5 119.9 ms, FastWAM 296.9 ms per chunk."

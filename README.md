@@ -63,5 +63,6 @@ Content sections use the approved numbered headings, card treatments, alternatin
 
 - Updated the abstract and paired open-loop figures from the November 16 manuscript. Main and additional paired examples share the same figure switcher.
 - Ordered content as Overview, Method, Performance (including latency plots), Simulation Results (tables, timing, videos), Real-world Results (table, videos), and Mechanism Analysis.
-- Split real-world and simulation video galleries so each appears alongside its results; retained synchronized camera switching and native seeking. Reduced gallery width to 920 px.
-- Drew the radar, scatter and latency plots directly on a pure-black Performance section. Other content sections use white backgrounds. An optional whole-page dark preview is available with `?theme=dark`.
+- Split real-world and simulation video galleries so each appears alongside its results; retained synchronized camera switching and native seeking. Simulation demos use four columns on desktop, two on tablets and one on narrow screens. Real-world demos retain two desktop columns in a narrower 760 px gallery.
+- Performance and Inference Efficiency use the same white background as the other content sections. Radar, scatter and latency plots sit directly on the section, with dark labels and preserved reveal animations. The whole-page dark preview is disabled.
+- Paired open-loop and closed-loop figures use equal columns and a shared title row, aligning their titles and image tops without cropping.

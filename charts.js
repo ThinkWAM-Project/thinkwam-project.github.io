@@ -3,7 +3,7 @@
 (() => {
   const NS = 'http://www.w3.org/2000/svg';
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  const palette = {ours: '#72d6c7', baseline: '#9dbce2', jepa: '#c2a5e4'};
+  const palette = {ours: '#17877d', baseline: '#819bb8', jepa: '#9b86ba'};
   const svgNode = (tag, attrs = {}, text) => {
     const node = document.createElementNS(NS, tag);
     Object.entries(attrs).forEach(([key, value]) => node.setAttribute(key, value));
@@ -159,7 +159,7 @@
       const px = x(point.x), py = y(point.y), radius = 4.7 * Math.sqrt(point.size_b);
       const group = svgNode('g', {class: 'chart-point scatter-point', transform: `translate(${px} ${py})`, 'data-method': point.method, 'data-x': point.x, 'data-y': point.y, 'data-size': point.size_b, style: `--point-delay:${index * 70}ms`});
       const mark = svgNode('g', {class: 'scatter-marker'});
-      const common = {fill: `url(#scatter-${kind})`, stroke: ours ? '#b5f3e7' : '#d4dbef', 'stroke-width': ours ? 1.5 : 1.2};
+      const common = {fill: `url(#scatter-${kind})`, stroke: ours ? '#126d65' : '#fff', 'stroke-width': ours ? 1.5 : 1.7};
       if (jepa) {
         const d = radius * Math.sqrt(Math.PI / 2);
         mark.append(svgNode('polygon', {...common, points: `0,${-d} ${d},0 0,${d} ${-d},0`}));

@@ -96,6 +96,18 @@ let selectedSimulationGroup = 'LIBERO / LIBERO-Plus';
 let selectedRealGroup = 'Two targets';
 const simulationFilters = document.querySelector('#simulation-filters');
 const realFilters = document.querySelector('#real-filters');
+// Below-the-fold players must not compete with the opening mosaic for bandwidth.
+const demoPreviewObserver = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const video = entry.target;
+    demoPreviewObserver.unobserve(video);
+    if (video.preload === 'none' && video.paused) {
+      video.preload = 'metadata';
+      video.load();
+    }
+  });
+}, {rootMargin: '240px 0px'}) : null;
 simulationFilters.querySelectorAll('button').forEach(button => button.addEventListener('click', () => {
   selectedSimulationGroup = button.dataset.simulationGroup;
   renderDemos('simulation');
@@ -106,7 +118,11 @@ realFilters.querySelectorAll('button').forEach(button => button.addEventListener
 }));
 function renderDemos(type) {
   const grid = document.querySelector(`#${type}-demo-grid`);
-  grid.querySelectorAll('video').forEach(video => video.pause());
+  grid.querySelectorAll('video').forEach(video => {
+    video.pause(); demoPreviewObserver?.unobserve(video);
+    // A detached player can otherwise keep downloading the previous filter's clip.
+    video.querySelector('source')?.removeAttribute('src'); video.load();
+  });
   grid.replaceChildren();
   const selectedGroup = type === 'real' ? selectedRealGroup : selectedSimulationGroup;
   const filtered = demos.filter(item => item.type === type && item.group === selectedGroup);
@@ -135,7 +151,8 @@ function renderDemos(type) {
     const figure = el('figure', 'demo-card');
     const media = el('div', 'demo-video-wrap' + (type === 'simulation' ? ' simulation' : ''));
     if (type !== 'real' && demo.aspect) media.style.aspectRatio = demo.aspect;
-    const video = document.createElement('video'); video.controls = true; video.playsInline = true; video.muted = true; video.preload = 'metadata'; video.poster = demo.poster;
+    const video = document.createElement('video'); video.controls = true; video.playsInline = true; video.muted = true; video.preload = 'none'; video.poster = demo.poster;
+    demoPreviewObserver?.observe(video);
     video.setAttribute('aria-label', demo.title); const source = document.createElement('source'); source.src = demo.src; source.type = 'video/mp4'; video.append(source);
     const fallback = el('a', '', 'Download video'); fallback.href = demo.src; video.append(fallback);
     video.addEventListener('play', () => { document.querySelectorAll('video').forEach(other => { if (other !== video) other.pause(); }); });
@@ -173,6 +190,7 @@ function renderDemos(type) {
           }, {once: true, signal: switchController.signal});
           if (type !== 'real') media.style.aspectRatio = view.aspect || demo.aspect || "";
           video.poster = view.poster; source.src = view.src; fallback.href = view.src;
+          video.preload = playing ? 'auto' : 'metadata';
           video.setAttribute('aria-label', `${demo.title} — ${view.label}`); video.load();
         });
         viewControls.append(button); return button;
@@ -307,7 +325,7 @@ function renderResearchFigures(selector, figures) {
     link.setAttribute('aria-label', 'Enlarge ' + item.title);
     link.style.setProperty('--figure-aspect', `${item.width} / ${item.height}`);
     const img = el('img'); img.src = item.src; img.alt = item.alt || item.caption;
-    img.width = item.width; img.height = item.height; img.loading = 'lazy';
+    img.width = item.width; img.height = item.height; img.loading = 'lazy'; img.decoding = 'async'; img.fetchPriority = 'low';
     link.append(img, el('span', 'zoom-hint', '↗'));
     figure.append(link);
     if (item.mobileParts?.length) {
@@ -318,7 +336,7 @@ function renderResearchFigures(selector, figures) {
         partLink.dataset.figure = ''; partLink.dataset.caption = part.title;
         partLink.setAttribute('aria-label', 'Enlarge ' + part.title);
         const partImage = el('img'); partImage.src = part.src; partImage.alt = part.alt;
-        partImage.width = part.width; partImage.height = part.height; partImage.loading = 'lazy';
+        partImage.width = part.width; partImage.height = part.height; partImage.loading = 'lazy'; partImage.decoding = 'async'; partImage.fetchPriority = 'low';
         partLink.append(partImage, el('span', 'zoom-hint', '↗')); parts.append(partLink);
       }
       figure.append(parts);
@@ -352,7 +370,7 @@ for (const item of data.mechanisms || []) {
   if (!item.hideHeading) article.append(el(item.group ? 'h4' : 'h3', '', item.shortTitle || item.title));
   const figure = el('figure', 'paper-figure'); const link = el('a', 'zoomable'); link.href = item.src; link.dataset.figure = ''; link.dataset.caption = item.title; link.setAttribute('aria-label', 'Enlarge ' + item.title);
   link.style.setProperty('--figure-aspect', `${item.width} / ${item.height}`);
-  const img = el('img'); img.src = item.src; img.alt = item.caption; img.width = item.width; img.height = item.height; img.loading = 'lazy'; link.append(img, el('span', 'zoom-hint', '↗'));
+  const img = el('img'); img.src = item.src; img.alt = item.caption; img.width = item.width; img.height = item.height; img.loading = 'lazy'; img.decoding = 'async'; img.fetchPriority = 'low'; link.append(img, el('span', 'zoom-hint', '↗'));
   figure.append(link);
   if (item.pages?.length > 1) {
     const pagination = el('div', 'figure-pagination'); pagination.setAttribute('role', 'group');

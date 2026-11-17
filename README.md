@@ -56,6 +56,14 @@ The 5x5 hero retains its existing clip order. Nine larger sources have dedicated
 
 `hero-playback.js` starts at most three pending media loads at a time, beginning across different benchmark rows. Source errors and stalled playback are retried with bounded backoff. Motion preferences, explicit pause, offscreen visibility and gallery playback remain respected. CSV download buttons are omitted from the public results sections.
 
+### Loading update (2026-11-17)
+
+The 5x5 layout and selected camera views remain unchanged. Fourteen hero-only H.264 derivatives under `assets/videos/hero-v28/` use 10 fps, at most 320 pixels of width, CRF 30 and fast-start metadata. They preserve complete clip durations to within one output frame. The nine already-small LIBERO-family sources remain in use. Unique hero video transfer size falls from 4,936,129 to 3,603,943 bytes; dedicated WebP posters under `assets/posters/hero-v28/` reduce poster bytes from 854,575 to 112,480. Full gallery files, view-switching data and original posters are unchanged.
+
+Playback starts in the more visible right-hand columns, spread across benchmark rows. Two loads are pending on slow connections, otherwise three. The watchdog tracks actual buffered progress before retrying a stalled download, uses a longer timeout on slow networks, and stops automatic retries after three failures. An explicit play action or an online event can retry failed tiles. Leaving the hero cancels unfinished loads and pauses playback. Gallery players defer metadata until near the viewport, and changing a gallery filter cancels its detached players' downloads. Below-the-fold figures use low fetch priority and asynchronous decoding.
+
+Playback recovery checks: `node --test tests/hero-playback.test.cjs`. Browser validation covers all 25 streams on desktop/mobile, pause/resume, a failed tile and recovery, reduced motion/data saving, gallery seeking, and synchronized camera switching.
+
 ## Content layout (2026-11-16)
 
 Content sections use the approved numbered headings, card treatments, alternating section backgrounds, three method steps, and continuous dark BibTeX/footer. Efficiency follows the simulation and real-world results, with its latency table in the same section. Figure and logo thumbnails use the supplied WebP assets. The demonstration panel has one unique set of IDs, and the existing hero playback controller and lightweight videos remain in use.

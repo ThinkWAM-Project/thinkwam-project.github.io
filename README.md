@@ -18,9 +18,11 @@ A static academic project page hosted by GitHub Pages from the `main` branch.
 Preview with `python3 -m http.server 4173`, then open `http://localhost:4173`.
 Push changes to `main` to update GitHub Pages. No build step is required. Bump the asset query version in `index.html` when updating CSS or JavaScript to refresh cached assets.
 
-## Pending resources
+## Paper and project resources
 
-Set `arxivUrl` in `site-data.js` after the preprint is available and update the BibTeX in `index.html`. The arXiv button keeps its icon when activated. Project GitHub links point to `https://github.com/HaoyunT/Thinkwam`.
+The paper is available at [arXiv:2611.21258](https://arxiv.org/abs/2611.21258). The hero button links directly to the abstract page and works without JavaScript. The BibTeX records the arXiv identifier, archive and Robotics subject class. Project GitHub links point to `https://github.com/HaoyunT/Thinkwam`.
+
+The November 17 author-supplied abstract is preserved in `site-data.js` and the structured article metadata. The compact Overview and sharing descriptions reflect its revised motivation: an unconditioned future prediction is identical across proposals and carries no proposal-specific signal. This wording follows the supplied revision rather than the earlier abstract currently shown on arXiv v1.
 
 The real-world results table is configured in `realWorldComparison`, combining three OOD condition success rates, their mean, and RTX 4080 SUPER latency. The latest supplied manuscript reports 30 complete dual-target episodes per condition and method (90 per method); selected videos are a separate qualitative collection. The A100 simulation timings and native chunk specifications are shown separately from `latency`.
 
